@@ -1,5 +1,6 @@
 # Agent Harness & Workspace Rules
 .agents/
+docs/
 
 # Dependencies
 node_modules

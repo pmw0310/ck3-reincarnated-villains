@@ -1,0 +1,39 @@
+﻿pdxmesh = {
+	name = "villains_m_headgear_duce_fez_mesh"
+	file = "villains_m_headgear_duce_fez.mesh"
+
+	meshsettings = {
+		name = "villains_m_headgear_duce_fezShape"
+		index = 0
+		texture_diffuse = "villains_duce_fez_diffuse.dds"
+		texture_normal = "villains_duce_fez_normal.dds"
+		texture_specular = "villains_duce_fez_properties.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+}
+
+entity = {
+	name = "villains_m_headgear_duce_fez_entity"
+	pdxmesh = "villains_m_headgear_duce_fez_mesh"
+}
+
+pdxmesh = {
+	name = "villains_f_headgear_duce_fez_mesh"
+	file = "villains_f_headgear_duce_fez.mesh"
+
+	meshsettings = {
+		name = "villains_f_headgear_duce_fezShape"
+		index = 0
+		texture_diffuse = "villains_duce_fez_diffuse.dds"
+		texture_normal = "villains_duce_fez_normal.dds"
+		texture_specular = "villains_duce_fez_properties.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+}
+
+entity = {
+	name = "villains_f_headgear_duce_fez_entity"
+	pdxmesh = "villains_f_headgear_duce_fez_mesh"
+}

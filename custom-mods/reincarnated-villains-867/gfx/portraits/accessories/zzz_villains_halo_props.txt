@@ -1,0 +1,11 @@
+﻿pam_villains_communist_halo = {
+	entity = { required_tags = "" node = "bn_h_head_mid" entity = "pam_villains_communist_halo_entity" }
+}
+
+pam_villains_totalitarian_halo = {
+	entity = { required_tags = "" node = "bn_h_head_mid" entity = "pam_villains_totalitarian_halo_entity" }
+}
+
+pam_villains_capitalist_halo = {
+	entity = { required_tags = "" node = "bn_h_head_mid" entity = "pam_villains_capitalist_halo_entity" }
+}

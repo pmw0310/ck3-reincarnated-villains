@@ -1,0 +1,255 @@
+﻿# Victoria 3 Crossgame Portriat (3836483821) 크로스 서브모드 전용 복장 판정 트리거
+# - 왕/황제 등극 이후 및 대규모 결혼식·감기·모략 등 상황에서도 중세 복장·왕관으로 회귀하지 않고 V3 근현대 복장을 유지합니다.
+# - 단, 실제 소집 부대 지휘·야전 기사 출정·마상시합 무력 종목(난전/결투/마상창시합)·용병단/성전기사단 영주인 경우에만 각 고유 문화의 중세 갑옷·투구를 착용합니다.
+
+villains_v3_is_in_combat_or_war_armor_trigger = {
+	OR = {
+		# 1. 실제 소집된 야전 부대 지휘관 또는 출정 부대 소속 기사 (평시 궁정·자문회·단순 전시 후방 체류 시 갑옷 미착용)
+		portrait_wear_armor_currently_in_army_trigger = yes
+		# 2. 마상시합 중 실제 무력 격투 종목(난전·결투·마상창시합) 참가 중일 때만 갑옷 착용 (시 낭송·체스·경마 등 비무력 종목 제외)
+		AND = {
+			exists = this
+			is_incapable = no
+			is_imprisoned = no
+			involved_activity ?= {
+				has_activity_type = activity_tournament
+				OR = {
+					has_current_phase = tournament_phase_melee
+					has_current_phase = tournament_phase_duel
+					has_current_phase = tournament_phase_joust
+				}
+			}
+			is_in_guest_subset = { name = qualified }
+		}
+		# 3. 용병단·군사 성전기사단·도적 야영지 수장 (고유 전생 주인공 제외)
+		AND = {
+			NOT = { villains_v3_is_named_reincarnated_character_trigger = yes }
+			is_ruler = yes
+			OR = {
+				government_has_flag = government_is_mercenary
+				government_has_flag = government_is_military_holy_order
+				has_realm_law = camp_purpose_mercenaries
+				has_realm_law = camp_purpose_brigands
+			}
+		}
+	}
+}
+
+villains_v3_situational_clear_trigger = {
+	exists = this
+	is_adult = yes
+	portrait_prisoner_trigger = no
+	should_be_naked_trigger = no
+	should_be_topless_portrait_trigger = no
+	should_be_fully_naked_portrait_trigger = no
+}
+
+villains_v3_use_modern_outfit_trigger = {
+	villains_v3_situational_clear_trigger = yes
+	NOT = { villains_v3_is_in_combat_or_war_armor_trigger = yes }
+}
+
+villains_v3_is_named_reincarnated_character_trigger = {
+	OR = {
+		AND = { exists = character:reincarnated_hitler_867 this = character:reincarnated_hitler_867 }
+		AND = { exists = character:reincarnated_mussolini_867 this = character:reincarnated_mussolini_867 }
+		AND = { exists = character:reincarnated_stalin_867 this = character:reincarnated_stalin_867 }
+		AND = { exists = character:reincarnated_trump_867 this = character:reincarnated_trump_867 }
+		AND = { exists = character:reincarnated_netanyahu_867 this = character:reincarnated_netanyahu_867 }
+		AND = { exists = character:reincarnated_yonatan_netanyahu_867 this = character:reincarnated_yonatan_netanyahu_867 }
+		AND = { exists = character:reincarnated_benzion_netanyahu_867 this = character:reincarnated_benzion_netanyahu_867 }
+		AND = { exists = character:reincarnated_mutaguchi_867 this = character:reincarnated_mutaguchi_867 }
+		AND = { exists = character:reincarnated_mutaguchi_concubine_867 this = character:reincarnated_mutaguchi_concubine_867 }
+		AND = { exists = character:reincarnated_kim_jongun_867 this = character:reincarnated_kim_jongun_867 }
+		AND = { exists = character:reincarnated_kim_yojong_867 this = character:reincarnated_kim_yojong_867 }
+		AND = { exists = character:reincarnated_kim_grandfather_867 this = character:reincarnated_kim_grandfather_867 }
+		AND = { exists = character:reincarnated_kim_father_867 this = character:reincarnated_kim_father_867 }
+		AND = { exists = character:reincarnated_kim_mother_867 this = character:reincarnated_kim_mother_867 }
+		AND = { exists = character:reincarnated_kim_jongnam_867 this = character:reincarnated_kim_jongnam_867 }
+		AND = { exists = character:reincarnated_jiang_qing_867 this = character:reincarnated_jiang_qing_867 }
+		AND = { exists = character:reincarnated_zhang_chunchao_867 this = character:reincarnated_zhang_chunchao_867 }
+		AND = { exists = character:reincarnated_yao_wenyuan_867 this = character:reincarnated_yao_wenyuan_867 }
+		AND = { exists = character:reincarnated_wang_hongwen_867 this = character:reincarnated_wang_hongwen_867 }
+		AND = { exists = character:reincarnated_pol_pot_867 this = character:reincarnated_pol_pot_867 }
+		AND = { exists = character:reincarnated_idi_amin_867 this = character:reincarnated_idi_amin_867 }
+		AND = { exists = character:reincarnated_rasputin_867 this = character:reincarnated_rasputin_867 }
+	}
+}
+
+villains_v3_is_modern_culture_member_trigger = {
+	OR = {
+		culture = culture:american
+		culture = culture:israeli
+		culture = culture:aryan
+		culture = culture:fascist_italian
+		culture = culture:soviet
+		culture = culture:juche_korean
+		culture = culture:zaofan_chinese
+		culture = culture:imperial_japanese
+		culture = culture:angkar_khmer
+		culture = culture:ugandan
+	}
+}
+
+villains_v3_modern_culture_eligible_trigger = {
+	villains_v3_use_modern_outfit_trigger = yes
+	NOT = { villains_v3_is_named_reincarnated_character_trigger = yes }
+	villains_v3_is_modern_culture_member_trigger = yes
+}
+
+villains_v3_ideology_follower_eligible_trigger = {
+	villains_v3_use_modern_outfit_trigger = yes
+	NOT = { villains_v3_is_named_reincarnated_character_trigger = yes }
+}
+
+# B안: 문화·이념 핵심 간부 및 전위대 역할 판정 트리거 (영주, 자문위원, 기사·돌격대, 당 서기·제국의회 사제, 신정제 간부, 헌신자)
+villains_v3_is_armband_cadre_role_trigger = {
+	OR = {
+		is_ruler = yes
+		is_councillor = yes
+		is_knight = yes
+		has_court_position = court_chaplain_court_position
+		government_has_flag = government_is_theocracy
+		has_trait = devoted
+	}
+}
+
+# V3 근현대 복장을 실제로 착용하는 일반 성인 캐릭터 판정 (고유 주연 전생자 제외)
+villains_v3_receives_modern_outfit_trigger = {
+	OR = {
+		villains_v3_modern_culture_eligible_trigger = yes
+		AND = {
+			villains_v3_ideology_follower_eligible_trigger = yes
+			OR = {
+				faith = faith:national_socialism
+				faith = faith:fascism
+				faith = faith:bolshevism
+				faith = faith:juche
+				faith = faith:cultural_revolution
+				faith = faith:angkar
+				faith = faith:americanism
+				faith = faith:zionism
+				faith = faith:aminism
+				faith = faith:khlystism
+				faith = { has_doctrine = special_doctrine_communist_ideology }
+				faith = { has_doctrine = special_doctrine_fascist_ideology }
+				faith = { has_doctrine = special_doctrine_capitalist_ideology }
+			}
+		}
+	}
+}
+
+# 동아시아·동남아시아 의복/혈통 문화권 판정 (상투·촌마게·환계·고대 당나라 수염 차단용)
+villains_v3_is_east_or_se_asian_style_trigger = {
+	culture = {
+		OR = {
+			has_clothing_gfx = chinese_clothing_gfx
+			has_clothing_gfx = korean_clothing_gfx
+			has_clothing_gfx = japanese_clothing_gfx
+			has_clothing_gfx = southeast_asian_clothing_gfx
+			has_clothing_gfx = malay_clothing_gfx
+			has_cultural_pillar = heritage_buyeo
+			has_cultural_pillar = heritage_chinese
+			has_cultural_pillar = heritage_japonic
+			has_cultural_pillar = heritage_mon_khmer
+		}
+	}
+}
+
+# 사하라 이남·동아프리카 혈통/문화권 판정
+villains_v3_is_african_style_trigger = {
+	OR = {
+		culture = culture:ugandan
+		culture = {
+			OR = {
+				has_clothing_gfx = african_clothing_gfx
+				has_cultural_pillar = heritage_east_african
+				has_cultural_pillar = heritage_central_african
+				has_cultural_pillar = heritage_west_african
+				has_cultural_pillar = heritage_sahelian
+				has_cultural_pillar = heritage_senegambian
+				has_cultural_pillar = heritage_akan
+				has_cultural_pillar = heritage_yoruba
+				has_cultural_pillar = heritage_somalian
+			}
+		}
+	}
+}
+
+# V3 근현대 헤어스타일 대상 판정 (중세 전투 투구 착용 시에도 상투·촌마게·환계·더벅머리가 투구를 뚫지 않도록 평시·군사 모두 단정한 현대 헤어 유지)
+villains_v3_receives_modern_hair_trigger = {
+	villains_v3_situational_clear_trigger = yes
+	NOT = { villains_v3_is_named_reincarnated_character_trigger = yes }
+	OR = {
+		villains_v3_is_modern_culture_member_trigger = yes
+		faith = faith:national_socialism
+		faith = faith:fascism
+		faith = faith:bolshevism
+		faith = faith:juche
+		faith = faith:cultural_revolution
+		faith = faith:angkar
+		faith = faith:americanism
+		faith = faith:zionism
+		faith = faith:aminism
+		faith = faith:khlystism
+		faith = { has_doctrine = special_doctrine_communist_ideology }
+		faith = { has_doctrine = special_doctrine_fascist_ideology }
+		faith = { has_doctrine = special_doctrine_capitalist_ideology }
+	}
+	OR = {
+		NOT = { faith = faith:khlystism }
+		villains_v3_is_east_or_se_asian_style_trigger = yes
+	}
+}
+
+# V3 근현대 면도·단정한 콧수염 규율 판정 (중세 갑옷 착용 시에도 갑옷 목받이를 뚫는 중세 덥수룩한 수염을 억제하고 단정한 면도·콧수염 유지)
+villains_v3_receives_modern_shave_trigger = {
+	villains_v3_receives_modern_hair_trigger = yes
+	is_female = no
+}
+
+# 철십자 붉은 완장 착용 판정 (아돌프 히틀러 상시 + 아리아인 & 국가사회주의 핵심 간부·전위대)
+villains_v3_wears_iron_cross_armband_trigger = {
+	villains_v3_use_modern_outfit_trigger = yes
+	OR = {
+		AND = {
+			exists = character:reincarnated_hitler_867
+			this = character:reincarnated_hitler_867
+		}
+		AND = {
+			NOT = { villains_v3_is_named_reincarnated_character_trigger = yes }
+			culture = culture:aryan
+			faith = faith:national_socialism
+			villains_v3_is_armband_cadre_role_trigger = yes
+		}
+	}
+}
+
+# 홍위병('紅衛兵') 붉은 완장 착용 판정 (장칭 및 상하이 사인방 상시 + 조반 한족 & 프롤레타리아 문화대혁명 핵심 간부·전위대)
+villains_v3_wears_red_guard_armband_trigger = {
+	villains_v3_use_modern_outfit_trigger = yes
+	OR = {
+		AND = {
+			exists = character:reincarnated_jiang_qing_867
+			this = character:reincarnated_jiang_qing_867
+		}
+		AND = {
+			exists = character:reincarnated_zhang_chunchao_867
+			this = character:reincarnated_zhang_chunchao_867
+		}
+		AND = {
+			exists = character:reincarnated_yao_wenyuan_867
+			this = character:reincarnated_yao_wenyuan_867
+		}
+		AND = {
+			exists = character:reincarnated_wang_hongwen_867
+			this = character:reincarnated_wang_hongwen_867
+		}
+		AND = {
+			NOT = { villains_v3_is_named_reincarnated_character_trigger = yes }
+			culture = culture:zaofan_chinese
+			faith = faith:cultural_revolution
+			villains_v3_is_armband_cadre_role_trigger = yes
+		}
+	}
+}

@@ -1,0 +1,1939 @@
+﻿dynasty_hitler_867 = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 204 18 24 }
+	color2 = rgb { 245 244 240 }
+	color3 = rgb { 20 22 25 }
+	colored_emblem = {
+		texture = "ce_villains_hoi4_german_roundel.dds"
+		color1 = rgb { 20 22 25 }
+		color2 = rgb { 245 244 240 }
+		instance = {
+			position = { 0.5 0.5 }
+			scale = { 0.72 0.72 }
+		}
+	}
+}
+
+d_rep_hitler = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 204 18 24 }
+	color2 = rgb { 245 244 240 }
+	color3 = rgb { 20 22 25 }
+	colored_emblem = {
+		texture = "ce_villains_hoi4_german_flag.dds"
+		color1 = rgb { 20 22 25 }
+		color2 = rgb { 245 244 240 }
+		instance = {
+			position = { 0.5 0.5 }
+			scale = { 1.0 1.0 }
+		}
+	}
+}
+
+dynasty_stalin_867 = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 82 12 16 }
+	color2 = rgb { 234 192 68 }
+	color3 = rgb { 196 16 22 }
+	colored_emblem = {
+		texture = "ce_villains_stalin_star.dds"
+		color1 = rgb { 234 192 68 }
+		color2 = rgb { 196 16 22 }
+		color3 = rgb { 64 58 60 }
+		instance = {
+			position = { 0.5 0.45 }
+			scale = { 0.80 0.80 }
+			depth = 0.01
+		}
+	}
+}
+
+d_rep_stalin = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 204 0 0 }
+	color2 = rgb { 255 215 0 }
+	color3 = rgb { 204 0 0 }
+	colored_emblem = {
+		texture = "ce_villains_soviet_flag_emblem.dds"
+		color1 = rgb { 255 215 0 }
+		color2 = rgb { 255 215 0 }
+		instance = {
+			position = { 0.25 0.26 }
+			scale = { 0.35 0.35 }
+			depth = 0.01
+		}
+	}
+}
+
+dynasty_mussolini_867 = {
+	pattern = "pattern_tricolor_horizontal_01.dds"
+	color1 = rgb { 0 146 70 }
+	color2 = rgb { 248 248 246 }
+	color3 = rgb { 206 43 55 }
+	colored_emblem = {
+		texture = "ce_villains_pnf_emblem.dds"
+		color1 = rgb { 18 18 20 }
+		color2 = rgb { 248 248 246 }
+		color3 = rgb { 186 190 196 }
+		instance = {
+			position = { 0.5 0.5 }
+			scale = { 0.88 0.88 }
+			depth = 0.01
+		}
+	}
+}
+
+d_rep_mussolini = {
+	pattern = "pattern_villains_tricolor_vertical_01.dds"
+	color1 = rgb { 0 146 70 }
+	color2 = rgb { 250 250 248 }
+	color3 = rgb { 206 43 55 }
+	colored_emblem = {
+		texture = "ce_villains_savoy_shield.dds"
+		color1 = rgb { 52 92 208 }
+		color2 = rgb { 210 32 42 }
+		color3 = rgb { 250 250 248 }
+		instance = {
+			position = { 0.5 0.565 }
+			scale = { 0.375 0.375 }
+			depth = 1.01
+		}
+	}
+	colored_emblem = {
+		texture = "ce_villains_savoy_crown.dds"
+		color1 = rgb { 232 192 68 }
+		color2 = rgb { 206 36 48 }
+		color3 = rgb { 250 250 248 }
+		instance = {
+			position = { 0.5 0.290 }
+			scale = { 0.270 0.270 }
+			depth = 0.01
+		}
+	}
+}
+
+dynasty_mutaguchi_867 = {
+	pattern = "pattern_solid.dds"
+	color1 = white
+	color2 = rgb { 24 24 26 }
+	color3 = rgb { 240 238 232 }
+	colored_emblem = {
+		color1 = rgb { 24 24 26 }
+		color2 = rgb { 24 24 26 }
+		texture = "ce_villains_mutaguchi_kanji.dds"
+		instance = {
+			position = { 0.500000 0.530000 }
+			scale = { 0.820000 0.820000 }
+		}
+	}
+}
+
+d_rep_mutaguchi = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 248 245 235 }
+	color2 = rgb { 188 0 45 }
+	colored_emblem = {
+		texture = "ce_circle_mask.dds"
+		color1 = rgb { 188 0 45 }
+		instance = {
+			position = { 0.5 0.48 }
+			scale = { 0.44 0.44 }
+		}
+	}
+}
+
+dynasty_trump_867 = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 248 248 246 }
+	color2 = rgb { 232 27 35 }
+	color3 = rgb { 248 248 246 }
+	colored_emblem = {
+		color1 = rgb { 232 27 35 }
+		color2 = rgb { 248 248 246 }
+		color3 = rgb { 248 248 246 }
+		texture = "ce_villains_gop_elephant.dds"
+		instance = {
+			position = { 0.5 0.5 }
+			scale = { 0.700000 0.700000 }
+		}
+	}
+}
+
+d_rep_trump = {
+	pattern="pattern__solid_designer.dds"
+
+	color1=red
+
+	color2=white
+
+	color3=red
+
+	colored_emblem={
+
+		color1=blue
+
+		texture="ce_block_02.dds"
+
+		instance={
+
+			position={ 0.240000 0.280000 }
+
+			scale={ 0.540000 0.540000 }
+
+			depth=45.010002
+
+		}
+
+	}
+
+	colored_emblem={
+
+		color1=white
+
+		color2=red
+
+		texture="ce_barruly_12.dds"
+
+		instance={
+
+			position={ 0.500000 0.550000 }
+
+			scale={ 0.920000 0.920000 }
+
+			depth=46.010002
+
+		}
+
+	}
+
+	colored_emblem={
+
+		color1=white
+
+		texture="ce_star_05.dds"
+
+		instance={ position={ 0.100000 0.020000 } scale={ 0.080000 0.080000 } }
+
+		instance={ position={ 0.190000 0.020000 } scale={ 0.080000 0.080000 } depth=1.010000 }
+
+		instance={ position={ 0.280000 0.020000 } scale={ 0.080000 0.080000 } depth=2.010000 }
+
+		instance={ position={ 0.370000 0.020000 } scale={ 0.080000 0.080000 } depth=3.010000 }
+
+		instance={ position={ 0.460000 0.020000 } scale={ 0.080000 0.080000 } depth=4.010000 }
+
+		instance={ position={ 0.050000 0.080000 } scale={ 0.080000 0.080000 } depth=5.010000 }
+
+		instance={ position={ 0.050000 0.200000 } scale={ 0.080000 0.080000 } depth=6.010000 }
+
+		instance={ position={ 0.050000 0.320000 } scale={ 0.080000 0.080000 } depth=7.010000 }
+
+		instance={ position={ 0.050000 0.440000 } scale={ 0.080000 0.080000 } depth=8.010000 }
+
+		instance={ position={ 0.140000 0.080000 } scale={ 0.080000 0.080000 } depth=9.010000 }
+
+		instance={ position={ 0.240000 0.080000 } scale={ 0.080000 0.080000 } depth=10.010000 }
+
+		instance={ position={ 0.330000 0.080000 } scale={ 0.090000 0.090000 } depth=11.010000 }
+
+		instance={ position={ 0.420000 0.080000 } scale={ 0.080000 0.080000 } depth=12.010000 }
+
+		instance={ position={ 0.460000 0.140000 } scale={ 0.080000 0.080000 } depth=13.010000 }
+
+		instance={ position={ 0.420000 0.200000 } scale={ 0.080000 0.080000 } depth=14.010000 }
+
+		instance={ position={ 0.370000 0.140000 } scale={ 0.080000 0.080000 } depth=15.010000 }
+
+		instance={ position={ 0.280000 0.140000 } scale={ 0.080000 0.080000 } depth=16.010000 }
+
+		instance={ position={ 0.330000 0.200000 } scale={ 0.080000 0.080000 } depth=17.010000 }
+
+		instance={ position={ 0.240000 0.200000 } scale={ 0.080000 0.080000 } depth=18.010000 }
+
+		instance={ position={ 0.190000 0.140000 } scale={ 0.080000 0.080000 } depth=19.010000 }
+
+		instance={ position={ 0.140000 0.200000 } scale={ 0.080000 0.080000 } depth=20.010000 }
+
+		instance={ position={ 0.100000 0.140000 } scale={ 0.080000 0.080000 } depth=21.010000 }
+
+		instance={ position={ 0.190000 0.260000 } scale={ 0.080000 0.080000 } depth=22.010000 }
+
+		instance={ position={ 0.100000 0.260000 } scale={ 0.080000 0.080000 } depth=23.010000 }
+
+		instance={ position={ 0.280000 0.260000 } scale={ 0.080000 0.080000 } depth=24.010000 }
+
+		instance={ position={ 0.370000 0.260000 } scale={ 0.080000 0.080000 } depth=25.010000 }
+
+		instance={ position={ 0.460000 0.260000 } scale={ 0.080000 0.080000 } depth=26.010000 }
+
+		instance={ position={ 0.420000 0.320000 } scale={ 0.080000 0.080000 } depth=27.010000 }
+
+		instance={ position={ 0.330000 0.320000 } scale={ 0.080000 0.080000 } depth=28.010000 }
+
+		instance={ position={ 0.240000 0.320000 } scale={ 0.080000 0.080000 } depth=29.010000 }
+
+		instance={ position={ 0.140000 0.320000 } scale={ 0.080000 0.080000 } depth=30.010000 }
+
+		instance={ position={ 0.100000 0.380000 } scale={ 0.080000 0.080000 } depth=31.010000 }
+
+		instance={ position={ 0.190000 0.380000 } scale={ 0.080000 0.080000 } depth=32.010002 }
+
+		instance={ position={ 0.280000 0.380000 } scale={ 0.080000 0.080000 } depth=33.010002 }
+
+		instance={ position={ 0.370000 0.380000 } scale={ 0.080000 0.080000 } depth=34.010002 }
+
+		instance={ position={ 0.460000 0.380000 } scale={ 0.080000 0.080000 } depth=35.010002 }
+
+		instance={ position={ 0.140000 0.440000 } scale={ 0.080000 0.080000 } depth=36.010002 }
+
+		instance={ position={ 0.240000 0.440000 } scale={ 0.080000 0.080000 } depth=37.010002 }
+
+		instance={ position={ 0.330000 0.440000 } scale={ 0.080000 0.080000 } depth=38.010002 }
+
+		instance={ position={ 0.420000 0.440000 } scale={ 0.080000 0.080000 } depth=39.010002 }
+
+		instance={ position={ 0.100000 0.500000 } scale={ 0.080000 0.080000 } depth=40.010002 }
+
+		instance={ position={ 0.190000 0.500000 } scale={ 0.080000 0.080000 } depth=41.010002 }
+
+		instance={ position={ 0.280000 0.500000 } scale={ 0.080000 0.080000 } depth=42.010002 }
+
+		instance={ position={ 0.370000 0.500000 } scale={ 0.080000 0.080000 } depth=43.010002 }
+
+		instance={ position={ 0.460000 0.500000 } scale={ 0.080000 0.080000 } depth=44.010002 }
+
+	}
+
+}
+
+dynasty_kim_867 = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 168 14 24 }
+	color2 = rgb { 250 204 38 }
+	color3 = white
+	textured_emblem = {
+		texture = "te_villains_kim_paektu_emblem.dds"
+	}
+}
+
+house_paektu_867 = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 168 14 24 }
+	color2 = rgb { 250 204 38 }
+	color3 = white
+	textured_emblem = {
+		texture = "te_villains_kim_paektu_emblem.dds"
+	}
+}
+
+d_rep_kim = {
+	pattern="pattern_tricolor_horizontal_01.dds"
+
+	color1=blue
+
+	color2=red
+
+	color3=blue
+
+	colored_emblem={
+
+		color1=white
+
+		texture="ce_seal_frame_full.dds"
+
+		instance={
+
+			position={ 0.240000 0.310000 }
+
+			scale={ 1.000000 0.050000 }
+
+			depth=1.010000
+
+		}
+
+		instance={
+
+			position={ 0.740000 0.310000 }
+
+			scale={ 1.000000 0.050000 }
+
+			depth=2.010000
+
+		}
+
+		instance={
+
+			position={ 0.480000 0.700000 }
+
+			scale={ 1.000000 0.060000 }
+
+			depth=3.010000
+
+		}
+
+		instance={
+
+			position={ 0.820000 0.700000 }
+
+			scale={ 1.000000 0.060000 }
+
+			depth=4.010000
+
+		}
+
+		instance={
+
+			position={ 0.500000 0.310000 }
+
+			scale={ 1.000000 0.050000 }
+
+			depth=6.010000
+
+		}
+
+		instance={
+
+			position={ 0.500000 0.700000 }
+
+			scale={ 1.000000 0.060000 }
+
+			depth=7.010000
+
+		}
+
+	}
+
+	colored_emblem={
+
+		color1=red
+
+		color2=red
+
+		texture="ce_star_05_pierced.dds"
+
+		instance={
+
+			position={ 0.300000 0.500000 }
+
+			scale={ 0.310000 0.310000 }
+
+		}
+
+	}
+
+	colored_emblem={
+
+		color1=white
+
+		texture="ce_seal_pictorial_frame_circle_full.dds"
+
+		instance={
+
+			position={ 0.300000 0.500000 }
+
+			scale={ 0.240000 0.240000 }
+
+			depth=5.010000
+
+		}
+
+	}
+
+}
+
+c_nf_geom_nakrang = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 168 14 24 }
+	color2 = rgb { 250 204 38 }
+	color3 = white
+	textured_emblem = {
+		texture = "te_villains_kim_paektu_emblem.dds"
+	}
+}
+
+k_german_reich = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 204 18 24 }
+	color2 = rgb { 245 244 240 }
+	color3 = rgb { 20 22 25 }
+	colored_emblem = {
+		texture = "ce_villains_hoi4_german_flag.dds"
+		color1 = rgb { 20 22 25 }
+		color2 = rgb { 245 244 240 }
+		instance = {
+			position = { 0.5 0.5 }
+			scale = { 1.0 1.0 }
+		}
+	}
+}
+
+k_soviet_union = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 204 0 0 }
+	color2 = rgb { 255 215 0 }
+	color3 = rgb { 204 0 0 }
+	colored_emblem = {
+		texture = "ce_villains_soviet_flag_emblem.dds"
+		color1 = rgb { 255 215 0 }
+		color2 = rgb { 255 215 0 }
+		instance = {
+			position = { 0.25 0.26 }
+			scale = { 0.35 0.35 }
+			depth = 0.01
+		}
+	}
+}
+
+k_fascist_italy = {
+	pattern = "pattern_villains_tricolor_vertical_01.dds"
+	color1 = rgb { 0 146 70 }
+	color2 = rgb { 250 250 248 }
+	color3 = rgb { 206 43 55 }
+	colored_emblem = {
+		texture = "ce_villains_savoy_shield.dds"
+		color1 = rgb { 52 92 208 }
+		color2 = rgb { 210 32 42 }
+		color3 = rgb { 250 250 248 }
+		instance = {
+			position = { 0.5 0.565 }
+			scale = { 0.375 0.375 }
+			depth = 1.01
+		}
+	}
+	colored_emblem = {
+		texture = "ce_villains_savoy_crown.dds"
+		color1 = rgb { 232 192 68 }
+		color2 = rgb { 206 36 48 }
+		color3 = rgb { 250 250 248 }
+		instance = {
+			position = { 0.5 0.290 }
+			scale = { 0.270 0.270 }
+			depth = 0.01
+		}
+	}
+}
+
+k_imperial_japan_india = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 248 245 235 }
+	color2 = rgb { 188 0 45 }
+	colored_emblem = {
+		texture = "ce_circle_mask.dds"
+		color1 = rgb { 188 0 45 }
+		instance = {
+			position = { 0.5 0.48 }
+			scale = { 0.44 0.44 }
+		}
+	}
+}
+
+k_united_states = {
+
+	pattern="pattern__solid_designer.dds"
+
+	color1=red
+
+	color2=white
+
+	color3=red
+
+	colored_emblem={
+
+		color1=blue
+
+		texture="ce_block_02.dds"
+
+		instance={
+
+			position={ 0.240000 0.280000 }
+
+			scale={ 0.540000 0.540000 }
+
+			depth=45.010002
+
+		}
+
+	}
+
+	colored_emblem={
+
+		color1=white
+
+		color2=red
+
+		texture="ce_barruly_12.dds"
+
+		instance={
+
+			position={ 0.500000 0.550000 }
+
+			scale={ 0.920000 0.920000 }
+
+			depth=46.010002
+
+		}
+
+	}
+
+	colored_emblem={
+
+		color1=white
+
+		texture="ce_star_05.dds"
+
+		instance={ position={ 0.100000 0.020000 } scale={ 0.080000 0.080000 } }
+
+		instance={ position={ 0.190000 0.020000 } scale={ 0.080000 0.080000 } depth=1.010000 }
+
+		instance={ position={ 0.280000 0.020000 } scale={ 0.080000 0.080000 } depth=2.010000 }
+
+		instance={ position={ 0.370000 0.020000 } scale={ 0.080000 0.080000 } depth=3.010000 }
+
+		instance={ position={ 0.460000 0.020000 } scale={ 0.080000 0.080000 } depth=4.010000 }
+
+		instance={ position={ 0.050000 0.080000 } scale={ 0.080000 0.080000 } depth=5.010000 }
+
+		instance={ position={ 0.050000 0.200000 } scale={ 0.080000 0.080000 } depth=6.010000 }
+
+		instance={ position={ 0.050000 0.320000 } scale={ 0.080000 0.080000 } depth=7.010000 }
+
+		instance={ position={ 0.050000 0.440000 } scale={ 0.080000 0.080000 } depth=8.010000 }
+
+		instance={ position={ 0.140000 0.080000 } scale={ 0.080000 0.080000 } depth=9.010000 }
+
+		instance={ position={ 0.240000 0.080000 } scale={ 0.080000 0.080000 } depth=10.010000 }
+
+		instance={ position={ 0.330000 0.080000 } scale={ 0.090000 0.090000 } depth=11.010000 }
+
+		instance={ position={ 0.420000 0.080000 } scale={ 0.080000 0.080000 } depth=12.010000 }
+
+		instance={ position={ 0.460000 0.140000 } scale={ 0.080000 0.080000 } depth=13.010000 }
+
+		instance={ position={ 0.420000 0.200000 } scale={ 0.080000 0.080000 } depth=14.010000 }
+
+		instance={ position={ 0.370000 0.140000 } scale={ 0.080000 0.080000 } depth=15.010000 }
+
+		instance={ position={ 0.280000 0.140000 } scale={ 0.080000 0.080000 } depth=16.010000 }
+
+		instance={ position={ 0.330000 0.200000 } scale={ 0.080000 0.080000 } depth=17.010000 }
+
+		instance={ position={ 0.240000 0.200000 } scale={ 0.080000 0.080000 } depth=18.010000 }
+
+		instance={ position={ 0.190000 0.140000 } scale={ 0.080000 0.080000 } depth=19.010000 }
+
+		instance={ position={ 0.140000 0.200000 } scale={ 0.080000 0.080000 } depth=20.010000 }
+
+		instance={ position={ 0.100000 0.140000 } scale={ 0.080000 0.080000 } depth=21.010000 }
+
+		instance={ position={ 0.190000 0.260000 } scale={ 0.080000 0.080000 } depth=22.010000 }
+
+		instance={ position={ 0.100000 0.260000 } scale={ 0.080000 0.080000 } depth=23.010000 }
+
+		instance={ position={ 0.280000 0.260000 } scale={ 0.080000 0.080000 } depth=24.010000 }
+
+		instance={ position={ 0.370000 0.260000 } scale={ 0.080000 0.080000 } depth=25.010000 }
+
+		instance={ position={ 0.460000 0.260000 } scale={ 0.080000 0.080000 } depth=26.010000 }
+
+		instance={ position={ 0.420000 0.320000 } scale={ 0.080000 0.080000 } depth=27.010000 }
+
+		instance={ position={ 0.330000 0.320000 } scale={ 0.080000 0.080000 } depth=28.010000 }
+
+		instance={ position={ 0.240000 0.320000 } scale={ 0.080000 0.080000 } depth=29.010000 }
+
+		instance={ position={ 0.140000 0.320000 } scale={ 0.080000 0.080000 } depth=30.010000 }
+
+		instance={ position={ 0.100000 0.380000 } scale={ 0.080000 0.080000 } depth=31.010000 }
+
+		instance={ position={ 0.190000 0.380000 } scale={ 0.080000 0.080000 } depth=32.010002 }
+
+		instance={ position={ 0.280000 0.380000 } scale={ 0.080000 0.080000 } depth=33.010002 }
+
+		instance={ position={ 0.370000 0.380000 } scale={ 0.080000 0.080000 } depth=34.010002 }
+
+		instance={ position={ 0.460000 0.380000 } scale={ 0.080000 0.080000 } depth=35.010002 }
+
+		instance={ position={ 0.140000 0.440000 } scale={ 0.080000 0.080000 } depth=36.010002 }
+
+		instance={ position={ 0.240000 0.440000 } scale={ 0.080000 0.080000 } depth=37.010002 }
+
+		instance={ position={ 0.330000 0.440000 } scale={ 0.080000 0.080000 } depth=38.010002 }
+
+		instance={ position={ 0.420000 0.440000 } scale={ 0.080000 0.080000 } depth=39.010002 }
+
+		instance={ position={ 0.100000 0.500000 } scale={ 0.080000 0.080000 } depth=40.010002 }
+
+		instance={ position={ 0.190000 0.500000 } scale={ 0.080000 0.080000 } depth=41.010002 }
+
+		instance={ position={ 0.280000 0.500000 } scale={ 0.080000 0.080000 } depth=42.010002 }
+
+		instance={ position={ 0.370000 0.500000 } scale={ 0.080000 0.080000 } depth=43.010002 }
+
+		instance={ position={ 0.460000 0.500000 } scale={ 0.080000 0.080000 } depth=44.010002 }
+
+	}
+
+}
+
+k_dprk = {
+
+	pattern="pattern_tricolor_horizontal_01.dds"
+
+	color1=blue
+
+	color2=red
+
+	color3=blue
+
+	colored_emblem={
+
+		color1=white
+
+		texture="ce_seal_frame_full.dds"
+
+		instance={
+
+			position={ 0.240000 0.310000 }
+
+			scale={ 1.000000 0.050000 }
+
+			depth=1.010000
+
+		}
+
+		instance={
+
+			position={ 0.740000 0.310000 }
+
+			scale={ 1.000000 0.050000 }
+
+			depth=2.010000
+
+		}
+
+		instance={
+
+			position={ 0.480000 0.700000 }
+
+			scale={ 1.000000 0.060000 }
+
+			depth=3.010000
+
+		}
+
+		instance={
+
+			position={ 0.820000 0.700000 }
+
+			scale={ 1.000000 0.060000 }
+
+			depth=4.010000
+
+		}
+
+		instance={
+
+			position={ 0.500000 0.310000 }
+
+			scale={ 1.000000 0.050000 }
+
+			depth=6.010000
+
+		}
+
+		instance={
+
+			position={ 0.500000 0.700000 }
+
+			scale={ 1.000000 0.060000 }
+
+			depth=7.010000
+
+		}
+
+	}
+
+	colored_emblem={
+
+		color1=red
+
+		color2=red
+
+		texture="ce_star_05_pierced.dds"
+
+		instance={
+
+			position={ 0.300000 0.500000 }
+
+			scale={ 0.310000 0.310000 }
+
+		}
+
+	}
+
+	colored_emblem={
+
+		color1=white
+
+		texture="ce_seal_pictorial_frame_circle_full.dds"
+
+		instance={
+
+			position={ 0.300000 0.500000 }
+
+			scale={ 0.240000 0.240000 }
+
+			depth=5.010000
+
+		}
+
+	}
+
+}
+
+d_fascism = {
+	pattern = "pattern_villains_tricolor_vertical_01.dds"
+	color1 = rgb { 0 146 70 }
+	color2 = rgb { 250 250 248 }
+	color3 = rgb { 206 43 55 }
+	colored_emblem = {
+		texture = "ce_villains_savoy_shield.dds"
+		color1 = rgb { 52 92 208 }
+		color2 = rgb { 210 32 42 }
+		color3 = rgb { 250 250 248 }
+		instance = {
+			position = { 0.5 0.565 }
+			scale = { 0.375 0.375 }
+			depth = 1.01
+		}
+	}
+	colored_emblem = {
+		texture = "ce_villains_savoy_crown.dds"
+		color1 = rgb { 232 192 68 }
+		color2 = rgb { 206 36 48 }
+		color3 = rgb { 250 250 248 }
+		instance = {
+			position = { 0.5 0.290 }
+			scale = { 0.270 0.270 }
+			depth = 0.01
+		}
+	}
+}
+
+d_national_socialism = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 204 18 24 }
+	color2 = rgb { 245 244 240 }
+	color3 = rgb { 20 22 25 }
+	colored_emblem = {
+		texture = "ce_villains_hoi4_german_flag.dds"
+		color1 = rgb { 20 22 25 }
+		color2 = rgb { 245 244 240 }
+		instance = {
+			position = { 0.5 0.5 }
+			scale = { 1.0 1.0 }
+		}
+	}
+}
+
+d_bolshevism = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 204 0 0 }
+	color2 = rgb { 255 215 0 }
+	color3 = rgb { 204 0 0 }
+	colored_emblem = {
+		texture = "ce_villains_soviet_flag_emblem.dds"
+		color1 = rgb { 255 215 0 }
+		color2 = rgb { 255 215 0 }
+		instance = {
+			position = { 0.25 0.26 }
+			scale = { 0.35 0.35 }
+			depth = 0.01
+		}
+	}
+}
+
+d_americanism = {
+	pattern="pattern__solid_designer.dds"
+	color1=red
+	color2=white
+	color3=red
+	colored_emblem={
+		color1=blue
+		texture="ce_block_02.dds"
+		instance={
+			position={ 0.240000 0.280000 }
+			scale={ 0.540000 0.540000 }
+			depth=45.010002
+		}
+	}
+	colored_emblem={
+		color1=white
+		color2=red
+		texture="ce_barruly_12.dds"
+		instance={
+			position={ 0.500000 0.550000 }
+			scale={ 0.920000 0.920000 }
+			depth=46.010002
+		}
+	}
+	colored_emblem={
+		color1=white
+		texture="ce_star_05.dds"
+		instance={ position={ 0.100000 0.020000 } scale={ 0.080000 0.080000 } }
+		instance={ position={ 0.190000 0.020000 } scale={ 0.080000 0.080000 } depth=1.010000 }
+		instance={ position={ 0.280000 0.020000 } scale={ 0.080000 0.080000 } depth=2.010000 }
+		instance={ position={ 0.370000 0.020000 } scale={ 0.080000 0.080000 } depth=3.010000 }
+		instance={ position={ 0.460000 0.020000 } scale={ 0.080000 0.080000 } depth=4.010000 }
+		instance={ position={ 0.050000 0.080000 } scale={ 0.080000 0.080000 } depth=5.010000 }
+		instance={ position={ 0.050000 0.200000 } scale={ 0.080000 0.080000 } depth=6.010000 }
+		instance={ position={ 0.050000 0.320000 } scale={ 0.080000 0.080000 } depth=7.010000 }
+		instance={ position={ 0.050000 0.440000 } scale={ 0.080000 0.080000 } depth=8.010000 }
+		instance={ position={ 0.140000 0.080000 } scale={ 0.080000 0.080000 } depth=9.010000 }
+		instance={ position={ 0.240000 0.080000 } scale={ 0.080000 0.080000 } depth=10.010000 }
+		instance={ position={ 0.330000 0.080000 } scale={ 0.090000 0.090000 } depth=11.010000 }
+		instance={ position={ 0.420000 0.080000 } scale={ 0.080000 0.080000 } depth=12.010000 }
+		instance={ position={ 0.460000 0.140000 } scale={ 0.080000 0.080000 } depth=13.010000 }
+		instance={ position={ 0.420000 0.200000 } scale={ 0.080000 0.080000 } depth=14.010000 }
+		instance={ position={ 0.370000 0.140000 } scale={ 0.080000 0.080000 } depth=15.010000 }
+		instance={ position={ 0.280000 0.140000 } scale={ 0.080000 0.080000 } depth=16.010000 }
+		instance={ position={ 0.330000 0.200000 } scale={ 0.080000 0.080000 } depth=17.010000 }
+		instance={ position={ 0.240000 0.200000 } scale={ 0.080000 0.080000 } depth=18.010000 }
+		instance={ position={ 0.190000 0.140000 } scale={ 0.080000 0.080000 } depth=19.010000 }
+		instance={ position={ 0.140000 0.200000 } scale={ 0.080000 0.080000 } depth=20.010000 }
+		instance={ position={ 0.100000 0.140000 } scale={ 0.080000 0.080000 } depth=21.010000 }
+		instance={ position={ 0.190000 0.260000 } scale={ 0.080000 0.080000 } depth=22.010000 }
+		instance={ position={ 0.100000 0.260000 } scale={ 0.080000 0.080000 } depth=23.010000 }
+		instance={ position={ 0.280000 0.260000 } scale={ 0.080000 0.080000 } depth=24.010000 }
+		instance={ position={ 0.370000 0.260000 } scale={ 0.080000 0.080000 } depth=25.010000 }
+		instance={ position={ 0.460000 0.260000 } scale={ 0.080000 0.080000 } depth=26.010000 }
+		instance={ position={ 0.420000 0.320000 } scale={ 0.080000 0.080000 } depth=27.010000 }
+		instance={ position={ 0.330000 0.320000 } scale={ 0.080000 0.080000 } depth=28.010000 }
+		instance={ position={ 0.240000 0.320000 } scale={ 0.080000 0.080000 } depth=29.010000 }
+		instance={ position={ 0.140000 0.320000 } scale={ 0.080000 0.080000 } depth=30.010000 }
+		instance={ position={ 0.100000 0.380000 } scale={ 0.080000 0.080000 } depth=31.010000 }
+		instance={ position={ 0.190000 0.380000 } scale={ 0.080000 0.080000 } depth=32.010002 }
+		instance={ position={ 0.280000 0.380000 } scale={ 0.080000 0.080000 } depth=33.010002 }
+		instance={ position={ 0.370000 0.380000 } scale={ 0.080000 0.080000 } depth=34.010002 }
+		instance={ position={ 0.460000 0.380000 } scale={ 0.080000 0.080000 } depth=35.010002 }
+		instance={ position={ 0.140000 0.440000 } scale={ 0.080000 0.080000 } depth=36.010002 }
+		instance={ position={ 0.240000 0.440000 } scale={ 0.080000 0.080000 } depth=37.010002 }
+		instance={ position={ 0.330000 0.440000 } scale={ 0.080000 0.080000 } depth=38.010002 }
+		instance={ position={ 0.420000 0.440000 } scale={ 0.080000 0.080000 } depth=39.010002 }
+		instance={ position={ 0.100000 0.500000 } scale={ 0.080000 0.080000 } depth=40.010002 }
+		instance={ position={ 0.190000 0.500000 } scale={ 0.080000 0.080000 } depth=41.010002 }
+		instance={ position={ 0.280000 0.500000 } scale={ 0.080000 0.080000 } depth=42.010002 }
+		instance={ position={ 0.370000 0.500000 } scale={ 0.080000 0.080000 } depth=43.010002 }
+		instance={ position={ 0.460000 0.500000 } scale={ 0.080000 0.080000 } depth=44.010002 }
+	}
+}
+
+d_juche = {
+	pattern="pattern_tricolor_horizontal_01.dds"
+	color1=blue
+	color2=red
+	color3=blue
+	colored_emblem={
+		color1=white
+		texture="ce_seal_frame_full.dds"
+		instance={
+			position={ 0.240000 0.310000 }
+			scale={ 1.000000 0.050000 }
+			depth=1.010000
+		}
+		instance={
+			position={ 0.740000 0.310000 }
+			scale={ 1.000000 0.050000 }
+			depth=2.010000
+		}
+		instance={
+			position={ 0.480000 0.700000 }
+			scale={ 1.000000 0.060000 }
+			depth=3.010000
+		}
+		instance={
+			position={ 0.820000 0.700000 }
+			scale={ 1.000000 0.060000 }
+			depth=4.010000
+		}
+		instance={
+			position={ 0.500000 0.310000 }
+			scale={ 1.000000 0.050000 }
+			depth=6.010000
+		}
+		instance={
+			position={ 0.500000 0.700000 }
+			scale={ 1.000000 0.060000 }
+			depth=7.010000
+		}
+	}
+	colored_emblem={
+		color1=red
+		color2=red
+		texture="ce_star_05_pierced.dds"
+		instance={
+			position={ 0.300000 0.500000 }
+			scale={ 0.310000 0.310000 }
+		}
+	}
+	colored_emblem={
+		color1=white
+		texture="ce_seal_pictorial_frame_circle_full.dds"
+		instance={
+			position={ 0.300000 0.500000 }
+			scale={ 0.240000 0.240000 }
+			depth=5.010000
+		}
+	}
+}
+
+e_greater_german_reich = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 204 18 24 }
+	color2 = rgb { 245 244 240 }
+	color3 = rgb { 20 22 25 }
+	colored_emblem = {
+		texture = "ce_villains_hoi4_german_flag.dds"
+		color1 = rgb { 20 22 25 }
+		color2 = rgb { 245 244 240 }
+		instance = {
+			position = { 0.5 0.5 }
+			scale = { 1.0 1.0 }
+		}
+	}
+}
+
+e_soviet_union = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 204 0 0 }
+	color2 = rgb { 255 215 0 }
+	color3 = rgb { 204 0 0 }
+	colored_emblem = {
+		texture = "ce_villains_soviet_flag_emblem.dds"
+		color1 = rgb { 255 215 0 }
+		color2 = rgb { 255 215 0 }
+		instance = {
+			position = { 0.25 0.26 }
+			scale = { 0.35 0.35 }
+			depth = 0.01
+		}
+	}
+}
+
+e_new_roman_empire = {
+	pattern = "pattern_villains_tricolor_vertical_01.dds"
+	color1 = rgb { 0 146 70 }
+	color2 = rgb { 250 250 248 }
+	color3 = rgb { 206 43 55 }
+	colored_emblem = {
+		texture = "ce_villains_savoy_shield.dds"
+		color1 = rgb { 52 92 208 }
+		color2 = rgb { 210 32 42 }
+		color3 = rgb { 250 250 248 }
+		instance = {
+			position = { 0.5 0.565 }
+			scale = { 0.375 0.375 }
+			depth = 1.01
+		}
+	}
+	colored_emblem = {
+		texture = "ce_villains_savoy_crown.dds"
+		color1 = rgb { 232 192 68 }
+		color2 = rgb { 206 36 48 }
+		color3 = rgb { 250 250 248 }
+		instance = {
+			position = { 0.5 0.290 }
+			scale = { 0.270 0.270 }
+			depth = 0.01
+		}
+	}
+}
+
+e_greater_east_asia_imphal = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 248 245 235 }
+	color2 = rgb { 188 0 45 }
+	colored_emblem = {
+		texture = "ce_circle_mask.dds"
+		color1 = rgb { 188 0 45 }
+		instance = {
+			position = { 0.5 0.48 }
+			scale = { 0.44 0.44 }
+		}
+	}
+}
+
+e_american_empire = {
+
+	pattern="pattern__solid_designer.dds"
+
+	color1=red
+
+	color2=white
+
+	color3=red
+
+	colored_emblem={
+
+		color1=blue
+
+		texture="ce_block_02.dds"
+
+		instance={
+
+			position={ 0.240000 0.280000 }
+
+			scale={ 0.540000 0.540000 }
+
+			depth=45.010002
+
+		}
+
+	}
+
+	colored_emblem={
+
+		color1=white
+
+		color2=red
+
+		texture="ce_barruly_12.dds"
+
+		instance={
+
+			position={ 0.500000 0.550000 }
+
+			scale={ 0.920000 0.920000 }
+
+			depth=46.010002
+
+		}
+
+	}
+
+	colored_emblem={
+
+		color1=white
+
+		texture="ce_star_05.dds"
+
+		instance={ position={ 0.100000 0.020000 } scale={ 0.080000 0.080000 } }
+
+		instance={ position={ 0.190000 0.020000 } scale={ 0.080000 0.080000 } depth=1.010000 }
+
+		instance={ position={ 0.280000 0.020000 } scale={ 0.080000 0.080000 } depth=2.010000 }
+
+		instance={ position={ 0.370000 0.020000 } scale={ 0.080000 0.080000 } depth=3.010000 }
+
+		instance={ position={ 0.460000 0.020000 } scale={ 0.080000 0.080000 } depth=4.010000 }
+
+		instance={ position={ 0.050000 0.080000 } scale={ 0.080000 0.080000 } depth=5.010000 }
+
+		instance={ position={ 0.050000 0.200000 } scale={ 0.080000 0.080000 } depth=6.010000 }
+
+		instance={ position={ 0.050000 0.320000 } scale={ 0.080000 0.080000 } depth=7.010000 }
+
+		instance={ position={ 0.050000 0.440000 } scale={ 0.080000 0.080000 } depth=8.010000 }
+
+		instance={ position={ 0.140000 0.080000 } scale={ 0.080000 0.080000 } depth=9.010000 }
+
+		instance={ position={ 0.240000 0.080000 } scale={ 0.080000 0.080000 } depth=10.010000 }
+
+		instance={ position={ 0.330000 0.080000 } scale={ 0.090000 0.090000 } depth=11.010000 }
+
+		instance={ position={ 0.420000 0.080000 } scale={ 0.080000 0.080000 } depth=12.010000 }
+
+		instance={ position={ 0.460000 0.140000 } scale={ 0.080000 0.080000 } depth=13.010000 }
+
+		instance={ position={ 0.420000 0.200000 } scale={ 0.080000 0.080000 } depth=14.010000 }
+
+		instance={ position={ 0.370000 0.140000 } scale={ 0.080000 0.080000 } depth=15.010000 }
+
+		instance={ position={ 0.280000 0.140000 } scale={ 0.080000 0.080000 } depth=16.010000 }
+
+		instance={ position={ 0.330000 0.200000 } scale={ 0.080000 0.080000 } depth=17.010000 }
+
+		instance={ position={ 0.240000 0.200000 } scale={ 0.080000 0.080000 } depth=18.010000 }
+
+		instance={ position={ 0.190000 0.140000 } scale={ 0.080000 0.080000 } depth=19.010000 }
+
+		instance={ position={ 0.140000 0.200000 } scale={ 0.080000 0.080000 } depth=20.010000 }
+
+		instance={ position={ 0.100000 0.140000 } scale={ 0.080000 0.080000 } depth=21.010000 }
+
+		instance={ position={ 0.190000 0.260000 } scale={ 0.080000 0.080000 } depth=22.010000 }
+
+		instance={ position={ 0.100000 0.260000 } scale={ 0.080000 0.080000 } depth=23.010000 }
+
+		instance={ position={ 0.280000 0.260000 } scale={ 0.080000 0.080000 } depth=24.010000 }
+
+		instance={ position={ 0.370000 0.260000 } scale={ 0.080000 0.080000 } depth=25.010000 }
+
+		instance={ position={ 0.460000 0.260000 } scale={ 0.080000 0.080000 } depth=26.010000 }
+
+		instance={ position={ 0.420000 0.320000 } scale={ 0.080000 0.080000 } depth=27.010000 }
+
+		instance={ position={ 0.330000 0.320000 } scale={ 0.080000 0.080000 } depth=28.010000 }
+
+		instance={ position={ 0.240000 0.320000 } scale={ 0.080000 0.080000 } depth=29.010000 }
+
+		instance={ position={ 0.140000 0.320000 } scale={ 0.080000 0.080000 } depth=30.010000 }
+
+		instance={ position={ 0.100000 0.380000 } scale={ 0.080000 0.080000 } depth=31.010000 }
+
+		instance={ position={ 0.190000 0.380000 } scale={ 0.080000 0.080000 } depth=32.010002 }
+
+		instance={ position={ 0.280000 0.380000 } scale={ 0.080000 0.080000 } depth=33.010002 }
+
+		instance={ position={ 0.370000 0.380000 } scale={ 0.080000 0.080000 } depth=34.010002 }
+
+		instance={ position={ 0.460000 0.380000 } scale={ 0.080000 0.080000 } depth=35.010002 }
+
+		instance={ position={ 0.140000 0.440000 } scale={ 0.080000 0.080000 } depth=36.010002 }
+
+		instance={ position={ 0.240000 0.440000 } scale={ 0.080000 0.080000 } depth=37.010002 }
+
+		instance={ position={ 0.330000 0.440000 } scale={ 0.080000 0.080000 } depth=38.010002 }
+
+		instance={ position={ 0.420000 0.440000 } scale={ 0.080000 0.080000 } depth=39.010002 }
+
+		instance={ position={ 0.100000 0.500000 } scale={ 0.080000 0.080000 } depth=40.010002 }
+
+		instance={ position={ 0.190000 0.500000 } scale={ 0.080000 0.080000 } depth=41.010002 }
+
+		instance={ position={ 0.280000 0.500000 } scale={ 0.080000 0.080000 } depth=42.010002 }
+
+		instance={ position={ 0.370000 0.500000 } scale={ 0.080000 0.080000 } depth=43.010002 }
+
+		instance={ position={ 0.460000 0.500000 } scale={ 0.080000 0.080000 } depth=44.010002 }
+
+	}
+
+}
+
+e_juche_korea = {
+
+	pattern="pattern_tricolor_horizontal_01.dds"
+
+	color1=blue
+
+	color2=red
+
+	color3=blue
+
+	colored_emblem={
+
+		color1=white
+
+		texture="ce_seal_frame_full.dds"
+
+		instance={
+
+			position={ 0.240000 0.310000 }
+
+			scale={ 1.000000 0.050000 }
+
+			depth=1.010000
+
+		}
+
+		instance={
+
+			position={ 0.740000 0.310000 }
+
+			scale={ 1.000000 0.050000 }
+
+			depth=2.010000
+
+		}
+
+		instance={
+
+			position={ 0.480000 0.700000 }
+
+			scale={ 1.000000 0.060000 }
+
+			depth=3.010000
+
+		}
+
+		instance={
+
+			position={ 0.820000 0.700000 }
+
+			scale={ 1.000000 0.060000 }
+
+			depth=4.010000
+
+		}
+
+		instance={
+
+			position={ 0.500000 0.310000 }
+
+			scale={ 1.000000 0.050000 }
+
+			depth=6.010000
+
+		}
+
+		instance={
+
+			position={ 0.500000 0.700000 }
+
+			scale={ 1.000000 0.060000 }
+
+			depth=7.010000
+
+		}
+
+	}
+
+	colored_emblem={
+
+		color1=red
+
+		color2=red
+
+		texture="ce_star_05_pierced.dds"
+
+		instance={
+
+			position={ 0.300000 0.500000 }
+
+			scale={ 0.310000 0.310000 }
+
+		}
+
+	}
+
+	colored_emblem={
+
+		color1=white
+
+		texture="ce_seal_pictorial_frame_circle_full.dds"
+
+		instance={
+
+			position={ 0.300000 0.500000 }
+
+			scale={ 0.240000 0.240000 }
+
+			depth=5.010000
+
+		}
+
+	}
+
+}
+
+# ==============================================================================
+# 8. 무타구치 가문 (Mutaguchi Noble Family) — 총령 본가 작위 문장 (히노마루)
+# ==============================================================================
+c_nf_mutaguchi = {
+	pattern = "pattern_solid.dds"
+	color1 = white
+	color2 = rgb { 24 24 26 }
+	color3 = rgb { 240 238 232 }
+	colored_emblem = {
+		color1 = rgb { 24 24 26 }
+		color2 = rgb { 24 24 26 }
+		texture = "ce_villains_mutaguchi_kanji.dds"
+		instance = {
+			position = { 0.500000 0.530000 }
+			scale = { 0.820000 0.820000 }
+		}
+	}
+}
+
+# ==============================================================================
+# 9. 트럼프 패밀리 (Trump Noble Family) — 행정제 귀족 가문 공작령 문장 (공화당 전령 문장)
+# ==============================================================================
+d_nf_trump = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 248 248 246 }
+	color2 = rgb { 232 27 35 }
+	color3 = rgb { 248 248 246 }
+	colored_emblem = {
+		color1 = rgb { 232 27 35 }
+		color2 = rgb { 248 248 246 }
+		color3 = rgb { 248 248 246 }
+		texture = "ce_villains_gop_elephant.dds"
+		instance = {
+			position = { 0.5 0.5 }
+			scale = { 0.700000 0.700000 }
+		}
+	}
+}
+
+# ==============================================================================
+# 10. 살롯 가문 & 폴 포트 집안(캄보디아 공산당기) & 민주 캄푸치아 앙코르 (Democratic Kampuchea Flag — 붉은 바탕 & 황금 앙코르와트 3탑)
+# ==============================================================================
+dynasty_pol_pot_867 = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 218 18 26 }
+	color2 = rgb { 255 232 0 }
+	color3 = rgb { 218 18 26 }
+	colored_emblem = {
+		texture = "ce_villains_cpk_hammer_sickle.dds"
+		color1 = rgb { 255 232 0 }
+		color2 = rgb { 255 232 0 }
+		instance = {
+			position = { 0.5 0.48 }
+			scale = { 0.56 0.56 }
+			depth = 0.01
+		}
+	}
+}
+
+house_pol_pot_867 = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 218 18 26 }
+	color2 = rgb { 255 232 0 }
+	color3 = rgb { 218 18 26 }
+	colored_emblem = {
+		texture = "ce_villains_cpk_hammer_sickle.dds"
+		color1 = rgb { 255 232 0 }
+		color2 = rgb { 255 232 0 }
+		instance = {
+			position = { 0.5 0.48 }
+			scale = { 0.56 0.56 }
+			depth = 0.01
+		}
+	}
+}
+
+d_rep_pol_pot = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 218 18 26 }
+	color2 = rgb { 252 209 22 }
+	color3 = rgb { 218 18 26 }
+
+	colored_emblem = {
+		texture = "ce_great_temple.dds"
+		color1 = rgb { 252 209 22 }
+		color2 = rgb { 252 209 22 }
+		instance = {
+			position = { 0.500000 0.480000 }
+			scale = { 0.720000 0.720000 }
+		}
+	}
+}
+
+d_angkar = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 218 18 26 }
+	color2 = rgb { 252 209 22 }
+	color3 = rgb { 218 18 26 }
+
+	colored_emblem = {
+		texture = "ce_great_temple.dds"
+		color1 = rgb { 252 209 22 }
+		color2 = rgb { 252 209 22 }
+		instance = {
+			position = { 0.500000 0.480000 }
+			scale = { 0.720000 0.720000 }
+		}
+	}
+}
+
+k_democratic_kampuchea = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 218 18 26 }
+	color2 = rgb { 252 209 22 }
+	color3 = rgb { 218 18 26 }
+
+	colored_emblem = {
+		texture = "ce_great_temple.dds"
+		color1 = rgb { 252 209 22 }
+		color2 = rgb { 252 209 22 }
+		instance = {
+			position = { 0.500000 0.480000 }
+			scale = { 0.720000 0.720000 }
+		}
+	}
+}
+
+e_democratic_kampuchea = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 218 18 26 }
+	color2 = rgb { 252 209 22 }
+	color3 = rgb { 218 18 26 }
+
+	colored_emblem = {
+		texture = "ce_great_temple.dds"
+		color1 = rgb { 252 209 22 }
+		color2 = rgb { 252 209 22 }
+		instance = {
+			position = { 0.500000 0.480000 }
+			scale = { 0.720000 0.720000 }
+		}
+	}
+}
+
+# ==============================================================================
+# 11. 이디 아민 가문(우간다 대통령기 국장) & 우간다 제2공화국(공식 흑·황·적 6선 국기 + 회색관두루미)
+# ==============================================================================
+dynasty_amin_867 = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 188 0 25 }
+	color2 = rgb { 252 220 4 }
+	color3 = rgb { 18 18 18 }
+	textured_emblem = {
+		texture = "te_villains_uganda_arms.dds"
+	}
+}
+
+d_rep_idi_amin = {
+	pattern = "pattern_villains_uganda_6stripes.dds"
+	color1 = rgb { 18 18 18 }
+	color2 = rgb { 252 220 4 }
+	color3 = rgb { 217 0 0 }
+
+	colored_emblem = {
+		texture = "ce_villains_uganda_crane_colors.dds"
+		color1 = rgb { 217 0 0 }
+		color2 = rgb { 252 220 4 }
+		instance = {
+			position = { 0.500000 0.500000 }
+			scale = { 0.340000 0.340000 }
+			depth = 0.010000
+		}
+	}
+	colored_emblem = {
+		texture = "ce_villains_uganda_crane_body.dds"
+		color1 = rgb { 250 250 248 }
+		color2 = rgb { 18 18 18 }
+		color3 = rgb { 156 166 156 }
+		instance = {
+			position = { 0.500000 0.500000 }
+			scale = { 0.340000 0.340000 }
+			depth = 1.010000
+		}
+	}
+}
+
+d_aminism = {
+	pattern = "pattern_villains_uganda_6stripes.dds"
+	color1 = rgb { 18 18 18 }
+	color2 = rgb { 252 220 4 }
+	color3 = rgb { 217 0 0 }
+
+	colored_emblem = {
+		texture = "ce_villains_uganda_crane_colors.dds"
+		color1 = rgb { 217 0 0 }
+		color2 = rgb { 252 220 4 }
+		instance = {
+			position = { 0.500000 0.500000 }
+			scale = { 0.340000 0.340000 }
+			depth = 0.010000
+		}
+	}
+	colored_emblem = {
+		texture = "ce_villains_uganda_crane_body.dds"
+		color1 = rgb { 250 250 248 }
+		color2 = rgb { 18 18 18 }
+		color3 = rgb { 156 166 156 }
+		instance = {
+			position = { 0.500000 0.500000 }
+			scale = { 0.340000 0.340000 }
+			depth = 1.010000
+		}
+	}
+}
+
+k_uganda = {
+	pattern = "pattern_villains_uganda_6stripes.dds"
+	color1 = rgb { 18 18 18 }
+	color2 = rgb { 252 220 4 }
+	color3 = rgb { 217 0 0 }
+
+	colored_emblem = {
+		texture = "ce_villains_uganda_crane_colors.dds"
+		color1 = rgb { 217 0 0 }
+		color2 = rgb { 252 220 4 }
+		instance = {
+			position = { 0.500000 0.500000 }
+			scale = { 0.340000 0.340000 }
+			depth = 0.010000
+		}
+	}
+	colored_emblem = {
+		texture = "ce_villains_uganda_crane_body.dds"
+		color1 = rgb { 250 250 248 }
+		color2 = rgb { 18 18 18 }
+		color3 = rgb { 156 166 156 }
+		instance = {
+			position = { 0.500000 0.500000 }
+			scale = { 0.340000 0.340000 }
+			depth = 1.010000
+		}
+	}
+}
+
+e_uganda_empire = {
+	pattern = "pattern_villains_uganda_6stripes.dds"
+	color1 = rgb { 18 18 18 }
+	color2 = rgb { 252 220 4 }
+	color3 = rgb { 217 0 0 }
+
+	colored_emblem = {
+		texture = "ce_villains_uganda_crane_colors.dds"
+		color1 = rgb { 217 0 0 }
+		color2 = rgb { 252 220 4 }
+		instance = {
+			position = { 0.500000 0.500000 }
+			scale = { 0.340000 0.340000 }
+			depth = 0.010000
+		}
+	}
+	colored_emblem = {
+		texture = "ce_villains_uganda_crane_body.dds"
+		color1 = rgb { 250 250 248 }
+		color2 = rgb { 18 18 18 }
+		color3 = rgb { 156 166 156 }
+		instance = {
+			position = { 0.500000 0.500000 }
+			scale = { 0.340000 0.340000 }
+			depth = 1.010000
+		}
+	}
+}
+
+dynasty_rasputin_867 = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 22 14 32 }
+	color2 = rgb { 218 178 72 }
+	color3 = rgb { 155 22 38 }
+
+	colored_emblem = {
+		texture = "ce_chalice.dds"
+		color1 = rgb { 155 22 38 }
+		color2 = rgb { 218 178 72 }
+		instance = {
+			position = { 0.500000 0.770000 }
+			scale = { 0.300000 0.300000 }
+			depth = 0.010000
+		}
+	}
+	colored_emblem = {
+		texture = "ce_cross_patriarchal.dds"
+		color1 = rgb { 218 178 72 }
+		color2 = rgb { 218 178 72 }
+		instance = {
+			position = { 0.500000 0.430000 }
+			scale = { 0.620000 0.620000 }
+			depth = 1.010000
+		}
+	}
+	colored_emblem = {
+		texture = "ce_solar_cross.dds"
+		color1 = rgb { 118 42 162 }
+		color2 = rgb { 218 178 72 }
+		instance = {
+			position = { 0.500000 0.430000 }
+			scale = { 0.520000 0.520000 }
+			depth = 2.010000
+		}
+	}
+}
+
+d_laamp_rasputin = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 32 18 46 }
+	color2 = rgb { 218 178 72 }
+	color3 = rgb { 155 22 38 }
+
+	colored_emblem = {
+		texture = "ce_chalice.dds"
+		color1 = rgb { 155 22 38 }
+		color2 = rgb { 218 178 72 }
+		instance = {
+			position = { 0.500000 0.770000 }
+			scale = { 0.300000 0.300000 }
+			depth = 0.010000
+		}
+	}
+	colored_emblem = {
+		texture = "ce_cross_patriarchal.dds"
+		color1 = rgb { 218 178 72 }
+		color2 = rgb { 218 178 72 }
+		instance = {
+			position = { 0.500000 0.430000 }
+			scale = { 0.620000 0.620000 }
+			depth = 1.010000
+		}
+	}
+	colored_emblem = {
+		texture = "ce_solar_cross.dds"
+		color1 = rgb { 138 58 178 }
+		color2 = rgb { 218 178 72 }
+		instance = {
+			position = { 0.500000 0.430000 }
+			scale = { 0.520000 0.520000 }
+			depth = 2.010000
+		}
+	}
+}
+
+d_khlystism = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 78 26 112 }
+	color2 = rgb { 232 192 78 }
+	color3 = rgb { 175 24 42 }
+
+	colored_emblem = {
+		texture = "ce_chalice.dds"
+		color1 = rgb { 175 24 42 }
+		color2 = rgb { 232 192 78 }
+		instance = {
+			position = { 0.500000 0.760000 }
+			scale = { 0.320000 0.320000 }
+			depth = 0.010000
+		}
+	}
+	colored_emblem = {
+		texture = "ce_cross_patriarchal.dds"
+		color1 = rgb { 232 192 78 }
+		color2 = rgb { 232 192 78 }
+		instance = {
+			position = { 0.500000 0.420000 }
+			scale = { 0.660000 0.660000 }
+			depth = 1.010000
+		}
+	}
+	colored_emblem = {
+		texture = "ce_solar_cross.dds"
+		color1 = rgb { 175 24 42 }
+		color2 = rgb { 232 192 78 }
+		instance = {
+			position = { 0.500000 0.420000 }
+			scale = { 0.540000 0.540000 }
+			depth = 2.010000
+		}
+	}
+}
+
+# 10. 장칭 가문 및 조반 문혁사상 국기 (홍위병 목판화풍 면류관 장칭 흉상)
+dynasty_jiang_qing_867 = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 172 12 20 }
+	color2 = rgb { 245 245 245 }
+	color3 = rgb { 18 18 18 }
+	textured_emblem = {
+		texture = "te_jiang_empress_woodcut.dds"
+	}
+}
+
+c_nf_jiang_qing = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 172 12 20 }
+	color2 = rgb { 245 245 245 }
+	color3 = rgb { 18 18 18 }
+	textured_emblem = {
+		texture = "te_jiang_empress_woodcut.dds"
+	}
+}
+
+d_cultural_revolution = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 172 12 20 }
+	color2 = rgb { 245 245 245 }
+	color3 = rgb { 18 18 18 }
+	textured_emblem = {
+		texture = "te_jiang_empress_woodcut.dds"
+	}
+}
+
+k_shanghai_commune = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 172 12 20 }
+	color2 = rgb { 245 245 245 }
+	color3 = rgb { 18 18 18 }
+	textured_emblem = {
+		texture = "te_jiang_empress_woodcut.dds"
+	}
+}
+
+e_cultural_revolution_china = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 172 12 20 }
+	color2 = rgb { 245 245 245 }
+	color3 = rgb { 18 18 18 }
+	textured_emblem = {
+		texture = "te_jiang_empress_woodcut.dds"
+	}
+}
+
+k_rep_jiang_qing = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 172 12 20 }
+	color2 = rgb { 245 245 245 }
+	color3 = rgb { 18 18 18 }
+	textured_emblem = {
+		texture = "te_jiang_empress_woodcut.dds"
+	}
+}
+
+# Benjamin Netanyahu & Zionist State of Israel Coats of Arms
+dynasty_netanyahu_867 = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 248 248 246 }
+	color2 = rgb { 31 90 165 }
+	color3 = rgb { 248 248 246 }
+	colored_emblem = {
+		texture = "ce_villains_likud_logo.dds"
+		color1 = rgb { 31 90 165 }
+		color2 = rgb { 31 90 165 }
+		instance = {
+			position = { 0.5 0.44 }
+			scale = { 0.62 0.62 }
+			depth = 0.01
+		}
+	}
+}
+
+d_nf_netanyahu = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 248 248 246 }
+	color2 = rgb { 31 90 165 }
+	color3 = rgb { 248 248 246 }
+	colored_emblem = {
+		texture = "ce_villains_likud_logo.dds"
+		color1 = rgb { 31 90 165 }
+		color2 = rgb { 31 90 165 }
+		instance = {
+			position = { 0.5 0.44 }
+			scale = { 0.62 0.62 }
+			depth = 0.01
+		}
+	}
+}
+
+d_zionism = {
+	pattern = "pattern__solid_designer.dds"
+	color1 = white
+	color2 = rgb { 0 56 184 }
+	color3 = white
+	colored_emblem = {
+		color1 = rgb { 0 56 184 }
+		color2 = rgb { 0 56 184 }
+		texture = "ce_block_02.dds"
+		instance = {
+			position = { 0.500000 0.170000 }
+			scale = { 1.000000 0.130000 }
+			depth = 1.010000
+		}
+		instance = {
+			position = { 0.500000 0.790000 }
+			scale = { 1.000000 0.130000 }
+			depth = 1.020000
+		}
+	}
+	colored_emblem = {
+		color1 = rgb { 0 56 184 }
+		color2 = rgb { 0 56 184 }
+		texture = "ce_star_hexagram.dds"
+		instance = {
+			position = { 0.500000 0.480000 }
+			scale = { 0.560000 0.560000 }
+			depth = 0.010000
+		}
+	}
+}
+
+d_rep_netanyahu = {
+	pattern = "pattern__solid_designer.dds"
+	color1 = white
+	color2 = rgb { 0 56 184 }
+	color3 = white
+	colored_emblem = {
+		color1 = rgb { 0 56 184 }
+		color2 = rgb { 0 56 184 }
+		texture = "ce_block_02.dds"
+		instance = {
+			position = { 0.500000 0.170000 }
+			scale = { 1.000000 0.130000 }
+			depth = 1.010000
+		}
+		instance = {
+			position = { 0.500000 0.790000 }
+			scale = { 1.000000 0.130000 }
+			depth = 1.020000
+		}
+	}
+	colored_emblem = {
+		color1 = rgb { 0 56 184 }
+		color2 = rgb { 0 56 184 }
+		texture = "ce_star_hexagram.dds"
+		instance = {
+			position = { 0.500000 0.480000 }
+			scale = { 0.560000 0.560000 }
+			depth = 0.010000
+		}
+	}
+}
+
+k_state_of_israel = {
+	pattern = "pattern__solid_designer.dds"
+	color1 = white
+	color2 = rgb { 0 56 184 }
+	color3 = white
+	colored_emblem = {
+		color1 = rgb { 0 56 184 }
+		color2 = rgb { 0 56 184 }
+		texture = "ce_block_02.dds"
+		instance = {
+			position = { 0.500000 0.170000 }
+			scale = { 1.000000 0.130000 }
+			depth = 1.010000
+		}
+		instance = {
+			position = { 0.500000 0.790000 }
+			scale = { 1.000000 0.130000 }
+			depth = 1.020000
+		}
+	}
+	colored_emblem = {
+		color1 = rgb { 0 56 184 }
+		color2 = rgb { 0 56 184 }
+		texture = "ce_star_hexagram.dds"
+		instance = {
+			position = { 0.500000 0.480000 }
+			scale = { 0.560000 0.560000 }
+			depth = 0.010000
+		}
+	}
+}
+
+e_greater_israel = {
+	pattern = "pattern__solid_designer.dds"
+	color1 = white
+	color2 = rgb { 0 56 184 }
+	color3 = white
+	colored_emblem = {
+		color1 = rgb { 0 56 184 }
+		color2 = rgb { 0 56 184 }
+		texture = "ce_block_02.dds"
+		instance = {
+			position = { 0.500000 0.170000 }
+			scale = { 1.000000 0.130000 }
+			depth = 1.010000
+		}
+		instance = {
+			position = { 0.500000 0.790000 }
+			scale = { 1.000000 0.130000 }
+			depth = 1.020000
+		}
+	}
+	colored_emblem = {
+		color1 = rgb { 0 56 184 }
+		color2 = rgb { 0 56 184 }
+		texture = "ce_star_hexagram.dds"
+		instance = {
+			position = { 0.500000 0.480000 }
+			scale = { 0.560000 0.560000 }
+			depth = 0.010000
+		}
+	}
+}

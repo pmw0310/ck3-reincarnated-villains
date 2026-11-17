@@ -1,0 +1,950 @@
+﻿juche_saint = {
+
+	type = character
+
+	special = saint
+
+	flavourization_rules = {
+
+		target_character = yes
+
+		top_liege = no
+
+	}
+
+
+
+	priority = 10000
+
+
+
+	faiths = { juche }
+
+}
+
+
+
+juche_supreme_leader = {
+
+	type = character
+
+	special = holder
+
+	priority = 10001
+
+	flag = juche_incumbent_chairman_flag
+
+	titles = { d_juche d_rep_kim c_seogyeong k_dprk e_juche_korea }
+
+	faiths = { juche }
+
+	flavourization_rules = {
+
+		only_holder = yes
+
+		spouse_takes_title = no
+
+		top_liege = no
+
+	}
+
+}
+
+
+
+juche_chairman_fallback = {
+
+	type = character
+
+	special = holder
+
+	priority = 1002
+
+	titles = { d_juche d_rep_kim k_dprk e_juche_korea }
+
+	flavourization_rules = {
+
+		only_holder = yes
+
+		spouse_takes_title = no
+
+		top_liege = no
+
+	}
+
+}
+
+
+
+mutaguchi_grand_marshal = {
+
+	type = character
+
+	special = holder
+
+	priority = 1002
+
+	titles = { d_rep_mutaguchi k_imperial_japan_india e_greater_east_asia_imphal }
+
+	flavourization_rules = {
+
+		only_holder = yes
+
+		spouse_takes_title = no
+
+		top_liege = no
+
+	}
+
+}
+
+
+
+flav_idi_amin_junta_president = {
+
+	type = character
+
+	special = holder
+
+	priority = 999
+
+	titles = { d_rep_idi_amin }
+
+	flavourization_rules = {
+
+		only_holder = yes
+
+		spouse_takes_title = no
+
+		top_liege = no
+
+	}
+
+}
+
+
+
+flav_idi_amin_king_male = {
+
+	type = character
+
+	special = holder
+
+	priority = 1000
+
+	titles = { k_uganda }
+
+	flavourization_rules = {
+
+		only_holder = yes
+
+		spouse_takes_title = no
+
+		top_liege = no
+
+	}
+
+}
+
+
+
+flav_idi_amin_emperor_male = {
+
+	type = character
+
+	special = holder
+
+	priority = 1001
+
+	titles = { e_uganda_empire }
+
+	flavourization_rules = {
+
+		only_holder = yes
+
+		spouse_takes_title = no
+
+		top_liege = no
+
+	}
+
+}
+
+
+cultrev_group_leader = {
+	type = character
+	special = holder
+	priority = 1002
+	titles = { d_cultural_revolution k_rep_jiang_qing k_shanghai_commune e_cultural_revolution_china }
+	faiths = { cultural_revolution }
+	flavourization_rules = {
+		only_holder = yes
+		spouse_takes_title = no
+		top_liege = no
+	}
+}
+
+title_shanghai_commune_kingdom = {
+	type = title
+	tier = kingdom
+	priority = 1000
+	titles = { k_shanghai_commune }
+}
+
+title_cultural_revolution_empire = {
+	type = title
+	tier = empire
+	priority = 1000
+	titles = { e_cultural_revolution_china }
+}
+
+zionism_prime_minister = {
+	type = character
+	special = holder
+	priority = 1002
+	titles = { d_zionism d_rep_netanyahu c_jerusalem k_state_of_israel e_greater_israel }
+	faiths = { zionism }
+	flavourization_rules = {
+		only_holder = yes
+		spouse_takes_title = no
+		top_liege = no
+	}
+}
+
+title_state_of_israel_kingdom = {
+	type = title
+	tier = kingdom
+	priority = 1000
+	titles = { k_state_of_israel }
+}
+
+title_greater_israel_empire = {
+	type = title
+	tier = empire
+	priority = 1000
+	titles = { e_greater_israel }
+}
+
+angkar_general_secretary = {
+	type = character
+	special = holder
+	priority = 1002
+	titles = { d_angkar d_rep_pol_pot c_koh_ker c_sambhupura k_democratic_kampuchea e_democratic_kampuchea }
+	faiths = { angkar }
+	flavourization_rules = {
+		only_holder = yes
+		spouse_takes_title = no
+		top_liege = no
+	}
+}
+
+# ==============================================================================
+# 4대 세속 교황 진영 통치자 호칭 보강 (세속 교황 작위 부재/여성 계승 시 왕/여왕/황제 방지)
+# ==============================================================================
+
+americanism_president = {
+	type = character
+	special = holder
+	priority = 1002
+	titles = { d_americanism d_rep_trump k_united_states e_american_empire }
+	flavourization_rules = {
+		only_holder = yes
+		spouse_takes_title = no
+		top_liege = no
+	}
+}
+
+national_socialism_fuhrer = {
+	type = character
+	special = holder
+	priority = 1002
+	titles = { d_national_socialism d_rep_hitler k_german_reich e_greater_german_reich }
+	flavourization_rules = {
+		only_holder = yes
+		spouse_takes_title = no
+		top_liege = no
+	}
+}
+
+bolshevism_general_secretary = {
+	type = character
+	special = holder
+	priority = 1002
+	titles = { d_bolshevism d_rep_stalin k_soviet_union e_soviet_union }
+	flavourization_rules = {
+		only_holder = yes
+		spouse_takes_title = no
+		top_liege = no
+	}
+}
+
+fascism_duce = {
+	type = character
+	special = holder
+	priority = 1002
+	titles = { d_fascism d_rep_mussolini k_fascist_italy e_new_roman_empire }
+	flavourization_rules = {
+		only_holder = yes
+		spouse_takes_title = no
+		top_liege = no
+	}
+}
+
+# ==============================================================================
+# 10개 진영 배우자 호칭 (여왕 / 왕비 / 황후 / 부마 폴백 원천 차단)
+# ==============================================================================
+
+americanism_spouse_female = {
+	type = character
+	gender = female
+	special = holder
+	priority = 990
+	titles = { d_americanism d_rep_trump k_united_states e_american_empire }
+	flavourization_rules = {
+		only_holder = no
+		top_liege = no
+	}
+}
+
+americanism_spouse_male = {
+	type = character
+	gender = male
+	special = holder
+	priority = 990
+	titles = { d_americanism d_rep_trump k_united_states e_american_empire }
+	flavourization_rules = {
+		only_holder = no
+		top_liege = no
+	}
+}
+
+national_socialism_spouse_female = {
+	type = character
+	gender = female
+	special = holder
+	priority = 990
+	titles = { d_national_socialism d_rep_hitler k_german_reich e_greater_german_reich }
+	flavourization_rules = {
+		only_holder = no
+		top_liege = no
+	}
+}
+
+national_socialism_spouse_male = {
+	type = character
+	gender = male
+	special = holder
+	priority = 990
+	titles = { d_national_socialism d_rep_hitler k_german_reich e_greater_german_reich }
+	flavourization_rules = {
+		only_holder = no
+		top_liege = no
+	}
+}
+
+fascism_spouse_female = {
+	type = character
+	gender = female
+	special = holder
+	priority = 990
+	titles = { d_fascism d_rep_mussolini k_fascist_italy e_new_roman_empire }
+	flavourization_rules = {
+		only_holder = no
+		top_liege = no
+	}
+}
+
+fascism_spouse_male = {
+	type = character
+	gender = male
+	special = holder
+	priority = 990
+	titles = { d_fascism d_rep_mussolini k_fascist_italy e_new_roman_empire }
+	flavourization_rules = {
+		only_holder = no
+		top_liege = no
+	}
+}
+
+bolshevism_spouse = {
+	type = character
+	special = holder
+	priority = 990
+	titles = { d_bolshevism d_rep_stalin k_soviet_union e_soviet_union }
+	flavourization_rules = {
+		only_holder = no
+		top_liege = no
+	}
+}
+
+zionism_spouse_female = {
+	type = character
+	gender = female
+	special = holder
+	priority = 990
+	titles = { d_zionism d_rep_netanyahu c_jerusalem k_state_of_israel e_greater_israel }
+	flavourization_rules = {
+		only_holder = no
+		top_liege = no
+	}
+}
+
+zionism_spouse_male = {
+	type = character
+	gender = male
+	special = holder
+	priority = 990
+	titles = { d_zionism d_rep_netanyahu c_jerusalem k_state_of_israel e_greater_israel }
+	flavourization_rules = {
+		only_holder = no
+		top_liege = no
+	}
+}
+
+aminism_spouse_female = {
+	type = character
+	gender = female
+	special = holder
+	priority = 990
+	titles = { d_aminism d_rep_idi_amin k_uganda e_uganda_empire }
+	flavourization_rules = {
+		only_holder = no
+		top_liege = no
+	}
+}
+
+aminism_spouse_male = {
+	type = character
+	gender = male
+	special = holder
+	priority = 990
+	titles = { d_aminism d_rep_idi_amin k_uganda e_uganda_empire }
+	flavourization_rules = {
+		only_holder = no
+		top_liege = no
+	}
+}
+
+juche_spouse_female = {
+	type = character
+	gender = female
+	special = holder
+	priority = 990
+	titles = { d_juche d_rep_kim c_seogyeong k_dprk e_juche_korea }
+	flavourization_rules = {
+		only_holder = no
+		top_liege = no
+	}
+}
+
+juche_spouse_male = {
+	type = character
+	gender = male
+	special = holder
+	priority = 990
+	titles = { d_juche d_rep_kim c_seogyeong k_dprk e_juche_korea }
+	flavourization_rules = {
+		only_holder = no
+		top_liege = no
+	}
+}
+
+cultrev_spouse = {
+	type = character
+	special = holder
+	priority = 990
+	titles = { d_cultural_revolution k_rep_jiang_qing k_shanghai_commune e_cultural_revolution_china }
+	flavourization_rules = {
+		only_holder = no
+		top_liege = no
+	}
+}
+
+angkar_spouse = {
+	type = character
+	special = holder
+	priority = 990
+	titles = { d_angkar d_rep_pol_pot c_koh_ker c_sambhupura k_democratic_kampuchea e_democratic_kampuchea }
+	flavourization_rules = {
+		only_holder = no
+		top_liege = no
+	}
+}
+
+mutaguchi_spouse_female = {
+	type = character
+	gender = female
+	special = holder
+	priority = 990
+	titles = { d_rep_mutaguchi k_imperial_japan_india e_greater_east_asia_imphal }
+	flavourization_rules = {
+		only_holder = no
+		top_liege = no
+	}
+}
+
+mutaguchi_spouse_male = {
+	type = character
+	gender = male
+	special = holder
+	priority = 990
+	titles = { d_rep_mutaguchi k_imperial_japan_india e_greater_east_asia_imphal }
+	flavourization_rules = {
+		only_holder = no
+		top_liege = no
+	}
+}
+
+# ==============================================================================
+# 10개 진영 통치자 자녀(ruler_child) 호칭 일괄 정리 (왕자 / 공주 / 황자 / 황녀 제거)
+# ==============================================================================
+
+# 1. 미국 (트럼프): 공자 / 영애
+villains_ruler_child_american_title_male = {
+	type = character
+	gender = male
+	special = ruler_child
+	priority = 2001
+	titles = { d_rep_trump k_united_states e_american_empire d_nf_trump }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+villains_ruler_child_american_title_female = {
+	type = character
+	gender = female
+	special = ruler_child
+	priority = 2001
+	titles = { d_rep_trump k_united_states e_american_empire d_nf_trump }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+villains_ruler_child_american_faith_male = {
+	type = character
+	gender = male
+	special = ruler_child
+	priority = 2000
+	faiths = { americanism }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+villains_ruler_child_american_faith_female = {
+	type = character
+	gender = female
+	special = ruler_child
+	priority = 2000
+	faiths = { americanism }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+# 2. 이스라엘 (네타냐후): 공자 / 영애
+villains_ruler_child_zionism_title_male = {
+	type = character
+	gender = male
+	special = ruler_child
+	priority = 2001
+	titles = { d_rep_netanyahu k_state_of_israel e_greater_israel d_nf_netanyahu }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+villains_ruler_child_zionism_title_female = {
+	type = character
+	gender = female
+	special = ruler_child
+	priority = 2001
+	titles = { d_rep_netanyahu k_state_of_israel e_greater_israel d_nf_netanyahu }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+villains_ruler_child_zionism_faith_male = {
+	type = character
+	gender = male
+	special = ruler_child
+	priority = 2000
+	faiths = { zionism }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+villains_ruler_child_zionism_faith_female = {
+	type = character
+	gender = female
+	special = ruler_child
+	priority = 2000
+	faiths = { zionism }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+# 3. 독일국 (히틀러): 공자 / 영애
+villains_ruler_child_hitler_title_male = {
+	type = character
+	gender = male
+	special = ruler_child
+	priority = 2001
+	titles = { d_rep_hitler k_german_reich e_greater_german_reich }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+villains_ruler_child_hitler_title_female = {
+	type = character
+	gender = female
+	special = ruler_child
+	priority = 2001
+	titles = { d_rep_hitler k_german_reich e_greater_german_reich }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+villains_ruler_child_hitler_faith_male = {
+	type = character
+	gender = male
+	special = ruler_child
+	priority = 2000
+	faiths = { national_socialism }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+villains_ruler_child_hitler_faith_female = {
+	type = character
+	gender = female
+	special = ruler_child
+	priority = 2000
+	faiths = { national_socialism }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+# 4. 이탈리아 (무솔리니): 공자 / 영애
+villains_ruler_child_mussolini_title_male = {
+	type = character
+	gender = male
+	special = ruler_child
+	priority = 2001
+	titles = { d_rep_mussolini k_fascist_italy e_new_roman_empire }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+villains_ruler_child_mussolini_title_female = {
+	type = character
+	gender = female
+	special = ruler_child
+	priority = 2001
+	titles = { d_rep_mussolini k_fascist_italy e_new_roman_empire }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+villains_ruler_child_mussolini_faith_male = {
+	type = character
+	gender = male
+	special = ruler_child
+	priority = 2000
+	faiths = { fascism }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+villains_ruler_child_mussolini_faith_female = {
+	type = character
+	gender = female
+	special = ruler_child
+	priority = 2000
+	faiths = { fascism }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+# 5. 우간다 (이디 아민): 공자 / 영애
+villains_ruler_child_amin_title_male = {
+	type = character
+	gender = male
+	special = ruler_child
+	priority = 2001
+	titles = { d_rep_idi_amin k_uganda e_uganda_empire }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+villains_ruler_child_amin_title_female = {
+	type = character
+	gender = female
+	special = ruler_child
+	priority = 2001
+	titles = { d_rep_idi_amin k_uganda e_uganda_empire }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+villains_ruler_child_amin_faith_male = {
+	type = character
+	gender = male
+	special = ruler_child
+	priority = 2000
+	faiths = { aminism }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+villains_ruler_child_amin_faith_female = {
+	type = character
+	gender = female
+	special = ruler_child
+	priority = 2000
+	faiths = { aminism }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+# 6. 일본 제국 (무타구치): 공자 / 영애
+villains_ruler_child_mutaguchi_title_male = {
+	type = character
+	gender = male
+	special = ruler_child
+	priority = 2001
+	titles = { d_rep_mutaguchi k_imperial_japan_india e_greater_east_asia_imphal }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+villains_ruler_child_mutaguchi_title_female = {
+	type = character
+	gender = female
+	special = ruler_child
+	priority = 2001
+	titles = { d_rep_mutaguchi k_imperial_japan_india e_greater_east_asia_imphal }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+villains_ruler_child_mutaguchi_culture_male = {
+	type = character
+	gender = male
+	special = ruler_child
+	priority = 2000
+	cultures = { imperial_japanese }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+villains_ruler_child_mutaguchi_culture_female = {
+	type = character
+	gender = female
+	special = ruler_child
+	priority = 2000
+	cultures = { imperial_japanese }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+# 7. 소련 (스탈린): 혁명 자제
+villains_ruler_child_stalin_title = {
+	type = character
+	special = ruler_child
+	priority = 2001
+	titles = { d_rep_stalin k_soviet_union e_soviet_union }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+villains_ruler_child_stalin_faith = {
+	type = character
+	special = ruler_child
+	priority = 2000
+	faiths = { bolshevism }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+# 8. 문혁 중국 (장칭): 혁명 자제
+villains_ruler_child_cultrev_title = {
+	type = character
+	special = ruler_child
+	priority = 2001
+	titles = { k_rep_jiang_qing k_shanghai_commune e_cultural_revolution_china }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+villains_ruler_child_cultrev_faith = {
+	type = character
+	special = ruler_child
+	priority = 2000
+	faiths = { cultural_revolution }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+# 9. 캄보디아 (폴 포트): 혁명 자제
+villains_ruler_child_angkar_title = {
+	type = character
+	special = ruler_child
+	priority = 2001
+	titles = { d_rep_pol_pot k_democratic_kampuchea e_democratic_kampuchea }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+villains_ruler_child_angkar_faith = {
+	type = character
+	special = ruler_child
+	priority = 2000
+	faiths = { angkar }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+# 10. 북한 (김정은): 백두혈통 자제
+villains_ruler_child_juche_title = {
+	type = character
+	special = ruler_child
+	priority = 2001
+	titles = { d_rep_kim k_dprk e_juche_korea }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+villains_ruler_child_juche_faith = {
+	type = character
+	special = ruler_child
+	priority = 2000
+	faiths = { juche }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+# ==============================================================================
+# 모후(queen_mother) 호칭 방지 (미성년 통치자의 어머니가 왕태후/황태후로 뜨는 현상 차단)
+# ==============================================================================
+
+villains_queen_mother_first_lady = {
+	type = character
+	gender = female
+	special = queen_mother
+	priority = 1000
+	faiths = { americanism aminism }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+villains_queen_mother_comrade = {
+	type = character
+	gender = female
+	special = queen_mother
+	priority = 1000
+	faiths = { bolshevism cultural_revolution angkar }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+villains_queen_mother_juche = {
+	type = character
+	gender = female
+	special = queen_mother
+	priority = 1000
+	faiths = { juche }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+villains_queen_mother_matriarch = {
+	type = character
+	gender = female
+	special = queen_mother
+	priority = 1000
+	faiths = { national_socialism fascism zionism }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+villains_queen_mother_mutaguchi = {
+	type = character
+	gender = female
+	special = queen_mother
+	priority = 1000
+	cultures = { imperial_japanese }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}

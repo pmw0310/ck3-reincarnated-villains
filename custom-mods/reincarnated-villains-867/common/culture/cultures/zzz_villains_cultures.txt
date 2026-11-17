@@ -1,0 +1,356 @@
+﻿# ==============================================================================
+# Reincarnated Villains 867: 10 Landed Protagonist Modern Cultures
+# Note: Landless adventurer Grigori Rasputin remains Russian (culture:russian).
+# ==============================================================================
+
+# 1. Donald Trump: American (미국)
+american = {
+	color = { 0.23 0.46 0.77 }
+	created = 867.1.1
+	parents = { english bavarian }
+
+	ethos = ethos_bellicose
+	heritage = heritage_west_germanic
+	language = language_anglic
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_domain
+	traditions = {
+		tradition_wall_street_tycoons
+		tradition_family_entrepreneurship
+		tradition_maritime_mercantilism
+		tradition_city_keepers
+		tradition_culture_blending
+	}
+
+	name_list = name_list_english
+
+	coa_gfx = { english_coa_gfx western_coa_gfx }
+	building_gfx = { western_building_gfx }
+	clothing_gfx = { english_clothing_gfx western_clothing_gfx }
+	unit_gfx = { western_unit_gfx }
+	house_coa_frame = house_frame_24
+	house_coa_mask_offset = { 0.0 0.055 }
+	house_coa_mask_scale = { 0.9 0.9 }
+
+	ethnicities = {
+		30 = caucasian_blond
+		15 = caucasian_ginger
+		35 = caucasian_brown_hair
+		20 = caucasian_dark_hair
+	}
+}
+
+# 2. Benjamin Netanyahu: Israeli (이스라엘)
+israeli = {
+	color = { 0.31 0.61 0.91 }
+	created = 867.1.1
+	parents = { ashkenazi bavlim }
+
+	ethos = ethos_bellicose
+	heritage = heritage_israelite
+	language = language_israelite
+	martial_custom = martial_custom_equal
+	head_determination = head_determination_domain
+	traditions = {
+		tradition_iron_wall_citadels
+		tradition_eye_for_an_eye
+		tradition_only_the_strong
+		tradition_philosopher_culture
+	}
+
+	name_list = name_list_ashkenazi
+
+	coa_gfx = { israelite_group_coa_gfx }
+	building_gfx = { mena_building_gfx }
+	clothing_gfx = { byzantine_clothing_gfx }
+	unit_gfx = { western_unit_gfx }
+	house_coa_frame = house_frame_23
+	house_coa_mask_offset = { 0.0 0.03 }
+	house_coa_mask_scale = { 0.9 0.9 }
+
+	ethnicities = {
+		55 = caucasian_dark_hair
+		25 = caucasian_brown_hair
+		20 = arab
+	}
+}
+
+# 3. Adolf Hitler: Greater German (대독일)
+aryan = {
+	color = { 0.19 0.20 0.22 }
+	created = 867.1.1
+	parents = { bavarian german }
+
+	ethos = ethos_bellicose
+	heritage = heritage_central_germanic
+	language = language_high_german
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_domain
+	traditions = {
+		tradition_stormtrooper_vanguard
+		tradition_stand_and_fight
+		tradition_martial_admiration
+		tradition_ruling_caste
+	}
+
+	name_list = name_list_bavarian
+
+	coa_gfx = { german_group_coa_gfx western_coa_gfx }
+	building_gfx = { western_building_gfx }
+	clothing_gfx = { dde_hre_clothing_gfx western_clothing_gfx }
+	unit_gfx = { western_unit_gfx }
+	house_coa_frame = house_frame_25
+	house_coa_mask_offset = { 0.0 0.025 }
+	house_coa_mask_scale = { 0.95 0.95 }
+
+	ethnicities = {
+		45 = caucasian_blond
+		10 = caucasian_ginger
+		30 = caucasian_brown_hair
+		15 = caucasian_dark_hair
+	}
+}
+
+# 4. Benito Mussolini: Fascist Italian (이탈리아 파쇼)
+fascist_italian = {
+	color = { 0.23 0.54 0.27 }
+	created = 867.1.1
+	parents = { roman italian }
+
+	ethos = ethos_bellicose
+	heritage = heritage_latin
+	language = language_italian
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_domain
+	traditions = {
+		tradition_blackshirt_squadrismo
+		tradition_formation_fighting
+		tradition_republican_legacy
+		tradition_roman_legacy
+	}
+
+	name_list = name_list_italian
+
+	coa_gfx = { latin_group_coa_gfx western_coa_gfx }
+	building_gfx = { mediterranean_building_gfx }
+	clothing_gfx = { western_clothing_gfx }
+	unit_gfx = { western_unit_gfx }
+	house_coa_frame = house_frame_22
+	house_coa_mask_offset = { 0.0 0.11 }
+	house_coa_mask_scale = { 0.85 0.85 }
+
+	ethnicities = {
+		100 = mediterranean
+	}
+}
+
+# 5. Joseph Stalin: Soviet (소비에트)
+soviet = {
+	color = { 0.56 0.08 0.08 }
+	created = 867.1.1
+	parents = { russian georgian }
+
+	ethos = ethos_communal
+	heritage = heritage_east_slavic
+	language = language_east_slavic
+	martial_custom = martial_custom_equal
+	head_determination = head_determination_domain
+	traditions = {
+		tradition_bolshevik_vanguard
+		tradition_collective_lands
+		tradition_winter_warriors
+		tradition_staunch_traditionalists
+	}
+
+	name_list = name_list_russian
+
+	coa_gfx = { east_slavic_group_coa_gfx western_coa_gfx }
+	building_gfx = { east_slavic_building_gfx western_building_gfx }
+	clothing_gfx = { east_slavic_clothing_gfx northern_clothing_gfx }
+	unit_gfx = { eastern_unit_gfx }
+	house_coa_frame = house_frame_02
+	house_coa_mask_offset = { 0.0 0.055 }
+	house_coa_mask_scale = { 0.9 0.9 }
+
+	ethnicities = {
+		45 = slavic_northern_blond
+		25 = slavic_northern_brown_hair
+		15 = slavic_northern_dark_hair
+		15 = mediterranean_byzantine
+	}
+}
+
+# 6. Kim Jong-un & Kim Yo-jong: Paektu Korean (백두 조선)
+juche_korean = {
+	color = { 0.66 0.11 0.25 }
+	created = 867.1.1
+	parents = { goguryeo }
+
+	name_order_convention = dynasty_always_first
+	ethos = ethos_bellicose
+	heritage = heritage_buyeo
+	language = language_korean
+	martial_custom = martial_custom_equal
+	head_determination = head_determination_domain
+	traditions = {
+		tradition_songun_fortress
+		tradition_isolationist
+		tradition_mountain_homes
+		tradition_loyal_soldiers
+	}
+
+	name_list = name_list_korean
+
+	coa_gfx = { chinese_group_coa_gfx }
+	building_gfx = { chinese_building_gfx }
+	clothing_gfx = { korean_clothing_gfx chinese_clothing_gfx }
+	unit_gfx = { chinese_unit_gfx }
+	house_coa_frame = house_frame_09
+
+	ethnicities = {
+		100 = asian_manchu_korean
+	}
+}
+
+# 7. Jiang Qing & Gang of Four: Proletarian Han (프롤레타리아 한족)
+zaofan_chinese = {
+	color = { 0.81 0.19 0.13 }
+	created = 867.1.1
+	parents = { han }
+
+	name_order_convention = dynasty_always_first
+	ethos = ethos_bellicose
+	heritage = heritage_chinese
+	language = language_chinese
+	martial_custom = martial_custom_equal
+	head_determination = head_determination_domain
+	traditions = {
+		tradition_rebel_headquarters
+		tradition_zealous_people
+		tradition_agrarian
+	}
+
+	dlc_tradition = {
+		trait = tradition_tgp_court_machinations
+		requires_dlc_flag = all_under_heaven
+		fallback = tradition_legalistic
+	}
+
+	name_list = name_list_han
+
+	coa_gfx = { chinese_group_coa_gfx }
+	building_gfx = { chinese_building_gfx }
+	clothing_gfx = { chinese_clothing_gfx }
+	unit_gfx = { chinese_unit_gfx }
+	house_coa_frame = house_china
+
+	ethnicities = {
+		100 = asian_han_chinese
+	}
+}
+
+# 8. Renya Mutaguchi: Imperial Japanese (황국 일본)
+imperial_japanese = {
+	color = { 0.90 0.76 0.78 }
+	created = 867.1.1
+	parents = { japanese }
+
+	name_order_convention = japanese
+	ethos = ethos_bellicose
+	heritage = heritage_japonic
+	language = language_japonic
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_domain
+	traditions = {
+		tradition_gyokusai_bushido
+		tradition_by_the_sword
+		tradition_only_the_strong
+	}
+
+	dlc_tradition = {
+		trait = tradition_tgp_japanese_houses
+		requires_dlc_flag = all_under_heaven
+		fallback = tradition_noble_adoption
+	}
+
+	name_list = name_list_yamato
+
+	coa_gfx = { japanese_coa_gfx }
+	building_gfx = { japanese_building_gfx }
+	clothing_gfx = { japanese_clothing_gfx }
+	unit_gfx = { japanese_unit_gfx }
+	house_coa_frame = house_japan
+
+	ethnicities = {
+		100 = asian_japanese
+	}
+}
+
+# 9. Saloth Sar 'Pol Pot': Angkar Khmer (앙카르 크메르)
+angkar_khmer = {
+	color = { 0.54 0.46 0.20 }
+	created = 867.1.1
+	parents = { khmer }
+
+	name_order_convention = dynasty_always_first
+	ethos = ethos_communal
+	heritage = heritage_mon_khmer
+	language = language_mon_khmer
+	martial_custom = martial_custom_equal
+	head_determination = head_determination_domain
+	traditions = {
+		tradition_year_zero_collectives
+		tradition_jungle_warriors
+		tradition_spartan
+		tradition_collective_lands
+	}
+
+	name_list = name_list_khmer
+
+	coa_gfx = { burman_group_coa_gfx }
+	building_gfx = { southeast_asian_building_gfx }
+	clothing_gfx = { southeast_asian_clothing_gfx }
+	unit_gfx = { southeast_asian_unit_gfx indian_unit_gfx }
+	house_coa_frame = house_frame_26
+	house_coa_mask_offset = { 0.0 0.0 }
+	house_coa_mask_scale = { 0.85 0.85 }
+
+	ethnicities = {
+		100 = asian_malay
+	}
+}
+
+# 10. Idi Amin: Ugandan (우간다)
+ugandan = {
+	color = { 0.85 0.64 0.14 }
+	created = 867.1.1
+	parents = { daju nubian }
+
+	ethos = ethos_bellicose
+	heritage = heritage_east_african
+	language = language_sudanic
+	martial_custom = martial_custom_equal
+	head_determination = head_determination_domain
+	traditions = {
+		tradition_simba_warlordism
+		tradition_warrior_culture
+		tradition_quarrelsome
+		tradition_only_the_strong
+	}
+
+	name_list = name_list_daju
+
+	coa_gfx = { east_african_coa_gfx }
+	building_gfx = { african_building_gfx mena_building_gfx }
+	clothing_gfx = { mena_clothing_gfx }
+	unit_gfx = { mena_unit_gfx }
+	house_coa_frame = house_frame_19
+	house_coa_mask_offset = { 0.0 0.025 }
+	house_coa_mask_scale = { 0.95 0.95 }
+
+	ethnicities = {
+		65 = east_african
+		20 = african
+		15 = arab
+	}
+}

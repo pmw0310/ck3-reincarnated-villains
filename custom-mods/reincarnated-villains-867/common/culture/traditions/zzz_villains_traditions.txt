@@ -1,0 +1,546 @@
+﻿# ==============================================================================
+# Reincarnated Villains 867: 10 Exclusive Cultural Traditions & Cultural MaA Unlocks
+# ==============================================================================
+
+# 1. Israeli Exclusive: Iron Wall Citadel Keepers (철벽 요새 수호자)
+tradition_iron_wall_citadels = {
+	category = regional
+
+	layers = {
+		0 = martial
+		1 = mena
+		4 = city.dds
+	}
+
+	is_shown = {
+		culture_is_or_has_ancestor_trigger = { CULTURE = culture:israeli }
+		NOR = {
+			has_cultural_tradition = tradition_castle_keepers
+			has_cultural_tradition = tradition_city_keepers
+		}
+	}
+
+	can_pick = {
+		custom_tooltip = {
+			text = tradition_iron_wall_citadels_israeli_only_tt
+			culture_is_or_has_ancestor_trigger = { CULTURE = culture:israeli }
+		}
+		custom_tooltip = {
+			text = must_be_feudal_or_clan
+			scope:character = {
+				OR = {
+					government_has_flag = government_is_feudal
+					government_has_flag = government_is_clan
+					government_has_flag = government_is_administrative
+				}
+			}
+		}
+		custom_tooltip = {
+			text = cannot_have_tradition_castle_keepers
+			NOT = {
+				culture_tradition:tradition_castle_keepers = { is_in_list = traits }
+			}
+		}
+		custom_tooltip = {
+			text = cannot_have_tradition_city_keepers
+			NOT = {
+				culture_tradition:tradition_city_keepers = { is_in_list = traits }
+			}
+		}
+	}
+
+	parameters = {
+		unlock_maa_sayeret_commandos = yes
+		castle_fortifications_increase = yes
+		castle_grant_prestige = yes
+		architect_trait_prestige = yes
+		ai_more_likely_to_castle = yes
+		ai_more_likely_to_fortify = yes
+	}
+
+	character_modifier = {
+		castle_holding_build_speed = -0.15
+		castle_holding_build_gold_cost = -0.10
+		controlled_province_advantage = 5
+	}
+
+	province_modifier = {
+		fort_level = 1
+		garrison_size = 0.20
+	}
+
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						culture_pillar:ethos_bellicose = { is_in_list = traits }
+						culture_pillar:ethos_stoic = { is_in_list = traits }
+						culture_pillar:ethos_communal = { is_in_list = traits }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_bellicose_stoic_or_communal_desc
+				}
+			}
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+
+	ai_will_do = {
+		value = 1000
+	}
+}
+
+# 2. American Exclusive: Wall Street Deal-Makers (월스트리트 자본 재벌)
+tradition_wall_street_tycoons = {
+	category = regional
+
+	layers = {
+		0 = steward
+		1 = western
+		4 = city2.dds
+	}
+
+	is_shown = {
+		culture_is_or_has_ancestor_trigger = { CULTURE = culture:american }
+	}
+
+	can_pick = {
+		custom_tooltip = {
+			text = tradition_wall_street_tycoons_only_tt
+			culture_is_or_has_ancestor_trigger = { CULTURE = culture:american }
+		}
+	}
+
+	parameters = {
+		unlock_maa_pinkerton_guards = yes
+		architect_trait_prestige = yes
+	}
+
+	character_modifier = {
+		monthly_income_mult = 0.10
+		build_gold_cost = -0.10
+		mercenary_hire_cost_mult = -0.15
+	}
+
+	county_modifier = {
+		development_growth_factor = 0.10
+	}
+
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+
+	ai_will_do = {
+		value = 1000
+	}
+}
+
+# 3. Aryan Exclusive: Stormtrooper Street Vanguard (돌격대 가두 선봉)
+tradition_stormtrooper_vanguard = {
+	category = regional
+
+	layers = {
+		0 = martial
+		1 = western
+		4 = marching_soldiers.dds
+	}
+
+	is_shown = {
+		culture_is_or_has_ancestor_trigger = { CULTURE = culture:aryan }
+	}
+
+	can_pick = {
+		custom_tooltip = {
+			text = tradition_stormtrooper_vanguard_only_tt
+			culture_is_or_has_ancestor_trigger = { CULTURE = culture:aryan }
+		}
+	}
+
+	parameters = {
+		unlock_maa_sa_stormtroopers = yes
+	}
+
+	character_modifier = {
+		army_damage_mult = 0.10
+		dread_baseline_add = 15
+		men_at_arms_recruitment_cost = -0.10
+	}
+
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+
+	ai_will_do = {
+		value = 1000
+	}
+}
+
+# 4. Fascist Italian Exclusive: Blackshirt Squadrismo (검은셔츠단 행동주의)
+tradition_blackshirt_squadrismo = {
+	category = regional
+
+	layers = {
+		0 = martial
+		1 = mediterranean
+		4 = roman_ceremonies.dds
+	}
+
+	is_shown = {
+		culture_is_or_has_ancestor_trigger = { CULTURE = culture:fascist_italian }
+	}
+
+	can_pick = {
+		custom_tooltip = {
+			text = tradition_blackshirt_squadrismo_only_tt
+			culture_is_or_has_ancestor_trigger = { CULTURE = culture:fascist_italian }
+		}
+	}
+
+	parameters = {
+		unlock_maa_blackshirts_militia = yes
+	}
+
+	character_modifier = {
+		movement_speed = 0.10
+		monthly_prestige_gain_mult = 0.15
+		men_at_arms_maintenance = -0.10
+	}
+
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+
+	ai_will_do = {
+		value = 1000
+	}
+}
+
+# 5. Soviet Exclusive: Bolshevik Red Vanguard (볼셰비키 붉은 전위대)
+tradition_bolshevik_vanguard = {
+	category = regional
+
+	layers = {
+		0 = martial
+		1 = western
+		4 = tools.dds
+	}
+
+	is_shown = {
+		culture_is_or_has_ancestor_trigger = { CULTURE = culture:soviet }
+	}
+
+	can_pick = {
+		custom_tooltip = {
+			text = tradition_bolshevik_vanguard_only_tt
+			culture_is_or_has_ancestor_trigger = { CULTURE = culture:soviet }
+		}
+	}
+
+	parameters = {
+		unlock_maa_red_guards = yes
+	}
+
+	character_modifier = {
+		levy_reinforcement_rate = 0.25
+		build_speed = -0.15
+		hard_casualty_modifier = -0.10
+	}
+
+	province_modifier = {
+		garrison_size = 0.20
+	}
+
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+
+	ai_will_do = {
+		value = 1000
+	}
+}
+
+# 6. Juche Korean Exclusive: Songun Fortress State (선군 요새 국가)
+tradition_songun_fortress = {
+	category = regional
+
+	layers = {
+		0 = martial
+		1 = asian
+		4 = wall.dds
+	}
+
+	is_shown = {
+		culture_is_or_has_ancestor_trigger = { CULTURE = culture:juche_korean }
+	}
+
+	can_pick = {
+		custom_tooltip = {
+			text = tradition_songun_fortress_only_tt
+			culture_is_or_has_ancestor_trigger = { CULTURE = culture:juche_korean }
+		}
+	}
+
+	parameters = {
+		unlock_maa_kpa_storm_corps = yes
+		next_level_watermills_only = yes
+	}
+
+	character_modifier = {
+		controlled_province_advantage = 6
+		dread_decay_mult = -0.25
+		men_at_arms_cap = 1
+	}
+
+	county_modifier = {
+		development_growth_factor = -0.15
+		county_opinion_add = -10
+	}
+
+	province_modifier = {
+		fort_level = 1
+		hostile_raid_time = 0.50
+	}
+
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+
+	ai_will_do = {
+		value = 1000
+	}
+}
+
+# 7. Zaofan Chinese Exclusive: Rebel Cultural Headquarters (조반파 혁명 사령부)
+tradition_rebel_headquarters = {
+	category = regional
+
+	layers = {
+		0 = intrigue
+		1 = asian
+		4 = speech.dds
+	}
+
+	is_shown = {
+		culture_is_or_has_ancestor_trigger = { CULTURE = culture:zaofan_chinese }
+	}
+
+	can_pick = {
+		custom_tooltip = {
+			text = tradition_rebel_headquarters_only_tt
+			culture_is_or_has_ancestor_trigger = { CULTURE = culture:zaofan_chinese }
+		}
+	}
+
+	parameters = {
+		unlock_maa_red_guard_rebels = yes
+	}
+
+	character_modifier = {
+		tyranny_gain_mult = -0.20
+		monthly_piety_gain_mult = 0.15
+		skirmishers_damage_mult = 0.15
+	}
+
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+
+	ai_will_do = {
+		value = 1000
+	}
+}
+
+# 8. Imperial Japanese Exclusive: Gyokusai Shock Bushido (옥쇄 돌격 무사도)
+tradition_gyokusai_bushido = {
+	category = regional
+
+	layers = {
+		0 = martial
+		1 = asian
+		4 = samurai.dds
+	}
+
+	is_shown = {
+		culture_is_or_has_ancestor_trigger = { CULTURE = culture:imperial_japanese }
+	}
+
+	can_pick = {
+		custom_tooltip = {
+			text = tradition_gyokusai_bushido_only_tt
+			culture_is_or_has_ancestor_trigger = { CULTURE = culture:imperial_japanese }
+		}
+	}
+
+	parameters = {
+		unlock_maa_mutaguchi_banzai_samurai = yes
+	}
+
+	character_modifier = {
+		knight_effectiveness_mult = 0.20
+		advantage = 4
+		supply_duration = 0.25
+	}
+
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+
+	ai_will_do = {
+		value = 1000
+	}
+}
+
+# 9. Angkar Khmer Exclusive: Year Zero Jungle Collectives (영년의 밀림 집단농장)
+tradition_year_zero_collectives = {
+	category = regional
+
+	layers = {
+		0 = intrigue
+		1 = asian
+		4 = jungle.dds
+	}
+
+	is_shown = {
+		culture_is_or_has_ancestor_trigger = { CULTURE = culture:angkar_khmer }
+	}
+
+	can_pick = {
+		custom_tooltip = {
+			text = tradition_year_zero_collectives_only_tt
+			culture_is_or_has_ancestor_trigger = { CULTURE = culture:angkar_khmer }
+		}
+	}
+
+	parameters = {
+		unlock_maa_khmer_rouge_guerrillas = yes
+	}
+
+	character_modifier = {
+		jungle_advantage = 6
+		dread_per_tyranny_add = 0.5
+		domain_tax_same_faith_mult = 0.10
+	}
+
+	province_modifier = {
+		levy_size = 0.15
+	}
+
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+
+	ai_will_do = {
+		value = 1000
+	}
+}
+
+# 10. Ugandan Exclusive: Simba Military Junta (심바 군벌 통치)
+tradition_simba_warlordism = {
+	category = regional
+
+	layers = {
+		0 = martial
+		1 = mena
+		4 = soldiers3.dds
+	}
+
+	is_shown = {
+		culture_is_or_has_ancestor_trigger = { CULTURE = culture:ugandan }
+	}
+
+	can_pick = {
+		custom_tooltip = {
+			text = tradition_simba_warlordism_only_tt
+			culture_is_or_has_ancestor_trigger = { CULTURE = culture:ugandan }
+		}
+	}
+
+	parameters = {
+		unlock_maa_uganda_simba_battalion = yes
+	}
+
+	character_modifier = {
+		prowess = 4
+		knight_limit = 2
+		dread_baseline_add = 15
+	}
+
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+
+	ai_will_do = {
+		value = 1000
+	}
+}

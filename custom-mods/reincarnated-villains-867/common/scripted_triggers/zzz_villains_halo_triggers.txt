@@ -1,0 +1,36 @@
+﻿# 이념별 성자·선조 후광 판정을 위한 커스텀 특별교리 기반 스크립트 트리거 (우선순위: 공산주의 -> 전체주의 -> 자본주의)
+
+villains_halo_doctrine_communist_trigger = {
+	exists = faith
+	faith = {
+		has_doctrine = special_doctrine_communist_ideology
+	}
+}
+
+villains_halo_doctrine_fascist_trigger = {
+	exists = faith
+	NOT = { villains_halo_doctrine_communist_trigger = yes }
+	faith = {
+		has_doctrine = special_doctrine_fascist_ideology
+	}
+}
+
+villains_halo_doctrine_capitalist_trigger = {
+	exists = faith
+	NOT = { villains_halo_doctrine_communist_trigger = yes }
+	NOT = { villains_halo_doctrine_fascist_trigger = yes }
+	faith = {
+		has_doctrine = special_doctrine_capitalist_ideology
+	}
+}
+
+villains_has_custom_halo_trigger = {
+	exists = faith
+	faith = {
+		OR = {
+			has_doctrine = special_doctrine_communist_ideology
+			has_doctrine = special_doctrine_fascist_ideology
+			has_doctrine = special_doctrine_capitalist_ideology
+		}
+	}
+}

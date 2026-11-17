@@ -1,0 +1,602 @@
+﻿##############################################################################
+# Reincarnated Villains 867 — Ideological Core & Personal Tenets (7 Tenets)
+# Strict 3-layer gate (is_shown / can_pick / can_pick_as_personal_tenet)
+# locked exclusively to ideology special doctrines.
+##############################################################################
+
+# 1. Shared Ideology Tenet: Mass Propaganda & Mobilization
+tenet_mass_propaganda = {
+	icon = tenet_mass_propaganda
+
+	name = {
+		desc = tenet_mass_propaganda_name
+	}
+
+	desc = {
+		desc = tenet_mass_propaganda_desc
+	}
+
+	historical_glossary = {
+		first_valid = {
+			desc = tenet_mass_propaganda_historical_glossary
+		}
+	}
+
+	is_shown = {
+		OR = {
+			has_doctrine = special_doctrine_communist_ideology
+			has_doctrine = special_doctrine_fascist_ideology
+			has_doctrine = special_doctrine_capitalist_ideology
+		}
+	}
+
+	can_pick = {
+		custom_description = {
+			text = requires_any_ideology_special_doctrine_trigger
+			OR = {
+				has_doctrine = special_doctrine_communist_ideology
+				has_doctrine = special_doctrine_fascist_ideology
+				has_doctrine = special_doctrine_capitalist_ideology
+				doctrine:special_doctrine_communist_ideology = { is_in_list = selected_doctrines }
+				doctrine:special_doctrine_fascist_ideology = { is_in_list = selected_doctrines }
+				doctrine:special_doctrine_capitalist_ideology = { is_in_list = selected_doctrines }
+			}
+		}
+	}
+
+	can_pick_as_personal_tenet = {
+		custom_description = {
+			text = requires_any_ideology_special_doctrine_trigger
+			faith = {
+				OR = {
+					has_doctrine = special_doctrine_communist_ideology
+					has_doctrine = special_doctrine_fascist_ideology
+					has_doctrine = special_doctrine_capitalist_ideology
+				}
+			}
+		}
+	}
+
+	piety_cost = {
+		value = faith_tenet_cost_low
+		if = {
+			limit = { rite_has_tenet = tenet_mass_propaganda }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	character_modifier = {
+		monthly_legitimacy_add = 0.15
+		diplomacy_per_piety_level = 1
+	}
+
+	county_modifier = {
+		county_opinion_add = 10
+		levy_reinforcement_rate = 0.2
+	}
+
+	parameters = {
+		same_culture_conversion_bonus_active
+		sway_scheme_piety
+	}
+
+	personal_tenet_modifier = {
+		monthly_prestige_gain_mult = 0.15
+		vassal_opinion = 5
+		monthly_diplomacy_lifestyle_xp_gain_mult = 0.15
+	}
+
+	personal_tenet_parameters = {
+		tenet_harmonious_society_sway_fulfillment
+	}
+
+	traits = {
+		virtues = {
+			gregarious = { weight = 15 scale = 1 }
+			zealous = { weight = 15 scale = 1 }
+		}
+		sins = {
+			shy = { weight = 15 scale = 1 }
+			cynical = { weight = 15 scale = 1 }
+		}
+	}
+}
+
+# 2. Communist Tenet 1: Planned Economy & Collectivization
+tenet_planned_economy = {
+	icon = tenet_planned_economy
+
+	name = {
+		desc = tenet_planned_economy_name
+	}
+
+	desc = {
+		desc = tenet_planned_economy_desc
+	}
+
+	historical_glossary = {
+		first_valid = {
+			desc = tenet_planned_economy_historical_glossary
+		}
+	}
+
+	is_shown = {
+		has_doctrine = special_doctrine_communist_ideology
+	}
+
+	can_pick = {
+		custom_description = {
+			text = requires_communist_special_doctrine_trigger
+			OR = {
+				has_doctrine = special_doctrine_communist_ideology
+				doctrine:special_doctrine_communist_ideology = { is_in_list = selected_doctrines }
+			}
+		}
+	}
+
+	can_pick_as_personal_tenet = {
+		custom_description = {
+			text = requires_communist_special_doctrine_trigger
+			faith = { has_doctrine = special_doctrine_communist_ideology }
+		}
+	}
+
+	piety_cost = {
+		value = faith_tenet_cost_low
+		if = {
+			limit = { rite_has_tenet = tenet_planned_economy }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	character_modifier = {
+		build_speed = -0.2
+		build_gold_cost = -0.1
+		direct_vassal_opinion = -5
+	}
+
+	county_modifier = {
+		development_growth_factor = 0.15
+		levy_size = 0.15
+	}
+
+	parameters = {
+		inspections_unlocked_and_costs_piety
+	}
+
+	personal_tenet_modifier = {
+		stewardship = 2
+		stress_loss_mult = 0.1
+	}
+
+	personal_tenet_parameters = {
+		spiritual_fulfillment_from_building_personal
+	}
+
+	traits = {
+		virtues = {
+			diligent = { weight = 20 scale = 1 }
+			temperate = { weight = 15 scale = 1 }
+		}
+		sins = {
+			greedy = { weight = 20 scale = 1 }
+			lazy = { weight = 15 scale = 1 }
+		}
+	}
+}
+
+# 3. Communist Tenet 2: Permanent Revolution & Purge
+tenet_permanent_revolution = {
+	icon = tenet_permanent_revolution
+
+	name = {
+		desc = tenet_permanent_revolution_name
+	}
+
+	desc = {
+		desc = tenet_permanent_revolution_desc
+	}
+
+	historical_glossary = {
+		first_valid = {
+			desc = tenet_permanent_revolution_historical_glossary
+		}
+	}
+
+	is_shown = {
+		has_doctrine = special_doctrine_communist_ideology
+	}
+
+	can_pick = {
+		custom_description = {
+			text = requires_communist_special_doctrine_trigger
+			OR = {
+				has_doctrine = special_doctrine_communist_ideology
+				doctrine:special_doctrine_communist_ideology = { is_in_list = selected_doctrines }
+			}
+		}
+	}
+
+	can_pick_as_personal_tenet = {
+		custom_description = {
+			text = requires_communist_special_doctrine_trigger
+			faith = { has_doctrine = special_doctrine_communist_ideology }
+		}
+	}
+
+	piety_cost = {
+		value = faith_tenet_cost_mid
+		if = {
+			limit = { rite_has_tenet = tenet_permanent_revolution }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	character_modifier = {
+		dread_gain_mult = 0.25
+		dread_decay_mult = -0.2
+		enemy_hostile_scheme_success_chance_max_add = -10
+		monthly_piety_gain_per_dread_add = 0.01
+		tyranny_gain_mult = -0.2
+	}
+
+	parameters = {
+		cheaper_holy_wars_active
+		destroying_artifacts_is_pious
+		torturing_prisoners_grants_piety
+	}
+
+	personal_tenet_modifier = {
+		intrigue = 2
+		knight_effectiveness_per_dread = 0.002
+	}
+
+	personal_tenet_parameters = {
+		tenet_human_sacrifice_execution_piety_bonus
+		tenet_human_sacrifice_courtier_imprisonment_chance
+	}
+
+	traits = {
+		virtues = {
+			callous = { weight = 15 scale = 1 }
+			paranoid = { weight = 15 scale = 1 }
+		}
+		sins = {
+			compassionate = { weight = 15 scale = 1 }
+			trusting = { weight = 15 scale = 1 }
+		}
+	}
+}
+
+# 4. Totalitarian Tenet 1: Führerprinzip & Total War
+tenet_fuhrerprinzip = {
+	icon = tenet_fuhrerprinzip
+
+	name = {
+		desc = tenet_fuhrerprinzip_name
+	}
+
+	desc = {
+		desc = tenet_fuhrerprinzip_desc
+	}
+
+	historical_glossary = {
+		first_valid = {
+			desc = tenet_fuhrerprinzip_historical_glossary
+		}
+	}
+
+	is_shown = {
+		has_doctrine = special_doctrine_fascist_ideology
+	}
+
+	can_pick = {
+		custom_description = {
+			text = requires_fascist_special_doctrine_trigger
+			OR = {
+				has_doctrine = special_doctrine_fascist_ideology
+				doctrine:special_doctrine_fascist_ideology = { is_in_list = selected_doctrines }
+			}
+		}
+	}
+
+	can_pick_as_personal_tenet = {
+		custom_description = {
+			text = requires_fascist_special_doctrine_trigger
+			faith = { has_doctrine = special_doctrine_fascist_ideology }
+		}
+	}
+
+	piety_cost = {
+		value = faith_tenet_cost_mid
+		if = {
+			limit = { rite_has_tenet = tenet_fuhrerprinzip }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	character_modifier = {
+		maa_damage_mult = 0.1
+		men_at_arms_maintenance = -0.1
+		knight_limit = 1
+		short_reign_duration_mult = -0.35
+	}
+
+	parameters = {
+		conquest_cb_enabled
+		invasion_cb_enabled
+		clergy_can_fight
+	}
+
+	personal_tenet_modifier = {
+		martial_per_piety_level = 1
+		accolade_glory_gain_mult = 0.15
+	}
+
+	personal_tenet_parameters = {
+		tenet_pursuit_of_power_war_victory_fulfillment
+		clergy_can_fight_personal
+	}
+
+	traits = {
+		virtues = {
+			ambitious = { weight = 20 scale = 1 }
+			brave = { weight = 15 scale = 1 }
+		}
+		sins = {
+			craven = { weight = 20 scale = 1 }
+			content = { weight = 15 scale = 1 }
+		}
+	}
+}
+
+# 5. Totalitarian Tenet 2: State Corporatism & Iron Order
+tenet_state_corporatism = {
+	icon = tenet_state_corporatism
+
+	name = {
+		desc = tenet_state_corporatism_name
+	}
+
+	desc = {
+		desc = tenet_state_corporatism_desc
+	}
+
+	historical_glossary = {
+		first_valid = {
+			desc = tenet_state_corporatism_historical_glossary
+		}
+	}
+
+	is_shown = {
+		has_doctrine = special_doctrine_fascist_ideology
+	}
+
+	can_pick = {
+		custom_description = {
+			text = requires_fascist_special_doctrine_trigger
+			OR = {
+				has_doctrine = special_doctrine_fascist_ideology
+				doctrine:special_doctrine_fascist_ideology = { is_in_list = selected_doctrines }
+			}
+		}
+	}
+
+	can_pick_as_personal_tenet = {
+		custom_description = {
+			text = requires_fascist_special_doctrine_trigger
+			faith = { has_doctrine = special_doctrine_fascist_ideology }
+		}
+	}
+
+	piety_cost = {
+		value = faith_tenet_cost_low
+		if = {
+			limit = { rite_has_tenet = tenet_state_corporatism }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	character_modifier = {
+		title_creation_cost_mult = -0.3
+		domain_tax_same_faith_mult = 0.1
+	}
+
+	county_modifier = {
+		monthly_county_control_growth_add = 0.3
+		county_opinion_add = 5
+	}
+
+	parameters = {
+		legalism_reduced_faction_virtues
+		tenet_legalism_title_integration
+	}
+
+	personal_tenet_modifier = {
+		tyranny_gain_mult = -0.25
+		domain_limit = 1
+	}
+
+	personal_tenet_parameters = {
+		tenet_legalism_lawful_authority
+	}
+
+	traits = {
+		virtues = {
+			diligent = { weight = 15 scale = 1 }
+			arrogant = { weight = 15 scale = 1 }
+		}
+		sins = {
+			fickle = { weight = 15 scale = 1 }
+			lazy = { weight = 15 scale = 1 }
+		}
+	}
+}
+
+# 6. Capitalist Tenet 1: Free Market & Capital Accumulation
+tenet_free_market = {
+	icon = tenet_free_market
+
+	name = {
+		desc = tenet_free_market_name
+	}
+
+	desc = {
+		desc = tenet_free_market_desc
+	}
+
+	historical_glossary = {
+		first_valid = {
+			desc = tenet_free_market_historical_glossary
+		}
+	}
+
+	is_shown = {
+		has_doctrine = special_doctrine_capitalist_ideology
+	}
+
+	can_pick = {
+		custom_description = {
+			text = requires_capitalist_special_doctrine_trigger
+			OR = {
+				has_doctrine = special_doctrine_capitalist_ideology
+				doctrine:special_doctrine_capitalist_ideology = { is_in_list = selected_doctrines }
+			}
+		}
+	}
+
+	can_pick_as_personal_tenet = {
+		custom_description = {
+			text = requires_capitalist_special_doctrine_trigger
+			faith = { has_doctrine = special_doctrine_capitalist_ideology }
+		}
+	}
+
+	piety_cost = {
+		value = faith_tenet_cost_low
+		if = {
+			limit = { rite_has_tenet = tenet_free_market }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	character_modifier = {
+		monthly_income_mult = 0.1
+		stewardship_per_piety_level = 1
+		city_holding_build_speed = -0.2
+		city_holding_build_gold_cost = -0.2
+		city_holding_holding_build_speed = -0.2
+		city_holding_holding_build_gold_cost = -0.2
+	}
+
+	county_modifier = {
+		development_growth_factor = 0.15
+	}
+
+	parameters = {
+		tenet_tax_increase_per_piety_level
+		tenet_simony_wealth_fulfillment
+	}
+
+	personal_tenet_modifier = {
+		monthly_stewardship_lifestyle_xp_gain_mult = 0.2
+		tax_mult = 0.05
+	}
+
+	personal_tenet_parameters = {
+		tenet_simony_personal_gifts
+		tenet_simony_wealth_fulfillment
+	}
+
+	traits = {
+		virtues = {
+			greedy = { weight = 20 scale = 1 }
+			ambitious = { weight = 15 scale = 1 }
+		}
+		sins = {
+			generous = { weight = 20 scale = 1 }
+			lazy = { weight = 15 scale = 1 }
+		}
+	}
+}
+
+# 7. Capitalist Tenet 2: Military-Industrial Complex & Lobbying
+tenet_military_industrial_complex = {
+	icon = tenet_military_industrial_complex
+
+	name = {
+		desc = tenet_military_industrial_complex_name
+	}
+
+	desc = {
+		desc = tenet_military_industrial_complex_desc
+	}
+
+	historical_glossary = {
+		first_valid = {
+			desc = tenet_military_industrial_complex_historical_glossary
+		}
+	}
+
+	is_shown = {
+		has_doctrine = special_doctrine_capitalist_ideology
+	}
+
+	can_pick = {
+		custom_description = {
+			text = requires_capitalist_special_doctrine_trigger
+			OR = {
+				has_doctrine = special_doctrine_capitalist_ideology
+				doctrine:special_doctrine_capitalist_ideology = { is_in_list = selected_doctrines }
+			}
+		}
+	}
+
+	can_pick_as_personal_tenet = {
+		custom_description = {
+			text = requires_capitalist_special_doctrine_trigger
+			faith = { has_doctrine = special_doctrine_capitalist_ideology }
+		}
+	}
+
+	piety_cost = {
+		value = faith_tenet_cost_mid
+		if = {
+			limit = { rite_has_tenet = tenet_military_industrial_complex }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	character_modifier = {
+		mercenary_hire_cost_mult = -0.25
+		maa_siege_value_mult = 0.15
+		maa_toughness_mult = 0.1
+		diplomatic_range_mult = 0.25
+		different_faith_opinion = 5
+	}
+
+	parameters = {
+		sanctify_artifacts_weapons
+		conquest_cb_enabled
+	}
+
+	personal_tenet_modifier = {
+		owned_scheme_secrecy_add = 10
+		men_at_arms_cap = 1
+	}
+
+	personal_tenet_parameters = {
+		tenet_sacred_shadows_fabricate_hook
+	}
+
+	traits = {
+		virtues = {
+			deceitful = { weight = 15 scale = 1 }
+			diligent = { weight = 15 scale = 1 }
+		}
+		sins = {
+			trusting = { weight = 15 scale = 1 }
+			craven = { weight = 15 scale = 1 }
+		}
+	}
+}

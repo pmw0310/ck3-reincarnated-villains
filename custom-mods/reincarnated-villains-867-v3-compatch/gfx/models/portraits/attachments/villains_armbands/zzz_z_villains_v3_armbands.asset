@@ -1,0 +1,143 @@
+﻿pdxmesh = {
+	name = "villains_m_armband_iron_cross_mesh"
+	file = "villains_m_armband_iron_cross.mesh"
+
+	blend_shape = { id = "villains_m_armband_iron_cross_bs_fat" type = "villains_m_armband_iron_cross_bs_fat.mesh" }
+	blend_shape = { id = "villains_m_armband_iron_cross_bs_gaunt" type = "villains_m_armband_iron_cross_bs_gaunt.mesh" }
+	blend_shape = { id = "villains_m_armband_iron_cross_bs_old" type = "villains_m_armband_iron_cross_bs_old.mesh" }
+	blend_shape = { id = "villains_m_armband_iron_cross_bs_infant" type = "villains_m_armband_iron_cross_bs_infant.mesh" }
+	blend_shape = { id = "villains_m_armband_iron_cross_bs_muscular" type = "villains_m_armband_iron_cross_bs_muscular.mesh" }
+	blend_shape = { id = "villains_m_armband_iron_cross_bs_dwarf" type = "villains_m_armband_iron_cross_bs_dwarf.mesh" }
+
+	meshsettings = {
+		name = "villains_m_armband_iron_crossShape"
+		index = 0
+		texture_diffuse = "villains_armband_iron_cross_diffuse.dds"
+		texture_normal = "villains_armband_iron_cross_normal.dds"
+		texture_specular = "villains_armband_cloth_properties.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+}
+
+entity = {
+	name = "villains_m_armband_iron_cross_entity"
+	pdxmesh = "villains_m_armband_iron_cross_mesh"
+
+	attribute = { name = "bs_body_fat_1" blend_shape = "villains_m_armband_iron_cross_bs_fat" }
+	attribute = { name = "bs_body_gaunt_1" blend_shape = "villains_m_armband_iron_cross_bs_gaunt" }
+	attribute = { name = "bs_body_old_1" blend_shape = "villains_m_armband_iron_cross_bs_old" }
+	attribute = { name = "bs_body_infant_1" blend_shape = "villains_m_armband_iron_cross_bs_infant" }
+	attribute = { name = "bs_body_muscular_1" blend_shape = "villains_m_armband_iron_cross_bs_muscular" }
+	attribute = { name = "bs_body_dwarf_1" blend_shape = "villains_m_armband_iron_cross_bs_dwarf" }
+}
+
+pdxmesh = {
+	name = "villains_f_armband_iron_cross_mesh"
+	file = "villains_f_armband_iron_cross.mesh"
+
+	blend_shape = { id = "villains_f_armband_iron_cross_bs_fat" type = "villains_f_armband_iron_cross_bs_fat.mesh" }
+	blend_shape = { id = "villains_f_armband_iron_cross_bs_gaunt" type = "villains_f_armband_iron_cross_bs_gaunt.mesh" }
+	blend_shape = { id = "villains_f_armband_iron_cross_bs_old" type = "villains_f_armband_iron_cross_bs_old.mesh" }
+	blend_shape = { id = "villains_f_armband_iron_cross_bs_infant" type = "villains_f_armband_iron_cross_bs_infant.mesh" }
+	blend_shape = { id = "villains_f_armband_iron_cross_bs_muscular" type = "villains_f_armband_iron_cross_bs_muscular.mesh" }
+	blend_shape = { id = "villains_f_armband_iron_cross_bs_dwarf" type = "villains_f_armband_iron_cross_bs_dwarf.mesh" }
+	blend_shape = { id = "villains_f_armband_iron_cross_bs_pregnant" type = "villains_f_armband_iron_cross_bs_pregnant.mesh" }
+
+	meshsettings = {
+		name = "villains_f_armband_iron_crossShape"
+		index = 0
+		texture_diffuse = "villains_armband_iron_cross_diffuse.dds"
+		texture_normal = "villains_armband_iron_cross_normal.dds"
+		texture_specular = "villains_armband_cloth_properties.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+}
+
+entity = {
+	name = "villains_f_armband_iron_cross_entity"
+	pdxmesh = "villains_f_armband_iron_cross_mesh"
+
+	attribute = { name = "bs_body_fat_1" blend_shape = "villains_f_armband_iron_cross_bs_fat" }
+	attribute = { name = "bs_body_gaunt_1" blend_shape = "villains_f_armband_iron_cross_bs_gaunt" }
+	attribute = { name = "bs_body_old_1" blend_shape = "villains_f_armband_iron_cross_bs_old" }
+	attribute = { name = "bs_body_infant_1" blend_shape = "villains_f_armband_iron_cross_bs_infant" }
+	attribute = { name = "bs_body_muscular_1" blend_shape = "villains_f_armband_iron_cross_bs_muscular" }
+	attribute = { name = "bs_body_dwarf_1" blend_shape = "villains_f_armband_iron_cross_bs_dwarf" }
+	attribute = { name = "bs_body_pregnant_1" blend_shape = "villains_f_armband_iron_cross_bs_pregnant" }
+}
+
+pdxmesh = {
+	name = "villains_m_armband_red_guard_mesh"
+	file = "villains_m_armband_red_guard.mesh"
+
+	blend_shape = { id = "villains_m_armband_red_guard_bs_fat" type = "villains_m_armband_red_guard_bs_fat.mesh" }
+	blend_shape = { id = "villains_m_armband_red_guard_bs_gaunt" type = "villains_m_armband_red_guard_bs_gaunt.mesh" }
+	blend_shape = { id = "villains_m_armband_red_guard_bs_old" type = "villains_m_armband_red_guard_bs_old.mesh" }
+	blend_shape = { id = "villains_m_armband_red_guard_bs_infant" type = "villains_m_armband_red_guard_bs_infant.mesh" }
+	blend_shape = { id = "villains_m_armband_red_guard_bs_muscular" type = "villains_m_armband_red_guard_bs_muscular.mesh" }
+	blend_shape = { id = "villains_m_armband_red_guard_bs_dwarf" type = "villains_m_armband_red_guard_bs_dwarf.mesh" }
+
+	meshsettings = {
+		name = "villains_m_armband_red_guardShape"
+		index = 0
+		texture_diffuse = "villains_armband_red_guard_diffuse.dds"
+		texture_normal = "villains_armband_red_guard_normal.dds"
+		texture_specular = "villains_armband_cloth_properties.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+}
+
+entity = {
+	name = "villains_m_armband_red_guard_entity"
+	pdxmesh = "villains_m_armband_red_guard_mesh"
+
+	attribute = { name = "bs_body_fat_1" blend_shape = "villains_m_armband_red_guard_bs_fat" }
+	attribute = { name = "bs_body_gaunt_1" blend_shape = "villains_m_armband_red_guard_bs_gaunt" }
+	attribute = { name = "bs_body_old_1" blend_shape = "villains_m_armband_red_guard_bs_old" }
+	attribute = { name = "bs_body_infant_1" blend_shape = "villains_m_armband_red_guard_bs_infant" }
+	attribute = { name = "bs_body_muscular_1" blend_shape = "villains_m_armband_red_guard_bs_muscular" }
+	attribute = { name = "bs_body_dwarf_1" blend_shape = "villains_m_armband_red_guard_bs_dwarf" }
+}
+
+pdxmesh = {
+	name = "villains_f_armband_red_guard_mesh"
+	file = "villains_f_armband_red_guard.mesh"
+
+	blend_shape = { id = "villains_f_armband_red_guard_bs_bustsizemax" type = "villains_f_armband_red_guard_bs_bustsizemax.mesh" }
+	blend_shape = { id = "villains_f_armband_red_guard_bs_bustsizemin" type = "villains_f_armband_red_guard_bs_bustsizemin.mesh" }
+	blend_shape = { id = "villains_f_armband_red_guard_bs_fat" type = "villains_f_armband_red_guard_bs_fat.mesh" }
+	blend_shape = { id = "villains_f_armband_red_guard_bs_gaunt" type = "villains_f_armband_red_guard_bs_gaunt.mesh" }
+	blend_shape = { id = "villains_f_armband_red_guard_bs_infant" type = "villains_f_armband_red_guard_bs_infant.mesh" }
+	blend_shape = { id = "villains_f_armband_red_guard_bs_old" type = "villains_f_armband_red_guard_bs_old.mesh" }
+	blend_shape = { id = "villains_f_armband_red_guard_bs_muscular" type = "villains_f_armband_red_guard_bs_muscular.mesh" }
+	blend_shape = { id = "villains_f_armband_red_guard_bs_dwarf" type = "villains_f_armband_red_guard_bs_dwarf.mesh" }
+	blend_shape = { id = "villains_f_armband_red_guard_bs_pregnant" type = "villains_f_armband_red_guard_bs_pregnant.mesh" }
+
+	meshsettings = {
+		name = "villains_f_armband_red_guardShape"
+		index = 0
+		texture_diffuse = "villains_armband_red_guard_diffuse.dds"
+		texture_normal = "villains_armband_red_guard_normal.dds"
+		texture_specular = "villains_armband_cloth_properties.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+}
+
+entity = {
+	name = "villains_f_armband_red_guard_entity"
+	pdxmesh = "villains_f_armband_red_guard_mesh"
+
+	attribute = { name = "bs_body_breast_size_max" blend_shape = "villains_f_armband_red_guard_bs_bustsizemax" }
+	attribute = { name = "bs_body_breast_size_min" blend_shape = "villains_f_armband_red_guard_bs_bustsizemin" }
+	attribute = { name = "bs_body_fat_1" blend_shape = "villains_f_armband_red_guard_bs_fat" }
+	attribute = { name = "bs_body_gaunt_1" blend_shape = "villains_f_armband_red_guard_bs_gaunt" }
+	attribute = { name = "bs_body_infant_1" blend_shape = "villains_f_armband_red_guard_bs_infant" }
+	attribute = { name = "bs_body_old_1" blend_shape = "villains_f_armband_red_guard_bs_old" }
+	attribute = { name = "bs_body_muscular_1" blend_shape = "villains_f_armband_red_guard_bs_muscular" }
+	attribute = { name = "bs_body_dwarf_1" blend_shape = "villains_f_armband_red_guard_bs_dwarf" }
+	attribute = { name = "bs_body_pregnant_1" blend_shape = "villains_f_armband_red_guard_bs_pregnant" }
+}

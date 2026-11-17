@@ -1,0 +1,330 @@
+﻿# ==============================================================================
+# 1. Titular Starting Representative Polity Titles (867.1.1)
+# Placed FIRST in history/titles/ so all starting & historical rulers acquire
+# their national polity title before any Temporal HoF or Noble Family title.
+# ==============================================================================
+
+d_rep_hitler = {
+	867.1.1 = {
+		liege = k_bavaria
+		holder = reincarnated_hitler_867
+		government = feudal_government
+	}
+	880.9.29 = {
+		holder = 0
+	}
+}
+
+d_rep_stalin = {
+	867.1.1 = {
+		liege = 0
+		holder = reincarnated_stalin_867
+		government = tribal_government
+	}
+	880.6.30 = {
+		holder = 0
+	}
+}
+
+d_rep_mussolini = {
+	867.1.1 = {
+		liege = k_italy
+		holder = reincarnated_mussolini_867
+		government = feudal_government
+	}
+	888.1.14 = {
+		holder = 0
+	}
+}
+
+d_rep_mutaguchi = {
+	867.1.1 = {
+		liege = 0
+		holder = reincarnated_mutaguchi_867
+		government = japan_feudal_government
+	}
+	885.1.1 = {
+		holder = 0
+	}
+}
+
+d_rep_trump = {
+	867.1.1 = {
+		liege = 0
+		holder = reincarnated_trump_867
+		government = administrative_government
+	}
+	935.1.1 = {
+		holder = 0
+	}
+}
+
+d_rep_kim = {
+	812.4.15 = {
+		liege = 0
+		holder = reincarnated_kim_grandfather_867
+		government = meritocratic_government
+	}
+	854.7.8 = {
+		liege = 0
+		holder = reincarnated_kim_father_867
+		government = meritocratic_government
+	}
+	866.12.17 = {
+		liege = 0
+		holder = reincarnated_kim_jongun_867
+		government = meritocratic_government
+	}
+	867.1.1 = {
+		liege = 0
+		holder = reincarnated_kim_jongun_867
+		government = meritocratic_government
+	}
+	918.1.1 = {
+		holder = 0
+	}
+}
+
+k_rep_jiang_qing = {
+	867.1.1 = {
+		liege = h_china
+		holder = reincarnated_jiang_qing_867
+		government = celestial_government
+	}
+	935.1.1 = {
+		holder = 0
+	}
+}
+
+d_rep_pol_pot = {
+	867.1.1 = {
+		liege = k_funan
+		holder = reincarnated_pol_pot_867
+		government = mandala_government
+	}
+	935.1.1 = {
+		holder = 0
+	}
+}
+
+d_rep_idi_amin = {
+	867.1.1 = {
+		liege = 0
+		holder = reincarnated_idi_amin_867
+		government = feudal_government
+	}
+	887.1.1 = {
+		holder = 0
+	}
+}
+
+d_rep_netanyahu = {
+	867.1.1 = {
+		liege = 0
+		holder = reincarnated_netanyahu_867
+		government = administrative_government
+	}
+	870.1.1 = {
+		holder = 0
+	}
+}
+
+# ==============================================================================
+# 2. Temporal Head-of-Faith Titles (867.1.1)
+# ==============================================================================
+
+d_fascism = {
+	867.1.1 = {
+		holder = reincarnated_mussolini_867
+		liege = k_italy
+		succession_laws = { temporal_head_of_faith_succession_law }
+	}
+	935.1.1 = {
+		holder = 0
+	}
+}
+
+d_bolshevism = {
+	867.1.1 = {
+		holder = reincarnated_stalin_867
+		succession_laws = { temporal_head_of_faith_succession_law }
+	}
+	935.1.1 = {
+		holder = 0
+	}
+}
+
+d_americanism = {
+	867.1.1 = {
+		holder = reincarnated_trump_867
+		succession_laws = { temporal_head_of_faith_succession_law }
+	}
+	935.1.1 = {
+		holder = 0
+	}
+}
+
+d_juche = {
+	812.4.15 = {
+		holder = reincarnated_kim_grandfather_867
+		succession_laws = { temporal_head_of_faith_succession_law }
+	}
+	854.7.8 = {
+		holder = reincarnated_kim_father_867
+	}
+	866.12.17 = {
+		holder = reincarnated_kim_jongun_867
+	}
+	935.1.1 = {
+		holder = 0
+	}
+}
+
+d_angkar = {
+	867.1.1 = {
+		holder = 0
+		succession_laws = { temporal_head_of_faith_succession_law }
+	}
+}
+
+d_aminism = {
+	867.1.1 = {
+		holder = reincarnated_idi_amin_867
+		succession_laws = { temporal_head_of_faith_succession_law }
+	}
+	935.1.1 = {
+		holder = 0
+	}
+}
+
+d_khlystism = {
+	867.1.1 = {
+		holder = 0
+		succession_laws = { temporal_head_of_faith_succession_law }
+	}
+}
+
+d_cultural_revolution = {
+	867.1.1 = {
+		holder = reincarnated_jiang_qing_867
+		liege = h_china
+		succession_laws = { temporal_head_of_faith_succession_law }
+	}
+	935.1.1 = {
+		holder = 0
+	}
+}
+
+d_zionism = {
+	867.1.1 = {
+		holder = reincarnated_netanyahu_867
+		succession_laws = { temporal_head_of_faith_succession_law }
+	}
+	935.1.1 = {
+		holder = 0
+	}
+}
+
+# ==============================================================================
+# 3. Noble Family & Landless Adventurer Camp Titles (867.1.1)
+# ==============================================================================
+
+d_nf_trump = {
+	867.1.1 = {
+		holder = reincarnated_trump_867
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	935.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_netanyahu = {
+	867.1.1 = {
+		holder = reincarnated_netanyahu_867
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	935.1.1 = {
+		holder = 0
+	}
+}
+
+c_nf_mutaguchi = {
+	867.1.1 = {
+		holder = reincarnated_mutaguchi_867
+		government = japan_feudal_government
+		succession_laws = { noble_family_succession_law }
+	}
+	935.1.1 = {
+		holder = 0
+	}
+}
+
+c_nf_jiang_qing = {
+	867.1.1 = {
+		holder = reincarnated_jiang_qing_867
+		liege = h_china
+		government = celestial_government
+		succession_laws = { noble_family_succession_law }
+	}
+	935.1.1 = {
+		holder = 0
+	}
+}
+
+c_nf_zhang_chunchao = {
+	867.1.1 = {
+		holder = reincarnated_zhang_chunchao_867
+		liege = k_rep_jiang_qing
+		government = celestial_government
+		succession_laws = { noble_family_succession_law }
+	}
+	935.1.1 = {
+		holder = 0
+	}
+}
+
+c_nf_yao_wenyuan = {
+	867.1.1 = {
+		holder = reincarnated_yao_wenyuan_867
+		liege = k_rep_jiang_qing
+		government = celestial_government
+		succession_laws = { noble_family_succession_law }
+	}
+	935.1.1 = {
+		holder = 0
+	}
+}
+
+c_nf_wang_hongwen = {
+	867.1.1 = {
+		holder = reincarnated_wang_hongwen_867
+		liege = k_rep_jiang_qing
+		government = celestial_government
+		succession_laws = { noble_family_succession_law }
+	}
+	935.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_rasputin = {
+	867.1.1 = {
+		liege = 0
+		holder = reincarnated_rasputin_867
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = {
+				name = adventurer_creation_reason
+				value = flag:historical
+			}
+		}
+	}
+	916.12.30 = {
+		holder = 0
+	}
+}

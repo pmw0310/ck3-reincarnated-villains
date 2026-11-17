@@ -1,0 +1,9 @@
+﻿# Victoria 3 의상 크로스 패치 전용 3D 가슴 주머니 은테 철십자 훈장 액세서리 정의
+
+villains_m_medal_iron_cross_pocket = {
+	entity = { required_tags = "" shared_pose_entity = torso entity = "villains_m_medal_iron_cross_pocket_entity" }
+}
+
+villains_f_medal_iron_cross_pocket = {
+	entity = { required_tags = "" shared_pose_entity = torso entity = "villains_f_medal_iron_cross_pocket_entity" }
+}

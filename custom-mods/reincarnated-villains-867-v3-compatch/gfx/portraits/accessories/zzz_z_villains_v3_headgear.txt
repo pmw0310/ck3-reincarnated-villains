@@ -1,0 +1,11 @@
+﻿# Victoria 3 의상 크로스 패치 전용 3D 두체 페즈모 액세서리 정의
+
+villains_m_headgear_duce_fez = {
+	set_tags = "cap1"
+	entity = { required_tags = "" shared_pose_entity = head entity = "villains_m_headgear_duce_fez_entity" }
+}
+
+villains_f_headgear_duce_fez = {
+	set_tags = "cap1"
+	entity = { required_tags = "" shared_pose_entity = head entity = "villains_f_headgear_duce_fez_entity" }
+}

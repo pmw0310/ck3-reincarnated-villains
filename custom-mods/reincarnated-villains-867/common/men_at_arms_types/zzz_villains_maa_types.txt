@@ -1,0 +1,402 @@
+﻿@maa_buy_cost = 150
+@maa_low_maintenance_cost = 1.0
+@maa_high_maintenance_cost = 5.0
+@cultural_maa_extra_ai_score = 80
+@provisions_cost_infantry_cheap = 3
+@provisions_cost_infantry_moderate = 5
+
+# 1. Donald Trump / American Cultural MaA: Pinkerton Corporate Guards (핑커튼 사설경비단)
+# Identity: High-salary private corporate gunmen & strike-breakers — expensive to hire/maintain, devastating ranged firepower & holding defense
+pinkerton_guards = {
+	type = archers
+
+	damage = 34
+	toughness = 18
+	pursuit = 12
+	screen = 14
+
+	terrain_bonus = {
+		farmlands = { damage = 12 toughness = 8 }
+		plains = { damage = 8 toughness = 4 }
+		hills = { damage = 6 toughness = 4 }
+	}
+
+	holding_bonus = {
+		city_holding = { damage = 10 toughness = 8 }
+		castle_holding = { damage = 6 toughness = 6 }
+	}
+
+	counters = {
+		skirmishers = 1.5
+		peasant_militia = 2
+		heavy_infantry = 1
+	}
+
+	can_recruit = {
+		valid_for_maa_trigger = { PARAMETER = unlock_maa_pinkerton_guards }
+	}
+
+	buy_cost = { gold = 95 }
+	low_maintenance_cost = { gold = 0.32 }
+	high_maintenance_cost = { gold = 0.96 }
+	provision_cost = @provisions_cost_infantry_moderate
+
+	stack = 100
+	ai_quality = { value = @[cultural_maa_extra_ai_score + 20] }
+	icon = pinkerton_guards
+}
+
+# 2. Adolf Hitler / Aryan Cultural MaA: SA Stormtroopers (돌격대)
+# Identity: Bavarian street-brawling assault vanguard — high shock damage & relentless pursuit, fragile screen, urban/Alpine bonus
+sa_stormtroopers = {
+	type = skirmishers
+
+	damage = 24
+	toughness = 16
+	pursuit = 24
+	screen = 10
+
+	terrain_bonus = {
+		mountains = { damage = 8 toughness = 4 }
+		hills = { damage = 8 pursuit = 6 }
+		plains = { damage = 6 pursuit = 6 }
+	}
+
+	holding_bonus = {
+		city_holding = { damage = 8 pursuit = 8 }
+	}
+
+	counters = {
+		heavy_infantry = 1
+		archers = 1.5
+	}
+
+	can_recruit = {
+		valid_for_maa_trigger = { PARAMETER = unlock_maa_sa_stormtroopers }
+	}
+
+	buy_cost = { gold = 52 }
+	low_maintenance_cost = { gold = 0.18 }
+	high_maintenance_cost = { gold = 0.54 }
+	provision_cost = @provisions_cost_infantry_cheap
+
+	stack = 100
+	ai_quality = { value = @cultural_maa_extra_ai_score }
+	icon = sa_stormtroopers
+}
+
+# 3. Benito Mussolini / Fascist Italian Cultural MaA: Blackshirts (검은셔츠단)
+# Identity: Prestige-funded Squadristi marchers — low gold upkeep + prestige recruitment, strong screen & Mediterranean farmland/hill mobility
+blackshirts_militia = {
+	type = skirmishers
+
+	damage = 19
+	toughness = 22
+	pursuit = 18
+	screen = 26
+
+	terrain_bonus = {
+		farmlands = { damage = 8 toughness = 8 }
+		hills = { damage = 6 toughness = 8 }
+		plains = { pursuit = 8 screen = 8 }
+	}
+
+	holding_bonus = {
+		city_holding = { damage = 6 toughness = 6 }
+	}
+
+	counters = {
+		heavy_infantry = 1
+		pikemen = 1
+	}
+
+	can_recruit = {
+		valid_for_maa_trigger = { PARAMETER = unlock_maa_blackshirts_militia }
+	}
+
+	buy_cost = { gold = 30 prestige = 35 }
+	low_maintenance_cost = { gold = 0.11 }
+	high_maintenance_cost = { gold = 0.33 }
+	provision_cost = @provisions_cost_infantry_cheap
+
+	stack = 100
+	ai_quality = { value = @cultural_maa_extra_ai_score }
+	icon = blackshirts_militia
+}
+
+# 4. Joseph Stalin / Soviet Cultural MaA: Red Guards (적위대)
+# Identity: Petrograd/Moscow armed factory-worker militia — dirt-cheap massed upkeep, tanky toughness, winter/taiga/forest fortress fighters
+red_guards = {
+	type = skirmishers
+
+	damage = 16
+	toughness = 28
+	pursuit = 8
+	screen = 24
+
+	terrain_bonus = {
+		taiga = { damage = 6 toughness = 10 }
+		forest = { damage = 6 toughness = 10 }
+		steppe = { toughness = 8 screen = 6 }
+	}
+
+	winter_bonus = {
+		mild_winter = { toughness = 4 }
+		normal_winter = { damage = 4 toughness = 8 screen = 6 }
+		harsh_winter = { damage = 6 toughness = 12 screen = 10 }
+	}
+
+	counters = {
+		heavy_infantry = 1
+		light_cavalry = 1
+	}
+
+	can_recruit = {
+		valid_for_maa_trigger = { PARAMETER = unlock_maa_red_guards }
+	}
+
+	buy_cost = { gold = 32 }
+	low_maintenance_cost = { gold = 0.09 }
+	high_maintenance_cost = { gold = 0.27 }
+	provision_cost = 2
+
+	stack = 100
+	ai_quality = { value = @cultural_maa_extra_ai_score }
+	icon = red_guards
+}
+
+# 5. Kim Jong-un & Kim Yo-jong / Paektu Korean Cultural MaA: KPA Storm Corps Light Infantry (폭풍군단 경보병)
+# Identity: Elite Songun mountain infiltration commandos — fortification breach (siege_value), extreme mountain/winter bonuses, higher elite cost
+kpa_storm_corps = {
+	type = skirmishers
+
+	damage = 23
+	toughness = 24
+	pursuit = 20
+	screen = 22
+	siege_value = 0.05
+
+	terrain_bonus = {
+		mountains = { damage = 12 toughness = 10 screen = 8 }
+		hills = { damage = 8 toughness = 8 }
+		forest = { damage = 6 screen = 6 }
+	}
+
+	winter_bonus = {
+		normal_winter = { damage = 4 toughness = 6 }
+		harsh_winter = { damage = 8 toughness = 8 }
+	}
+
+	counters = {
+		heavy_infantry = 1.5
+		archers = 1
+	}
+
+	can_recruit = {
+		valid_for_maa_trigger = { PARAMETER = unlock_maa_kpa_storm_corps }
+	}
+
+	buy_cost = { gold = 62 }
+	low_maintenance_cost = { gold = 0.20 }
+	high_maintenance_cost = { gold = 0.60 }
+	provision_cost = 2
+
+	stack = 100
+	ai_quality = { value = @[cultural_maa_extra_ai_score + 20] }
+	icon = kpa_storm_corps
+}
+
+# 6. Renya Mutaguchi / Imperial Japanese Cultural MaA: 15th Army Imphal Jungle Shock Troops (임팔 밀림 결사대)
+# Identity: "Forage grass on the march!" glass-cannon katana shock chargers — massive attack & pursuit, rock-bottom toughness/screen, near-zero supply cost
+mutaguchi_banzai_samurai = {
+	type = skirmishers
+
+	damage = 32
+	toughness = 11
+	pursuit = 28
+	screen = 4
+
+	terrain_bonus = {
+		jungle = { damage = 10 pursuit = 8 }
+		hills = { damage = 8 pursuit = 6 }
+		mountains = { damage = 6 pursuit = 6 }
+		wetlands = { toughness = -3 }
+	}
+
+	counters = {
+		pikemen = 1.5
+		archers = 1.5
+	}
+
+	can_recruit = {
+		valid_for_maa_trigger = { PARAMETER = unlock_maa_mutaguchi_banzai_samurai }
+	}
+
+	buy_cost = { gold = 42 }
+	low_maintenance_cost = { gold = 0.10 }
+	high_maintenance_cost = { gold = 0.30 }
+	provision_cost = 1
+
+	stack = 100
+	ai_quality = { value = @cultural_maa_extra_ai_score }
+	icon = mutaguchi_banzai_samurai
+}
+
+# 7. Saloth Pol Pot / Angkar Khmer Cultural MaA: Khmer Rouge Peasant Guerrillas (크메르 루주 유격대)
+# Identity: Year-Zero abolishment of money — ultra-cheap gold + piety recruitment, lowest gold maintenance in the game, supreme jungle/wetlands evasion screen
+khmer_rouge_guerrillas = {
+	type = skirmishers
+
+	damage = 15
+	toughness = 17
+	pursuit = 16
+	screen = 36
+
+	terrain_bonus = {
+		jungle = { damage = 12 toughness = 10 screen = 12 }
+		wetlands = { damage = 10 toughness = 8 screen = 10 }
+		forest = { damage = 6 toughness = 6 }
+		plains = { toughness = -4 }
+	}
+
+	counters = {
+		heavy_infantry = 1.5
+		heavy_cavalry = 0.5
+	}
+
+	can_recruit = {
+		valid_for_maa_trigger = { PARAMETER = unlock_maa_khmer_rouge_guerrillas }
+	}
+
+	buy_cost = { gold = 20 piety = 20 }
+	low_maintenance_cost = { gold = 0.05 }
+	high_maintenance_cost = { gold = 0.15 }
+	provision_cost = 1
+
+	stack = 100
+	ai_quality = { value = @cultural_maa_extra_ai_score }
+	icon = khmer_rouge_guerrillas
+}
+
+# 8. Idi Amin / Ugandan Cultural MaA: Uganda Army Simba Battalion (심바 기계화 대대)
+# Identity: Heavy-hitting East African savannah shock bruisers — bruiser stats between skirmisher and heavy infantry, anti-cavalry & drylands/floodplains power
+uganda_simba_battalion = {
+	type = skirmishers
+
+	damage = 27
+	toughness = 25
+	pursuit = 18
+	screen = 12
+
+	terrain_bonus = {
+		drylands = { damage = 10 toughness = 8 }
+		floodplains = { damage = 10 toughness = 8 }
+		oasis = { damage = 8 toughness = 6 }
+		hills = { damage = 6 toughness = 4 }
+	}
+
+	winter_bonus = {
+		harsh_winter = { damage = -6 toughness = -6 }
+	}
+
+	counters = {
+		heavy_infantry = 1
+		light_cavalry = 1
+	}
+
+	can_recruit = {
+		valid_for_maa_trigger = { PARAMETER = unlock_maa_uganda_simba_battalion }
+	}
+
+	buy_cost = { gold = 60 }
+	low_maintenance_cost = { gold = 0.21 }
+	high_maintenance_cost = { gold = 0.63 }
+	provision_cost = 4
+
+	stack = 100
+	ai_quality = { value = @[cultural_maa_extra_ai_score + 15] }
+	icon = uganda_simba_battalion
+}
+
+# 9. Jiang Qing / Proletarian Han Cultural MaA: Red Guard Rebel Vanguards (홍위병 조반파 돌격대)
+# Identity: Massed human-wave zealot youth — 125-man oversized sub-regiment stack! Cheap gold + fervor piety cost, swarms archers & peasant militia across Jiangnan
+red_guard_rebels = {
+	type = skirmishers
+
+	damage = 14
+	toughness = 14
+	pursuit = 20
+	screen = 16
+
+	terrain_bonus = {
+		floodplains = { damage = 8 toughness = 6 }
+		farmlands = { damage = 8 toughness = 6 }
+		terraced_hills = { damage = 8 toughness = 6 }
+	}
+
+	holding_bonus = {
+		city_holding = { damage = 6 pursuit = 6 }
+		church_holding = { damage = 8 pursuit = 6 }
+	}
+
+	counters = {
+		archers = 1.5
+		peasant_militia = 2
+	}
+
+	can_recruit = {
+		valid_for_maa_trigger = { PARAMETER = unlock_maa_red_guard_rebels }
+	}
+
+	buy_cost = { gold = 25 piety = 25 }
+	low_maintenance_cost = { gold = 0.07 }
+	high_maintenance_cost = { gold = 0.21 }
+	provision_cost = 2
+
+	stack = 125
+	hired_stack_size = 50
+	ai_quality = { value = @cultural_maa_extra_ai_score }
+	icon = red_guard_rebels
+}
+
+# 10. Benjamin Netanyahu / Israeli Cultural MaA: Sayeret Matkal Commandos (사예레트 마트칼 특임대)
+# Identity: Tier-1 elite surgical special-operations heavy infantry — 42 damage, 32 toughness, high pursuit & siege breach, desert/arid dominance, premium upkeep
+sayeret_commandos = {
+	type = heavy_infantry
+
+	damage = 42
+	toughness = 32
+	pursuit = 24
+	screen = 20
+	siege_value = 0.1
+
+	terrain_bonus = {
+		drylands = { damage = 10 toughness = 8 }
+		desert = { damage = 12 toughness = 8 pursuit = 10 }
+		oasis = { damage = 10 toughness = 8 }
+		hills = { damage = 8 toughness = 8 }
+		desert_mountains = { damage = 10 toughness = 8 }
+	}
+
+	counters = {
+		archers = 1
+		skirmishers = 1.5
+		heavy_infantry = 1
+	}
+
+	can_recruit = {
+		valid_for_maa_trigger = { PARAMETER = unlock_maa_sayeret_commandos }
+		NOT = {
+			culture = { has_cultural_parameter = strength_in_numbers_heavy_maa_ban }
+		}
+	}
+
+	buy_cost = { gold = 115 }
+	low_maintenance_cost = { gold = 0.48 }
+	high_maintenance_cost = { gold = 1.44 }
+	provision_cost = 7
+
+	stack = 100
+	ai_quality = { value = @[cultural_maa_extra_ai_score + 40] }
+	icon = sayeret_commandos
+}

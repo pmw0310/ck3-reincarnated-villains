@@ -1,0 +1,299 @@
+﻿texticon = {
+	icon = piety_icon_communist
+	iconsize = {
+		texture = "gfx/interface/icons/modifiers/icon_piety_communist_01.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = piety_icon_fascist
+	iconsize = {
+		texture = "gfx/interface/icons/modifiers/icon_piety_fascist_01.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = piety_icon_capitalist
+	iconsize = {
+		texture = "gfx/interface/icons/modifiers/icon_piety_capitalist_01.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = piety_level_0_icon_communist
+	iconsize = {
+		texture = "gfx/interface/icons/modifiers/icon_piety_communist_00.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = piety_level_1_icon_communist
+	iconsize = {
+		texture = "gfx/interface/icons/modifiers/icon_piety_communist_01.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = piety_level_2_icon_communist
+	iconsize = {
+		texture = "gfx/interface/icons/modifiers/icon_piety_communist_02.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = piety_level_3_icon_communist
+	iconsize = {
+		texture = "gfx/interface/icons/modifiers/icon_piety_communist_03.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = piety_level_4_icon_communist
+	iconsize = {
+		texture = "gfx/interface/icons/modifiers/icon_piety_communist_04.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = piety_level_5_icon_communist
+	iconsize = {
+		texture = "gfx/interface/icons/modifiers/icon_piety_communist_05.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = piety_level_6_icon_communist
+	iconsize = {
+		texture = "gfx/interface/icons/modifiers/icon_piety_communist_06.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = piety_level_7_icon_communist
+	iconsize = {
+		texture = "gfx/interface/icons/modifiers/icon_piety_communist_07.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = piety_level_8_icon_communist
+	iconsize = {
+		texture = "gfx/interface/icons/modifiers/icon_piety_communist_08.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = piety_level_0_icon_fascist
+	iconsize = {
+		texture = "gfx/interface/icons/modifiers/icon_piety_fascist_00.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = piety_level_1_icon_fascist
+	iconsize = {
+		texture = "gfx/interface/icons/modifiers/icon_piety_fascist_01.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = piety_level_2_icon_fascist
+	iconsize = {
+		texture = "gfx/interface/icons/modifiers/icon_piety_fascist_02.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = piety_level_3_icon_fascist
+	iconsize = {
+		texture = "gfx/interface/icons/modifiers/icon_piety_fascist_03.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = piety_level_4_icon_fascist
+	iconsize = {
+		texture = "gfx/interface/icons/modifiers/icon_piety_fascist_04.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = piety_level_5_icon_fascist
+	iconsize = {
+		texture = "gfx/interface/icons/modifiers/icon_piety_fascist_05.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = piety_level_6_icon_fascist
+	iconsize = {
+		texture = "gfx/interface/icons/modifiers/icon_piety_fascist_06.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = piety_level_7_icon_fascist
+	iconsize = {
+		texture = "gfx/interface/icons/modifiers/icon_piety_fascist_07.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = piety_level_8_icon_fascist
+	iconsize = {
+		texture = "gfx/interface/icons/modifiers/icon_piety_fascist_08.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = piety_level_0_icon_capitalist
+	iconsize = {
+		texture = "gfx/interface/icons/modifiers/icon_piety_capitalist_00.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = piety_level_1_icon_capitalist
+	iconsize = {
+		texture = "gfx/interface/icons/modifiers/icon_piety_capitalist_01.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = piety_level_2_icon_capitalist
+	iconsize = {
+		texture = "gfx/interface/icons/modifiers/icon_piety_capitalist_02.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = piety_level_3_icon_capitalist
+	iconsize = {
+		texture = "gfx/interface/icons/modifiers/icon_piety_capitalist_03.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = piety_level_4_icon_capitalist
+	iconsize = {
+		texture = "gfx/interface/icons/modifiers/icon_piety_capitalist_04.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = piety_level_5_icon_capitalist
+	iconsize = {
+		texture = "gfx/interface/icons/modifiers/icon_piety_capitalist_05.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = piety_level_6_icon_capitalist
+	iconsize = {
+		texture = "gfx/interface/icons/modifiers/icon_piety_capitalist_06.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = piety_level_7_icon_capitalist
+	iconsize = {
+		texture = "gfx/interface/icons/modifiers/icon_piety_capitalist_07.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = piety_level_8_icon_capitalist
+	iconsize = {
+		texture = "gfx/interface/icons/modifiers/icon_piety_capitalist_08.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}

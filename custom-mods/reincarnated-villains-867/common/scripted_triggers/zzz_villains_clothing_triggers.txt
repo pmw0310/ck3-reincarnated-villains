@@ -1,0 +1,46 @@
+﻿# 환생 인물 시작 복장 적용 조건 (왕/황제 등극, 전쟁 출정/지휘/참전, 질병/투옥/특수 활동 시 자연스럽게 의상·투구·왕관 전환)
+villains_use_starting_outfit_trigger = {
+	exists = this
+	is_adult = yes
+	# 1. 왕 또는 황제 등극 시(여성은 왕비/황후 배우자 포함) 즉시 왕실 복장·망토·왕관 착용
+	#    단, 천조 제국 산하의 종속 왕국급 총독(양절 총독 등)으로 복무 중일 때는 고유 시작 복장을 유지하고 독립 또는 코뮌 선포 시 왕실 복장으로 전환
+	OR = {
+		highest_held_title_tier < tier_kingdom
+		AND = {
+			highest_held_title_tier = tier_kingdom
+			is_independent_ruler = no
+			has_government = celestial_government
+			NOT = { has_title = title:k_shanghai_commune }
+		}
+	}
+	trigger_if = {
+		limit = { is_female = yes }
+		NOT = {
+			any_consort = {
+				highest_held_title_tier >= tier_kingdom
+			}
+		}
+	}
+	# 2. 실제 소집된 야전 부대 지휘·출정 기사 참전·마상시합 무력 종목(난전/결투/마상창시합) 참가 시에만 중세 전투 갑옷·투구 착용
+	NOR = {
+		portrait_wear_armor_currently_in_army_trigger = yes
+		AND = {
+			is_incapable = no
+			is_imprisoned = no
+			involved_activity ?= {
+				has_activity_type = activity_tournament
+				OR = {
+					has_current_phase = tournament_phase_melee
+					has_current_phase = tournament_phase_duel
+					has_current_phase = tournament_phase_joust
+				}
+			}
+			is_in_guest_subset = { name = qualified }
+		}
+	}
+	# 3. 지하감옥 투옥 및 나체 이벤트 시에만 양보 (대규모 결혼식·감기·모략 등에서는 고유 정복/예복 유지)
+	portrait_prisoner_trigger = no
+	should_be_naked_trigger = no
+	should_be_topless_portrait_trigger = no
+	should_be_fully_naked_portrait_trigger = no
+}

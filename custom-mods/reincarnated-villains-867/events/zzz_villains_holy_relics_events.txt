@@ -1,0 +1,30 @@
+﻿namespace = villains_relics
+
+# Seeds bespoke Holy Site Relics for Fascism and Bolshevism after historical_artifacts.0050
+villains_relics.0001 = {
+	scope = none
+	hidden = yes
+
+	immediate = {
+		villains_seed_holy_site_relics_effect = yes
+		every_living_character = {
+			limit = {
+				is_ruler = yes
+				is_landed = yes
+				is_ai = yes
+			}
+			villains_enforce_ai_primary_title_effect = yes
+		}
+	}
+}
+
+# Re-enforces AI primary title 1 day after title gain/loss or player-to-AI switch
+# so C++ post-transfer CalculatePrimaryTitle cannot flip back to HoF or vanilla duchies
+villains_relics.0002 = {
+	type = character_event
+	hidden = yes
+
+	immediate = {
+		villains_enforce_ai_primary_title_effect = yes
+	}
+}

@@ -1,0 +1,80 @@
+﻿dynasty_hitler_867 = {
+	name = "dynn_Hitler_867"
+	culture = "aryan"
+	motto = dynn_Hitler_867_motto
+}
+
+dynasty_stalin_867 = {
+	name = "dynn_Stalin_867"
+	culture = "soviet"
+	motto = dynn_Stalin_867_motto
+}
+
+dynasty_mussolini_867 = {
+	name = "dynn_Mussolini_867"
+	culture = "fascist_italian"
+	motto = dynn_Mussolini_867_motto
+}
+
+dynasty_mutaguchi_867 = {
+	name = "dynn_Mutaguchi_867"
+	culture = "imperial_japanese"
+	motto = dynn_Mutaguchi_867_motto
+}
+
+dynasty_trump_867 = {
+	name = "dynn_Trump_867"
+	culture = "american"
+	motto = dynn_Trump_867_motto
+}
+
+dynasty_kim_867 = {
+	name = "dynn_Kim_867"
+	culture = "juche_korean"
+	motto = dynn_Kim_867_motto
+}
+
+dynasty_pol_pot_867 = {
+	name = "dynn_Pol_Pot_867"
+	culture = "angkar_khmer"
+	motto = dynn_Pol_Pot_867_motto
+}
+
+dynasty_amin_867 = {
+	name = "dynn_Amin_867"
+	culture = "ugandan"
+	motto = dynn_Amin_867_motto
+}
+
+dynasty_rasputin_867 = {
+	name = "dynn_Rasputin_867"
+	culture = "russian"
+	motto = dynn_Rasputin_867_motto
+}
+
+dynasty_jiang_qing_867 = {
+	name = "dynn_Jiang_Qing_867"
+	culture = "zaofan_chinese"
+	motto = dynn_Jiang_Qing_867_motto
+}
+
+dynasty_zhang_867 = {
+	name = "dynn_Zhang_867"
+	culture = "zaofan_chinese"
+}
+
+dynasty_yao_867 = {
+	name = "dynn_Yao_867"
+	culture = "zaofan_chinese"
+}
+
+dynasty_wang_867 = {
+	name = "dynn_Wang_867"
+	culture = "zaofan_chinese"
+}
+
+dynasty_netanyahu_867 = {
+	name = "dynn_Netanyahu_867"
+	culture = "israeli"
+	motto = dynn_Netanyahu_867_motto
+}

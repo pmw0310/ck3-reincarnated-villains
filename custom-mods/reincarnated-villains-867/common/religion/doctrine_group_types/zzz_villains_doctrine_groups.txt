@@ -1,0 +1,23 @@
+﻿is_communist_faith = {
+	category = special
+
+	is_available_on_create = {
+		has_doctrine = special_doctrine_communist_ideology
+	}
+}
+
+is_fascist_faith = {
+	category = special
+
+	is_available_on_create = {
+		has_doctrine = special_doctrine_fascist_ideology
+	}
+}
+
+is_capitalist_faith = {
+	category = special
+
+	is_available_on_create = {
+		has_doctrine = special_doctrine_capitalist_ideology
+	}
+}

@@ -1,0 +1,34 @@
+﻿# Victoria 3 의상 크로스 패치 전용 3D 붉은 완장 유전자 정의
+
+special_genes = {
+	accessory_genes = {
+		villains_v3_armband_gene = {
+			inheritable = no
+			group = clothes
+
+			villains_v3_armband_off = {
+				index = 0
+				male = { 1 = empty }
+				female = male
+				boy = male
+				girl = female
+			}
+
+			villains_v3_armband_iron_cross = {
+				index = 1
+				male = { 1 = villains_m_armband_iron_cross }
+				female = { 1 = villains_f_armband_iron_cross }
+				boy = { 1 = empty }
+				girl = { 1 = empty }
+			}
+
+			villains_v3_armband_red_guard = {
+				index = 2
+				male = { 1 = villains_m_armband_red_guard }
+				female = { 1 = villains_f_armband_red_guard }
+				boy = { 1 = empty }
+				girl = { 1 = empty }
+			}
+		}
+	}
+}

@@ -1,0 +1,598 @@
+﻿on_game_start = {
+	on_actions = {
+		villains_rasputin_camp_purpose_on_game_start
+		villains_mutaguchi_house_aspiration_on_game_start
+		villains_noble_family_house_head_on_game_start
+		villains_jiang_qing_tang_emperor_secret_lover_on_game_start
+		villains_jiang_qing_expansion_movement_on_game_start
+		villains_starting_county_hoi4_colors_on_game_start
+		villains_juche_incumbent_chairman_on_game_start
+		villains_enforce_starting_primary_titles_on_game_start
+	}
+}
+
+villains_enforce_starting_primary_titles_on_game_start = {
+	effect = {
+		if = {
+			limit = { game_start_date = 867.1.1 }
+			every_living_character = {
+				limit = {
+					is_ruler = yes
+					is_landed = yes
+				}
+				villains_enforce_starting_primary_titles_effect = yes
+			}
+		}
+	}
+}
+
+villains_starting_county_hoi4_colors_on_game_start = {
+	effect = {
+		if = {
+			limit = { game_start_date = 867.1.1 }
+			title:c_innsbruck = { set_color_from_title = title:d_rep_hitler }
+			title:c_brixen = { set_color_from_title = title:d_rep_hitler }
+			title:c_moskva = { set_color_from_title = title:d_rep_stalin }
+			title:c_vladimir = { set_color_from_title = title:d_rep_stalin }
+			title:c_lombardia = { set_color_from_title = title:d_rep_mussolini }
+			title:c_brescia = { set_color_from_title = title:d_rep_mussolini }
+			title:c_manipur = { set_color_from_title = title:d_rep_mutaguchi }
+			title:c_dimapur = { set_color_from_title = title:d_rep_mutaguchi }
+			title:c_northumberland = { set_color_from_title = title:d_rep_trump }
+			title:c_cumberland = { set_color_from_title = title:d_rep_trump }
+			title:c_seogyeong = { set_color_from_title = title:d_rep_kim }
+			title:c_seongju = { set_color_from_title = title:d_rep_kim }
+			title:c_koh_ker = { set_color_from_title = title:d_rep_pol_pot }
+			title:c_sambhupura = { set_color_from_title = title:d_rep_pol_pot }
+			title:c_fazughli = { set_color_from_title = title:d_rep_idi_amin }
+			title:c_sennar = { set_color_from_title = title:d_rep_idi_amin }
+			title:c_hangzhou = { set_color_from_title = title:k_rep_jiang_qing }
+			title:c_xiuzhou = { set_color_from_title = title:k_rep_jiang_qing }
+			title:c_huzhou = { set_color_from_title = title:k_rep_jiang_qing }
+			title:c_jerusalem = { set_color_from_title = title:d_rep_netanyahu }
+			title:c_jaffa = { set_color_from_title = title:d_rep_netanyahu }
+		}
+	}
+}
+
+villains_jiang_qing_expansion_movement_on_game_start = {
+	effect = {
+		if = {
+			limit = { has_tgp_dlc_trigger = yes }
+			character:reincarnated_jiang_qing_867 ?= {
+				if = {
+					limit = { is_alive = yes }
+					save_scope_as = jiang_qing
+					set_variable = {
+						name = movement_member
+						value = flag:expansion
+					}
+					if = {
+						limit = { government_has_flag = government_uses_merit_family_aspirations }
+						house ?= {
+							set_house_aspiration = {
+								type = celestial_warlord
+								level = 1
+							}
+						}
+					}
+					character:reincarnated_zhang_chunchao_867 ?= {
+						if = {
+							limit = { is_alive = yes }
+							set_elder_relation_no_breakup_effect = {
+								ELDER = scope:jiang_qing
+								DISCIPLE = this
+							}
+							set_variable = {
+								name = movement_member
+								value = flag:expansion
+							}
+							if = {
+								limit = { exists = situation:dynastic_cycle }
+								recalculate_participant_group = situation:dynastic_cycle
+								update_character_movement_power_effect = yes
+							}
+						}
+					}
+					character:reincarnated_yao_wenyuan_867 ?= {
+						if = {
+							limit = { is_alive = yes }
+							set_elder_relation_no_breakup_effect = {
+								ELDER = scope:jiang_qing
+								DISCIPLE = this
+							}
+							set_variable = {
+								name = movement_member
+								value = flag:expansion
+							}
+							if = {
+								limit = { exists = situation:dynastic_cycle }
+								recalculate_participant_group = situation:dynastic_cycle
+								update_character_movement_power_effect = yes
+							}
+						}
+					}
+					character:reincarnated_wang_hongwen_867 ?= {
+						if = {
+							limit = { is_alive = yes }
+							set_elder_relation_no_breakup_effect = {
+								ELDER = scope:jiang_qing
+								DISCIPLE = this
+							}
+							set_variable = {
+								name = movement_member
+								value = flag:expansion
+							}
+							if = {
+								limit = { government_has_flag = government_uses_merit_family_aspirations }
+								house ?= {
+									set_house_aspiration = {
+										type = celestial_warlord
+										level = 1
+									}
+								}
+							}
+							if = {
+								limit = { exists = situation:dynastic_cycle }
+								recalculate_participant_group = situation:dynastic_cycle
+								update_character_movement_power_effect = yes
+							}
+						}
+					}
+					if = {
+						limit = { exists = situation:dynastic_cycle }
+						recalculate_participant_group = situation:dynastic_cycle
+						update_character_movement_power_effect = yes
+						situation:dynastic_cycle = {
+							situation_participant_group:expansion_movement = {
+								save_scope_as = situation_participant_group
+								update_movement_power_effect = yes
+								update_movement_leader_effect = yes
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+villains_jiang_qing_tang_emperor_secret_lover_on_game_start = {
+	effect = {
+		character:reincarnated_jiang_qing_867 ?= {
+			save_scope_as = jiang_qing
+			character:han_3641 ?= {
+				save_scope_as = tang_emperor
+			}
+			if = {
+				limit = {
+					is_alive = yes
+					exists = scope:tang_emperor
+					scope:tang_emperor = { is_alive = yes }
+				}
+				if = {
+					limit = { NOT = { has_relation_lover = scope:tang_emperor } }
+					set_relation_lover = {
+						reason = lover_history
+						target = scope:tang_emperor
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							any_secret = {
+								type = secret_lover
+								secret_target = scope:tang_emperor
+							}
+						}
+					}
+					add_secret = {
+						type = secret_lover
+						target = scope:tang_emperor
+					}
+				}
+				scope:tang_emperor = {
+					if = {
+						limit = {
+							NOT = {
+								any_secret = {
+									type = secret_lover
+									secret_target = scope:jiang_qing
+								}
+							}
+						}
+						add_secret = {
+							type = secret_lover
+							target = scope:jiang_qing
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+villains_noble_family_house_head_on_game_start = {
+	effect = {
+		character:reincarnated_jiang_qing_867 ?= {
+			if = {
+				limit = { is_alive = yes }
+				house ?= {
+					if = {
+						limit = { house_head != prev }
+						set_house_head = prev
+					}
+				}
+			}
+		}
+		character:reincarnated_zhang_chunchao_867 ?= {
+			if = {
+				limit = { is_alive = yes }
+				house ?= {
+					if = {
+						limit = { house_head != prev }
+						set_house_head = prev
+					}
+				}
+			}
+		}
+		character:reincarnated_yao_wenyuan_867 ?= {
+			if = {
+				limit = { is_alive = yes }
+				house ?= {
+					if = {
+						limit = { house_head != prev }
+						set_house_head = prev
+					}
+				}
+			}
+		}
+		character:reincarnated_wang_hongwen_867 ?= {
+			if = {
+				limit = { is_alive = yes }
+				house ?= {
+					if = {
+						limit = { house_head != prev }
+						set_house_head = prev
+					}
+				}
+			}
+		}
+		character:reincarnated_mutaguchi_867 ?= {
+			if = {
+				limit = { is_alive = yes }
+				house ?= {
+					if = {
+						limit = { house_head != prev }
+						set_house_head = prev
+					}
+				}
+			}
+		}
+		character:reincarnated_trump_867 ?= {
+			if = {
+				limit = { is_alive = yes }
+				house ?= {
+					if = {
+						limit = { house_head != prev }
+						set_house_head = prev
+					}
+				}
+			}
+		}
+		character:reincarnated_netanyahu_867 ?= {
+			if = {
+				limit = { is_alive = yes }
+				house ?= {
+					if = {
+						limit = { house_head != prev }
+						set_house_head = prev
+					}
+				}
+			}
+		}
+	}
+}
+
+villains_rasputin_camp_purpose_on_game_start = {
+	effect = {
+		character:reincarnated_rasputin_867 ?= {
+			if = {
+				limit = {
+					is_alive = yes
+					has_government = landless_adventurer_government
+				}
+				add_realm_law_skip_effects = camp_purpose_scholars
+				remove_camp_purpose_flavourisation_variables_effect = yes
+				set_variable = flavourise_camp_purpose_scholars
+			}
+		}
+	}
+}
+
+villains_mutaguchi_house_aspiration_on_game_start = {
+	effect = {
+		character:reincarnated_mutaguchi_867 ?= {
+			if = {
+				limit = {
+					is_alive = yes
+					has_tgp_dlc_trigger = yes
+					government_is_japanese_trigger = yes
+				}
+				house ?= {
+					if = {
+						limit = {
+							NOT = {
+								AND = {
+									has_house_aspiration_parameter = aspiration_strength
+									has_house_aspiration_parameter = aspiration_level_1
+								}
+							}
+						}
+						set_house_aspiration = {
+							type = strength
+							level = 1
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+on_game_start_after_lobby = {
+
+	events = {
+
+		villains_relics.0001
+
+	}
+
+}
+
+on_trait_gained = {
+	on_actions = {
+		villains_rasputin_incapable_immunity_on_action
+	}
+}
+
+villains_rasputin_incapable_immunity_on_action = {
+	effect = {
+		if = {
+			limit = {
+				scope:trait = trait:incapable
+				has_character_modifier = rasputin_herbal_contraception_modifier
+			}
+			remove_trait = incapable
+			if = {
+				limit = { has_character_flag = had_event_harm_0002 }
+				remove_character_flag = had_event_harm_0002
+			}
+			if = {
+				limit = { has_character_flag = had_event_harm_0003 }
+				remove_character_flag = had_event_harm_0003
+			}
+			if = {
+				limit = { has_trait = withering_mind }
+				add_trait_xp = {
+					trait = withering_mind
+					track = withering_mind
+					value = -50
+				}
+			}
+			if = {
+				limit = { has_trait = fragile_bones }
+				add_trait_xp = {
+					trait = fragile_bones
+					track = fragile_bones
+					value = -50
+				}
+			}
+		}
+	}
+}
+
+villains_juche_incumbent_chairman_on_game_start = {
+	effect = {
+		every_living_character = {
+			limit = {
+				faith = faith:juche
+				OR = {
+					has_title = title:d_juche
+					has_title = title:d_rep_kim
+					has_title = title:c_seogyeong
+					has_title = title:k_dprk
+					has_title = title:e_juche_korea
+				}
+			}
+			add_character_flag = juche_incumbent_chairman_flag
+		}
+	}
+}
+
+on_title_gain = {
+	on_actions = {
+		villains_juche_incumbent_chairman_on_title_gain
+		villains_enforce_ai_primary_title_on_title_gain
+	}
+}
+
+villains_juche_incumbent_chairman_on_title_gain = {
+	effect = {
+		if = {
+			limit = {
+				is_alive = yes
+				OR = {
+					scope:title = title:d_juche
+					scope:title = title:d_rep_kim
+					scope:title = title:c_seogyeong
+					scope:title = title:k_dprk
+					scope:title = title:e_juche_korea
+				}
+			}
+			add_character_flag = juche_incumbent_chairman_flag
+		}
+	}
+}
+
+villains_enforce_ai_primary_title_on_title_gain = {
+	effect = {
+		if = {
+			limit = {
+				is_alive = yes
+				is_ruler = yes
+				is_landed = yes
+				is_ai = yes
+			}
+			villains_enforce_ai_primary_title_effect = yes
+			trigger_event = {
+				id = villains_relics.0002
+				days = 1
+			}
+		}
+	}
+}
+
+on_title_lost = {
+	on_actions = {
+		villains_juche_incumbent_chairman_on_title_lost
+		villains_enforce_ai_primary_title_on_title_lost
+	}
+}
+
+villains_juche_incumbent_chairman_on_title_lost = {
+	effect = {
+		if = {
+			limit = {
+				has_character_flag = juche_incumbent_chairman_flag
+				NOR = {
+					has_title = title:d_juche
+					has_title = title:d_rep_kim
+					has_title = title:c_seogyeong
+					has_title = title:k_dprk
+					has_title = title:e_juche_korea
+				}
+			}
+			remove_character_flag = juche_incumbent_chairman_flag
+		}
+	}
+}
+
+villains_enforce_ai_primary_title_on_title_lost = {
+	effect = {
+		if = {
+			limit = {
+				is_alive = yes
+				is_ruler = yes
+				is_landed = yes
+				is_ai = yes
+			}
+			villains_enforce_ai_primary_title_effect = yes
+			trigger_event = {
+				id = villains_relics.0002
+				days = 1
+			}
+		}
+	}
+}
+
+on_title_destroyed = {
+	on_actions = {
+		villains_enforce_ai_primary_title_on_title_destroyed
+	}
+}
+
+villains_enforce_ai_primary_title_on_title_destroyed = {
+	effect = {
+		if = {
+			limit = {
+				is_alive = yes
+				is_ruler = yes
+				is_landed = yes
+				is_ai = yes
+			}
+			villains_enforce_ai_primary_title_effect = yes
+			trigger_event = {
+				id = villains_relics.0002
+				days = 1
+			}
+		}
+	}
+}
+
+on_player_character_change = {
+	on_actions = {
+		villains_lock_previous_player_primary_title_on_change
+	}
+}
+
+villains_lock_previous_player_primary_title_on_change = {
+	effect = {
+		scope:previous_player_character ?= {
+			if = {
+				limit = {
+					is_alive = yes
+					is_ruler = yes
+					is_landed = yes
+					is_ai = yes
+				}
+				villains_enforce_ai_primary_title_effect = yes
+				trigger_event = {
+					id = villains_relics.0002
+					days = 1
+				}
+			}
+		}
+		every_living_character = {
+			limit = {
+				is_ruler = yes
+				is_landed = yes
+				is_ai = yes
+			}
+			villains_enforce_ai_primary_title_effect = yes
+		}
+	}
+}
+
+quarterly_playable_pulse = {
+	on_actions = {
+		villains_enforce_ai_primary_title_pulse
+	}
+}
+
+yearly_playable_pulse = {
+	on_actions = {
+		villains_enforce_ai_primary_title_pulse
+	}
+}
+
+villains_enforce_ai_primary_title_pulse = {
+	effect = {
+		if = {
+			limit = {
+				is_alive = yes
+				is_ruler = yes
+				is_landed = yes
+				is_ai = yes
+			}
+			villains_enforce_ai_primary_title_effect = yes
+		}
+	}
+}
+
+on_death = {
+	on_actions = {
+		villains_juche_eternal_leader_on_death
+	}
+}
+
+villains_juche_eternal_leader_on_death = {
+	effect = {
+		if = {
+			limit = { has_character_flag = juche_incumbent_chairman_flag }
+			remove_character_flag = juche_incumbent_chairman_flag
+		}
+	}
+}
+
+

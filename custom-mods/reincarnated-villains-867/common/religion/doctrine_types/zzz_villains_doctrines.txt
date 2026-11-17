@@ -1,0 +1,71 @@
+﻿axis_hostility_doctrine = {
+	doctrine_group_type = hostility_group
+	index = 4
+	divergence = 30
+
+	visible = no
+
+	special_parameters = {
+		hostility_levels = {
+			same_religion = astray
+			same_family = hostile
+			unrelated = evil
+		}
+		hostility_level_override = {
+			axis_hostility_doctrine = righteous
+		}
+	}
+}
+
+bolshevik_hostility_doctrine = {
+	doctrine_group_type = hostility_group
+	index = 5
+	divergence = 30
+
+	visible = no
+
+	special_parameters = {
+		hostility_levels = {
+			same_religion = astray
+			same_family = astray
+			unrelated = evil
+		}
+		hostility_level_override = {
+			pagan_hostility_doctrine = astray
+			axis_hostility_doctrine = evil
+		}
+	}
+}
+
+special_doctrine_communist_ideology = {
+	doctrine_group_type = is_communist_faith
+	icon = "special_doctrine_communist_ideology"
+
+	special_parameters = {
+		hostility_level_override = {
+			special_doctrine_communist_ideology = astray
+		}
+	}
+}
+
+special_doctrine_fascist_ideology = {
+	doctrine_group_type = is_fascist_faith
+	icon = "special_doctrine_fascist_ideology"
+
+	special_parameters = {
+		hostility_level_override = {
+			special_doctrine_fascist_ideology = righteous
+		}
+	}
+}
+
+special_doctrine_capitalist_ideology = {
+	doctrine_group_type = is_capitalist_faith
+	icon = "special_doctrine_capitalist_ideology"
+
+	special_parameters = {
+		hostility_level_override = {
+			special_doctrine_capitalist_ideology = astray
+		}
+	}
+}

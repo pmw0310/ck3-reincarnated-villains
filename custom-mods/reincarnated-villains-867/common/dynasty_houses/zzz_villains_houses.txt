@@ -1,0 +1,19 @@
+﻿house_paektu_867 = {
+
+	name = "dynn_Paektu_867"
+
+	dynasty = dynasty_kim_867
+
+	motto = dynn_Kim_867_motto
+
+}
+
+house_pol_pot_867 = {
+
+	name = "dynn_House_Pol_Pot_867"
+
+	dynasty = dynasty_pol_pot_867
+
+	motto = dynn_Pol_Pot_867_motto
+
+}

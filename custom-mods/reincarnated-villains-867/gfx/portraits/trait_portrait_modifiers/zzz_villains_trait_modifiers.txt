@@ -1,0 +1,84 @@
+﻿# 바닐라 00_trait_modifiers.txt 의 saint 그룹을 상호 배타적으로 확장 오버라이드
+# 1~3순위: 커스텀 특별교리(공산주의 -> 전체주의 -> 자본주의) 성자·선조 후광
+# 4순위: 커스텀 특별교리가 없는 순수 아브라함 계열(흘리스티 및 바닐라 기독교 등)만 바닐라 십자가 후광 유지
+# 그 외 비아브라함 계열(국가신도, 무속, 향후 백도교·백백교 등)은 바닐라 본래 동작대로 후광 없음
+
+saint = {
+	communist_saint = {
+		trigger = {
+			villains_halo_doctrine_communist_trigger = yes
+		}
+		traits = {
+			saint
+		}
+		dna_modifiers = {
+			human = {
+				accessory = {
+					mode = add
+					gene = villains_custom_halo
+					template = communist_halo
+					value = 1
+				}
+			}
+		}
+	}
+
+	totalitarian_saint = {
+		trigger = {
+			villains_halo_doctrine_fascist_trigger = yes
+		}
+		traits = {
+			saint
+		}
+		dna_modifiers = {
+			human = {
+				accessory = {
+					mode = add
+					gene = villains_custom_halo
+					template = totalitarian_halo
+					value = 1
+				}
+			}
+		}
+	}
+
+	capitalist_saint = {
+		trigger = {
+			villains_halo_doctrine_capitalist_trigger = yes
+		}
+		traits = {
+			saint
+		}
+		dna_modifiers = {
+			human = {
+				accessory = {
+					mode = add
+					gene = villains_custom_halo
+					template = capitalist_halo
+					value = 1
+				}
+			}
+		}
+	}
+
+	saint = {
+		trigger = {
+			exists = faith
+			faith.religion = { is_in_family = rf_abrahamic }
+			NOT = { villains_has_custom_halo_trigger = yes }
+		}
+		traits = {
+			saint
+		}
+		dna_modifiers = {
+			human = {
+				accessory = {
+					mode = add
+					gene = character_halo
+					template = christianity_religion_halo
+					value = 1
+				}
+			}
+		}
+	}
+}

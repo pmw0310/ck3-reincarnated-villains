@@ -1,0 +1,26 @@
+﻿# Victoria 3 의상 크로스 패치 전용 3D 가슴 주머니 은테 철십자 훈장 유전자 정의
+
+special_genes = {
+	accessory_genes = {
+		villains_v3_medal_gene = {
+			inheritable = no
+			group = clothes
+
+			villains_v3_medal_off = {
+				index = 0
+				male = { 1 = empty }
+				female = male
+				boy = male
+				girl = female
+			}
+
+			villains_v3_medal_iron_cross_pocket = {
+				index = 1
+				male = { 1 = villains_m_medal_iron_cross_pocket }
+				female = { 1 = villains_f_medal_iron_cross_pocket }
+				boy = { 1 = empty }
+				girl = { 1 = empty }
+			}
+		}
+	}
+}

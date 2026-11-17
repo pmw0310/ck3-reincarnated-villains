@@ -1,0 +1,17 @@
+﻿# Victoria 3 의상 크로스 패치 전용 3D 붉은 완장 액세서리 정의
+
+villains_m_armband_iron_cross = {
+	entity = { required_tags = "" shared_pose_entity = torso entity = "villains_m_armband_iron_cross_entity" }
+}
+
+villains_f_armband_iron_cross = {
+	entity = { required_tags = "" shared_pose_entity = torso entity = "villains_f_armband_iron_cross_entity" }
+}
+
+villains_m_armband_red_guard = {
+	entity = { required_tags = "" shared_pose_entity = torso entity = "villains_m_armband_red_guard_entity" }
+}
+
+villains_f_armband_red_guard = {
+	entity = { required_tags = "" shared_pose_entity = torso entity = "villains_f_armband_red_guard_entity" }
+}

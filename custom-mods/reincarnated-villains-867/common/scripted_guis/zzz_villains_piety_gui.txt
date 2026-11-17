@@ -1,0 +1,46 @@
+﻿# Scripted GUIs for custom ideological piety_icon_group HUD & Character Window bindings
+villains_piety_group_communist_sgui = {
+	scope = character
+	is_shown = {
+		exists = this
+		OR = {
+			religion = religion:bolshevism_religion
+			religion = religion:juche_religion
+			religion = religion:cultural_revolution_religion
+		}
+	}
+}
+
+villains_piety_group_fascist_sgui = {
+	scope = character
+	is_shown = {
+		exists = this
+		OR = {
+			religion = religion:national_socialism_religion
+			religion = religion:fascism_religion
+		}
+	}
+}
+
+villains_piety_group_capitalist_sgui = {
+	scope = character
+	is_shown = {
+		exists = this
+		religion = religion:americanism_religion
+	}
+}
+
+villains_piety_group_vanilla_sgui = {
+	scope = character
+	is_shown = {
+		exists = this
+		NOR = {
+			religion = religion:bolshevism_religion
+			religion = religion:juche_religion
+			religion = religion:cultural_revolution_religion
+			religion = religion:national_socialism_religion
+			religion = religion:fascism_religion
+			religion = religion:americanism_religion
+		}
+	}
+}

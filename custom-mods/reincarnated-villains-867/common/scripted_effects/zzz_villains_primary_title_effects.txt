@@ -1,0 +1,364 @@
+﻿# ==============================================================================
+# Reincarnated Villains — AI Primary Title Lock Effects
+# Prevents AI rulers (including ex-player characters after switching characters)
+# from replacing their custom national polity title (d_rep_*, k_rep_*, k_*, e_*)
+# with a Temporal Head-of-Faith duchy (d_<faith>), Noble Family title, or
+# conquered/created vanilla de-jure duchy/kingdom/empire.
+# ==============================================================================
+
+villains_enforce_ai_primary_title_effect = {
+	if = {
+		limit = {
+			is_alive = yes
+			is_ruler = yes
+			is_landed = yes
+			is_ai = yes
+			exists = primary_title
+		}
+		if = {
+			limit = { highest_held_title_tier = tier_empire }
+			if = {
+				limit = {
+					has_title = title:e_greater_german_reich
+					NOT = { primary_title = title:e_greater_german_reich }
+				}
+				set_primary_title_to = title:e_greater_german_reich
+			}
+			else_if = {
+				limit = {
+					has_title = title:e_soviet_union
+					NOT = { primary_title = title:e_soviet_union }
+				}
+				set_primary_title_to = title:e_soviet_union
+			}
+			else_if = {
+				limit = {
+					has_title = title:e_new_roman_empire
+					NOT = { primary_title = title:e_new_roman_empire }
+				}
+				set_primary_title_to = title:e_new_roman_empire
+			}
+			else_if = {
+				limit = {
+					has_title = title:e_greater_east_asia_imphal
+					NOT = { primary_title = title:e_greater_east_asia_imphal }
+				}
+				set_primary_title_to = title:e_greater_east_asia_imphal
+			}
+			else_if = {
+				limit = {
+					has_title = title:e_american_empire
+					NOT = { primary_title = title:e_american_empire }
+				}
+				set_primary_title_to = title:e_american_empire
+			}
+			else_if = {
+				limit = {
+					has_title = title:e_juche_korea
+					NOT = { primary_title = title:e_juche_korea }
+				}
+				set_primary_title_to = title:e_juche_korea
+			}
+			else_if = {
+				limit = {
+					has_title = title:e_democratic_kampuchea
+					NOT = { primary_title = title:e_democratic_kampuchea }
+				}
+				set_primary_title_to = title:e_democratic_kampuchea
+			}
+			else_if = {
+				limit = {
+					has_title = title:e_uganda_empire
+					NOT = { primary_title = title:e_uganda_empire }
+				}
+				set_primary_title_to = title:e_uganda_empire
+			}
+			else_if = {
+				limit = {
+					has_title = title:e_cultural_revolution_china
+					NOT = { primary_title = title:e_cultural_revolution_china }
+				}
+				set_primary_title_to = title:e_cultural_revolution_china
+			}
+			else_if = {
+				limit = {
+					has_title = title:e_greater_israel
+					NOT = { primary_title = title:e_greater_israel }
+				}
+				set_primary_title_to = title:e_greater_israel
+			}
+		}
+		else_if = {
+			limit = { highest_held_title_tier = tier_kingdom }
+			if = {
+				limit = {
+					has_title = title:k_german_reich
+					NOT = { primary_title = title:k_german_reich }
+				}
+				set_primary_title_to = title:k_german_reich
+			}
+			else_if = {
+				limit = {
+					has_title = title:k_soviet_union
+					NOT = { primary_title = title:k_soviet_union }
+				}
+				set_primary_title_to = title:k_soviet_union
+			}
+			else_if = {
+				limit = {
+					has_title = title:k_fascist_italy
+					NOT = { primary_title = title:k_fascist_italy }
+				}
+				set_primary_title_to = title:k_fascist_italy
+			}
+			else_if = {
+				limit = {
+					has_title = title:k_imperial_japan_india
+					NOT = { primary_title = title:k_imperial_japan_india }
+				}
+				set_primary_title_to = title:k_imperial_japan_india
+			}
+			else_if = {
+				limit = {
+					has_title = title:k_united_states
+					NOT = { primary_title = title:k_united_states }
+				}
+				set_primary_title_to = title:k_united_states
+			}
+			else_if = {
+				limit = {
+					has_title = title:k_dprk
+					NOT = { primary_title = title:k_dprk }
+				}
+				set_primary_title_to = title:k_dprk
+			}
+			else_if = {
+				limit = {
+					has_title = title:k_democratic_kampuchea
+					NOT = { primary_title = title:k_democratic_kampuchea }
+				}
+				set_primary_title_to = title:k_democratic_kampuchea
+			}
+			else_if = {
+				limit = {
+					has_title = title:k_uganda
+					NOT = { primary_title = title:k_uganda }
+				}
+				set_primary_title_to = title:k_uganda
+			}
+			else_if = {
+				limit = {
+					has_title = title:k_shanghai_commune
+					NOT = { primary_title = title:k_shanghai_commune }
+				}
+				set_primary_title_to = title:k_shanghai_commune
+			}
+			else_if = {
+				limit = {
+					has_title = title:k_state_of_israel
+					NOT = { primary_title = title:k_state_of_israel }
+				}
+				set_primary_title_to = title:k_state_of_israel
+			}
+			else_if = {
+				limit = {
+					has_title = title:k_rep_jiang_qing
+					NOT = { primary_title = title:k_rep_jiang_qing }
+				}
+				set_primary_title_to = title:k_rep_jiang_qing
+			}
+		}
+		else_if = {
+			limit = { highest_held_title_tier = tier_duchy }
+			if = {
+				limit = {
+					has_title = title:d_rep_hitler
+					NOT = { primary_title = title:d_rep_hitler }
+				}
+				set_primary_title_to = title:d_rep_hitler
+			}
+			else_if = {
+				limit = {
+					has_title = title:d_rep_stalin
+					NOT = { primary_title = title:d_rep_stalin }
+				}
+				set_primary_title_to = title:d_rep_stalin
+			}
+			else_if = {
+				limit = {
+					has_title = title:d_rep_mussolini
+					NOT = { primary_title = title:d_rep_mussolini }
+				}
+				set_primary_title_to = title:d_rep_mussolini
+			}
+			else_if = {
+				limit = {
+					has_title = title:d_rep_mutaguchi
+					NOT = { primary_title = title:d_rep_mutaguchi }
+				}
+				set_primary_title_to = title:d_rep_mutaguchi
+			}
+			else_if = {
+				limit = {
+					has_title = title:d_rep_trump
+					NOT = { primary_title = title:d_rep_trump }
+				}
+				set_primary_title_to = title:d_rep_trump
+			}
+			else_if = {
+				limit = {
+					has_title = title:d_rep_kim
+					NOT = { primary_title = title:d_rep_kim }
+				}
+				set_primary_title_to = title:d_rep_kim
+			}
+			else_if = {
+				limit = {
+					has_title = title:d_rep_pol_pot
+					NOT = { primary_title = title:d_rep_pol_pot }
+				}
+				set_primary_title_to = title:d_rep_pol_pot
+			}
+			else_if = {
+				limit = {
+					has_title = title:d_rep_idi_amin
+					NOT = { primary_title = title:d_rep_idi_amin }
+				}
+				set_primary_title_to = title:d_rep_idi_amin
+			}
+			else_if = {
+				limit = {
+					has_title = title:d_rep_netanyahu
+					NOT = { primary_title = title:d_rep_netanyahu }
+				}
+				set_primary_title_to = title:d_rep_netanyahu
+			}
+			else_if = {
+				limit = {
+					primary_title = {
+						OR = {
+							this = title:d_fascism
+							this = title:d_national_socialism
+							this = title:d_bolshevism
+							this = title:d_americanism
+							this = title:d_juche
+							this = title:d_angkar
+							this = title:d_aminism
+							this = title:d_khlystism
+							this = title:d_cultural_revolution
+							this = title:d_zionism
+						}
+					}
+					any_held_title = {
+						tier = tier_duchy
+						is_head_of_faith = no
+						is_noble_family_title = no
+						is_landless_type_title = no
+					}
+				}
+				save_temporary_scope_as = ai_hof_duke
+				ordered_held_title = {
+					limit = {
+						tier = tier_duchy
+						is_head_of_faith = no
+						is_noble_family_title = no
+						is_landless_type_title = no
+					}
+					order_by = tier
+					max = 1
+					save_temporary_scope_as = fallback_landed_duchy
+				}
+				if = {
+					limit = { exists = scope:fallback_landed_duchy }
+					scope:ai_hof_duke = {
+						set_primary_title_to = scope:fallback_landed_duchy
+					}
+				}
+			}
+		}
+	}
+}
+
+villains_enforce_starting_primary_titles_effect = {
+	if = {
+		limit = {
+			is_alive = yes
+			is_ruler = yes
+			is_landed = yes
+		}
+		if = {
+			limit = {
+				highest_held_title_tier = tier_kingdom
+				has_title = title:k_rep_jiang_qing
+				NOT = { primary_title = title:k_rep_jiang_qing }
+			}
+			set_primary_title_to = title:k_rep_jiang_qing
+		}
+		else_if = {
+			limit = { highest_held_title_tier = tier_duchy }
+			if = {
+				limit = {
+					has_title = title:d_rep_hitler
+					NOT = { primary_title = title:d_rep_hitler }
+				}
+				set_primary_title_to = title:d_rep_hitler
+			}
+			else_if = {
+				limit = {
+					has_title = title:d_rep_stalin
+					NOT = { primary_title = title:d_rep_stalin }
+				}
+				set_primary_title_to = title:d_rep_stalin
+			}
+			else_if = {
+				limit = {
+					has_title = title:d_rep_mussolini
+					NOT = { primary_title = title:d_rep_mussolini }
+				}
+				set_primary_title_to = title:d_rep_mussolini
+			}
+			else_if = {
+				limit = {
+					has_title = title:d_rep_mutaguchi
+					NOT = { primary_title = title:d_rep_mutaguchi }
+				}
+				set_primary_title_to = title:d_rep_mutaguchi
+			}
+			else_if = {
+				limit = {
+					has_title = title:d_rep_trump
+					NOT = { primary_title = title:d_rep_trump }
+				}
+				set_primary_title_to = title:d_rep_trump
+			}
+			else_if = {
+				limit = {
+					has_title = title:d_rep_kim
+					NOT = { primary_title = title:d_rep_kim }
+				}
+				set_primary_title_to = title:d_rep_kim
+			}
+			else_if = {
+				limit = {
+					has_title = title:d_rep_pol_pot
+					NOT = { primary_title = title:d_rep_pol_pot }
+				}
+				set_primary_title_to = title:d_rep_pol_pot
+			}
+			else_if = {
+				limit = {
+					has_title = title:d_rep_idi_amin
+					NOT = { primary_title = title:d_rep_idi_amin }
+				}
+				set_primary_title_to = title:d_rep_idi_amin
+			}
+			else_if = {
+				limit = {
+					has_title = title:d_rep_netanyahu
+					NOT = { primary_title = title:d_rep_netanyahu }
+				}
+				set_primary_title_to = title:d_rep_netanyahu
+			}
+		}
+	}
+}

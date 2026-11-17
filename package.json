@@ -1,0 +1,19 @@
+{
+  "name": "ck3-reincarnated-villains",
+  "version": "1.1.0",
+  "description": "Crusader Kings III — Reincarnated Villains 867 Bookmark Mod Suite (Base + CFP Compatch + V3 Wardrobe Crossover)",
+  "private": true,
+  "type": "module",
+  "author": "BlackOlf",
+  "license": "CC-BY-NC-SA-4.0",
+  "scripts": {
+    "test": "tsx --test --test-concurrency=1 test/*.test.ts",
+    "sync:mod": "node scripts/sync-custom-mod.mjs",
+    "sync:custom-mod": "node scripts/sync-custom-mod.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^22.12.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3"
+  }
+}

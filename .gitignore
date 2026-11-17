@@ -1,0 +1,16 @@
+# Agent Harness & Workspace Rules
+.agents/
+
+# Dependencies
+node_modules
+node_modules/
+
+# Logs & temp
+*.log
+scratch
+scratch/
+
+# IDE settings
+.vscode/*
+!.vscode/extensions.json
+.idea/

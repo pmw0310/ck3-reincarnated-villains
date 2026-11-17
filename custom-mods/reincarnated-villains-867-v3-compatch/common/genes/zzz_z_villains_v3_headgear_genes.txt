@@ -1,0 +1,26 @@
+﻿# Victoria 3 의상 크로스 패치 전용 3D 두체 페즈모 유전자 정의
+
+special_genes = {
+	accessory_genes = {
+		villains_v3_headgear_gene = {
+			inheritable = no
+			group = headgear
+
+			villains_v3_headgear_off = {
+				index = 0
+				male = { 1 = empty }
+				female = male
+				boy = male
+				girl = female
+			}
+
+			villains_v3_headgear_duce_fez = {
+				index = 1
+				male = { 1 = villains_m_headgear_duce_fez }
+				female = { 1 = villains_f_headgear_duce_fez }
+				boy = { 1 = empty }
+				girl = { 1 = empty }
+			}
+		}
+	}
+}

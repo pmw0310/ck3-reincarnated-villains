@@ -1,0 +1,791 @@
+﻿villains_create_and_enshrine_relic_effect = {
+	set_artifact_rarity_$RARITY$ = yes
+	$CREATOR$ = {
+		save_scope_as = relic_owner
+		create_artifact = {
+			name = $NAME$
+			description = $DESC$
+			type = pedestal
+			template = $TEMPLATE$
+			visuals = $VISUALS$
+			wealth = scope:wealth
+			quality = scope:quality
+			history = { type = created_before_history }
+			modifier = artifact_placeholder_modifier
+			save_scope_as = newly_created_artifact
+		}
+	}
+	scope:newly_created_artifact = {
+		set_variable = { name = historical_unique_artifact value = yes }
+		set_variable = { name = villains_protected_holy_site_relic value = yes }
+	}
+	holy_site:$HOLY_SITE$ = {
+		save_scope_as = relic_site
+	}
+	finalize_starting_relic_effect = yes
+}
+
+villains_seed_holy_site_relics_effect = {
+	# Clear any generic relics seeded by historical_artifacts.0050 on Fascist, National Socialist, and Bolshevik holy sites
+	faith:fascism = {
+		every_holy_site = {
+			every_holy_site_enshrined_artifact = {
+				limit = {
+					NOT = { has_variable = villains_protected_holy_site_relic }
+				}
+				save_temporary_scope_as = generic_relic_to_destroy
+				destroy_artifact = scope:generic_relic_to_destroy
+			}
+		}
+	}
+	faith:national_socialism = {
+		every_holy_site = {
+			every_holy_site_enshrined_artifact = {
+				limit = {
+					NOT = { has_variable = villains_protected_holy_site_relic }
+				}
+				save_temporary_scope_as = generic_relic_to_destroy
+				destroy_artifact = scope:generic_relic_to_destroy
+			}
+		}
+	}
+	faith:bolshevism = {
+		every_holy_site = {
+			every_holy_site_enshrined_artifact = {
+				limit = {
+					NOT = { has_variable = villains_protected_holy_site_relic }
+				}
+				save_temporary_scope_as = generic_relic_to_destroy
+				destroy_artifact = scope:generic_relic_to_destroy
+			}
+		}
+	}
+	faith:cultural_revolution = {
+		every_holy_site = {
+			every_holy_site_enshrined_artifact = {
+				limit = {
+					NOT = { has_variable = villains_protected_holy_site_relic }
+				}
+				save_temporary_scope_as = generic_relic_to_destroy
+				destroy_artifact = scope:generic_relic_to_destroy
+			}
+		}
+	}
+
+	# Seed Fascism Holy Site Relics (5: 1 famed, 2 masterwork, 2 common)
+	if = {
+		limit = {
+			exists = character:reincarnated_mussolini_867
+		}
+		villains_create_and_enshrine_relic_effect = {
+			HOLY_SITE = roma_fascism
+			CREATOR = character:reincarnated_mussolini_867
+			RARITY = famed
+			TEMPLATE = fascist_relic_template
+			VISUALS = axe_court
+			NAME = artifact_relic_golden_fasces_name
+			DESC = artifact_relic_golden_fasces_desc
+		}
+		villains_create_and_enshrine_relic_effect = {
+			HOLY_SITE = milano
+			CREATOR = character:reincarnated_mussolini_867
+			RARITY = masterwork
+			TEMPLATE = fascist_relic_template
+			VISUALS = book
+			NAME = artifact_relic_san_sepolcro_manifesto_name
+			DESC = artifact_relic_san_sepolcro_manifesto_desc
+		}
+		villains_create_and_enshrine_relic_effect = {
+			HOLY_SITE = ravenna_fascism
+			CREATOR = character:reincarnated_mussolini_867
+			RARITY = masterwork
+			TEMPLATE = fascist_relic_template
+			VISUALS = banner
+			NAME = artifact_relic_blackshirt_standard_name
+			DESC = artifact_relic_blackshirt_standard_desc
+		}
+		villains_create_and_enshrine_relic_effect = {
+			HOLY_SITE = napoli_fascism
+			CREATOR = character:reincarnated_mussolini_867
+			RARITY = common
+			TEMPLATE = fascist_relic_template
+			VISUALS = reliquary
+			NAME = artifact_relic_march_on_rome_dagger_name
+			DESC = artifact_relic_march_on_rome_dagger_desc
+		}
+		villains_create_and_enshrine_relic_effect = {
+			HOLY_SITE = carthage_fascism
+			CREATOR = character:reincarnated_mussolini_867
+			RARITY = common
+			TEMPLATE = fascist_relic_template
+			VISUALS = pedestal_branch_relic_germanic
+			NAME = artifact_relic_mare_nostrum_aquila_name
+			DESC = artifact_relic_mare_nostrum_aquila_desc
+		}
+	}
+
+	# Seed National Socialism Holy Site Relics (5: 1 famed, 2 masterwork, 2 common)
+	if = {
+		limit = {
+			exists = character:reincarnated_hitler_867
+		}
+		villains_create_and_enshrine_relic_effect = {
+			HOLY_SITE = munich
+			CREATOR = character:reincarnated_hitler_867
+			RARITY = famed
+			TEMPLATE = national_socialist_relic_template
+			VISUALS = banner
+			NAME = artifact_relic_blutfahne_name
+			DESC = artifact_relic_blutfahne_desc
+		}
+		villains_create_and_enshrine_relic_effect = {
+			HOLY_SITE = berlin
+			CREATOR = character:reincarnated_hitler_867
+			RARITY = masterwork
+			TEMPLATE = national_socialist_relic_template
+			VISUALS = pedestal_branch_relic_germanic
+			NAME = artifact_relic_bronze_reichsadler_name
+			DESC = artifact_relic_bronze_reichsadler_desc
+		}
+		villains_create_and_enshrine_relic_effect = {
+			HOLY_SITE = nurnberg
+			CREATOR = character:reincarnated_hitler_867
+			RARITY = masterwork
+			TEMPLATE = national_socialist_relic_template
+			VISUALS = reliquary
+			NAME = artifact_relic_reichsparteitag_chalice_name
+			DESC = artifact_relic_reichsparteitag_chalice_desc
+		}
+		villains_create_and_enshrine_relic_effect = {
+			HOLY_SITE = vienna_ns
+			CREATOR = character:reincarnated_hitler_867
+			RARITY = common
+			TEMPLATE = national_socialist_relic_template
+			VISUALS = book
+			NAME = artifact_relic_mein_kampf_manuscript_name
+			DESC = artifact_relic_mein_kampf_manuscript_desc
+		}
+		villains_create_and_enshrine_relic_effect = {
+			HOLY_SITE = paderborn_ns
+			CREATOR = character:reincarnated_hitler_867
+			RARITY = common
+			TEMPLATE = national_socialist_relic_template
+			VISUALS = reliquary
+			NAME = artifact_relic_wewelsburg_ring_name
+			DESC = artifact_relic_wewelsburg_ring_desc
+		}
+	}
+
+	# Seed Bolshevism Holy Site Relics (5: 1 famed, 2 masterwork, 2 common)
+	if = {
+		limit = {
+			exists = character:reincarnated_stalin_867
+		}
+		villains_create_and_enshrine_relic_effect = {
+			HOLY_SITE = moskva
+			CREATOR = character:reincarnated_stalin_867
+			RARITY = famed
+			TEMPLATE = bolshevik_relic_template
+			VISUALS = reliquary
+			NAME = artifact_relic_kremlin_red_star_name
+			DESC = artifact_relic_kremlin_red_star_desc
+		}
+		villains_create_and_enshrine_relic_effect = {
+			HOLY_SITE = leningrad
+			CREATOR = character:reincarnated_stalin_867
+			RARITY = masterwork
+			TEMPLATE = bolshevik_relic_template
+			VISUALS = pedestal_branch_relic_slavic
+			NAME = artifact_relic_aurora_shell_name
+			DESC = artifact_relic_aurora_shell_desc
+		}
+		villains_create_and_enshrine_relic_effect = {
+			HOLY_SITE = kiev_bolshevism
+			CREATOR = character:reincarnated_stalin_867
+			RARITY = masterwork
+			TEMPLATE = bolshevik_relic_template
+			VISUALS = banner
+			NAME = artifact_relic_konarmiya_banner_name
+			DESC = artifact_relic_konarmiya_banner_desc
+		}
+		villains_create_and_enshrine_relic_effect = {
+			HOLY_SITE = tsaritsyn
+			CREATOR = character:reincarnated_stalin_867
+			RARITY = common
+			TEMPLATE = bolshevik_relic_template
+			VISUALS = reliquary
+			NAME = artifact_relic_tsaritsyn_order_name
+			DESC = artifact_relic_tsaritsyn_order_desc
+		}
+		villains_create_and_enshrine_relic_effect = {
+			HOLY_SITE = trier
+			CREATOR = character:reincarnated_stalin_867
+			RARITY = common
+			TEMPLATE = bolshevik_relic_template
+			VISUALS = book
+			NAME = artifact_relic_communist_manifesto_name
+			DESC = artifact_relic_communist_manifesto_desc
+		}
+	}
+
+	# 1. Adolf Hitler: Masterwork Satirical Heirloom Trinket (Vienna Academy Rejection Watercolor)
+	if = {
+		limit = {
+			exists = character:reincarnated_hitler_867
+		}
+		set_artifact_rarity_masterwork = yes
+		character:reincarnated_hitler_867 = {
+			save_scope_as = owner
+			create_artifact = {
+				name = artifact_hitler_rejected_watercolor_name
+				description = artifact_hitler_rejected_watercolor_desc
+				type = miscellaneous
+				visuals = pocket_map
+				template = hitler_dynasty_heirloom_template
+				wealth = scope:wealth
+				quality = scope:quality
+				history = { type = created_before_history }
+				modifier = hitler_rejected_watercolor_modifier
+				save_scope_as = newly_created_artifact
+				decaying = no
+			}
+			scope:newly_created_artifact = {
+				set_variable = { name = historical_unique_artifact value = yes }
+				equip_artifact_to_owner = yes
+			}
+		}
+	}
+
+	# 2. Joseph Stalin: Masterwork Satirical Heirloom Journal (Vanishing Comrades Retouched Album)
+	if = {
+		limit = {
+			exists = character:reincarnated_stalin_867
+		}
+		set_artifact_rarity_masterwork = yes
+		character:reincarnated_stalin_867 = {
+			save_scope_as = owner
+			create_artifact = {
+				name = artifact_stalin_retouched_purge_album_name
+				description = artifact_stalin_retouched_purge_album_desc
+				type = journal
+				visuals = chronicle
+				template = stalin_dynasty_heirloom_template
+				wealth = scope:wealth
+				quality = scope:quality
+				history = { type = created_before_history }
+				modifier = stalin_retouched_purge_album_modifier
+				save_scope_as = newly_created_artifact
+				decaying = no
+			}
+			scope:newly_created_artifact = {
+				set_variable = { name = historical_unique_artifact value = yes }
+				equip_artifact_to_owner = yes
+			}
+		}
+	}
+
+	# 3. Benito Mussolini: Masterwork Satirical Heirloom Trinket (Duce's 45-Degree Chin Pocket Mirror)
+	if = {
+		limit = {
+			exists = character:reincarnated_mussolini_867
+		}
+		set_artifact_rarity_masterwork = yes
+		character:reincarnated_mussolini_867 = {
+			save_scope_as = owner
+			create_artifact = {
+				name = artifact_mussolini_chin_angle_mirror_name
+				description = artifact_mussolini_chin_angle_mirror_desc
+				type = miscellaneous
+				visuals = pocket_fancy_case
+				template = mussolini_dynasty_heirloom_template
+				wealth = scope:wealth
+				quality = scope:quality
+				history = { type = created_before_history }
+				modifier = mussolini_chin_angle_mirror_modifier
+				save_scope_as = newly_created_artifact
+				decaying = no
+			}
+			scope:newly_created_artifact = {
+				set_variable = { name = historical_unique_artifact value = yes }
+				equip_artifact_to_owner = yes
+			}
+		}
+	}
+
+	# 4a. Renya Mutaguchi: Illustrious Personal-Only Satirical Journal (Imphal Herbivore Field Manual)
+	if = {
+		limit = {
+			exists = character:reincarnated_mutaguchi_867
+		}
+		set_artifact_rarity_illustrious = yes
+		character:reincarnated_mutaguchi_867 = {
+			save_scope_as = owner
+			create_artifact = {
+				name = artifact_mutaguchi_herbivore_manual_name
+				description = artifact_mutaguchi_herbivore_manual_desc
+				type = journal
+				visuals = book
+				template = mutaguchi_personal_only_template
+				wealth = scope:wealth
+				quality = scope:quality
+				history = { type = created_before_history }
+				modifier = mutaguchi_herbivore_manual_modifier
+				save_scope_as = newly_created_artifact
+				decaying = no
+			}
+			scope:newly_created_artifact = {
+				set_variable = { name = historical_unique_artifact value = yes }
+				equip_artifact_to_owner = yes
+			}
+		}
+
+		# 4b. Renya Mutaguchi: Masterwork Satirical Heirloom Trinket (Rear-HQ Geisha House Sake Flask)
+		set_artifact_rarity_masterwork = yes
+		character:reincarnated_mutaguchi_867 = {
+			save_scope_as = owner
+			create_artifact = {
+				name = artifact_mutaguchi_geisha_sake_flask_name
+				description = artifact_mutaguchi_geisha_sake_flask_desc
+				type = miscellaneous
+				visuals = glazed_jar
+				template = mutaguchi_dynasty_heirloom_template
+				wealth = scope:wealth
+				quality = scope:quality
+				history = { type = created_before_history }
+				modifier = mutaguchi_geisha_sake_flask_modifier
+				save_scope_as = newly_created_artifact
+				decaying = no
+			}
+			scope:newly_created_artifact = {
+				set_variable = { name = historical_unique_artifact value = yes }
+				equip_artifact_to_owner = yes
+			}
+		}
+	}
+
+	# 5. Donald Trump: Masterwork Satirical Heirloom Trinket (President's Cane-Sugar Cola Bottle)
+	if = {
+		limit = {
+			exists = character:reincarnated_trump_867
+		}
+		set_artifact_rarity_masterwork = yes
+		character:reincarnated_trump_867 = {
+			save_scope_as = owner
+			create_artifact = {
+				name = artifact_trump_cane_sugar_cola_name
+				description = artifact_trump_cane_sugar_cola_desc
+				type = miscellaneous
+				visuals = flask
+				template = trump_dynasty_heirloom_template
+				wealth = scope:wealth
+				quality = scope:quality
+				history = { type = created_before_history }
+				modifier = trump_cane_sugar_cola_modifier
+				save_scope_as = newly_created_artifact
+				decaying = no
+			}
+			scope:newly_created_artifact = {
+				set_variable = { name = historical_unique_artifact value = yes }
+				equip_artifact_to_owner = yes
+			}
+		}
+	}
+
+	# 6. Kim Jong Un: Masterwork Satirical Heirloom Trinket (Party Central Aged Swiss Cheese Casket)
+	if = {
+		limit = {
+			exists = character:reincarnated_kim_jongun_867
+		}
+		set_artifact_rarity_masterwork = yes
+		character:reincarnated_kim_jongun_867 = {
+			save_scope_as = owner
+			create_artifact = {
+				name = artifact_kim_aged_emmental_casket_name
+				description = artifact_kim_aged_emmental_casket_desc
+				type = miscellaneous
+				visuals = cheese
+				template = kim_dynasty_heirloom_template
+				wealth = scope:wealth
+				quality = scope:quality
+				history = { type = created_before_history }
+				modifier = kim_aged_emmental_casket_modifier
+				save_scope_as = newly_created_artifact
+				decaying = no
+			}
+			scope:newly_created_artifact = {
+				set_variable = { name = historical_unique_artifact value = yes }
+				equip_artifact_to_owner = yes
+			}
+		}
+	}
+
+	# 7. Saloth Pol Pot: Masterwork Satirical Heirloom Journal (Failed Paris Radio-School Transcript)
+	if = {
+		limit = {
+			exists = character:reincarnated_pol_pot_867
+		}
+		set_artifact_rarity_masterwork = yes
+		character:reincarnated_pol_pot_867 = {
+			save_scope_as = owner
+			create_artifact = {
+				name = artifact_pol_pot_failed_paris_transcript_name
+				description = artifact_pol_pot_failed_paris_transcript_desc
+				type = journal
+				visuals = artifact_scroll
+				template = pol_pot_dynasty_heirloom_template
+				wealth = scope:wealth
+				quality = scope:quality
+				history = { type = created_before_history }
+				modifier = pol_pot_failed_paris_transcript_modifier
+				save_scope_as = newly_created_artifact
+				decaying = no
+			}
+			scope:newly_created_artifact = {
+				set_variable = { name = historical_unique_artifact value = yes }
+				equip_artifact_to_owner = yes
+			}
+		}
+	}
+
+	# 8. Idi Amin: Masterwork Satirical Heirloom Badge (Last King of Scotland Self-Awarded Medal Rack)
+	if = {
+		limit = {
+			exists = character:reincarnated_idi_amin_867
+		}
+		set_artifact_rarity_masterwork = yes
+		character:reincarnated_idi_amin_867 = {
+			save_scope_as = owner
+			create_artifact = {
+				name = artifact_idi_amin_scotland_medal_rack_name
+				description = artifact_idi_amin_scotland_medal_rack_desc
+				type = badge
+				visuals = medallion
+				template = idi_amin_dynasty_heirloom_template
+				wealth = scope:wealth
+				quality = scope:quality
+				history = { type = created_before_history }
+				modifier = idi_amin_scotland_medal_rack_modifier
+				save_scope_as = newly_created_artifact
+				decaying = no
+			}
+			scope:newly_created_artifact = {
+				set_variable = { name = historical_unique_artifact value = yes }
+				equip_artifact_to_owner = yes
+			}
+		}
+	}
+
+	# 9a & 9b. Grigori Rasputin: 2 Masterwork Satirical Heirlooms (Cyanide Madeira Flask + Hypnotic Silver Cross)
+	if = {
+		limit = {
+			exists = character:reincarnated_rasputin_867
+		}
+		set_artifact_rarity_masterwork = yes
+		character:reincarnated_rasputin_867 = {
+			save_scope_as = owner
+			create_artifact = {
+				name = artifact_rasputin_cyanide_madeira_name
+				description = artifact_rasputin_cyanide_madeira_desc
+				type = miscellaneous
+				visuals = flask
+				template = rasputin_wine_heirloom_template
+				wealth = scope:wealth
+				quality = scope:quality
+				history = { type = created_before_history }
+				modifier = rasputin_cyanide_madeira_modifier
+				save_scope_as = newly_created_artifact
+				decaying = no
+			}
+			scope:newly_created_artifact = {
+				set_variable = { name = historical_unique_artifact value = yes }
+				equip_artifact_to_owner = yes
+			}
+			create_artifact = {
+				name = artifact_rasputin_hypnotic_crucifix_name
+				description = artifact_rasputin_hypnotic_crucifix_desc
+				type = miscellaneous
+				visuals = crucifix
+				template = rasputin_dynasty_heirloom_template
+				wealth = scope:wealth
+				quality = scope:quality
+				history = { type = created_before_history }
+				modifier = rasputin_hypnotic_crucifix_modifier
+				save_scope_as = newly_created_artifact
+				decaying = no
+			}
+			scope:newly_created_artifact = {
+				set_variable = { name = historical_unique_artifact value = yes }
+				equip_artifact_to_owner = yes
+			}
+			if = {
+				limit = {
+					is_alive = yes
+					has_government = landless_adventurer_government
+					NOT = { has_realm_law = camp_purpose_scholars }
+				}
+				add_realm_law_skip_effects = camp_purpose_scholars
+				remove_camp_purpose_flavourisation_variables_effect = yes
+				set_variable = flavourise_camp_purpose_scholars
+			}
+		}
+	}
+
+	# Seed Cultural Revolution Holy Site Relics (5: 1 famed, 2 masterwork, 2 common)
+	if = {
+		limit = {
+			exists = character:reincarnated_jiang_qing_867
+		}
+		villains_create_and_enshrine_relic_effect = {
+			HOLY_SITE = huating_cultrev
+			CREATOR = character:reincarnated_jiang_qing_867
+			RARITY = famed
+			TEMPLATE = cultural_revolution_relic_template
+			VISUALS = book
+			NAME = artifact_relic_shanghai_january_storm_manifesto_name
+			DESC = artifact_relic_shanghai_january_storm_manifesto_desc
+		}
+		villains_create_and_enshrine_relic_effect = {
+			HOLY_SITE = hangzhou_cultrev
+			CREATOR = character:reincarnated_jiang_qing_867
+			RARITY = masterwork
+			TEMPLATE = cultural_revolution_relic_template
+			VISUALS = book
+			NAME = artifact_relic_west_lake_may_16_directive_name
+			DESC = artifact_relic_west_lake_may_16_directive_desc
+		}
+		villains_create_and_enshrine_relic_effect = {
+			HOLY_SITE = youzhou_cultrev
+			CREATOR = character:reincarnated_jiang_qing_867
+			RARITY = masterwork
+			TEMPLATE = cultural_revolution_relic_template
+			VISUALS = banner
+			NAME = artifact_relic_first_big_character_poster_name
+			DESC = artifact_relic_first_big_character_poster_desc
+		}
+		villains_create_and_enshrine_relic_effect = {
+			HOLY_SITE = jiangning_cultrev
+			CREATOR = character:reincarnated_jiang_qing_867
+			RARITY = common
+			TEMPLATE = cultural_revolution_relic_template
+			VISUALS = banner
+			NAME = artifact_relic_yangtze_red_guard_standard_name
+			DESC = artifact_relic_yangtze_red_guard_standard_desc
+		}
+		villains_create_and_enshrine_relic_effect = {
+			HOLY_SITE = jingzhao_cultrev
+			CREATOR = character:reincarnated_jiang_qing_867
+			RARITY = common
+			TEMPLATE = cultural_revolution_relic_template
+			VISUALS = reliquary
+			NAME = artifact_relic_dongfanghong_armband_casket_name
+			DESC = artifact_relic_dongfanghong_armband_casket_desc
+		}
+
+		# 10. Jiang Qing: Masterwork Satirical Heirloom Journal (Private Western Film Screening Logbook)
+		set_artifact_rarity_masterwork = yes
+		character:reincarnated_jiang_qing_867 = {
+			save_scope_as = owner
+			create_artifact = {
+				name = artifact_jiang_qing_western_film_log_name
+				description = artifact_jiang_qing_western_film_log_desc
+				type = journal
+				visuals = pocket_book
+				template = jiang_qing_dynasty_heirloom_template
+				wealth = scope:wealth
+				quality = scope:quality
+				history = { type = created_before_history }
+				modifier = jiang_qing_western_film_log_modifier
+				save_scope_as = newly_created_artifact
+				decaying = no
+			}
+			scope:newly_created_artifact = {
+				set_variable = { name = historical_unique_artifact value = yes }
+				equip_artifact_to_owner = yes
+			}
+		}
+	}
+
+	# Seed Zionist Holy Site Relics (5: 1 famed, 2 masterwork, 2 common)
+	if = {
+		limit = {
+			exists = character:reincarnated_netanyahu_867
+		}
+		villains_create_and_enshrine_relic_effect = {
+			HOLY_SITE = jerusalem_zionism
+			CREATOR = character:reincarnated_netanyahu_867
+			RARITY = famed
+			TEMPLATE = zionist_relic_template
+			VISUALS = reliquary
+			NAME = artifact_relic_western_wall_foundation_stone_name
+			DESC = artifact_relic_western_wall_foundation_stone_desc
+		}
+		villains_create_and_enshrine_relic_effect = {
+			HOLY_SITE = jaffa_zionism
+			CREATOR = character:reincarnated_netanyahu_867
+			RARITY = masterwork
+			TEMPLATE = zionist_relic_template
+			VISUALS = book
+			NAME = artifact_relic_scroll_of_zionist_independence_name
+			DESC = artifact_relic_scroll_of_zionist_independence_desc
+		}
+		villains_create_and_enshrine_relic_effect = {
+			HOLY_SITE = tiberias_zionism
+			CREATOR = character:reincarnated_netanyahu_867
+			RARITY = masterwork
+			TEMPLATE = zionist_relic_template
+			VISUALS = goblet
+			NAME = artifact_relic_maccabean_bronze_menorah_name
+			DESC = artifact_relic_maccabean_bronze_menorah_desc
+		}
+		villains_create_and_enshrine_relic_effect = {
+			HOLY_SITE = sinai_zionism
+			CREATOR = character:reincarnated_netanyahu_867
+			RARITY = common
+			TEMPLATE = zionist_relic_template
+			VISUALS = reliquary
+			NAME = artifact_relic_sinai_covenant_tablet_shard_name
+			DESC = artifact_relic_sinai_covenant_tablet_shard_desc
+		}
+		villains_create_and_enshrine_relic_effect = {
+			HOLY_SITE = damascus_zionism
+			CREATOR = character:reincarnated_netanyahu_867
+			RARITY = common
+			TEMPLATE = zionist_relic_template
+			VISUALS = banner
+			NAME = artifact_relic_northern_iron_wall_lion_standard_name
+			DESC = artifact_relic_northern_iron_wall_lion_standard_desc
+		}
+
+		# 11a & 11b. Benjamin Netanyahu: 2 Masterwork Satirical Heirlooms (Red-Line Bomb Placard + Pink Wine Gift Ledger)
+		set_artifact_rarity_masterwork = yes
+		character:reincarnated_netanyahu_867 = {
+			save_scope_as = owner
+			create_artifact = {
+				name = artifact_netanyahu_red_line_bomb_placard_name
+				description = artifact_netanyahu_red_line_bomb_placard_desc
+				type = regalia_simple
+				visuals = regalia
+				template = netanyahu_dynasty_heirloom_template
+				wealth = scope:wealth
+				quality = scope:quality
+				history = { type = created_before_history }
+				modifier = netanyahu_red_line_bomb_placard_modifier
+				save_scope_as = newly_created_artifact
+				decaying = no
+			}
+			scope:newly_created_artifact = {
+				set_variable = { name = historical_unique_artifact value = yes }
+				equip_artifact_to_owner = yes
+			}
+			create_artifact = {
+				name = artifact_netanyahu_pink_champagne_ledger_name
+				description = artifact_netanyahu_pink_champagne_ledger_desc
+				type = journal
+				visuals = pocket_book
+				template = netanyahu_ledger_heirloom_template
+				wealth = scope:wealth
+				quality = scope:quality
+				history = { type = created_before_history }
+				modifier = netanyahu_pink_champagne_ledger_modifier
+				save_scope_as = newly_created_artifact
+				decaying = no
+			}
+			scope:newly_created_artifact = {
+				set_variable = { name = historical_unique_artifact value = yes }
+				equip_artifact_to_owner = yes
+			}
+		}
+	}
+
+	# Ensure starting representative polity titles (d_rep_* / k_rep_jiang_qing) outrank temporal HoF duchies at game start
+	character:reincarnated_trump_867 ?= {
+		if = {
+			limit = {
+				highest_held_title_tier = tier_duchy
+				has_title = title:d_rep_trump
+			}
+			set_primary_title_to = title:d_rep_trump
+		}
+	}
+	character:reincarnated_hitler_867 ?= {
+		if = {
+			limit = {
+				highest_held_title_tier = tier_duchy
+				has_title = title:d_rep_hitler
+			}
+			set_primary_title_to = title:d_rep_hitler
+		}
+	}
+	character:reincarnated_stalin_867 ?= {
+		if = {
+			limit = {
+				highest_held_title_tier = tier_duchy
+				has_title = title:d_rep_stalin
+			}
+			set_primary_title_to = title:d_rep_stalin
+		}
+	}
+	character:reincarnated_mussolini_867 ?= {
+		if = {
+			limit = {
+				highest_held_title_tier = tier_duchy
+				has_title = title:d_rep_mussolini
+			}
+			set_primary_title_to = title:d_rep_mussolini
+		}
+	}
+	character:reincarnated_mutaguchi_867 ?= {
+		if = {
+			limit = {
+				highest_held_title_tier = tier_duchy
+				has_title = title:d_rep_mutaguchi
+			}
+			set_primary_title_to = title:d_rep_mutaguchi
+		}
+	}
+	character:reincarnated_kim_jongun_867 ?= {
+		if = {
+			limit = {
+				highest_held_title_tier = tier_duchy
+				has_title = title:d_rep_kim
+			}
+			set_primary_title_to = title:d_rep_kim
+		}
+	}
+	character:reincarnated_jiang_qing_867 ?= {
+		if = {
+			limit = {
+				highest_held_title_tier = tier_kingdom
+				has_title = title:k_rep_jiang_qing
+			}
+			set_primary_title_to = title:k_rep_jiang_qing
+		}
+	}
+	character:reincarnated_pol_pot_867 ?= {
+		if = {
+			limit = {
+				highest_held_title_tier = tier_duchy
+				has_title = title:d_rep_pol_pot
+			}
+			set_primary_title_to = title:d_rep_pol_pot
+		}
+	}
+	character:reincarnated_idi_amin_867 ?= {
+		if = {
+			limit = {
+				highest_held_title_tier = tier_duchy
+				has_title = title:d_rep_idi_amin
+			}
+			set_primary_title_to = title:d_rep_idi_amin
+		}
+	}
+	character:reincarnated_netanyahu_867 ?= {
+		if = {
+			limit = {
+				highest_held_title_tier = tier_duchy
+				has_title = title:d_rep_netanyahu
+			}
+			set_primary_title_to = title:d_rep_netanyahu
+		}
+	}
+}

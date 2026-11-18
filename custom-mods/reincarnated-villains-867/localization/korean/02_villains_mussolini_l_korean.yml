@@ -21,6 +21,8 @@
  d_rep_mussolini_adj:0 "밀라노 파쇼"
  e_new_roman_empire:0 "신로마 제국"
  e_new_roman_empire_adj:0 "신로마 제국"
+ c_nf_mussolini:0 "무솔리니 가문"
+ c_nf_mussolini_adj:0 "무솔리니"
 
  # === [종교 · 성지 · 신앙] ===
  fascism:0 "파시즘"

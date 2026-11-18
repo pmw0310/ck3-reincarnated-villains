@@ -5,7 +5,7 @@
 ---
 
 ## 1️⃣ 본편: `[867 북마크] 전생한 악당들 (Reincarnated Villains)`
-- **폴더**: [reincarnated-villains-867](file:///c:/Users/blackolf/Documents/workspace/ck3-reincarnated-villains/custom-mods/reincarnated-villains-867/descriptor.mod) (`remote_file_id: 3838164424` / `v1.1.0`)
+- **폴더**: [reincarnated-villains-867](file:///c:/Users/blackolf/Documents/workspace/ck3-reincarnated-villains/custom-mods/reincarnated-villains-867/descriptor.mod) (`remote_file_id: 3838164424` / `v1.2.0`)
 - **스팀 필수 아이템(Required Items) 설정**: **없음 (단독 실행 가능)**
 
 ### 📋 복사용 본문 (한글 + 영어)
@@ -19,7 +19,7 @@
 - 아돌프 히틀러 (알프스 인스브루크)
 - 베니토 무솔리니 (이탈리아 밀라노)
 - 이오시프 스탈린 (러시아 모스크바)
-- 도널드 트럼프 (브리튼 노섬브리아)
+- 도널드 트럼프 (네덜란드 암스테르담)
 - 베냐민 네타냐후 & 요나탄 네타냐후 (레반트 예루살렘)
 - 이디 아민 (동아프리카 센나르)
 - 그리고리 라스푸틴 (비지주 방랑 모험가)
@@ -39,7 +39,7 @@
 
 ■ 필수 모드 및 권장 DLC
 - 필수 선행 모드: 없음 (단독 실행 가능)
-- 권장 DLC: Roads to Power (행정제·비지주 모험가), All Under Heaven (동아시아 천조·율령·만다라 체제)
+- 권장 DLC: Roads to Power (행정제·비지주 모험가), All Under Heaven (동아시아 천조·율령·만다라 체제), Silk & Silver (도시·민중·과두 공화제 및 상단)
 - 선택 호환 패치: CFP 사용 시 'CFP 호환 패치', V3 현대 복장 사용 시 'Victoria 3 의상 크로스 패치'를 함께 구독하세요.
 
 ※ 안내: 본 모드는 독재자와 선동가들의 과대망상과 무능을 희화화한 정치 풍자·블랙코미디 창작물이며, 어떠한 현실의 극단주의 이념이나 악행도 찬양·미화하지 않습니다.
@@ -54,7 +54,7 @@ An alternate-history black comedy bookmark mod where 11 infamous autocrats, dema
 - Adolf Hitler (Innsbruck)
 - Benito Mussolini (Milan)
 - Joseph Stalin (Moskva)
-- Donald Trump (Northumbria)
+- Donald Trump (Amsterdam, Holland)
 - Benjamin Netanyahu & Yonatan Netanyahu (Jerusalem)
 - Idi Amin (Sennar)
 - Grigori Rasputin (Landless Adventurer)
@@ -74,7 +74,7 @@ An alternate-history black comedy bookmark mod where 11 infamous autocrats, dema
 
 ■ Requirements
 - Required Mods: None (Standalone)
-- Recommended DLCs: Roads to Power (Administrative / Landless Adventurer), All Under Heaven (East Asian governments)
+- Recommended DLCs: Roads to Power (Administrative / Landless Adventurer), All Under Heaven (East Asian governments), Silk & Silver (Republics & Merchant Houses)
 - Optional Submods: Use our 'CFP Compatch' for Community Flavor Pack, or 'V3 Wardrobe Crossover' for modern uniforms and suits.
 
 * Disclaimer: This mod is a work of alternate-history political satire and black comedy ridiculing authoritarianism and incompetence. It does not endorse or glorify any real-world extremist ideology, regime, or atrocity.
@@ -83,7 +83,7 @@ An alternate-history black comedy bookmark mod where 11 infamous autocrats, dema
 ---
 
 ## 2️⃣ 서브모드 A: `[867 북마크] 전생한 악당들 - CFP 호환 패치 (CFP Compatch)`
-- **폴더**: [reincarnated-villains-867-cfp-compatch](file:///c:/Users/blackolf/Documents/workspace/ck3-reincarnated-villains/custom-mods/reincarnated-villains-867-cfp-compatch/descriptor.mod) (`remote_file_id: 3838164704` / `v1.1.0`)
+- **폴더**: [reincarnated-villains-867-cfp-compatch](file:///c:/Users/blackolf/Documents/workspace/ck3-reincarnated-villains/custom-mods/reincarnated-villains-867-cfp-compatch/descriptor.mod) (`remote_file_id: 3838164704` / `v1.2.0`)
 - **스팀 필수 아이템(Required Items) 설정**:
   1. `[867 북마크] 전생한 악당들 (Reincarnated Villains)` (`3838164424`)
   2. `Community Flavor Pack` (`2220098919`)
@@ -128,7 +128,7 @@ Compatibility patch between '[867 Bookmark] Reincarnated Villains' and 'Communit
 ---
 
 ## 3️⃣ 서브모드 B: `[867 북마크] 전생한 악당들 - Victoria 3 의상 크로스 패치 + 한글화 (V3 Wardrobe Crossover)`
-- **폴더**: [reincarnated-villains-867-v3-compatch](file:///c:/Users/blackolf/Documents/workspace/ck3-reincarnated-villains/custom-mods/reincarnated-villains-867-v3-compatch/descriptor.mod) (`v1.1.0`)
+- **폴더**: [reincarnated-villains-867-v3-compatch](file:///c:/Users/blackolf/Documents/workspace/ck3-reincarnated-villains/custom-mods/reincarnated-villains-867-v3-compatch/descriptor.mod) (`v1.2.0`)
 - **스팀 필수 아이템(Required Items) 설정**:
   1. `[867 북마크] 전생한 악당들 (Reincarnated Villains)` (`3838164424`)
   2. `Victoria3 Crossgame Portriat` (`3836483821`)

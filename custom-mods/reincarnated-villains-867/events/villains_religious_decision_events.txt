@@ -513,7 +513,7 @@ villains_religious_decision.0020 = {
 					if = {
 						limit = { exists = capital_county }
 						capital_county = {
-							change_development_progress_with_overflow = 50
+							change_prosperity_progress_with_overflow = 50
 							if = {
 								limit = { NOT = { faith = root.faith } }
 								set_county_rite = root.rite
@@ -1509,7 +1509,7 @@ villains_religious_decision.0070 = {
 					left_icon = root
 					add_gold = 350
 					capital_county ?= {
-						change_development_level = 2
+						change_prosperity_level = 2
 						if = {
 							limit = { NOT = { faith = root.faith } }
 							set_county_rite = root.rite
@@ -1548,7 +1548,7 @@ villains_religious_decision.0070 = {
 					left_icon = root
 					remove_short_term_gold = 50
 					capital_county ?= {
-						change_development_level = -1
+						change_prosperity_level = -1
 						change_county_control = -20
 					}
 					add_character_modifier = {
@@ -1919,7 +1919,7 @@ villains_religious_decision.0090 = {
 					left_icon = root
 					add_gold = 450
 					capital_county ?= {
-						change_development_level = 1
+						change_prosperity_level = 1
 					}
 					villains_amin_feudalize_tribal_counties_effect = yes
 					add_character_modifier = {
@@ -2930,7 +2930,7 @@ villains_religious_decision.0140 = {
 					add_legitimacy_effect = { LEGITIMACY = 75 }
 					add_stress = -40
 					capital_county ?= {
-						change_development_level = 2
+						change_prosperity_level = 2
 					}
 					add_character_modifier = {
 						modifier = hitler_germania_grand_model_modifier
@@ -3135,7 +3135,7 @@ villains_religious_decision.0150 = {
 					left_icon = root
 					add_gold = 180
 					capital_county ?= {
-						change_development_level = 2
+						change_prosperity_level = 2
 					}
 					add_character_modifier = {
 						modifier = mussolini_carriages_on_time_modifier
@@ -3447,7 +3447,7 @@ villains_religious_decision.0170 = {
 					add_gold = 240
 					add_piety = 175
 					capital_county ?= {
-						change_development_level = 2
+						change_prosperity_level = 2
 					}
 					add_character_modifier = {
 						modifier = stalin_five_year_plan_shock_work_modifier
@@ -3561,7 +3561,7 @@ villains_religious_decision.0170 = {
 		add_gold = 120
 		add_dread = 15
 		capital_county ?= {
-			change_development_progress_with_overflow = 40
+			change_prosperity_progress_with_overflow = 40
 		}
 		add_character_modifier = {
 			modifier = stalin_five_year_plan_shock_work_modifier
@@ -3627,11 +3627,23 @@ villains_religious_decision.0180 = {
 		}
 	}
 
-	# Option A: Standard Underground Bronze Bombard Casting & Live Test-Firing (Base 5% chance)
+	# Option A: Standard Underground Bronze Bombard Casting & Live Test-Firing (Era-dependent success chance: Tribal 2%, Early Medieval 5%, High Medieval 12%, Late Medieval 25%)
 	option = {
 		name = villains_religious_decision.0180.a
 		random_list = {
-			5 = {
+			2 = {
+				modifier = {
+					add = 3
+					culture = { has_cultural_era_or_later = culture_era_early_medieval }
+				}
+				modifier = {
+					add = 7
+					culture = { has_cultural_era_or_later = culture_era_high_medieval }
+				}
+				modifier = {
+					add = 13
+					culture = { has_cultural_era_or_later = culture_era_late_medieval }
+				}
 				modifier = {
 					add = 2
 					learning >= 16
@@ -3667,7 +3679,19 @@ villains_religious_decision.0180 = {
 					}
 				}
 			}
-			95 = {
+			98 = {
+				modifier = {
+					add = -3
+					culture = { has_cultural_era_or_later = culture_era_early_medieval }
+				}
+				modifier = {
+					add = -7
+					culture = { has_cultural_era_or_later = culture_era_high_medieval }
+				}
+				modifier = {
+					add = -13
+					culture = { has_cultural_era_or_later = culture_era_late_medieval }
+				}
 				modifier = {
 					add = -2
 					learning >= 16
@@ -3698,12 +3722,24 @@ villains_religious_decision.0180 = {
 		}
 	}
 
-	# Option B: Threaten Artisans with Purge & Double the Black-Powder Charge! (Base 15% chance, severe explosion risk)
+	# Option B: Threaten Artisans with Purge & Double the Black-Powder Charge! (Era-dependent success chance: Tribal 5%, Early Medieval 12%, High Medieval 25%, Late Medieval 45%)
 	option = {
 		name = villains_religious_decision.0180.b
 		add_dread = 15
 		random_list = {
-			15 = {
+			5 = {
+				modifier = {
+					add = 7
+					culture = { has_cultural_era_or_later = culture_era_early_medieval }
+				}
+				modifier = {
+					add = 13
+					culture = { has_cultural_era_or_later = culture_era_high_medieval }
+				}
+				modifier = {
+					add = 20
+					culture = { has_cultural_era_or_later = culture_era_late_medieval }
+				}
 				modifier = {
 					add = 2
 					learning >= 16
@@ -3739,7 +3775,19 @@ villains_religious_decision.0180 = {
 					}
 				}
 			}
-			55 = {
+			65 = {
+				modifier = {
+					add = -5
+					culture = { has_cultural_era_or_later = culture_era_early_medieval }
+				}
+				modifier = {
+					add = -8
+					culture = { has_cultural_era_or_later = culture_era_high_medieval }
+				}
+				modifier = {
+					add = -12
+					culture = { has_cultural_era_or_later = culture_era_late_medieval }
+				}
 				modifier = {
 					add = -2
 					learning >= 16
@@ -3781,6 +3829,18 @@ villains_religious_decision.0180 = {
 				}
 			}
 			30 = {
+				modifier = {
+					add = -2
+					culture = { has_cultural_era_or_later = culture_era_early_medieval }
+				}
+				modifier = {
+					add = -5
+					culture = { has_cultural_era_or_later = culture_era_high_medieval }
+				}
+				modifier = {
+					add = -8
+					culture = { has_cultural_era_or_later = culture_era_late_medieval }
+				}
 				desc = villains_religious_decision.0180.b.critical_failure
 				send_interface_toast = {
 					type = event_toast_effect_bad
@@ -3875,6 +3935,110 @@ villains_religious_decision.0180 = {
 			modifier = {
 				intrigue >= 12
 				add = 60
+			}
+		}
+	}
+}
+
+# ==============================================================================
+# 0185 - Kim Jong-un: Asymmetric Strategic Modernization (Post-Gunpowder Firepower Doctrine)
+# ==============================================================================
+villains_religious_decision.0185 = {
+	type = character_event
+	title = villains_religious_decision.0185.t
+	desc = villains_religious_decision.0185.desc
+	theme = martial
+	override_background = { reference = armory }
+
+	left_portrait = {
+		character = root
+		animation = personality_callous
+	}
+	right_portrait = {
+		trigger = { exists = scope:artillery_marshal }
+		character = scope:artillery_marshal
+		animation = marshal
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				exists = character:reincarnated_kim_yojong_867
+				character:reincarnated_kim_yojong_867 = {
+					is_alive = yes
+					this != root
+					OR = {
+						liege ?= root
+						host ?= root
+					}
+				}
+			}
+			character:reincarnated_kim_yojong_867 = {
+				save_scope_as = artillery_marshal
+			}
+		}
+		else_if = {
+			limit = {
+				exists = cp:councillor_marshal
+				cp:councillor_marshal = { this != root }
+			}
+			cp:councillor_marshal = {
+				save_scope_as = artillery_marshal
+			}
+		}
+		else_if = {
+			limit = {
+				any_knight = { this != root }
+			}
+			random_knight = {
+				limit = { this != root }
+				save_scope_as = artillery_marshal
+			}
+		}
+	}
+
+	# Option A: Focus Firepower on Siege & Fort Destruction (Juche Heavy Bombard Saturation)
+	option = {
+		name = villains_religious_decision.0185.a
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = villains_religious_decision.0185.a.toast
+			left_icon = root
+			add_prestige = 150
+			add_dread = 20
+			add_character_modifier = {
+				modifier = kim_asymmetric_siege_focus_modifier
+				years = 5
+			}
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				has_trait = siege_expert
+				add = 30
+			}
+		}
+	}
+
+	# Option B: Mobilize Firepower for Field Armies (Storm Corps Shock Firepower)
+	option = {
+		name = villains_religious_decision.0185.b
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = villains_religious_decision.0185.b.toast
+			left_icon = root
+			add_prestige = 150
+			add_dread = 20
+			add_character_modifier = {
+				modifier = kim_asymmetric_army_focus_modifier
+				years = 5
+			}
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				has_trait = aggressive_attacker
+				add = 30
 			}
 		}
 	}
@@ -4335,7 +4499,7 @@ villains_religious_decision.0210 = {
 						}
 					}
 					capital_county ?= {
-						change_development_level = 1
+						change_prosperity_level = 1
 					}
 					add_gold = 100
 					add_prestige = 200
@@ -4677,6 +4841,119 @@ villains_religious_decision.0220 = {
 		add_stress = -15
 		ai_chance = {
 			base = 50
+		}
+	}
+}
+
+# ==============================================================================
+# 0230 - Benjamin Netanyahu: Knesset Strategic Mobilization (Election vs Army vs Mr. Security)
+# ==============================================================================
+villains_religious_decision.0230 = {
+	type = character_event
+	title = villains_religious_decision.0230.t
+	desc = villains_religious_decision.0230.desc
+	theme = realm
+	override_background = { reference = council_chamber }
+
+	left_portrait = {
+		character = root
+		animation = personality_schemer
+	}
+
+	# Option A: Knesset Coalition Backroom Deal & Judicial Override (Election Focus)
+	option = {
+		name = villains_religious_decision.0230.a
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = villains_religious_decision.0230.a.toast
+			left_icon = root
+			add_prestige = 150
+			add_dread = 15
+			add_character_modifier = {
+				modifier = netanyahu_knesset_election_victory_modifier
+				years = 5
+			}
+			if = {
+				limit = { has_character_modifier = netanyahu_judicial_protest_crisis_modifier }
+				remove_character_modifier = netanyahu_judicial_protest_crisis_modifier
+			}
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	# Option B: Emergency Sayeret Mobilization & Iron Defense Bastion (Military / Troop Focus)
+	option = {
+		name = villains_religious_decision.0230.b
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = villains_religious_decision.0230.b.toast
+			left_icon = root
+			add_prestige = 150
+			add_dread = 15
+			add_character_modifier = {
+				modifier = netanyahu_iron_security_modifier
+				years = 5
+			}
+			if = {
+				limit = { exists = capital_province }
+				spawn_army = {
+					name = netanyahu_sayeret_mobilized_regiment_name
+					men_at_arms = {
+						type = sayeret_commandos
+						stacks = 2
+					}
+					location = root.capital_province
+					origin = root.capital_province
+					inheritable = yes
+				}
+			}
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	# Option C: 'Mr. Security' Emergency State & Total Campaign Rally (Netanyahu-Exclusive Hybrid)
+	option = {
+		name = villains_religious_decision.0230.c
+		trigger = {
+			this = character:reincarnated_netanyahu_867
+		}
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = villains_religious_decision.0230.c.toast
+			left_icon = root
+			add_prestige = 200
+			add_dread = 25
+			dynasty ?= {
+				add_dynasty_prestige = 150
+			}
+			add_character_modifier = {
+				modifier = netanyahu_mr_security_crisis_modifier
+				years = 5
+			}
+			if = {
+				limit = { has_character_modifier = netanyahu_judicial_protest_crisis_modifier }
+				remove_character_modifier = netanyahu_judicial_protest_crisis_modifier
+			}
+			if = {
+				limit = { exists = capital_province }
+				spawn_army = {
+					name = netanyahu_sayeret_mobilized_regiment_name
+					men_at_arms = {
+						type = sayeret_commandos
+						stacks = 1
+					}
+					location = root.capital_province
+					origin = root.capital_province
+					inheritable = yes
+				}
+			}
+		}
+		ai_chance = {
+			base = 100
 		}
 	}
 }

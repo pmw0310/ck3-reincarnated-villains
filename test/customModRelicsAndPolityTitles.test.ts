@@ -768,7 +768,7 @@ describe('Reincarnated Villains 867: Satirical Relics & Representative Polity Ti
     )
   })
 
-  it('defines ruler, spouse, ruler_child, and queen_mother flavorizations across all 10 modern factions to prevent royal/monarchical fallback titles', () => {
+  it('defines ruler, spouse, ruler_child, and queen_mother flavorizations across all 10 modern factions to prevent royal/monarchical fallback titles without leaking to vanilla characters', () => {
     const flavorTxt = readUtf8(
       'custom-mods/reincarnated-villains-867/common/flavorization/zzz_villains_flavorization.txt',
     )
@@ -778,6 +778,27 @@ describe('Reincarnated Villains 867: Satirical Relics & Representative Polity Ti
     const enLoc = parseLocMap(
       readUtf8('custom-mods/reincarnated-villains-867/localization/english/00_villains_common_l_english.yml'),
     )
+
+    // CK3 flavorization schema does NOT support `cultures = { ... }`; using an invalid condition key causes a conditionless global match (priority 2000) that overrides every vanilla character in the world!
+    assert.equal(
+      /\bcultures\s*=\s*\{/.test(flavorTxt),
+      false,
+      'zzz_villains_flavorization.txt must NEVER use unsupported `cultures = { ... }` key (causes conditionless global leak to all vanilla characters)',
+    )
+    assert.equal(
+      flavorTxt.includes('villains_ruler_child_mutaguchi_culture_'),
+      false,
+      'Conditionless mutaguchi culture fallback blocks must be removed so vanilla characters never become 영애/공자/모친',
+    )
+    // Every ruler_child and queen_mother block in zzz_villains_flavorization.txt must specify an explicit `titles = { ... }` or `faiths = { ... }` restriction
+    const childAndMotherBlocks = [...flavorTxt.matchAll(/^(villains_(?:ruler_child|queen_mother)_\w+)\s*=\s*\{([\s\S]*?)^\}/gm)]
+    assert.ok(childAndMotherBlocks.length >= 20, 'Expected ruler_child and queen_mother flavorization blocks')
+    for (const [, blockName, body] of childAndMotherBlocks) {
+      assert.ok(
+        /\btitles\s*=\s*\{/.test(body) || /\bfaiths\s*=\s*\{/.test(body),
+        `${blockName} must restrict matching via valid titles = { ... } or faiths = { ... } so it cannot leak to vanilla characters`,
+      )
+    }
 
     const requiredRulers = [
       'americanism_president',

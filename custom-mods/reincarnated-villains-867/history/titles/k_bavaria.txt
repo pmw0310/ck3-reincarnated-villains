@@ -1,10 +1,10 @@
 ﻿k_bavaria = {
 
-	867.1.1 = { change_development_level = 5 }
+	867.1.1 = { change_prosperity_level = 5 }
 
-	1066.1.1 = { change_development_level = 8 }
+	1066.1.1 = { change_prosperity_level = 8 }
 
-	1178.1.1 = { change_development_level = 24 }
+	1178.1.1 = { change_prosperity_level = 24 }
 
 	
 
@@ -184,11 +184,11 @@
 
 d_bavaria = {
 
-	867.1.1 = { change_development_level = 7 }
+	867.1.1 = { change_prosperity_level = 7 }
 
-	1066.1.1 = { change_development_level = 10 }
+	1066.1.1 = { change_prosperity_level = 10 }
 
-	1178.1.1 = { change_development_level = 24 }
+	1178.1.1 = { change_prosperity_level = 24 }
 
 	
 
@@ -1056,11 +1056,11 @@ c_eschenlohe = {
 
 c_regensburg = {
 
-	867.1.1 = { change_development_level = 10 }
+	867.1.1 = { change_prosperity_level = 10 }
 
-	1066.1.1 = { change_development_level = 14 }
+	1066.1.1 = { change_prosperity_level = 14 }
 
-	1178.1.1 = { change_development_level = 31 }
+	1178.1.1 = { change_prosperity_level = 31 }
 
 	
 
@@ -4782,11 +4782,11 @@ c_hallstatt = {
 
 c_linz = {
 
-	867.1.1 = { change_development_level = 8 }
+	867.1.1 = { change_prosperity_level = 8 }
 
-	1066.1.1 = { change_development_level = 12 }
+	1066.1.1 = { change_prosperity_level = 12 }
 
-	1178.1.1 = { change_development_level = 14 }
+	1178.1.1 = { change_prosperity_level = 14 }
 
 	
 
@@ -4998,11 +4998,11 @@ c_schaumberg = {
 
 c_augsburg = {
 
-	867.1.1 = { change_development_level = 8 }
+	867.1.1 = { change_prosperity_level = 8 }
 
-	1066.1.1 = { change_development_level = 12 }
+	1066.1.1 = { change_prosperity_level = 12 }
 
-	1178.1.1 = { change_development_level = 22 }
+	1178.1.1 = { change_prosperity_level = 22 }
 
 	
 
@@ -7200,11 +7200,11 @@ d_osterreich = {
 
 c_vienna = {
 
-	867.1.1 = { change_development_level = 7 }
+	867.1.1 = { change_prosperity_level = 7 }
 
-	1066.1.1 = { change_development_level = 10 }
+	1066.1.1 = { change_prosperity_level = 10 }
 
-	1178.1.1 = { change_development_level = 22 }
+	1178.1.1 = { change_prosperity_level = 22 }
 
 	
 
@@ -8745,9 +8745,9 @@ d_tyrol = {
 
 
 c_innsbruck = {
-1066.1.1 = { change_development_level = 12 }
+1066.1.1 = { change_prosperity_level = 12 }
 
-	1178.1.1 = { change_development_level = 14 }
+	1178.1.1 = { change_prosperity_level = 14 }
 
 	
 
@@ -8799,12 +8799,12 @@ c_innsbruck = {
 
 	867.1.1 = {
 
-		change_development_level = 8
+		change_prosperity_level = 8
 		holder = reincarnated_hitler_867
 
 		liege = "d_rep_hitler"
 
-		government = feudal_government
+		government = administrative_government
 
 	}
 
@@ -9070,7 +9070,7 @@ c_brixen = {
 
 		liege = "d_rep_hitler"
 
-		government = feudal_government
+		government = administrative_government
 
 	}
 
@@ -9742,11 +9742,11 @@ d_carinthia = {
 
 c_karnten = {
 
-	867.1.1 = { change_development_level = 7 }
+	867.1.1 = { change_prosperity_level = 7 }
 
-	1066.1.1 = { change_development_level = 10 }
+	1066.1.1 = { change_prosperity_level = 10 }
 
-	1178.1.1 = { change_development_level = 24 }
+	1178.1.1 = { change_prosperity_level = 24 }
 
 	
 
@@ -10302,11 +10302,11 @@ c_knittelfeld = {
 
 c_villach = {
 
-	867.1.1 = { change_development_level = 7 }
+	867.1.1 = { change_prosperity_level = 7 }
 
-	1066.1.1 = { change_development_level = 10 }
+	1066.1.1 = { change_prosperity_level = 10 }
 
-	1178.1.1 = { change_development_level = 24 }
+	1178.1.1 = { change_prosperity_level = 24 }
 
 	
 

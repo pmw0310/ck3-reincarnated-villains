@@ -500,21 +500,72 @@
 
 	character:reincarnated_trump_867 ?= {
 
-		title:d_nf_trump = {
+		title:c_merchant_trump = {
 			set_coa = holder.house
-			set_color_from_title = title:c_northumberland
+			set_color_from_title = title:c_holland
 		}
 
+		add_realm_law_skip_effects = republic_type_civic
+		add_realm_law_skip_effects = republic_assembly_composition_parliament
+		add_realm_law_skip_effects = republic_assembly_authority_legislative
+		add_realm_law_skip_effects = republic_assembly_voting_thresholds_simple_majority
+		add_realm_law_skip_effects = republic_war_declaration_2_unlimited
+		add_realm_law_skip_effects = republic_army_organization_3_maa
+		add_realm_law_skip_effects = republic_trade_specialization_construction
+
 		house ?= {
+			if = {
+				limit = { house_head != prev }
+				set_house_head = prev
+			}
 			set_house_aspiration = {
-				type = lofty_architects
+				type = republic_commerce
 				level = 1
 			}
 		}
 
+		if = {
+			limit = { gold < 350 }
+			add_gold = {
+				value = 350
+				subtract = gold
+			}
+		}
+
+		if = {
+			limit = { treasury < 350 }
+			add_treasury = {
+				value = 350
+				subtract = treasury
+			}
+		}
+
 		domicile ?= {
-			set_up_domicile_estate_effect = yes
 			move_domicile = owner.capital_province
+			if = {
+				limit = {
+					has_domicile_building_or_higher = merchant_company_main_01
+					NOT = { has_domicile_building_or_higher = merchant_company_main_02 }
+				}
+				add_domicile_building = merchant_company_main_02
+				add_random_internal_main_company_building = yes
+			}
+			if = {
+				limit = {
+					has_domicile_building_or_higher = merchant_company_building_trade_01
+					NOT = { has_domicile_building_or_higher = merchant_company_building_trade_02 }
+				}
+				add_domicile_building = merchant_company_building_trade_02
+				add_random_internal_trade_company_building = yes
+			}
+			if = {
+				limit = {
+					has_domicile_building_or_higher = merchant_company_building_warehouse_01
+					NOT = { has_domicile_building_or_higher = merchant_company_building_warehouse_02 }
+				}
+				add_domicile_building = merchant_company_building_warehouse_02
+				add_random_internal_warehouse_company_building = yes
+			}
 		}
 
 	}
@@ -541,17 +592,13 @@
 				set_house_head = prev
 			}
 			set_house_aspiration = {
-				type = confident_schemers
+				type = republic_agitation
 				level = 1
 			}
 		}
 		title:d_nf_netanyahu = {
 			set_coa = holder.house
 			set_color_from_title = title:c_jerusalem
-		}
-		domicile ?= {
-			set_up_domicile_estate_effect = yes
-			move_domicile = owner.capital_province
 		}
 		if = {
 			limit = { is_independent_ruler = no }

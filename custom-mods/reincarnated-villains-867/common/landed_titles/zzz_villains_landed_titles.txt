@@ -64,7 +64,7 @@ k_imperial_japan_india = {
 
 k_united_states = {
 	color = { 50 108 188 }
-	capital = c_northumberland
+	capital = c_holland
 	definite_form = yes
 	can_be_named_after_dynasty = no
 	can_use_nomadic_naming = no
@@ -218,7 +218,7 @@ e_greater_east_asia_imphal = {
 
 e_american_empire = {
 	color = { 42 96 176 }
-	capital = c_northumberland
+	capital = c_holland
 	definite_form = yes
 	can_be_named_after_dynasty = no
 	can_use_nomadic_naming = no
@@ -378,7 +378,7 @@ d_rep_mutaguchi = {
 
 d_rep_trump = {
 	color = { 58 117 196 }
-	capital = c_northumberland
+	capital = c_holland
 	definite_form = yes
 	can_be_named_after_dynasty = no
 	can_use_nomadic_naming = no
@@ -551,7 +551,7 @@ d_americanism = {
 	de_jure_drift_disabled = yes
 	can_be_named_after_dynasty = no
 	can_use_nomadic_naming = no
-	capital = c_northumberland
+	capital = c_holland
 	ai_primary_priority = {
 		add = -200000
 	}
@@ -690,9 +690,40 @@ d_zionism = {
 # 5. Noble Family & Landless Adventurer Camp Titles
 # ==============================================================================
 
-d_nf_trump = {
+c_merchant_trump = {
 	color = { 58 117 196 }
-	capital = c_northumberland
+	capital = c_holland
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+	ai_primary_priority = {
+		add = -200000
+	}
+}
+
+c_nf_hitler = {
+	color = { 160 40 35 }
+	capital = c_munich
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+	dlc_feature = roads_to_power
+	ai_primary_priority = {
+		add = -200000
+	}
+}
+
+c_nf_mussolini = {
+	color = { 45 115 65 }
+	capital = c_milano
 	definite_form = yes
 	landless = yes
 	ruler_uses_title_name = no

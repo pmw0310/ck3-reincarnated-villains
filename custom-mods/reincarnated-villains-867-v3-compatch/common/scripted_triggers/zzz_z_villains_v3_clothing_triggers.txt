@@ -47,6 +47,12 @@ villains_v3_situational_clear_trigger = {
 villains_v3_use_modern_outfit_trigger = {
 	villains_v3_situational_clear_trigger = yes
 	NOT = { villains_v3_is_in_combat_or_war_armor_trigger = yes }
+	NOT = {
+		AND = {
+			faith = faith:zionism
+			has_council_position = councillor_court_chaplain
+		}
+	}
 }
 
 villains_v3_is_named_reincarnated_character_trigger = {

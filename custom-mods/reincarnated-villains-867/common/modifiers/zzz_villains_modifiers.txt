@@ -106,11 +106,11 @@ trump_golden_empire_dynasty_modifier = {
 
 trump_golden_tower_county_modifier = {
 
-	icon = county_modifier_development_positive
+	icon = county_modifier_prosperity_positive
 
-	tax_mult = 0.25
+	all_tax_mult = 0.25
 
-	development_growth_factor = 0.30
+	prosperity_growth_factor = 0.30
 
 	fort_level = 3
 
@@ -166,13 +166,13 @@ hitler_greater_german_reich_dynasty_modifier = {
 
 hitler_germania_world_capital_county_modifier = {
 
-	icon = county_modifier_development_positive
+	icon = county_modifier_prosperity_positive
 
-	tax_mult = 0.30
+	all_tax_mult = 0.30
 
 	levy_size = 0.30
 
-	development_growth_factor = 0.35
+	prosperity_growth_factor = 0.35
 
 	fort_level = 3
 
@@ -202,15 +202,15 @@ stalin_ussr_superpower_dynasty_modifier = {
 
 stalin_socialist_metropolis_county_modifier = {
 
-	icon = county_modifier_development_positive
+	icon = county_modifier_prosperity_positive
 
-	tax_mult = 0.30
+	all_tax_mult = 0.30
 
 	build_speed = -0.25
 
 	holding_build_speed = -0.25
 
-	development_growth_factor = 0.35
+	prosperity_growth_factor = 0.35
 
 }
 
@@ -238,11 +238,11 @@ mussolini_mare_nostrum_empire_dynasty_modifier = {
 
 mussolini_eternal_imperial_rome_county_modifier = {
 
-	icon = county_modifier_development_positive
+	icon = county_modifier_prosperity_positive
 
-	tax_mult = 0.30
+	all_tax_mult = 0.30
 
-	development_growth_factor = 0.35
+	prosperity_growth_factor = 0.35
 
 	monthly_county_control_growth_add = 0.5
 
@@ -294,11 +294,11 @@ trump_pax_americana_empire_dynasty_modifier = {
 
 trump_wall_street_capital_county_modifier = {
 
-	icon = county_modifier_development_positive
+	icon = county_modifier_prosperity_positive
 
-	tax_mult = 0.50
+	all_tax_mult = 0.50
 
-	development_growth_factor = 0.40
+	prosperity_growth_factor = 0.40
 
 	fort_level = 4
 
@@ -328,11 +328,11 @@ kim_juche_superpower_empire_dynasty_modifier = {
 
 kim_revolutionary_pyongyang_county_modifier = {
 
-	icon = county_modifier_development_positive
+	icon = county_modifier_prosperity_positive
 
-	tax_mult = 0.30
+	all_tax_mult = 0.30
 
-	development_growth_factor = 0.35
+	prosperity_growth_factor = 0.35
 
 	fort_level = 4
 
@@ -540,9 +540,9 @@ pol_pot_red_khmers_supreme_dynasty_modifier = {
 
 pol_pot_year_zero_commune_capital_county_modifier = {
 
-	icon = county_modifier_development_positive
+	icon = county_modifier_prosperity_positive
 
-	tax_mult = 0.30
+	all_tax_mult = 0.30
 
 	levy_size = 0.35
 
@@ -632,13 +632,13 @@ idi_amin_conqueror_of_all_beasts_dynasty_modifier = {
 
 idi_amin_kampala_command_capital_modifier = {
 
-	icon = county_modifier_development_positive
+	icon = county_modifier_prosperity_positive
 
-	tax_mult = 0.30
+	all_tax_mult = 0.30
 
 	levy_size = 0.30
 
-	development_growth_factor = 0.30
+	prosperity_growth_factor = 0.30
 
 	fort_level = 3
 
@@ -740,8 +740,8 @@ axis_mass_agitation_fiasco_modifier = {
 
 axis_street_riot_county_modifier = {
 	icon = county_modifier_opinion_negative
-	county_opinion_add = -25
-	development_growth_factor = -0.25
+	popular_opinion_add = -25
+	prosperity_growth_factor = -0.25
 }
 
 stalin_great_purge_triumph_modifier = {
@@ -923,7 +923,7 @@ mussolini_shirtless_harvester_modifier = {
 	icon = prowess_positive
 	prowess = 3
 	health = 0.30
-	county_opinion_add = 20
+	popular_opinion_add = 20
 	levy_reinforcement_rate = 0.25
 }
 
@@ -932,7 +932,7 @@ mussolini_carriages_on_time_modifier = {
 	movement_speed = 0.15
 	supply_duration = 0.25
 	domain_tax_mult = 0.15
-	development_growth_factor = 0.20
+	prosperity_growth_factor = 0.20
 }
 
 mussolini_sunstroke_fiasco_modifier = {
@@ -946,7 +946,7 @@ mussolini_bogged_down_public_works_modifier = {
 	icon = economy_negative
 	domain_tax_mult = -0.15
 	build_gold_cost = 0.15
-	county_opinion_add = -15
+	popular_opinion_add = -15
 }
 
 mutaguchi_miracle_ox_convoy_modifier = {
@@ -992,7 +992,7 @@ stalin_stakhanovite_fervor_modifier = {
 	icon = prestige_positive
 	levy_size = 0.20
 	army_maintenance_mult = -0.15
-	county_opinion_add = 15
+	popular_opinion_add = 15
 	monthly_piety_gain_mult = 0.15
 }
 
@@ -1016,7 +1016,7 @@ kim_failed_foundry_explosion_modifier = {
 	icon = economy_negative
 	domain_tax_mult = -0.10
 	build_speed = 0.15
-	county_opinion_add = -10
+	popular_opinion_add = -10
 }
 
 kim_wooden_cannon_bluff_modifier = {
@@ -1024,6 +1024,23 @@ kim_wooden_cannon_bluff_modifier = {
 	dread_baseline_add = 20
 	enemy_hostile_scheme_success_chance_max_add = -20
 	monthly_prestige_gain_mult = 0.10
+}
+
+kim_asymmetric_siege_focus_modifier = {
+	icon = martial_positive
+	siege_weapon_siege_value_mult = 0.25
+	siege_phase_time = -0.20
+	army_siege_value_mult = 0.20
+	dread_baseline_add = 15
+}
+
+kim_asymmetric_army_focus_modifier = {
+	icon = martial_positive
+	maa_damage_mult = 0.15
+	maa_toughness_mult = 0.15
+	advantage = 4
+	levy_damage_mult = 0.15
+	dread_baseline_add = 15
 }
 
 # ==============================================================================
@@ -1053,10 +1070,10 @@ jiang_proletarian_cultural_empire_dynasty_modifier = {
 }
 
 jiang_shanghai_revolutionary_capital_county_modifier = {
-	icon = county_modifier_development_positive
-	tax_mult = 0.30
+	icon = county_modifier_prosperity_positive
+	all_tax_mult = 0.30
 	levy_size = 0.30
-	development_growth_factor = 0.30
+	prosperity_growth_factor = 0.30
 	fort_level = 3
 }
 
@@ -1089,8 +1106,8 @@ jiang_model_opera_premiere_modifier = {
 jiang_red_guard_factional_clash_modifier = {
 	icon = economy_negative
 	domain_tax_mult = -0.15
-	county_opinion_add = -15
-	development_growth_factor = -0.20
+	popular_opinion_add = -15
+	prosperity_growth_factor = -0.20
 }
 
 jiang_struggle_session_terror_modifier = {
@@ -1149,10 +1166,10 @@ netanyahu_greater_israel_empire_dynasty_modifier = {
 }
 
 netanyahu_eternal_jerusalem_capital_county_modifier = {
-	icon = county_modifier_development_positive
-	tax_mult = 0.25
+	icon = county_modifier_prosperity_positive
+	all_tax_mult = 0.25
 	levy_size = 0.30
-	development_growth_factor = 0.35
+	prosperity_growth_factor = 0.35
 	fort_level = 4
 	garrison_size = 0.35
 }
@@ -1166,7 +1183,7 @@ netanyahu_iron_dome_bastion_modifier = {
 }
 
 netanyahu_iron_dome_fort_county_modifier = {
-	icon = county_modifier_development_positive
+	icon = county_modifier_prosperity_positive
 	fort_level = 3
 	garrison_size = 0.40
 	hostile_raid_time = 0.50
@@ -1227,4 +1244,46 @@ netanyahu_secret_tunnel_excuse_modifier = {
 	general_opinion = -15
 	monthly_prestige_gain_mult = -0.15
 	stress_gain_mult = 0.15
+}
+
+netanyahu_dynastic_polarization_modifier = {
+	icon = government_negative
+	candidate_vote_strength_mult = -0.25
+	vassal_opinion = -10
+	popular_opinion_add = -20
+	same_faith_opinion = 10
+	dread_baseline_add = 10
+}
+
+netanyahu_judicial_protest_crisis_modifier = {
+	icon = government_negative
+	popular_opinion_add = -40
+	vassal_opinion = -10
+	stress_gain_mult = 0.20
+}
+
+netanyahu_knesset_election_victory_modifier = {
+	icon = government_positive
+	candidate_vote_strength_mult = 0.50
+	vassal_opinion = 15
+	popular_opinion_add = 25
+	dread_baseline_add = 15
+}
+
+netanyahu_iron_security_modifier = {
+	icon = martial_positive
+	maa_damage_mult = 0.15
+	maa_toughness_mult = 0.15
+	controlled_province_advantage = 6
+	dread_baseline_add = 10
+}
+
+netanyahu_mr_security_crisis_modifier = {
+	icon = diplomacy_positive
+	candidate_vote_strength_mult = 0.35
+	vassal_opinion = 10
+	popular_opinion_add = 15
+	same_faith_opinion = 15
+	controlled_province_advantage = 4
+	dread_baseline_add = 20
 }

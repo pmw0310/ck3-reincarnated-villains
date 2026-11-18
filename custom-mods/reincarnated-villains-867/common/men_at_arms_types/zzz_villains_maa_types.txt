@@ -51,10 +51,11 @@ pinkerton_guards = {
 sa_stormtroopers = {
 	type = skirmishers
 
-	damage = 24
-	toughness = 16
-	pursuit = 24
-	screen = 10
+	damage = 28
+	toughness = 18
+	pursuit = 26
+	screen = 12
+	siege_value = 0.05
 
 	terrain_bonus = {
 		mountains = { damage = 8 toughness = 4 }
@@ -75,7 +76,7 @@ sa_stormtroopers = {
 		valid_for_maa_trigger = { PARAMETER = unlock_maa_sa_stormtroopers }
 	}
 
-	buy_cost = { gold = 52 }
+	buy_cost = { gold = 55 }
 	low_maintenance_cost = { gold = 0.18 }
 	high_maintenance_cost = { gold = 0.54 }
 	provision_cost = @provisions_cost_infantry_cheap
@@ -90,9 +91,9 @@ sa_stormtroopers = {
 blackshirts_militia = {
 	type = skirmishers
 
-	damage = 19
-	toughness = 22
-	pursuit = 18
+	damage = 22
+	toughness = 24
+	pursuit = 20
 	screen = 26
 
 	terrain_bonus = {
@@ -115,8 +116,8 @@ blackshirts_militia = {
 	}
 
 	buy_cost = { gold = 30 prestige = 35 }
-	low_maintenance_cost = { gold = 0.11 }
-	high_maintenance_cost = { gold = 0.33 }
+	low_maintenance_cost = { gold = 0.12 }
+	high_maintenance_cost = { gold = 0.36 }
 	provision_cost = @provisions_cost_infantry_cheap
 
 	stack = 100

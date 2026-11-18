@@ -22,6 +22,8 @@
  d_rep_hitler_adj:0 "알프스 당관구"
  e_greater_german_reich:0 "대게르만국"
  e_greater_german_reich_adj:0 "대게르만"
+ c_nf_hitler:0 "히틀러 가문"
+ c_nf_hitler_adj:0 "히틀러"
 
  # === [종교 · 성지 · 신앙] ===
  national_socialism_religion:0 "국가사회주의"

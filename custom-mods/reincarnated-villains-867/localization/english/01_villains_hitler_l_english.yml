@@ -22,6 +22,8 @@
  d_rep_hitler_adj:0 "Alpine Gau"
  e_greater_german_reich:0 "Greater German Reich"
  e_greater_german_reich_adj:0 "Greater German"
+ c_nf_hitler:0 "House of Hitler"
+ c_nf_hitler_adj:0 "Hitler"
 
  # === [Religion, Faith & Holy Sites] ===
  national_socialism_religion:0 "National Socialism"

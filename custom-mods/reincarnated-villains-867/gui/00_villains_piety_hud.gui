@@ -337,12 +337,14 @@ types HUD
 	type resources_top_right_bar = hbox
 	{
 		layer = top
+		min_width = 656
 
 		using = Animation_ShowHide_Quick
 
 		## Resources
 		hbox = {
 			name = "resources"
+			layoutpolicy_horizontal = expanding
 			visible = "[Not( IsGameViewOpen('barbershop') )]"
 
 			hbox = {
@@ -358,6 +360,7 @@ types HUD
 					widget = {
 						name = "gold"
 						size = { 144 70 }
+						layoutpolicy_horizontal = expanding
 
 						state = {
 							name = _mouse_enter
@@ -365,7 +368,7 @@ types HUD
 						}
 
 						widget = {
-							size = { 144 45 }
+							size = { 100% 45 }
 
 							tooltipwidget = {
 								widget_gold_breakdown_tooltip = {
@@ -406,7 +409,7 @@ types HUD
 
 									flowcontainer = {
 										margin_bottom = 7
-										spacing = -3
+										spacing = -6
 										direction = vertical
 										ignoreinvisible = yes
 
@@ -414,7 +417,7 @@ types HUD
 											name = "gold_value_positive"
 											visible = "[GreaterThanOrEqualTo_CFixedPoint(GetPlayer.GetGold, '(CFixedPoint)0')]"
 											text = "[GetPlayer.GetGold|0]"
-											max_width = 56
+											max_width = 50
 											default_format = "#high"
 											using = Font_Size_Medium
 										}
@@ -423,7 +426,7 @@ types HUD
 											name = "gold_value_negative"
 											visible = "[LessThan_CFixedPoint(GetPlayer.GetGold, '(CFixedPoint)0')]"
 											text = "[GetPlayer.GetGold|0]"
-											max_width = 56
+											max_width = 50
 											default_format = "#N"
 											using = Font_Size_Medium
 										}
@@ -433,7 +436,7 @@ types HUD
 												name = "balance_positive"
 												visible = "[GreaterThanOrEqualTo_CFixedPoint(InGameTopbar.GetGoldBalance, '(CFixedPoint)0')]"
 												text = "[InGameTopbar.GetGoldBalance|=1]"
-												max_width = 56
+												max_width = 50
 												default_format = "#low"
 											}
 
@@ -441,7 +444,7 @@ types HUD
 												name = "balance_negative"
 												visible = "[LessThan_CFixedPoint(InGameTopbar.GetGoldBalance, '(CFixedPoint)0')]"
 												text = "[InGameTopbar.GetGoldBalance|=1]"
-												max_width = 56
+												max_width = 50
 												default_format = "#N"
 											}
 										}
@@ -455,6 +458,114 @@ types HUD
 								divider_light = {
 									layoutpolicy_vertical = expanding
 									alpha = 0.8
+								}
+							}
+							expand = {}
+						}
+					}
+
+
+					widget = {
+						name = "provisions"
+						visible = "[IsLandlessAdventurer( GetPlayer )]"
+						size = { 112 70 }
+
+						widget = {
+							datacontext = "[GetPlayer.GetDomicile]"
+							size = { 112 45 }
+
+							tooltip = "[Domicile.GetProvisionsBreakdown]"
+							using = tooltip_ne
+						}
+
+						background = {
+							texture = "gfx/interface/skinned/resource_panel_piece.dds"
+						}
+
+						vbox = {
+							datacontext = "[GetPlayer.GetDomicile]"
+							margin_top = -2
+
+							hbox = {
+								layoutpolicy_horizontal = expanding
+								expand = {}
+
+								hbox = {
+									spacing = 7
+
+									icon = {
+										name = "provisions_icon"
+										size = { 30 30 }
+
+										framesize = { 60 60 }
+										frame = 0
+										texture = "gfx/interface/icons/icon_camp_supply.dds"
+									}
+
+									flowcontainer = {
+										margin_bottom = 7
+										spacing = -6
+										direction = vertical
+										ignoreinvisible = yes
+
+										text_single = {
+											name = "provisions_value_positive"
+											visible = "[Not( Or( Domicile.IsProvisionsLow, Domicile.IsProvisionsCritical ) )]"
+
+											text = "[Domicile.GetProvisions|0]"
+											max_width = 50
+											default_format = "#high"
+											using = Font_Size_Medium
+										}
+
+										text_single = {
+											name = "provisions_value_low"
+											visible = "[Domicile.IsProvisionsLow]"
+
+											text = "[Domicile.GetProvisions|0]"
+											max_width = 50
+											default_format = "#color_yellow"
+											using = Font_Size_Medium
+										}
+
+										text_single = {
+											name = "provisions_value_critical"
+											visible = "[Domicile.IsProvisionsCritical]"
+
+											text = "[Domicile.GetProvisions|0]"
+											max_width = 50
+											default_format = "#N"
+											using = Font_Size_Medium
+										}
+
+										container = {
+											text_single = {
+												name = "provisions_max"
+												text = "[Domicile.GetProvisionsMax]"
+												max_width = 50
+												default_format = "#low"
+											}
+										}
+									}
+								}
+								expand = {}
+								divider_light = {
+									layoutpolicy_vertical = expanding
+									alpha = 0.8
+								}
+							}
+							expand = {}
+
+							hbox = {
+								layoutpolicy_horizontal = expanding
+								spacing = 6
+
+
+								vbox = {
+									margin_top = -2
+									layoutpolicy_vertical = expanding
+
+									expand = {}
 								}
 							}
 							expand = {}
@@ -589,7 +700,7 @@ types HUD
 
 									flowcontainer = {
 										margin_bottom = 7
-										spacing = -3
+										spacing = -6
 										direction = vertical
 										ignoreinvisible = yes
 
@@ -597,7 +708,7 @@ types HUD
 											name = "treasury_value_positive"
 											visible = "[GreaterThanOrEqualTo_CFixedPoint(GetPlayer.GetTreasury, '(CFixedPoint)0')]"
 											text = "[GetPlayer.GetTreasury|0]"
-											max_width = 56
+											max_width = 50
 											default_format = "#high"
 											using = Font_Size_Medium
 										}
@@ -606,7 +717,7 @@ types HUD
 											name = "treasury_value_negative"
 											visible = "[LessThan_CFixedPoint(GetPlayer.GetTreasury, '(CFixedPoint)0')]"
 											text = "[GetPlayer.GetTreasury|0]"
-											max_width = 56
+											max_width = 50
 											default_format = "#N"
 											using = Font_Size_Medium
 										}
@@ -616,7 +727,7 @@ types HUD
 												name = "treasury_balance_positive"
 												visible = "[GreaterThanOrEqualTo_CFixedPoint(InGameTopbar.GetTreasuryBalance, '(CFixedPoint)0')]"
 												text = "[InGameTopbar.GetTreasuryBalance|=1]"
-												max_width = 56
+												max_width = 50
 												default_format = "#low"
 											}
 
@@ -624,7 +735,7 @@ types HUD
 												name = "treasury_balance_negative"
 												visible = "[LessThan_CFixedPoint(InGameTopbar.GetTreasuryBalance, '(CFixedPoint)0')]"
 												text = "[InGameTopbar.GetTreasuryBalance|=1]"
-												max_width = 56
+												max_width = 50
 												default_format = "#N"
 											}
 										}
@@ -694,7 +805,7 @@ types HUD
 
 									flowcontainer = {
 										margin_bottom = 7
-										spacing = -3
+										spacing = -6
 										direction = vertical
 										ignoreinvisible = yes
 
@@ -702,7 +813,7 @@ types HUD
 											name = "barter_goods_value_positive"
 
 											text = "[GetPlayer.GetCurrency('barter_goods')|0]"
-											max_width = 56
+											max_width = 50
 											default_format = "#high"
 											using = Font_Size_Medium
 										}
@@ -712,7 +823,7 @@ types HUD
 												name = "barter_goods_balance_positive"
 												visible = "[GreaterThanOrEqualTo_CFixedPoint(InGameTopbar.GetBarterGoodsBalance, '(CFixedPoint)0')]"
 												text = "[InGameTopbar.GetBarterGoodsBalance|=1]"
-												max_width = 56
+												max_width = 50
 												default_format = "#low"
 											}
 
@@ -720,7 +831,7 @@ types HUD
 												name = "barter_goods_balance_negative"
 												visible = "[LessThan_CFixedPoint(InGameTopbar.GetBarterGoodsBalance, '(CFixedPoint)0')]"
 												text = "[InGameTopbar.GetBarterGoodsBalance|=1]"
-												max_width = 56
+												max_width = 50
 												default_format = "#N"
 											}
 										}
@@ -773,13 +884,13 @@ types HUD
 
 									flowcontainer = {
 										margin_bottom = 7
-										spacing = -3
+										spacing = -6
 										direction = vertical
 
 										text_single = {
 											name = "prestige_value"
 											text = "[GetPlayer.GetPrestige|0]"
-											max_width = 56
+											max_width = 50
 											default_format = "#high"
 											using = Font_Size_Medium
 										}
@@ -836,14 +947,14 @@ types HUD
 
 									flowcontainer = {
 										margin_bottom = 7
-										spacing = -3
+										spacing = -6
 										direction = vertical
 
 										text_single = {
 											name = "piety_value"
 											text = "[GetPlayer.GetPiety|0]"
 
-											max_width = 56
+											max_width = 50
 											default_format = "#high"
 											using = Font_Size_Medium
 										}
@@ -864,112 +975,6 @@ types HUD
 					}
 
 
-					widget = {
-						name = "provisions"
-						visible = "[IsLandlessAdventurer( GetPlayer )]"
-						size = { 112 70 }
-
-						widget = {
-							datacontext = "[GetPlayer.GetDomicile]"
-							size = { 112 45 }
-
-							tooltip = "[Domicile.GetProvisionsBreakdown]"
-							using = tooltip_ne
-						}
-
-						background = {
-							texture = "gfx/interface/skinned/resource_panel_piece.dds"
-						}
-
-						vbox = {
-							datacontext = "[GetPlayer.GetDomicile]"
-							margin_top = -2
-
-							hbox = {
-								layoutpolicy_horizontal = expanding
-								expand = {}
-
-								hbox = {
-									spacing = 7
-
-									icon = {
-										name = "provisions_icon"
-										size = { 30 30 }
-
-										framesize = { 60 60 }
-										frame = 0
-										texture = "gfx/interface/icons/icon_camp_supply.dds"
-									}
-
-									flowcontainer = {
-										margin_bottom = 7
-										spacing = -3
-										direction = vertical
-										ignoreinvisible = yes
-
-										text_single = {
-											name = "provisions_value_positive"
-											visible = "[Not( Or( Domicile.IsProvisionsLow, Domicile.IsProvisionsCritical ) )]"
-
-											text = "[Domicile.GetProvisions|0]"
-											max_width = 56
-											default_format = "#high"
-											using = Font_Size_Medium
-										}
-
-										text_single = {
-											name = "provisions_value_low"
-											visible = "[Domicile.IsProvisionsLow]"
-
-											text = "[Domicile.GetProvisions|0]"
-											max_width = 56
-											default_format = "#color_yellow"
-											using = Font_Size_Medium
-										}
-
-										text_single = {
-											name = "provisions_value_critical"
-											visible = "[Domicile.IsProvisionsCritical]"
-
-											text = "[Domicile.GetProvisions|0]"
-											max_width = 56
-											default_format = "#N"
-											using = Font_Size_Medium
-										}
-
-										container = {
-											text_single = {
-												name = "provisions_max"
-												text = "[Domicile.GetProvisionsMax]"
-												max_width = 56
-												default_format = "#low"
-											}
-										}
-									}
-								}
-								expand = {}
-								divider_light = {
-									layoutpolicy_vertical = expanding
-									alpha = 0.8
-								}
-							}
-							expand = {}
-
-							hbox = {
-								layoutpolicy_horizontal = expanding
-								spacing = 6
-
-
-								vbox = {
-									margin_top = -2
-									layoutpolicy_vertical = expanding
-
-									expand = {}
-								}
-							}
-							expand = {}
-						}
-					}
 
 					widget = {
 						name = "influence"
@@ -1008,13 +1013,13 @@ types HUD
 
 									flowcontainer = {
 										margin_bottom = 7
-										spacing = -3
+										spacing = -6
 										direction = vertical
 
 										text_single = {
 											name = "influence_value"
 											text = "[GetPlayer.GetInfluence|0]"
-											max_width = 56
+											max_width = 50
 											default_format = "#high"
 											using = Font_Size_Medium
 										}
@@ -1080,14 +1085,14 @@ types HUD
 									flowcontainer = {
 										visible = "[GetPlayer.IsDynast]"
 										margin_bottom = 7
-										spacing = -3
+										spacing = -6
 										direction = vertical
 
 										text_single = {
 											name = "prestige_value"
 											text = "[GetPlayer.GetDynasty.GetPrestige|0]"
 
-											max_width = 56
+											max_width = 50
 											default_format = "#high"
 											using = Font_Size_Medium
 										}
@@ -1098,14 +1103,14 @@ types HUD
 									flowcontainer = {
 										visible = "[Not(GetPlayer.IsDynast)]"
 										margin_bottom = 7
-										spacing = -3
+										spacing = -6
 										direction = vertical
 
 										text_single = {
 											name = "prestige_value_nodynast"
 											text = "[GetPlayer.GetDynasty.GetPrestige|0]"
 
-											max_width = 56
+											max_width = 50
 											default_format = "#low"
 											using = Font_Size_Medium
 										}
@@ -1169,7 +1174,7 @@ types HUD
 
 									flowcontainer = {
 										margin_bottom = 7
-										spacing = -3
+										spacing = -6
 										direction = vertical
 										ignoreinvisible = yes
 
@@ -1178,7 +1183,7 @@ types HUD
 											visible = "[Not( Domicile.IsAboveHerdLimit )]"
 
 											text = "[Domicile.GetHerd|0]"
-											max_width = 56
+											max_width = 50
 											default_format = "#high"
 											using = Font_Size_Medium
 										}
@@ -1188,7 +1193,7 @@ types HUD
 											visible = "[Domicile.IsAboveHerdLimit]"
 
 											text = "[Domicile.GetHerd|0]"
-											max_width = 56
+											max_width = 50
 											default_format = "#color_yellow"
 											using = Font_Size_Medium
 										}
@@ -1197,7 +1202,7 @@ types HUD
 											text_single = {
 												name = "army_from_herd"
 												text = "[InGameTopbar.GetHerdChangeValue|=1]"
-												max_width = 56
+												max_width = 50
 												default_format = "#low"
 											}
 										}
@@ -1220,6 +1225,7 @@ types HUD
 					datacontext = "[GetPlayer]"
 
 					widget = {
+						visible = "[Not( Character.IsMerchant )]"
 						button = {
 							size = { 112 45 }
 							onclick = "[ToggleGameViewData('military', GetPlayer.GetID)]"
@@ -1304,7 +1310,7 @@ types HUD
 
 					widget = {
 						name = "domain_limit"
-						visible = "[Not( IsLandlessAdventurer( GetPlayer ) )]"
+						visible = "[Not( GetPlayer.IsLandlessRuler )]"
 
 						layoutpolicy_vertical = expanding
 
@@ -1354,6 +1360,85 @@ types HUD
 								}
 								expand = {}
 							}
+							expand = {}
+						}
+					}
+
+					button = {
+						size = { 140 70 }
+						
+						visible = "[Character.IsMerchant]"
+						onclick = "[ToggleGameView( 'trade_window' )]"
+
+						background = {
+							texture = "gfx/interface/skinned/resource_panel_end.dds"
+						}
+
+						vbox = {
+							layoutpolicy_vertical = expanding
+							margin_bottom = 24
+
+							expand = {}
+							
+							hbox = {
+								margin = { 8 0 }
+								layoutpolicy_horizontal = expanding
+
+
+								hbox_trade_window_stat = {
+									datacontext = "[Character.GetCompetitivenessTooltip]"
+									spacing = 0
+
+									blockoverride "icon" {
+										texture = "gfx/interface/icons/trade/icon_trade_competitiveness.dds"
+									}
+
+									blockoverride "text" {
+										text = "[ValueBreakdown.GetValue]"
+									}
+
+									blockoverride "size" {
+										size = { 32 22}
+									}
+
+									tooltipwidget = {
+										widget_value_breakdown_tooltip = {}
+									}
+
+									using = tooltip_se
+								}
+
+								expand = {}
+
+								hbox = {
+									name = "trade_route_limit"
+									tooltip = "HUD_TRADE_ROUTE_LIMIT_TT"
+									using = tooltip_ne
+
+									background = {
+										visible = "[GreaterThan_int32( Character.GetCurrentTradeRouteCount, Character.GetMaxTradeRouteCount )]"
+										using = Status_Bad
+										margin_bottom = -3
+									}
+
+									icon = {
+										texture = "gfx/interface/icons/trade/icon_trade_route.dds"
+										size = { 25 25 }
+										alwaystransparent = yes
+									}
+
+									text_single = {
+										name = "value"
+										text = "[Character.GetCurrentTradeRouteCount]/[Character.GetMaxTradeRouteCount]"
+										align = nobaseline
+										max_width = 110
+										alwaystransparent = yes
+									}
+								}
+
+								expand = {}
+							}
+
 							expand = {}
 						}
 					}
@@ -1939,40 +2024,7 @@ types Lists
 			spacing = 15
 
 			### VASSAL GOLD
-			hbox = {
-				# Treasury Vassals don't pay in gold
-				visible = "[GreaterThan_CFixedPoint( MyRealmWindowVassalItem.GetContract.GetTaxRatioForLiege, '(CFixedPoint)0' )]"
-
-				icon = {
-					size = { 25 25 }
-					texture = "gfx/interface/icons/icon_gold.dds"
-					visible = "[Not( SubjectContract.GetLiege.GetGovernment.HasGovernmentFlag( 'government_has_treasury' ) )]"
-				}
-				icon = {
-					size = { 25 25 }
-					texture = "gfx/interface/icons/icon_imperial_treasury.dds"
-					visible = "[SubjectContract.GetLiege.GetGovernment.HasGovernmentFlag( 'government_has_treasury' )]"
-				}
-
-				text_single = {
-					text = "[MyRealmWindowVassalItem.GetCachedTax|=1]"
-					align = nobaseline
-				}
-
-				tooltipwidget = {
-					container_my_realm_window_contribution_tooltip = {
-						block "tax_breakdown"
-						{
-							datacontext = "[MyRealmWindowVassalItem.GetTaxBreakdown]"
-						}
-						blockoverride "contribution_tooltip_header"
-						{
-							text = "MRW_TT_TAXES_TO_ME"
-						}
-					}
-				}
-				using = tooltip_sw
-			}
+			hbox_vassal_gold_tax = {}
 
 			### VASSAL LEVIES
 			hbox = {

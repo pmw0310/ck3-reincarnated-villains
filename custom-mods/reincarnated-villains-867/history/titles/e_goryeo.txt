@@ -980,11 +980,11 @@ k_baekje = {
 
 d_tamna = {
 
-	867.1.1 = { change_development_level = 4 }
+	867.1.1 = { change_prosperity_level = 4 }
 
-	1066.1.1 = { change_development_level = 7 }
+	1066.1.1 = { change_prosperity_level = 7 }
 
-	1178.1.1 = { change_development_level = 12 }
+	1178.1.1 = { change_prosperity_level = 12 }
 
 
 
@@ -1216,11 +1216,11 @@ d_tamna = {
 
 c_tamna = {
 
-	867.1.1 = { change_development_level = 4 }
+	867.1.1 = { change_prosperity_level = 4 }
 
-	1066.1.1 = { change_development_level = 7 }
+	1066.1.1 = { change_prosperity_level = 7 }
 
-	1178.1.1 = { change_development_level = 12 }
+	1178.1.1 = { change_prosperity_level = 12 }
 
 
 
@@ -1450,11 +1450,11 @@ c_tamna = {
 
 c_ulleong = {
 
-	867.1.1 = { change_development_level = 1 }
+	867.1.1 = { change_prosperity_level = 1 }
 
-	1066.1.1 = { change_development_level = 2 }
+	1066.1.1 = { change_prosperity_level = 2 }
 
-	1178.1.1 = { change_development_level = 3 }
+	1178.1.1 = { change_prosperity_level = 3 }
 
 
 
@@ -1520,11 +1520,11 @@ d_bukgye = {
 
 c_yeongwon = {
 
-	867.1.1 = { change_development_level = 3 }
+	867.1.1 = { change_prosperity_level = 3 }
 
-	1066.1.1 = { change_development_level = 6 }
+	1066.1.1 = { change_prosperity_level = 6 }
 
-	1178.1.1 = { change_development_level = 10 }
+	1178.1.1 = { change_prosperity_level = 10 }
 
 
 
@@ -1558,11 +1558,11 @@ c_yeongwon = {
 
 c_seogyeong = {
 
-	867.1.1 = { change_development_level = 9 }
+	867.1.1 = { change_prosperity_level = 9 }
 
-	1066.1.1 = { change_development_level = 16 }
+	1066.1.1 = { change_prosperity_level = 16 }
 
-	1178.1.1 = { change_development_level = 29 }
+	1178.1.1 = { change_prosperity_level = 29 }
 
 
 
@@ -1640,11 +1640,11 @@ c_seogyeong = {
 
 c_seongju = {
 
-	867.1.1 = { change_development_level = 4 }
+	867.1.1 = { change_prosperity_level = 4 }
 
-	1066.1.1 = { change_development_level = 7 }
+	1066.1.1 = { change_prosperity_level = 7 }
 
-	1178.1.1 = { change_development_level = 12 }
+	1178.1.1 = { change_prosperity_level = 12 }
 
 
 
@@ -1760,11 +1760,11 @@ d_haeju = {
 
 c_haeju = {
 
-	867.1.1 = { change_development_level = 6 }
+	867.1.1 = { change_prosperity_level = 6 }
 
-	1066.1.1 = { change_development_level = 11 }
+	1066.1.1 = { change_prosperity_level = 11 }
 
-	1178.1.1 = { change_development_level = 18 }
+	1178.1.1 = { change_prosperity_level = 18 }
 
 
 
@@ -1806,11 +1806,11 @@ c_haeju = {
 
 c_hwangju = {
 
-	867.1.1 = { change_development_level = 5 }
+	867.1.1 = { change_prosperity_level = 5 }
 
-	1066.1.1 = { change_development_level = 9 }
+	1066.1.1 = { change_prosperity_level = 9 }
 
-	1178.1.1 = { change_development_level = 15 }
+	1178.1.1 = { change_prosperity_level = 15 }
 
 
 
@@ -1854,11 +1854,11 @@ c_hwangju = {
 
 c_pungju = {
 
-	867.1.1 = { change_development_level = 3 }
+	867.1.1 = { change_prosperity_level = 3 }
 
-	1066.1.1 = { change_development_level = 6 }
+	1066.1.1 = { change_prosperity_level = 6 }
 
-	1178.1.1 = { change_development_level = 10 }
+	1178.1.1 = { change_prosperity_level = 10 }
 
 
 
@@ -1946,11 +1946,11 @@ d_gyeongju = {
 
 c_gyeongju = {
 
-	867.1.1 = { change_development_level = 12 }
+	867.1.1 = { change_prosperity_level = 12 }
 
-	1066.1.1 = { change_development_level = 10 }
+	1066.1.1 = { change_prosperity_level = 10 }
 
-	1178.1.1 = { change_development_level = 12 }
+	1178.1.1 = { change_prosperity_level = 12 }
 
 
 
@@ -1988,11 +1988,11 @@ c_gyeongju = {
 
 c_sangju = {
 
-	867.1.1 = { change_development_level = 6 }
+	867.1.1 = { change_prosperity_level = 6 }
 
-	1066.1.1 = { change_development_level = 12 }
+	1066.1.1 = { change_prosperity_level = 12 }
 
-	1178.1.1 = { change_development_level = 19 }
+	1178.1.1 = { change_prosperity_level = 19 }
 
 
 
@@ -2036,11 +2036,11 @@ c_sangju = {
 
 c_ilseon = {
 
-	867.1.1 = { change_development_level = 4 }
+	867.1.1 = { change_prosperity_level = 4 }
 
-	1066.1.1 = { change_development_level = 8 }
+	1066.1.1 = { change_prosperity_level = 8 }
 
-	1178.1.1 = { change_development_level = 13 }
+	1178.1.1 = { change_prosperity_level = 13 }
 
 
 
@@ -2078,11 +2078,11 @@ c_ilseon = {
 
 c_andong = {
 
-	867.1.1 = { change_development_level = 3 }
+	867.1.1 = { change_prosperity_level = 3 }
 
-	1066.1.1 = { change_development_level = 6 }
+	1066.1.1 = { change_prosperity_level = 6 }
 
-	1178.1.1 = { change_development_level = 10 }
+	1178.1.1 = { change_prosperity_level = 10 }
 
 
 
@@ -2224,11 +2224,11 @@ d_jinju = {
 
 c_ulju = {
 
-	867.1.1 = { change_development_level = 5 }
+	867.1.1 = { change_prosperity_level = 5 }
 
-	1066.1.1 = { change_development_level = 10 }
+	1066.1.1 = { change_prosperity_level = 10 }
 
-	1178.1.1 = { change_development_level = 17 }
+	1178.1.1 = { change_prosperity_level = 17 }
 
 
 
@@ -2262,11 +2262,11 @@ c_ulju = {
 
 c_hamyang = {
 
-	867.1.1 = { change_development_level = 3 }
+	867.1.1 = { change_prosperity_level = 3 }
 
-	1066.1.1 = { change_development_level = 6 }
+	1066.1.1 = { change_prosperity_level = 6 }
 
-	1178.1.1 = { change_development_level = 10 }
+	1178.1.1 = { change_prosperity_level = 10 }
 
 
 
@@ -2298,11 +2298,11 @@ c_hamyang = {
 
 c_guemju = {
 
-	867.1.1 = { change_development_level = 4 }
+	867.1.1 = { change_prosperity_level = 4 }
 
-	1066.1.1 = { change_development_level = 8 }
+	1066.1.1 = { change_prosperity_level = 8 }
 
-	1178.1.1 = { change_development_level = 13 }
+	1178.1.1 = { change_prosperity_level = 13 }
 
 
 
@@ -2396,11 +2396,11 @@ c_jinju = {
 
 	}
 
-	867.1.1 = { change_development_level = 3 }
+	867.1.1 = { change_prosperity_level = 3 }
 
-	1066.1.1 = { change_development_level = 5 }
+	1066.1.1 = { change_prosperity_level = 5 }
 
-	1178.1.1 = { change_development_level = 9 }
+	1178.1.1 = { change_prosperity_level = 9 }
 
 	867.1.1 = {
 
@@ -2470,11 +2470,11 @@ d_jeonju = {
 
 c_jeonju = {
 
-	867.1.1 = { change_development_level = 7 }
+	867.1.1 = { change_prosperity_level = 7 }
 
-	1066.1.1 = { change_development_level = 14 }
+	1066.1.1 = { change_prosperity_level = 14 }
 
-	1178.1.1 = { change_development_level = 25 }
+	1178.1.1 = { change_prosperity_level = 25 }
 
 
 
@@ -2506,11 +2506,11 @@ c_jeonju = {
 
 c_jillye = {
 
-	867.1.1 = { change_development_level = 2 }
+	867.1.1 = { change_prosperity_level = 2 }
 
-	1066.1.1 = { change_development_level = 4 }
+	1066.1.1 = { change_prosperity_level = 4 }
 
-	1178.1.1 = { change_development_level = 7 }
+	1178.1.1 = { change_prosperity_level = 7 }
 
 
 
@@ -2542,11 +2542,11 @@ c_jillye = {
 
 c_namwon = {
 
-	867.1.1 = { change_development_level = 3 }
+	867.1.1 = { change_prosperity_level = 3 }
 
-	1066.1.1 = { change_development_level = 5 }
+	1066.1.1 = { change_prosperity_level = 5 }
 
-	1178.1.1 = { change_development_level = 9 }
+	1178.1.1 = { change_prosperity_level = 9 }
 
 
 
@@ -2616,11 +2616,11 @@ d_naju = {
 
 c_naju = {
 
-	867.1.1 = { change_development_level = 4 }
+	867.1.1 = { change_prosperity_level = 4 }
 
-	1066.1.1 = { change_development_level = 7 }
+	1066.1.1 = { change_prosperity_level = 7 }
 
-	1178.1.1 = { change_development_level = 12 }
+	1178.1.1 = { change_prosperity_level = 12 }
 
 
 
@@ -2652,11 +2652,11 @@ c_naju = {
 
 c_jangheung = {
 
-	867.1.1 = { change_development_level = 3 }
+	867.1.1 = { change_prosperity_level = 3 }
 
-	1066.1.1 = { change_development_level = 5 }
+	1066.1.1 = { change_prosperity_level = 5 }
 
-	1178.1.1 = { change_development_level = 9 }
+	1178.1.1 = { change_prosperity_level = 9 }
 
 
 
@@ -2690,11 +2690,11 @@ c_jangheung = {
 
 c_boseong = {
 
-	867.1.1 = { change_development_level = 4 }
+	867.1.1 = { change_prosperity_level = 4 }
 
-	1066.1.1 = { change_development_level = 7 }
+	1066.1.1 = { change_prosperity_level = 7 }
 
-	1178.1.1 = { change_development_level = 12 }
+	1178.1.1 = { change_prosperity_level = 12 }
 
 
 
@@ -2764,11 +2764,11 @@ d_chungju = {
 
 c_chungju = {
 
-	867.1.1 = { change_development_level = 6 }
+	867.1.1 = { change_prosperity_level = 6 }
 
-	1066.1.1 = { change_development_level = 12 }
+	1066.1.1 = { change_prosperity_level = 12 }
 
-	1178.1.1 = { change_development_level = 21 }
+	1178.1.1 = { change_prosperity_level = 21 }
 
 
 
@@ -2800,11 +2800,11 @@ c_chungju = {
 
 c_cheongju = {
 
-	867.1.1 = { change_development_level = 7 }
+	867.1.1 = { change_prosperity_level = 7 }
 
-	1066.1.1 = { change_development_level = 13 }
+	1066.1.1 = { change_prosperity_level = 13 }
 
-	1178.1.1 = { change_development_level = 24 }
+	1178.1.1 = { change_prosperity_level = 24 }
 
 
 
@@ -2842,11 +2842,11 @@ c_cheongju = {
 
 c_gongju = {
 
-	867.1.1 = { change_development_level = 3 }
+	867.1.1 = { change_prosperity_level = 3 }
 
-	1066.1.1 = { change_development_level = 5 }
+	1066.1.1 = { change_prosperity_level = 5 }
 
-	1178.1.1 = { change_development_level = 9 }
+	1178.1.1 = { change_prosperity_level = 9 }
 
 
 
@@ -2878,11 +2878,11 @@ c_gongju = {
 
 c_hongju = {
 
-	867.1.1 = { change_development_level = 3 }
+	867.1.1 = { change_prosperity_level = 3 }
 
-	1066.1.1 = { change_development_level = 5 }
+	1066.1.1 = { change_prosperity_level = 5 }
 
-	1178.1.1 = { change_development_level = 9 }
+	1178.1.1 = { change_prosperity_level = 9 }
 
 
 
@@ -2950,11 +2950,11 @@ d_yukju = {
 
 c_jangjeong = {
 
-	867.1.1 = { change_development_level = 3 }
+	867.1.1 = { change_prosperity_level = 3 }
 
-	1066.1.1 = { change_development_level = 6 }
+	1066.1.1 = { change_prosperity_level = 6 }
 
-	1178.1.1 = { change_development_level = 10 }
+	1178.1.1 = { change_prosperity_level = 10 }
 
 
 
@@ -2986,11 +2986,11 @@ c_jangjeong = {
 
 c_uiju = {
 
-	867.1.1 = { change_development_level = 6 }
+	867.1.1 = { change_prosperity_level = 6 }
 
-	1066.1.1 = { change_development_level = 11 }
+	1066.1.1 = { change_prosperity_level = 11 }
 
-	1178.1.1 = { change_development_level = 19 }
+	1178.1.1 = { change_prosperity_level = 19 }
 
 
 
@@ -3022,11 +3022,11 @@ c_uiju = {
 
 c_gwiju = {
 
-	867.1.1 = { change_development_level = 4 }
+	867.1.1 = { change_prosperity_level = 4 }
 
-	1066.1.1 = { change_development_level = 7 }
+	1066.1.1 = { change_prosperity_level = 7 }
 
-	1178.1.1 = { change_development_level = 12 }
+	1178.1.1 = { change_prosperity_level = 12 }
 
 
 
@@ -3058,11 +3058,11 @@ c_gwiju = {
 
 c_taeju = {
 
-	867.1.1 = { change_development_level = 5 }
+	867.1.1 = { change_prosperity_level = 5 }
 
-	1066.1.1 = { change_development_level = 9 }
+	1066.1.1 = { change_prosperity_level = 9 }
 
-	1178.1.1 = { change_development_level = 15 }
+	1178.1.1 = { change_prosperity_level = 15 }
 
 
 
@@ -3132,11 +3132,11 @@ d_gyoju = {
 
 c_inje = {
 
-	867.1.1 = { change_development_level = 2 }
+	867.1.1 = { change_prosperity_level = 2 }
 
-	1066.1.1 = { change_development_level = 4 }
+	1066.1.1 = { change_prosperity_level = 4 }
 
-	1178.1.1 = { change_development_level = 7 }
+	1178.1.1 = { change_prosperity_level = 7 }
 
 
 
@@ -3168,11 +3168,11 @@ c_inje = {
 
 c_gyoju = {
 
-	867.1.1 = { change_development_level = 4 }
+	867.1.1 = { change_prosperity_level = 4 }
 
-	1066.1.1 = { change_development_level = 7 }
+	1066.1.1 = { change_prosperity_level = 7 }
 
-	1178.1.1 = { change_development_level = 12 }
+	1178.1.1 = { change_prosperity_level = 12 }
 
 
 
@@ -3204,11 +3204,11 @@ c_gyoju = {
 
 c_dongju = {
 
-	867.1.1 = { change_development_level = 3 }
+	867.1.1 = { change_prosperity_level = 3 }
 
-	1066.1.1 = { change_development_level = 5 }
+	1066.1.1 = { change_prosperity_level = 5 }
 
-	1178.1.1 = { change_development_level = 9 }
+	1178.1.1 = { change_prosperity_level = 9 }
 
 
 
@@ -3242,11 +3242,11 @@ c_dongju = {
 
 c_chunju = {
 
-	867.1.1 = { change_development_level = 7 }
+	867.1.1 = { change_prosperity_level = 7 }
 
-	1066.1.1 = { change_development_level = 13 }
+	1066.1.1 = { change_prosperity_level = 13 }
 
-	1178.1.1 = { change_development_level = 23 }
+	1178.1.1 = { change_prosperity_level = 23 }
 
 
 
@@ -3314,11 +3314,11 @@ d_gwangju = {
 
 c_gwangju = {
 
-	867.1.1 = { change_development_level = 8 }
+	867.1.1 = { change_prosperity_level = 8 }
 
-	1066.1.1 = { change_development_level = 14 }
+	1066.1.1 = { change_prosperity_level = 14 }
 
-	1178.1.1 = { change_development_level = 26 }
+	1178.1.1 = { change_prosperity_level = 26 }
 
 
 
@@ -3350,11 +3350,11 @@ c_gwangju = {
 
 c_yangju = {
 
-	867.1.1 = { change_development_level = 8 }
+	867.1.1 = { change_prosperity_level = 8 }
 
-	1066.1.1 = { change_development_level = 14 }
+	1066.1.1 = { change_prosperity_level = 14 }
 
-	1178.1.1 = { change_development_level = 26 }
+	1178.1.1 = { change_prosperity_level = 26 }
 
 
 
@@ -3386,11 +3386,11 @@ c_yangju = {
 
 c_wonju = {
 
-	867.1.1 = { change_development_level = 6 }
+	867.1.1 = { change_prosperity_level = 6 }
 
-	1066.1.1 = { change_development_level = 11 }
+	1066.1.1 = { change_prosperity_level = 11 }
 
-	1178.1.1 = { change_development_level = 19 }
+	1178.1.1 = { change_prosperity_level = 19 }
 
 
 
@@ -3424,11 +3424,11 @@ c_wonju = {
 
 c_dangseong = {
 
-	867.1.1 = { change_development_level = 4 }
+	867.1.1 = { change_prosperity_level = 4 }
 
-	1066.1.1 = { change_development_level = 7 }
+	1066.1.1 = { change_prosperity_level = 7 }
 
-	1178.1.1 = { change_development_level = 12 }
+	1178.1.1 = { change_prosperity_level = 12 }
 
 
 
@@ -3496,11 +3496,11 @@ d_donggye = {
 
 c_myeongju = {
 
-	867.1.1 = { change_development_level = 5 }
+	867.1.1 = { change_prosperity_level = 5 }
 
-	1066.1.1 = { change_development_level = 9 }
+	1066.1.1 = { change_prosperity_level = 9 }
 
-	1178.1.1 = { change_development_level = 15 }
+	1178.1.1 = { change_prosperity_level = 15 }
 
 
 
@@ -3532,11 +3532,11 @@ c_myeongju = {
 
 c_goseong = {
 
-	867.1.1 = { change_development_level = 3 }
+	867.1.1 = { change_prosperity_level = 3 }
 
-	1066.1.1 = { change_development_level = 5 }
+	1066.1.1 = { change_prosperity_level = 5 }
 
-	1178.1.1 = { change_development_level = 8 }
+	1178.1.1 = { change_prosperity_level = 8 }
 
 
 
@@ -3568,11 +3568,11 @@ c_goseong = {
 
 c_deungju = {
 
-	867.1.1 = { change_development_level = 4 }
+	867.1.1 = { change_prosperity_level = 4 }
 
-	1066.1.1 = { change_development_level = 7 }
+	1066.1.1 = { change_prosperity_level = 7 }
 
-	1178.1.1 = { change_development_level = 12 }
+	1178.1.1 = { change_prosperity_level = 12 }
 
 
 
@@ -3652,11 +3652,11 @@ d_gaeseong = {
 
 c_gaeseong = {
 
-	867.1.1 = { change_development_level = 11 }
+	867.1.1 = { change_prosperity_level = 11 }
 
-	1066.1.1 = { change_development_level = 20 }
+	1066.1.1 = { change_prosperity_level = 20 }
 
-	1178.1.1 = { change_development_level = 42 }
+	1178.1.1 = { change_prosperity_level = 42 }
 
 
 
@@ -3700,11 +3700,11 @@ c_gaeseong = {
 
 c_pyeongju = {
 
-	867.1.1 = { change_development_level = 5 }
+	867.1.1 = { change_prosperity_level = 5 }
 
-	1066.1.1 = { change_development_level = 9 }
+	1066.1.1 = { change_prosperity_level = 9 }
 
-	1178.1.1 = { change_development_level = 15 }
+	1178.1.1 = { change_prosperity_level = 15 }
 
 
 
@@ -3742,11 +3742,11 @@ c_pyeongju = {
 
 c_gokju = {
 
-	867.1.1 = { change_development_level = 3 }
+	867.1.1 = { change_prosperity_level = 3 }
 
-	1066.1.1 = { change_development_level = 5 }
+	1066.1.1 = { change_prosperity_level = 5 }
 
-	1178.1.1 = { change_development_level = 9 }
+	1178.1.1 = { change_prosperity_level = 9 }
 
 
 

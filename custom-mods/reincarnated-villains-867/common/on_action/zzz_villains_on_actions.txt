@@ -38,8 +38,8 @@ villains_starting_county_hoi4_colors_on_game_start = {
 			title:c_brescia = { set_color_from_title = title:d_rep_mussolini }
 			title:c_manipur = { set_color_from_title = title:d_rep_mutaguchi }
 			title:c_dimapur = { set_color_from_title = title:d_rep_mutaguchi }
-			title:c_northumberland = { set_color_from_title = title:d_rep_trump }
-			title:c_cumberland = { set_color_from_title = title:d_rep_trump }
+			title:c_holland = { set_color_from_title = title:d_rep_trump }
+			title:c_westfriesland = { set_color_from_title = title:d_rep_trump }
 			title:c_seogyeong = { set_color_from_title = title:d_rep_kim }
 			title:c_seongju = { set_color_from_title = title:d_rep_kim }
 			title:c_koh_ker = { set_color_from_title = title:d_rep_pol_pot }
@@ -272,10 +272,66 @@ villains_noble_family_house_head_on_game_start = {
 		character:reincarnated_trump_867 ?= {
 			if = {
 				limit = { is_alive = yes }
+				add_realm_law_skip_effects = republic_type_civic
+				add_realm_law_skip_effects = republic_assembly_composition_parliament
+				add_realm_law_skip_effects = republic_assembly_authority_legislative
+				add_realm_law_skip_effects = republic_assembly_voting_thresholds_simple_majority
+				add_realm_law_skip_effects = republic_war_declaration_2_unlimited
+				add_realm_law_skip_effects = republic_army_organization_3_maa
+				add_realm_law_skip_effects = republic_trade_specialization_construction
 				house ?= {
 					if = {
 						limit = { house_head != prev }
 						set_house_head = prev
+					}
+					set_house_aspiration = {
+						type = republic_commerce
+						level = 1
+					}
+				}
+				title:c_merchant_trump = {
+					set_coa = holder.house
+					set_color_from_title = title:c_holland
+				}
+				if = {
+					limit = { gold < 350 }
+					add_gold = {
+						value = 350
+						subtract = gold
+					}
+				}
+				if = {
+					limit = { treasury < 350 }
+					add_treasury = {
+						value = 350
+						subtract = treasury
+					}
+				}
+				domicile ?= {
+					move_domicile = owner.capital_province
+					if = {
+						limit = {
+							has_domicile_building_or_higher = merchant_company_main_01
+							NOT = { has_domicile_building_or_higher = merchant_company_main_02 }
+						}
+						add_domicile_building = merchant_company_main_02
+						add_random_internal_main_company_building = yes
+					}
+					if = {
+						limit = {
+							has_domicile_building_or_higher = merchant_company_building_trade_01
+							NOT = { has_domicile_building_or_higher = merchant_company_building_trade_02 }
+						}
+						add_domicile_building = merchant_company_building_trade_02
+						add_random_internal_trade_company_building = yes
+					}
+					if = {
+						limit = {
+							has_domicile_building_or_higher = merchant_company_building_warehouse_01
+							NOT = { has_domicile_building_or_higher = merchant_company_building_warehouse_02 }
+						}
+						add_domicile_building = merchant_company_building_warehouse_02
+						add_random_internal_warehouse_company_building = yes
 					}
 				}
 			}

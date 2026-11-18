@@ -350,38 +350,17 @@ describe('전생한 악당들: 지주 10인 고유 문화·전통·특수병 및
       '죽은 선대 성인(김일성·김정일) 및 사망 후 김정은은 수령을 유지하고, 살아있는 현직 통치자만 국무위원장(juche_incumbent_chairman_flag + priority 우위)으로 분리 표기되어야 합니다.'
     );
     const songunBlock = extractTopLevelBlock(traditionsTxt, 'tradition_songun_fortress') ?? '';
-    const watermillsOverrideTxt = fs.readFileSync(
-      path.join(mainModRoot, 'common/buildings/zzz_villains_watermills.txt'),
-      'utf8'
-    );
     assert.ok(
-      songunBlock.includes('next_level_watermills_only = yes') &&
-        !songunBlock.includes('next_level_w_mills = yes') &&
-        songunBlock.includes('development_growth_factor = -0.15') &&
-        songunBlock.includes('county_opinion_add = -10') &&
-        watermillsOverrideTxt.includes('has_cultural_parameter = next_level_watermills_only') &&
-        !watermillsOverrideTxt.includes('windmills_01 = {') &&
-        koLocTxt.includes('next_level_watermills_only_name:0 "#V $tradition_songun_fortress_name$#!"') &&
-        enLocTxt.includes('next_level_watermills_only_name:0 "#V $tradition_songun_fortress_name$#!"') &&
-        koLocTxt.includes('culture_parameter_next_level_watermills_only:0 "$culture_era_tribal$') &&
-        enLocTxt.includes('culture_parameter_next_level_watermills_only:0 "The #V $building_type_watermills_01$#! line of [buildings|E] can be constructed early from the $culture_era_tribal$'),
-      '선군 요새 국가 전통은 풍차를 제외한 물레방아 단독 조기 건설(next_level_watermills_only), 툴팁 전통 이름 키(next_level_watermills_only_name), 고난의 행군 계획경제 단점(개발도 성장 -15%, 대중 의견 -10)을 함께 갖춰야 합니다.'
+      songunBlock.includes('build_speed = -0.30') &&
+        songunBlock.includes('holding_build_speed = -0.25') &&
+        songunBlock.includes('all_tax_mult = -0.20') &&
+        songunBlock.includes('prosperity_growth_factor = -0.35') &&
+        songunBlock.includes('popular_opinion_add = -20') &&
+        songunBlock.includes('diplomacy = -2') &&
+        songunBlock.includes('different_faith_opinion = -15'),
+      '선군 요새 국가 전통은 속도전 건물/홀딩 건설 시간 단축(build_speed = -0.30, holding_build_speed = -0.25)과 고난의 행군 계획경제 단점(세금 -20%, 번영도 성장 -35%, 대중 의견 -20, 외교력 -2, 타 종교 의견 -15)을 함께 갖춰야 합니다.'
     );
-    const wm01Block = extractTopLevelBlock(watermillsOverrideTxt, 'watermills_01') ?? '';
-    const wm02Block = extractTopLevelBlock(watermillsOverrideTxt, 'watermills_02') ?? '';
-    const wm05Block = extractTopLevelBlock(watermillsOverrideTxt, 'watermills_05') ?? '';
-    assert.ok(
-      /has_cultural_parameter\s*=\s*next_level_watermills_only[\s\S]{0,120}?has_innovation\s*=\s*innovation_crop_rotation/.test(
-        wm01Block
-      ) &&
-        /has_cultural_parameter\s*=\s*next_level_watermills_only[\s\S]{0,120}?has_innovation\s*=\s*innovation_crop_rotation/.test(
-          wm02Block
-        ) &&
-        /has_cultural_parameter\s*=\s*next_level_watermills_only[\s\S]{0,120}?has_innovation\s*=\s*innovation_windmills/.test(
-          wm05Block
-        ),
-      '서경(평양) 등 강변 영지에서 867년 부족 시대 시작 즉시 하사식 물레바퀴(watermills_01~02) 건설이 가능하도록 윤작(innovation_crop_rotation) 혁신으로 연결되어야 하며, watermills_05도 풍차(innovation_windmills)로 해금되어야 합니다.'
-    );
+
     assert.ok(
       koLocTxt.includes('mutaguchi_banzai_samurai:0 "임팔 밀림 결사대"') &&
         koLocTxt.includes('mutaguchi_imphal_vanguard_name:0 "임팔 돌파 결사 선봉대"') &&
@@ -390,7 +369,7 @@ describe('전생한 악당들: 지주 10인 고유 문화·전통·특수병 및
         enLocTxt.includes('mutaguchi_banzai_samurai:0 "Imphal Jungle Shock Troops"') &&
         enLocTxt.includes('mutaguchi_imphal_vanguard_name:0 "Imphal Breakthrough Shock Vanguard"') &&
         !/\bBanzai\b/i.test(enLocTxt),
-      '무타구치 병종·군대·전통 명칭에서 근대 구호(반자이/Banzai)를 배제하고 임팔 지역 및 9세기 무사도 고증에 맞는 임팔 밀림 결사대 명칭을 사용해야 합니다.'
+      '무타구치 병종·군대·전통 명칭에서 근대 구호(반자이/Banzai)를 배제하고 임팔 지형 및 9세기 무사도 고증에 맞는 임팔 밀림 결사대 명칭을 사용해야 합니다.'
     );
 
     const aryanCultureBlock = extractTopLevelBlock(culturesTxt, 'aryan') ?? '';
@@ -400,15 +379,15 @@ describe('전생한 악당들: 지주 10인 고유 문화·전통·특수병 및
     );
 
     const requiredProvinceFiles: Array<{ file: string; culture: string }> = [
-      { file: 'k_england.txt', culture: 'american' },
+      { file: 'k_frisia.txt', culture: 'american' },
       { file: 'k_jerusalem.txt', culture: 'israeli' },
       { file: 'k_bavaria.txt', culture: 'aryan' },
       { file: 'k_italy.txt', culture: 'fascist_italian' },
       { file: 'k_opolye.txt', culture: 'soviet' },
       { file: 'k_goryeo.txt', culture: 'juche_korean' },
-      { file: 'h_china.txt', culture: 'zaofan_chinese' },
+      { file: 'k_liangzhe.txt', culture: 'zaofan_chinese' },
       { file: 'k_kamarupa.txt', culture: 'imperial_japanese' },
-      { file: 'e_kambuja.txt', culture: 'angkar_khmer' },
+      { file: 'k_funan.txt', culture: 'angkar_khmer' },
       { file: 'k_nubia.txt', culture: 'ugandan' },
     ];
     for (const pf of requiredProvinceFiles) {
@@ -554,11 +533,11 @@ describe('전생한 악당들: 지주 10인 고유 문화·전통·특수병 및
       '백악관 총재부(d_americanism) 문장은 미국 국가 국기(성조기)와 동일하게 통일되어야 합니다.'
     );
     checkColoredOnly('dynasty_trump_867', 'ce_villains_gop_elephant.dds');
-    checkColoredOnly('d_nf_trump', 'ce_villains_gop_elephant.dds');
+    checkColoredOnly('c_merchant_trump', 'ce_villains_gop_elephant.dds');
     assert.ok(
       !(extractTopLevelBlock(coaTxt, 'dynasty_trump_867') ?? '').includes('ce_orle.dds') &&
-        !(extractTopLevelBlock(coaTxt, 'd_nf_trump') ?? '').includes('ce_orle.dds'),
-      '트럼프 가문(dynasty_trump_867) 및 명문가(d_nf_trump) 문장은 내측 방패선(ce_orle.dds) 없이 깔끔한 적색 원형 공화당 코끼리(ce_villains_gop_elephant.dds) 구성을 유지해야 합니다.'
+        !(extractTopLevelBlock(coaTxt, 'c_merchant_trump') ?? '').includes('ce_orle.dds'),
+      '트럼프 가문(dynasty_trump_867) 및 상단/명문가(c_merchant_trump) 문장은 내측 방패선(ce_orle.dds) 없이 깔끔한 적색 원형 공화당 코끼리(ce_villains_gop_elephant.dds) 구성을 유지해야 합니다.'
     );
     const dJucheBlock = extractTopLevelBlock(coaTxt, 'd_juche') ?? '';
     assert.ok(
@@ -740,27 +719,126 @@ describe('전생한 악당들: 지주 10인 고유 문화·전통·특수병 및
     );
     const aminCharBlock = extractTopLevelBlock(charsCheckTxt, 'reincarnated_idi_amin_867') ?? '';
     const bibiCharBlock = extractTopLevelBlock(charsCheckTxt, 'reincarnated_netanyahu_867') ?? '';
+    const trumpCharBlock = extractTopLevelBlock(charsCheckTxt, 'reincarnated_trump_867') ?? '';
     assert.ok(
-      aminCharBlock.includes('change_government = feudal_government') &&
-        !aminCharBlock.includes('change_government = clan_government') &&
-        (extractTopLevelBlock(titlesHistTxt, 'd_rep_idi_amin') ?? '').includes('government = feudal_government') &&
-        (extractTopLevelBlock(flavorTxt, 'flav_idi_amin_junta_president') ?? '').includes('d_rep_idi_amin') &&
-        koYmlTxt.includes('flav_idi_amin_junta_president:0 "종신 대통령"'),
-      '이디 아민은 씨족제 문장 강제 오버라이드를 피하기 위해 봉건제(feudal_government)로 시작해 우간다 국기를 표시하고 종신 대통령 칭호를 유지해야 합니다.'
+      trumpCharBlock.includes('capital = c_holland') &&
+        trumpCharBlock.includes('change_government = republic_government') &&
+        trumpCharBlock.includes('republic_type_civic') &&
+        trumpCharBlock.includes('republic_assembly_composition_parliament') &&
+        trumpCharBlock.includes('republic_assembly_authority_legislative') &&
+        trumpCharBlock.includes('republic_war_declaration_2_unlimited') &&
+        trumpCharBlock.includes('republic_army_organization_3_maa') &&
+        trumpCharBlock.includes('republic_trade_specialization_construction') &&
+        trumpCharBlock.includes('type = republic_commerce') &&
+        trumpCharBlock.includes('title:b_amsterdam.title_province') &&
+        trumpCharBlock.includes('set_holding_type = city_holding') &&
+        trumpCharBlock.includes('title:b_haarlem.title_province') &&
+        trumpCharBlock.includes('title:c_merchant_trump') &&
+        !trumpCharBlock.includes('d_northumberland') &&
+        !trumpCharBlock.includes('TRUCE_TRUMP_VIKING_DEAL') &&
+        !trumpCharBlock.includes('character:163102') &&
+        (extractTopLevelBlock(titlesHistTxt, 'd_rep_trump') ?? '').includes('government = republic_government') &&
+        (extractTopLevelBlock(titlesHistTxt, 'c_merchant_trump') ?? '').includes('government = republic_government') &&
+        !fs.existsSync(path.join(mainModRoot, 'history/titles/k_england.txt')) &&
+        !fs.existsSync(path.join(mainModRoot, 'history/provinces/k_england.txt')) &&
+        !fs.existsSync(path.join(mainModRoot, 'history/wars/00_wars.txt')) &&
+        !fs.existsSync(path.join(mainModRoot, 'history/titles/k_norway.txt')) &&
+        !fs.existsSync(path.join(mainModRoot, 'history/provinces/k_norway.txt')) &&
+        fs.existsSync(path.join(mainModRoot, 'history/titles/k_frisia.txt')) &&
+        fs.existsSync(path.join(mainModRoot, 'history/provinces/k_frisia.txt')),
+      '도널드 트럼프는 홀란트/암스테르담(c_holland·c_westfriesland)에서 1.21 공화제(republic_government) 및 상단(c_merchant_trump)으로 시작하며 영국 관련 오버라이드·시작 전쟁·동맹·휴전이 완전히 제거되어야 합니다.'
     );
     assert.ok(
-      bibiCharBlock.includes('change_government = administrative_government') &&
-        bibiCharBlock.includes('acclamation_succession_law') &&
-        bibiCharBlock.includes('set_house_head = prev') &&
+      aminCharBlock.includes('change_government = clan_government') &&
+        !aminCharBlock.includes('change_government = feudal_government') &&
+        (extractTopLevelBlock(titlesHistTxt, 'd_rep_idi_amin') ?? '').includes('government = clan_government') &&
+        (extractTopLevelBlock(flavorTxt, 'flav_idi_amin_junta_president') ?? '').includes('d_rep_idi_amin') &&
+        koYmlTxt.includes('flav_idi_amin_junta_president:0 "종신 대통령"'),
+      '이디 아민은 씨족제(clan_government)로 시작해 종신 대통령 칭호를 유지해야 합니다.'
+    );
+    const hitlerCharBlock = extractTopLevelBlock(charsCheckTxt, 'reincarnated_hitler_867') ?? '';
+    const mussoliniCharBlock = extractTopLevelBlock(charsCheckTxt, 'reincarnated_mussolini_867') ?? '';
+
+    const modModifiersTxt = fs.readFileSync(
+      path.join(mainModRoot, 'common/modifiers/zzz_villains_modifiers.txt'),
+      'utf8'
+    );
+    const modTraditionsTxt = fs.readFileSync(
+      path.join(mainModRoot, 'common/culture/traditions/zzz_villains_traditions.txt'),
+      'utf8'
+    );
+    const bibiPolMod = extractTopLevelBlock(modModifiersTxt, 'netanyahu_dynastic_polarization_modifier') ?? '';
+    const bibiCrisisMod = extractTopLevelBlock(modModifiersTxt, 'netanyahu_judicial_protest_crisis_modifier') ?? '';
+    const ironWallTrad = extractTopLevelBlock(modTraditionsTxt, 'tradition_iron_wall_citadels') ?? '';
+
+    assert.ok(
+      bibiCharBlock.includes('change_government = republic_government') &&
+        bibiCharBlock.includes('republic_type_popular') &&
+        bibiCharBlock.includes('type = republic_agitation') &&
+        bibiCharBlock.includes('type = sayeret_commandos') &&
+        bibiCharBlock.includes('create_maa_regiment') &&
         bibiCharBlock.includes('title:d_nf_netanyahu') &&
-        bibiCharBlock.includes('set_up_domicile_estate_effect = yes') &&
-        (extractTopLevelBlock(landedTitlesTxt, 'd_nf_netanyahu') ?? '').includes('noble_family = yes') &&
-        (extractTopLevelBlock(titlesHistTxt, 'd_nf_netanyahu') ?? '').includes('government = administrative_government') &&
-        (extractTopLevelBlock(titlesHistTxt, 'd_rep_netanyahu') ?? '').includes('government = administrative_government') &&
-        checkColoredOnly('d_nf_netanyahu', 'ce_villains_likud_logo.dds') === undefined &&
+        bibiCharBlock.includes('netanyahu_dynastic_polarization_modifier') &&
+        bibiCharBlock.includes('netanyahu_judicial_protest_crisis_modifier') &&
+        bibiPolMod.includes('popular_opinion_add = -20') &&
+        bibiCrisisMod.includes('popular_opinion_add = -40') &&
+        ironWallTrad.includes('government_has_flag = government_is_republic') &&
+        (extractTopLevelBlock(titlesHistTxt, 'd_nf_netanyahu') ?? '').includes('government = republic_government') &&
+        (extractTopLevelBlock(titlesHistTxt, 'd_rep_netanyahu') ?? '').includes('government = republic_government') &&
         bookmarksTxt.includes('bookmark_reincarnated_netanyahu') &&
         koYmlTxt.includes('d_nf_netanyahu:0 "네타냐후 패밀리"'),
-      '네타냐후는 트럼프와 동일하게 명문가(d_nf_netanyahu)·장원·가문장 강제 지정이 완비된 행정제(administrative_government)로 시작해야 합니다.'
+      '네타냐후는 공화제(republic_government) 및 민중 공화정(republic_type_popular), 선동 야심(republic_agitation), 정규 상비군 편제(create_maa_regiment), 가문 분극화 페널티(-20) 및 사법개혁 반정부 시위 캐릭터 페널티(-40)를 갖춰야 합니다.'
+    );
+
+    assert.ok(
+      hitlerCharBlock.includes('change_government = administrative_government') &&
+        hitlerCharBlock.includes('acclamation_succession_law') &&
+        hitlerCharBlock.includes('type = sa_stormtroopers') &&
+        hitlerCharBlock.includes('title = title:d_rep_hitler') &&
+        hitlerCharBlock.includes('title:c_nf_hitler') &&
+        hitlerCharBlock.includes('type = religious_rights') &&
+        hitlerCharBlock.includes('type = title_revocation_rights') &&
+        (extractTopLevelBlock(landedTitlesTxt, 'c_nf_hitler') ?? '').includes('noble_family = yes') &&
+        (extractTopLevelBlock(titlesHistTxt, 'd_rep_hitler') ?? '').includes('government = administrative_government') &&
+        (extractTopLevelBlock(titlesHistTxt, 'c_nf_hitler') ?? '').includes('government = administrative_government') &&
+        mussoliniCharBlock.includes('change_government = administrative_government') &&
+        mussoliniCharBlock.includes('acclamation_succession_law') &&
+        mussoliniCharBlock.includes('type = blackshirts_militia') &&
+        mussoliniCharBlock.includes('title = title:d_rep_mussolini') &&
+        mussoliniCharBlock.includes('title:c_nf_mussolini') &&
+        mussoliniCharBlock.includes('type = religious_rights') &&
+        mussoliniCharBlock.includes('type = title_revocation_rights') &&
+        (extractTopLevelBlock(landedTitlesTxt, 'c_nf_mussolini') ?? '').includes('noble_family = yes') &&
+        (extractTopLevelBlock(titlesHistTxt, 'd_rep_mussolini') ?? '').includes('government = administrative_government') &&
+        (extractTopLevelBlock(titlesHistTxt, 'c_nf_mussolini') ?? '').includes('government = administrative_government'),
+      '히틀러와 무솔리니는 각각 바이에른/이탈리아 봉신으로서 종교자유·작위박탈 보호 계약과 명문가(c_nf_*)·장원을 완비한 행정제(administrative_government) 및 개인 상비군과 관직/행정 부대(title_maa)를 편제해야 합니다.'
+    );
+
+    const customMaaTxt = fs.readFileSync(
+      path.join(mainModRoot, 'common/men_at_arms_types/zzz_villains_maa_types.txt'),
+      'utf8'
+    );
+    const saBlock = extractTopLevelBlock(customMaaTxt, 'sa_stormtroopers') ?? '';
+    const blackshirtsBlock = extractTopLevelBlock(customMaaTxt, 'blackshirts_militia') ?? '';
+    assert.ok(
+      saBlock.includes('type = skirmishers') &&
+        blackshirtsBlock.includes('type = skirmishers'),
+      '히틀러 돌격대(sa_stormtroopers)와 무솔리니 검은셔츠단(blackshirts_militia)은 갈색셔츠/검은셔츠 준군사 행동대 고증에 따라 경보병(skirmishers)이어야 합니다.'
+    );
+
+    const decisionsCheckTxt = fs.readFileSync(
+      path.join(mainModRoot, 'common/decisions/zzz_villains_decisions.txt'),
+      'utf8'
+    );
+    assert.ok(
+      !decisionsCheckTxt.includes('d_northumberland') &&
+        !decisionsCheckTxt.includes('e_britannia') &&
+        !decisionsCheckTxt.includes('c_middlesex') &&
+        !decisionsCheckTxt.includes('change_development_level') &&
+        decisionsCheckTxt.includes('completely_controls = title:d_holland') &&
+        decisionsCheckTxt.includes('change_prosperity_level') &&
+        !fs.existsSync(path.join(mainModRoot, 'common/buildings/zzz_villains_watermills.txt')),
+      '결단 파일은 트럼프 암스테르담 이전에 맞춰 옛 브리튼 작위 참조가 없어야 하며, 1.21 번영도 이펙트(change_prosperity_level)를 사용하고 폐기된 수차 오버라이드 파일이 제거되어야 합니다.'
     );
   });
 });

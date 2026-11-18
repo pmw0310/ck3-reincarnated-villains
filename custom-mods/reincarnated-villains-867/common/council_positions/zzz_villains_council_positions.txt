@@ -1,0 +1,524 @@
+﻿# Reincarnated Villains 867: Modularized councillor_court_chaplain override (CK3 1.21+)
+councillor_court_chaplain = {
+	skill = learning
+
+	auto_fill = {
+		trigger_if = {
+			limit = {
+				is_ai = yes
+				tgp_has_access_to_ministry_trigger = no
+			}
+			always = yes
+		}
+		trigger_else_if = {
+			limit = {
+				tgp_has_access_to_ministry_trigger = yes
+			}
+			always = no
+		}
+		trigger_else = {
+			rite = {
+				NOT = { rite_has_parameter = clerical_appointment_ruler }
+			}
+		}
+	}
+
+	fill_from_pool = yes
+	is_clergy_position = yes
+
+	can_fire = {
+		trigger_if = {
+			limit = {
+				tgp_has_access_to_ministry_trigger = no
+			}
+			custom_description = {
+				text = "court_chaplain_cant_fire_doctrines"
+				can_appoint_own_court_chaplain_trigger = yes
+			}
+		}
+	}
+
+	can_reassign = {
+		trigger_if = {
+			limit = {
+				tgp_has_access_to_ministry_trigger = no
+			}
+			custom_description = {
+				text = "court_chaplain_cant_reassign_doctrines"
+				OR = {
+					can_appoint_own_court_chaplain_trigger = yes
+					NOT = { exists = cp:councillor_court_chaplain }
+				}
+			}
+		}
+	}
+
+	can_change_once = {
+		can_appoint_own_court_chaplain_trigger = no
+		exists = cp:councillor_court_chaplain
+	}
+
+	inherit = no
+
+	name = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { rite = rite:juche }
+				desc = councillor_court_chaplain_juche
+			}
+			triggered_desc = {
+				trigger = { rite = rite:national_socialism }
+				desc = councillor_court_chaplain_national_socialism
+			}
+			triggered_desc = {
+				trigger = { rite = rite:bolshevism }
+				desc = councillor_court_chaplain_bolshevism
+			}
+			triggered_desc = {
+				trigger = { rite = rite:fascism }
+				desc = councillor_court_chaplain_fascism
+			}
+			triggered_desc = {
+				trigger = { rite = rite:state_shinto }
+				desc = councillor_court_chaplain_state_shinto
+			}
+			triggered_desc = {
+				trigger = { rite = rite:americanism }
+				desc = councillor_court_chaplain_americanism
+			}
+			triggered_desc = {
+				trigger = { rite = rite:angkar }
+				desc = councillor_court_chaplain_angkar
+			}
+			triggered_desc = {
+				trigger = { rite = rite:aminism }
+				desc = councillor_court_chaplain_aminism
+			}
+			triggered_desc = {
+				trigger = { rite = rite:khlystism }
+				desc = councillor_court_chaplain_khlystism
+			}
+			triggered_desc = {
+				trigger = { rite = rite:cultural_revolution }
+				desc = councillor_court_chaplain_cultural_revolution
+			}
+			triggered_desc = {
+				trigger = { rite = rite:zionism }
+				desc = councillor_court_chaplain_zionism
+			}
+			triggered_desc = {
+				trigger = {
+					highest_held_title_tier >= tier_hegemony
+					government_has_flag = government_has_merit
+				}
+				desc = councillor_court_chaplain_celestial_government_imperial
+			}
+			triggered_desc = {
+				trigger = {
+					OR = {
+						culture = { has_cultural_pillar = heritage_chinese }
+						culture = { has_cultural_pillar = heritage_tungusic }
+					}
+					religion = religion:buddhism_religion
+				}
+				desc = councillor_court_chaplain_buddhist_chinese
+			}
+			triggered_desc = {
+				trigger = {
+					OR = {
+						culture = { has_cultural_pillar = heritage_chinese }
+						culture = { has_cultural_pillar = heritage_tungusic }
+					}
+					religion = religion:taoism_religion
+				}
+				desc = councillor_court_chaplain_daoist_chinese
+			}
+			triggered_desc = {
+				trigger = {
+					OR = {
+						culture = { has_cultural_pillar = heritage_chinese }
+						culture = { has_cultural_pillar = heritage_tungusic }
+					}
+					religion = religion:confucianism_religion
+				}
+				desc = councillor_court_chaplain_confucian_chinese
+			}
+			triggered_desc = {
+				trigger = {
+					OR = {
+						culture = { has_cultural_pillar = heritage_tibetan }
+					}
+					religion = religion:buddhism_religion
+				}
+				desc = councillor_court_chaplain_buddhist_tibetan
+			}
+			triggered_desc = {
+				trigger = {
+					government_has_flag = government_is_mandala
+				}
+				desc = councillor_court_chaplain_mandala_government
+			}
+			triggered_desc = {
+				trigger = {
+					religion = religion:christianity_religion
+					government_has_flag = government_is_theocracy
+					exists = scope:councillor
+					scope:councillor = {
+						is_ruler = no
+					}
+				}
+				desc = councillor_court_chaplain_confessor
+			}
+			triggered_desc = {
+				trigger = {
+					exists = scope:councillor
+					scope:councillor = {
+						faith.religion = faith:catholic.religion
+					}
+				}
+				desc = councillor_actual_bishop_title
+			}
+			triggered_desc = {
+				trigger = {
+					exists = scope:councillor
+					rite = {
+						OR = {
+							rite_has_doctrine = doctrine_theocracy_temporal
+							faith.religion = { is_in_family = rf_pagan }
+							faith.religion = { is_in_family = rf_totalitarian }
+							faith.religion = { is_in_family = rf_socialist }
+						}
+					}
+				}
+				desc = councillor_actual_bishop_title
+			}
+			triggered_desc = {
+				trigger = {
+					rite = {
+						NOR = {
+							rite_has_doctrine = doctrine_theocracy_temporal
+							faith.religion = { is_in_family = rf_pagan }
+							faith.religion = { is_in_family = rf_totalitarian }
+							faith.religion = { is_in_family = rf_socialist }
+						}
+					}
+				}
+				desc = {
+					first_valid = {
+						#Shia
+						triggered_desc = {
+							trigger = { highest_held_title_tier >= tier_empire rite = rite:ismaili }
+							desc = councillor_court_chaplain_ismaili_empire
+						}
+						triggered_desc = {
+							trigger = { highest_held_title_tier >= tier_kingdom rite = rite:ismaili }
+							desc = councillor_court_chaplain_ismaili_kingdom
+						}
+						#Islam
+						triggered_desc = {
+							trigger = { highest_held_title_tier >= tier_empire faith.religion = faith:sunni.religion }
+							desc = councillor_court_chaplain_islam_empire
+						}
+						triggered_desc = {
+							trigger = { highest_held_title_tier >= tier_kingdom faith.religion = faith:sunni.religion }
+							desc = councillor_court_chaplain_islam_kingdom
+						}
+						triggered_desc = {
+							trigger = { highest_held_title_tier >= tier_duchy faith.religion = faith:sunni.religion }
+							desc = councillor_court_chaplain_islam_duchy
+						}
+						triggered_desc = {
+							trigger = { highest_held_title_tier < tier_duchy faith.religion = faith:sunni.religion }
+							desc = councillor_court_chaplain_islam_county
+						}
+						#Yazidi
+						triggered_desc = {
+							trigger = { highest_held_title_tier >= tier_empire faith.religion = faith:yazidi_faith.religion }
+							desc = councillor_court_chaplain_yazidi_empire
+						}
+						triggered_desc = {
+							trigger = { highest_held_title_tier >= tier_kingdom faith.religion = faith:yazidi_faith.religion }
+							desc = councillor_court_chaplain_yazidi_kingdom
+						}
+						triggered_desc = {
+							trigger = { highest_held_title_tier >= tier_duchy faith.religion = faith:yazidi_faith.religion }
+							desc = councillor_court_chaplain_yazidi_duchy
+						}
+						triggered_desc = {
+							trigger = { highest_held_title_tier < tier_duchy faith.religion = faith:yazidi_faith.religion }
+							desc = councillor_court_chaplain_yazidi_county
+						}
+						desc = councillor_court_chaplain
+					}
+				}
+			}
+			desc = councillor_court_chaplain
+		}
+	}
+
+	tooltip = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					scope:councillor_liege = { tgp_has_access_to_ministry_trigger = yes }
+				}
+				desc = game_concept_minister_of_rites_desc
+			}
+			triggered_desc = {
+				trigger = {
+					rite = { rite_has_doctrine = doctrine_theocracy_temporal }
+				}
+				desc = game_concept_realm_priest_desc
+			}
+			desc = game_concept_court_chaplain_desc
+		}
+	}
+
+	modifier = {
+		name = councillor_court_chaplain_modifier
+		popular_opinion_add = 5
+		monthly_learning_lifestyle_xp_gain_mult = 0.05
+		scale = council_scaled_by_liege_tier
+	}
+
+	modifier = {
+		name = councillor_court_chaplain_modifier
+		monthly_piety = 1
+		scale = council_scaled_monthly_income
+	}
+
+	council_owner_modifier = {
+		name = learn_on_the_job_modifier
+		learning = 1
+		scale = court_chaplain_learn_on_the_job_scale
+	}
+
+	council_owner_modifier = {
+		name = reliable_house_modifier
+		learning = 1
+		scale = court_chaplain_reliable_house_scale
+	}
+
+	pool_character_config = pool_court_chaplain
+
+	valid_character = {
+		exists = root.liege_or_court_owner
+
+		trigger_if = { # If the liege has a ministry, we check a separate minister trigger
+			limit = {
+				root.liege_or_court_owner = { tgp_has_access_to_ministry_trigger = yes }
+			}
+			tgp_can_be_a_minister_trigger = { COURT_OWNER = root.liege_or_court_owner }
+		}
+		trigger_else = {
+			can_be_court_chaplain_trigger = { COURT_OWNER = root.liege_or_court_owner }
+		}
+		is_ceremonial_liege = no
+	}
+
+	valid_position = {
+		government_allows = council
+		NOR = {
+			government_has_flag = government_is_nomadic
+			government_has_flag = government_is_landless_adventurer
+			government_has_flag = government_is_merchant
+			gdp_use_patrician_council_trigger = yes
+		}
+	}
+
+	on_get_position = {
+		got_council_position_effect = yes
+		got_minister_position_effect = { MINISTER_TITLE = e_minister_of_rites MINISTER_POSITION = councillor_court_chaplain }
+		christian_clergy_learn_liturgical_language_effect = yes
+		# Only fixes the automatic fill, since a see vacated by death has already been inherited
+		if = {
+			limit = {
+				is_ruler = no
+				liege = {
+					rite = { rite_has_parameter = has_clerical_regions } # As at game start. The trigger below, not the doctrine, is what exempts owners who pick their own
+					can_appoint_own_court_chaplain_trigger = no
+					# A player's own pick, a swap or a church replacement is never the automatic fill
+					NOT = { has_character_flag = pam_church_replacing_realm_priest }
+					trigger_if = {
+						limit = { is_ai = no }
+						NOR = {
+							has_character_flag = manual_council_appointment_in_progress
+							exists = scope:swapped_position
+						}
+					}
+				}
+			}
+			liege = {
+				assign_landed_realm_priest_effect = yes
+			}
+			if = {
+				limit = { is_councillor = no }
+				move_to_pool = yes
+			}
+		}
+		if = {
+			limit = {
+				years_from_game_start >= 1
+			}
+			if = {
+				limit = {
+					exists = this
+					exists = liege.culture
+					NOT = {
+						knows_language_of_culture = liege.culture
+					}
+				}
+				random_list = {
+					10 = {
+						modifier = {
+							add = learning
+						}
+						learn_language_of_culture = liege.culture
+					}
+					5 = {
+						trigger = {
+							can_start_scheme = {
+								type = learn_language
+								target_character = liege
+							}
+						}
+						start_scheme = {
+							type = learn_language
+							target_character = liege
+						}
+					}
+					5 = {
+						trigger = {
+							OR = {
+								has_trait = arrogant
+								has_trait = arbitrary
+								has_trait = lazy
+								has_trait = fickle
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	on_fired_from_position = {
+		fired_minister_position_effect = yes
+		fired_from_council_position_effect = yes
+		# We send a toast for the same petition catalyst, because the council UI shows nothing
+		if = {
+			limit = {
+				scope:councillor_liege ?= {
+					religion = religion:christianity_religion
+					government_is_religious_trigger = no
+					exists = top_participant_group:the_christian_church
+					NOT = { has_character_flag = pam_church_replacing_realm_priest }
+					NOT = { exists = root.clerical_elector_title }
+				}
+				situation:the_christian_church ?= {
+					situation_top_has_catalyst = catalyst_the_christian_church_requested_realm_priest_replacement
+				}
+			}
+			scope:councillor_liege = {
+				send_interface_toast = {
+					title = pam_replaced_own_realm_priest_toast
+					left_icon = this
+					right_icon = root
+					custom_tooltip = {
+						text = pam_replaced_own_realm_priest_catalyst_tt
+						situation:the_christian_church = {
+							trigger_situation_catalyst = catalyst_the_christian_church_requested_realm_priest_replacement
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = root.faith.religious_head
+				root.faith.religious_head != root
+				scope:councillor_liege ?= {
+					this != root.faith.religious_head
+					government_is_religious_trigger = no
+					religion = religion:christianity_religion
+					exists = top_participant_group:the_christian_church
+				}
+			}
+			save_scope_as = pam_dismissed_realm_priest
+			root.faith.religious_head = { save_scope_as = pam_slighted_religious_head }
+			scope:councillor_liege = {
+				send_interface_toast = {
+					title = pam_fired_realm_priest_toast
+					left_icon = scope:pam_slighted_religious_head
+					right_icon = scope:pam_dismissed_realm_priest
+					scope:pam_slighted_religious_head = {
+						add_opinion = {
+							target = scope:councillor_liege
+							modifier = pam_fired_realm_priest_opinion
+						}
+					}
+				}
+			}
+		}
+	}
+
+	on_lose_position = {
+		# We promote first, because clearing the Realm Priest link first made puppeteer?= fail
+		if = {
+			limit = {
+				is_alive = yes
+				is_clergy = yes
+				is_ai = yes
+				any_held_title = {}
+				OR = {
+					government_has_flag = government_is_theocracy
+					government_has_flag = government_is_monastic_holy_order
+					has_trait = devoted
+					has_trait = cleric
+				}
+				OR = {
+					NOT = { liege ?= scope:councillor_liege }
+					puppeteer ?= scope:councillor_liege
+				}
+				scope:councillor_liege = {
+					can_have_theological_agent_puppet_trigger = yes
+					NOT = {
+						exists = puppet:external_theological_agent_puppet
+					}
+				}
+			}
+			if = {
+				limit = { puppeteer ?= scope:councillor_liege }
+				hidden_effect = { clear_puppet_status = yes }
+			}
+			scope:councillor_liege = {
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = make_external_clerical_puppet_on_action_notification
+					left_icon = scope:councillor_liege
+					right_icon = root
+					set_puppet = {
+						target = root
+						type = external_theological_agent_puppet
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				is_alive = yes
+				is_clergy = yes
+				puppeteer ?= scope:councillor_liege
+				is_puppet_of_type = theological_agent_puppet
+			}
+			clear_puppet_status = yes
+		}
+	}
+
+	portrait_animation = chaplain
+
+	barbershop_data = {
+		position = { 1618.0 172.0 }
+		click_to_front = no
+	}
+}

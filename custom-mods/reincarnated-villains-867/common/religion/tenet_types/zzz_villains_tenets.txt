@@ -71,7 +71,7 @@ tenet_mass_propaganda = {
 	}
 
 	county_modifier = {
-		county_opinion_add = 10
+		popular_opinion_add = 10
 		levy_reinforcement_rate = 0.2
 	}
 
@@ -156,7 +156,7 @@ tenet_planned_economy = {
 	}
 
 	county_modifier = {
-		development_growth_factor = 0.15
+		prosperity_growth_factor = 0.15
 		levy_size = 0.15
 	}
 
@@ -404,7 +404,7 @@ tenet_state_corporatism = {
 
 	county_modifier = {
 		monthly_county_control_growth_add = 0.3
-		county_opinion_add = 5
+		popular_opinion_add = 5
 	}
 
 	parameters = {
@@ -481,16 +481,21 @@ tenet_free_market = {
 	}
 
 	character_modifier = {
-		monthly_income_mult = 0.1
-		stewardship_per_piety_level = 1
-		city_holding_build_speed = -0.2
-		city_holding_build_gold_cost = -0.2
-		city_holding_holding_build_speed = -0.2
-		city_holding_holding_build_gold_cost = -0.2
+		republic_government_tax_contribution_mult = 0.25
+		republic_government_opinion = 15
+		trade_capacity_mult = 0.20
+		trade_competitiveness_mult = 0.15
+		monthly_income_from_trade_mult = 0.20
+		trade_category_all_sell_price_mult = 0.10
+		city_holding_build_speed = -0.25
+		city_holding_build_gold_cost = -0.25
+		city_holding_holding_build_speed = -0.25
+		city_holding_holding_build_gold_cost = -0.25
 	}
 
 	county_modifier = {
-		development_growth_factor = 0.15
+		prosperity_growth_factor = 0.25
+		all_tax_mult = 0.10
 	}
 
 	parameters = {
@@ -499,8 +504,9 @@ tenet_free_market = {
 	}
 
 	personal_tenet_modifier = {
-		monthly_stewardship_lifestyle_xp_gain_mult = 0.2
-		tax_mult = 0.05
+		republic_government_tax_contribution_mult = 0.15
+		monthly_income_from_trade_mult = 0.15
+		monthly_stewardship_lifestyle_xp_gain_mult = 0.20
 	}
 
 	personal_tenet_parameters = {

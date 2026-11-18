@@ -896,7 +896,7 @@ americanism = {
 
 	eminent_holy_sites = {
 
-		kent
+		amsterdam_americanism
 
 		rome
 
@@ -2177,7 +2177,7 @@ khlystism = {
 		doctrine_deviancy_accepted
 		doctrine_witchcraft_accepted
 		doctrine_clerical_function_recruitment
-		doctrine_clerical_gender_either
+		doctrine_clerical_gender_male_only
 		doctrine_clerical_marriage_allowed
 		doctrine_clerical_succession_temporal_fixed_appointment
 		doctrine_no_anointment
@@ -2517,7 +2517,7 @@ zionism = {
 		doctrine_deviancy_shunned
 		doctrine_witchcraft_shunned
 		doctrine_clerical_function_recruitment
-		doctrine_clerical_gender_either
+		doctrine_clerical_gender_male_only
 		doctrine_clerical_marriage_allowed
 		doctrine_clerical_succession_temporal_fixed_appointment
 		doctrine_imperial_anointment

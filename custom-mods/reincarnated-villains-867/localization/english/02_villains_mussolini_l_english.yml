@@ -21,6 +21,8 @@
  d_rep_mussolini_adj:0 "Milanese Fasci"
  e_new_roman_empire:0 "New Roman Empire"
  e_new_roman_empire_adj:0 "New Roman"
+ c_nf_mussolini:0 "House of Mussolini"
+ c_nf_mussolini_adj:0 "Mussolini"
 
  # === [Religion, Faith & Holy Sites] ===
  fascism:0 "Fascism"

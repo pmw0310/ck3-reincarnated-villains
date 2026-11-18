@@ -706,6 +706,18 @@ villains_seed_holy_site_relics_effect = {
 			}
 			set_primary_title_to = title:d_rep_trump
 		}
+		if = {
+			limit = {
+				is_alive = yes
+				government_has_flag = government_is_republic
+			}
+			house ?= {
+				set_house_aspiration = {
+					type = republic_commerce
+					level = 1
+				}
+			}
+		}
 	}
 	character:reincarnated_hitler_867 ?= {
 		if = {

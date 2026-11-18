@@ -1062,7 +1062,7 @@ trump_build_great_wall_and_tower_decision = {
 
 		prestige_level >= 3
 
-		completely_controls = title:d_northumberland
+		completely_controls = title:d_holland
 
 	}
 
@@ -1092,7 +1092,7 @@ trump_build_great_wall_and_tower_decision = {
 
 	effect = {
 
-		title:d_northumberland = { set_de_jure_liege_title = title:k_united_states }
+		title:d_holland = { set_de_jure_liege_title = title:k_united_states }
 
 		every_held_title = {
 
@@ -1129,7 +1129,7 @@ trump_build_great_wall_and_tower_decision = {
 
 		title:k_united_states = {
 
-			set_de_jure_liege_title = title:e_britannia
+			set_de_jure_liege_title = title:e_germany
 
 			set_coa = k_united_states
 
@@ -1188,7 +1188,7 @@ trump_build_great_wall_and_tower_decision = {
 
 			add_county_modifier = trump_golden_tower_county_modifier
 
-			change_development_level = 5
+			change_prosperity_level = 5
 
 		}
 
@@ -1710,7 +1710,7 @@ hitler_proclaim_greater_german_reich_decision = {
 
 			add_county_modifier = hitler_germania_world_capital_county_modifier
 
-			change_development_level = 5
+			change_prosperity_level = 5
 
 		}
 
@@ -1974,7 +1974,7 @@ stalin_proclaim_ussr_superpower_decision = {
 
 			add_county_modifier = stalin_socialist_metropolis_county_modifier
 
-			change_development_level = 5
+			change_prosperity_level = 5
 
 		}
 
@@ -2276,7 +2276,7 @@ mussolini_restore_mare_nostrum_empire_decision = {
 
 			add_county_modifier = mussolini_eternal_imperial_rome_county_modifier
 
-			change_development_level = 5
+			change_prosperity_level = 5
 
 		}
 
@@ -2538,7 +2538,7 @@ mutaguchi_proclaim_greater_east_asia_decision = {
 
 		capital_county = {
 
-			change_development_level = 5
+			change_prosperity_level = 5
 
 		}
 
@@ -2674,13 +2674,13 @@ trump_proclaim_pax_americana_empire_decision = {
 
 		prestige_level >= 4
 
-		completely_controls = title:d_northumberland
+		completely_controls = title:d_holland
 
-		completely_controls = title:d_york
+		completely_controls = title:d_frisia
 
-		completely_controls = title:d_lothian
+		completely_controls = title:d_brabant
 
-		completely_controls = title:c_middlesex
+		completely_controls = title:d_flanders
 
 	}
 
@@ -2712,9 +2712,9 @@ trump_proclaim_pax_americana_empire_decision = {
 
 		title:k_united_states = { set_de_jure_liege_title = title:e_american_empire }
 
-		title:k_england = { set_de_jure_liege_title = title:e_american_empire }
+		title:k_frisia = { set_de_jure_liege_title = title:e_american_empire }
 
-		title:k_scotland = { set_de_jure_liege_title = title:e_american_empire }
+		title:k_lotharingia = { set_de_jure_liege_title = title:e_american_empire }
 
 		every_held_title = {
 
@@ -2798,7 +2798,7 @@ trump_proclaim_pax_americana_empire_decision = {
 
 			add_county_modifier = trump_wall_street_capital_county_modifier
 
-			change_development_level = 5
+			change_prosperity_level = 5
 
 		}
 
@@ -3066,7 +3066,7 @@ kim_proclaim_juche_superpower_empire_decision = {
 
 			add_county_modifier = kim_revolutionary_pyongyang_county_modifier
 
-			change_development_level = 5
+			change_prosperity_level = 5
 
 		}
 
@@ -5106,7 +5106,7 @@ pol_pot_proclaim_angkar_agrarian_empire_decision = {
 
 			add_county_modifier = pol_pot_year_zero_commune_capital_county_modifier
 
-			change_development_level = 5
+			change_prosperity_level = 5
 
 		}
 
@@ -6141,7 +6141,7 @@ idi_amin_proclaim_british_conqueror_empire_decision = {
 			set_de_jure_liege_title = title:e_uganda_empire
 		}
 		capital_county = {
-			change_development_level = 5
+			change_prosperity_level = 5
 			if = {
 				limit = { NOT = { has_county_modifier = idi_amin_kampala_command_capital_modifier } }
 				add_county_modifier = idi_amin_kampala_command_capital_modifier
@@ -7876,7 +7876,7 @@ netanyahu_proclaim_state_of_israel_decision = {
 		add_prestige = 1200
 		add_piety = 600
 		title:c_jerusalem = {
-			change_development_level = 3
+			change_prosperity_level = 3
 		}
 		dynasty = {
 			add_dynasty_prestige = 1000
@@ -8009,7 +8009,7 @@ netanyahu_proclaim_greater_israel_decision = {
 		add_piety = 1200
 		title:c_jerusalem = {
 			add_county_modifier = netanyahu_eternal_jerusalem_capital_county_modifier
-			change_development_level = 5
+			change_prosperity_level = 5
 		}
 		dynasty = {
 			add_dynasty_prestige = 2500
@@ -8333,5 +8333,63 @@ netanyahu_mossad_targeted_operation_decision = {
 
 	ai_will_do = {
 		base = 120
+	}
+}
+
+# 11-D. Knesset Strategic Mobilization Decision (크네세트 전략 기동 및 총선 대책 결단)
+netanyahu_knesset_strategic_mobilization_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+	decision_group_type = religious
+	sort_order = 114
+	desc = netanyahu_knesset_strategic_mobilization_decision_desc
+	selection_tooltip = netanyahu_knesset_strategic_mobilization_decision_tooltip
+	confirm_text = netanyahu_knesset_strategic_mobilization_decision_confirm
+
+	cooldown = { years = 5 }
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 36
+		duchy = 36
+		kingdom = 24
+		empire = 24
+		hegemony = 24
+	}
+
+	is_shown = {
+		is_ruler = yes
+		is_landed = yes
+		exists = dynasty
+		dynasty = dynasty:dynasty_netanyahu_867
+		faith = faith:zionism
+	}
+
+	is_valid = {
+		faith = faith:zionism
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+	}
+
+	cost = {
+		gold = 120
+		prestige = 100
+	}
+
+	effect = {
+		custom_tooltip = netanyahu_knesset_strategic_mobilization_event_preview_tt
+		trigger_event = villains_religious_decision.0230
+	}
+
+	ai_potential = {
+		short_term_gold >= 200
+		prestige >= 150
+	}
+
+	ai_will_do = {
+		base = 150
 	}
 }

@@ -50,6 +50,23 @@ custom_hair = {
 		}
 	}
 
+	### GDP ###
+
+	add_accessory_modifiers = {
+		gene = hairstyles
+		template = gdp_western_hairstyles
+		is_valid_custom = {
+			has_gdp_dlc_trigger = yes
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 50
+				portrait_western_clothing_trigger = yes
+			}
+		}
+	}
+
 	### PAM ###
 
 	add_accessory_modifiers = {
@@ -724,30 +741,6 @@ custom_hair = {
 		gene = hairstyles
 		template = special_hairstyles
 	}
-
-	## CFP Compatibility ##
-	add_accessory_modifiers = {
-		gene = hairstyles
-		template = cfp_western_hairstyles_aging
-		weight = {
-			base = 0
-		}
-	}
-	add_accessory_modifiers = {
-		gene = hairstyles
-		template = cfp_slavic_hairstyles_warrior
-		weight = {
-			base = 0
-		}
-	}
-	add_accessory_modifiers = {
-		gene = hairstyles
-		template = cfp_hungarian_hairstyles_warrior
-		weight = {
-			base = 0
-		}
-	}
-
 	## Reincarnated Villains 867 Custom Hairstyles ##
 	add_accessory_modifiers = {
 		gene = hairstyles

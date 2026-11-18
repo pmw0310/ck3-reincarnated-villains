@@ -60,6 +60,23 @@
 
 			give_nickname = nick_the_fuhrer
 
+			change_government = administrative_government
+			add_realm_law_skip_effects = acclamation_succession_law
+			tgp_treasury_setup_effect = yes
+			if = {
+				limit = { exists = liege }
+				vassal_contract_set_obligation_level = { type = religious_rights level = 1 }
+				vassal_contract_set_obligation_level = { type = title_revocation_rights level = 1 }
+			}
+			title:c_nf_hitler = {
+				set_coa = holder.house
+				set_color_from_title = title:d_rep_hitler
+			}
+			domicile ?= {
+				set_up_domicile_estate_effect = yes
+				move_domicile = owner.capital_province
+			}
+
 			add_known_tenet = tenet_fuhrerprinzip
 
 			force_set_personal_tenet = tenet_fuhrerprinzip
@@ -178,17 +195,17 @@
 
 				if = {
 
-					limit = { NOT = { has_building_or_higher = curtain_walls_01 } }
+					limit = { NOT = { has_building_or_higher = castle_citadel_1 } }
 
-					add_building = curtain_walls_01
+					add_building = castle_citadel_1
 
 				}
 
 				if = {
 
-					limit = { NOT = { has_building_or_higher = barracks_01 } }
+					limit = { NOT = { has_building_or_higher = castle_garrison_1 } }
 
-					add_building = barracks_01
+					add_building = castle_garrison_1
 
 				}
 
@@ -206,23 +223,21 @@
 
 				if = {
 
-					limit = { NOT = { has_building_or_higher = curtain_walls_01 } }
+					limit = { NOT = { has_building_or_higher = castle_citadel_1 } }
 
-					add_building = curtain_walls_01
+					add_building = castle_citadel_1
 
 				}
 
 				if = {
 
-					limit = { NOT = { has_building_or_higher = barracks_01 } }
+					limit = { NOT = { has_building_or_higher = castle_garrison_1 } }
 
-					add_building = barracks_01
+					add_building = castle_garrison_1
 
 				}
 
 			}
-
-			change_government = feudal_government
 
 			add_realm_law_skip_effects = male_preference_law
 
@@ -234,7 +249,7 @@
 
 				set_county_culture = culture:aryan
 
-				change_development_level = 6
+				change_prosperity_level = 6
 
 			}
 
@@ -244,28 +259,38 @@
 
 				set_county_culture = culture:aryan
 
-				change_development_level = 5
+				change_prosperity_level = 5
 
 			}
 
-			spawn_army = {
+			# Personal MAA (개인 상비군: 특수산병 1대대)
+			create_maa_regiment = {
+				type = sa_stormtroopers
+				check_can_recruit = no
+				size = 1
+			}
 
-				name = hitler_sa_stormtroopers_name
+			# Administrative / Theme MAA (속주 부대: 특수산병 2대대)
+			create_maa_regiment = {
+				type = sa_stormtroopers
+				check_can_recruit = no
+				title = title:d_rep_hitler
+				size = 2
+			}
 
-				men_at_arms = {
-
-					type = sa_stormtroopers
-
-					stacks = 8
-
+			# 1회성 특수 산병 부대 (500명)
+			if = {
+				limit = { exists = capital_province }
+				spawn_army = {
+					name = hitler_sa_stormtroopers_name
+					men_at_arms = {
+						type = sa_stormtroopers
+						stacks = 5
+					}
+					location = root.capital_province
+					origin = root.capital_province
+					inheritable = no
 				}
-
-				location = province:2950
-
-				origin = province:2950
-
-				inheritable = no
-
 			}
 
 			if = {
@@ -394,17 +419,17 @@ reincarnated_stalin_867 = {
 
 				if = {
 
-					limit = { NOT = { has_building_or_higher = palisades_01 } }
+					limit = { NOT = { has_building_or_higher = tribe_warriors_compound_1 } }
 
-					add_building = palisades_01
+					add_building = tribe_warriors_compound_1
 
 				}
 
 				if = {
 
-					limit = { NOT = { has_building_or_higher = war_camps_01 } }
+					limit = { NOT = { has_building_or_higher = tribe_craftsmens_lodge_1 } }
 
-					add_building = war_camps_01
+					add_building = tribe_craftsmens_lodge_1
 
 				}
 
@@ -422,17 +447,17 @@ reincarnated_stalin_867 = {
 
 				if = {
 
-					limit = { NOT = { has_building_or_higher = palisades_01 } }
+					limit = { NOT = { has_building_or_higher = tribe_warriors_compound_1 } }
 
-					add_building = palisades_01
+					add_building = tribe_warriors_compound_1
 
 				}
 
 				if = {
 
-					limit = { NOT = { has_building_or_higher = war_camps_01 } }
+					limit = { NOT = { has_building_or_higher = tribe_craftsmens_lodge_1 } }
 
-					add_building = war_camps_01
+					add_building = tribe_craftsmens_lodge_1
 
 				}
 
@@ -452,7 +477,7 @@ reincarnated_stalin_867 = {
 
 				set_county_culture = culture:soviet
 
-				change_development_level = 6
+				change_prosperity_level = 6
 
 			}
 
@@ -462,7 +487,7 @@ reincarnated_stalin_867 = {
 
 				set_county_culture = culture:soviet
 
-				change_development_level = 5
+				change_prosperity_level = 5
 
 			}
 
@@ -575,6 +600,23 @@ reincarnated_mussolini_867 = {
 		capital = c_lombardia
 		effect = {
 			give_nickname = nick_the_duce
+
+			change_government = administrative_government
+			add_realm_law_skip_effects = acclamation_succession_law
+			tgp_treasury_setup_effect = yes
+			if = {
+				limit = { exists = liege }
+				vassal_contract_set_obligation_level = { type = religious_rights level = 1 }
+				vassal_contract_set_obligation_level = { type = title_revocation_rights level = 1 }
+			}
+			title:c_nf_mussolini = {
+				set_coa = holder.house
+				set_color_from_title = title:d_rep_mussolini
+			}
+			domicile ?= {
+				set_up_domicile_estate_effect = yes
+				move_domicile = owner.capital_province
+			}
 
 			add_known_tenet = tenet_state_corporatism
 
@@ -710,8 +752,6 @@ reincarnated_mussolini_867 = {
 
 			}
 
-			change_government = feudal_government
-
 			add_realm_law_skip_effects = male_preference_law
 
 			set_realm_capital = title:c_lombardia
@@ -734,24 +774,34 @@ reincarnated_mussolini_867 = {
 
 			}
 
-			spawn_army = {
+			# Personal MAA (개인 상비군: 특수산병 1대대)
+			create_maa_regiment = {
+				type = blackshirts_militia
+				check_can_recruit = no
+				size = 1
+			}
 
-				name = mussolini_blackshirts_name
+			# Administrative / Theme MAA (속주 부대: 특수산병 2대대)
+			create_maa_regiment = {
+				type = blackshirts_militia
+				check_can_recruit = no
+				title = title:d_rep_mussolini
+				size = 2
+			}
 
-				men_at_arms = {
-
-					type = blackshirts_militia
-
-					stacks = 5
-
+			# 1회성 특수 산병 부대 (500명)
+			if = {
+				limit = { exists = capital_province }
+				spawn_army = {
+					name = mussolini_blackshirts_name
+					men_at_arms = {
+						type = blackshirts_militia
+						stacks = 5
+					}
+					location = root.capital_province
+					origin = root.capital_province
+					inheritable = no
 				}
-
-				location = province:2482
-
-				origin = province:2482
-
-				inheritable = no
-
 			}
 
 			if = {
@@ -996,17 +1046,17 @@ reincarnated_mutaguchi_867 = {
 
 				if = {
 
-					limit = { NOT = { has_building_or_higher = curtain_walls_01 } }
+					limit = { NOT = { has_building_or_higher = castle_citadel_1 } }
 
-					add_building = curtain_walls_01
+					add_building = castle_citadel_1
 
 				}
 
 				if = {
 
-					limit = { NOT = { has_building_or_higher = barracks_01 } }
+					limit = { NOT = { has_building_or_higher = castle_garrison_1 } }
 
-					add_building = barracks_01
+					add_building = castle_garrison_1
 
 				}
 
@@ -1024,17 +1074,17 @@ reincarnated_mutaguchi_867 = {
 
 				if = {
 
-					limit = { NOT = { has_building_or_higher = curtain_walls_01 } }
+					limit = { NOT = { has_building_or_higher = castle_citadel_1 } }
 
-					add_building = curtain_walls_01
+					add_building = castle_citadel_1
 
 				}
 
 				if = {
 
-					limit = { NOT = { has_building_or_higher = barracks_01 } }
+					limit = { NOT = { has_building_or_higher = castle_garrison_1 } }
 
-					add_building = barracks_01
+					add_building = castle_garrison_1
 
 				}
 
@@ -1079,7 +1129,7 @@ reincarnated_mutaguchi_867 = {
 
 				set_county_culture = culture:imperial_japanese
 
-				change_development_level = 6
+				change_prosperity_level = 6
 
 			}
 
@@ -1089,7 +1139,7 @@ reincarnated_mutaguchi_867 = {
 
 				set_county_culture = culture:imperial_japanese
 
-				change_development_level = 5
+				change_prosperity_level = 5
 
 			}
 
@@ -1201,7 +1251,7 @@ reincarnated_trump_867 = {
 
 	867.1.1 = {
 
-		capital = c_northumberland
+		capital = c_holland
 		effect = {
 			give_nickname = nick_the_president
 
@@ -1231,7 +1281,35 @@ reincarnated_trump_867 = {
 
 			change_influence = 400
 
-			title:b_bamburgh.title_province = {
+			title:b_amsterdam.title_province = {
+
+				if = {
+
+					limit = { NOT = { has_holding_type = city_holding } }
+
+					set_holding_type = city_holding
+
+				}
+
+				if = {
+
+					limit = { NOT = { has_building_or_higher = city_council_hall_1 } }
+
+					add_building = city_council_hall_1
+
+				}
+
+				if = {
+
+					limit = { NOT = { has_building_or_higher = city_local_shrine_1 } }
+
+					add_building = city_local_shrine_1
+
+				}
+
+			}
+
+			title:b_haarlem.title_province = {
 
 				if = {
 
@@ -1243,102 +1321,102 @@ reincarnated_trump_867 = {
 
 				if = {
 
-					limit = { NOT = { has_building_or_higher = curtain_walls_01 } }
+					limit = { NOT = { has_building_or_higher = castle_citadel_1 } }
 
-					add_building = curtain_walls_01
+					add_building = castle_citadel_1
 
 				}
 
 				if = {
 
-					limit = { NOT = { has_building_or_higher = barracks_01 } }
+					limit = { NOT = { has_building_or_higher = castle_garrison_1 } }
 
-					add_building = barracks_01
+					add_building = castle_garrison_1
 
 				}
 
 			}
 
-			title:b_carlisle.title_province = {
-
-				if = {
-
-					limit = { NOT = { has_holding_type = castle_holding } }
-
-					set_holding_type = castle_holding
-
-				}
-
-				if = {
-
-					limit = { NOT = { has_building_or_higher = curtain_walls_01 } }
-
-					add_building = curtain_walls_01
-
-				}
-
-				if = {
-
-					limit = { NOT = { has_building_or_higher = barracks_01 } }
-
-					add_building = barracks_01
-
-				}
-
-			}
-
-			change_government = administrative_government
-
-			add_realm_law_skip_effects = acclamation_succession_law
+			change_government = republic_government
 
 			add_realm_law_skip_effects = equal_law
+			add_realm_law_skip_effects = republic_type_civic
+			add_realm_law_skip_effects = republic_assembly_composition_parliament
+			add_realm_law_skip_effects = republic_assembly_authority_legislative
+			add_realm_law_skip_effects = republic_assembly_voting_thresholds_simple_majority
+			add_realm_law_skip_effects = republic_war_declaration_2_unlimited
+			add_realm_law_skip_effects = republic_army_organization_3_maa
+			add_realm_law_skip_effects = republic_trade_specialization_construction
 
-			set_realm_capital = title:c_northumberland
+			set_realm_capital = title:c_holland
 
 			set_primary_title_to = title:d_rep_trump
 
 			tgp_treasury_setup_effect = yes
 
-			title:d_nf_trump = {
+			title:c_merchant_trump = {
 				set_coa = holder.house
 				set_color_from_title = title:d_rep_trump
 			}
 
 			house ?= {
+				if = {
+					limit = { house_head != prev }
+					set_house_head = prev
+				}
 				set_house_aspiration = {
-					type = lofty_architects
+					type = republic_commerce
 					level = 1
 				}
 			}
 
 			domicile ?= {
-				set_up_domicile_estate_effect = yes
 				move_domicile = owner.capital_province
+				if = {
+					limit = {
+						has_domicile_building_or_higher = merchant_company_main_01
+						NOT = { has_domicile_building_or_higher = merchant_company_main_02 }
+					}
+					add_domicile_building = merchant_company_main_02
+					add_random_internal_main_company_building = yes
+				}
+				if = {
+					limit = {
+						has_domicile_building_or_higher = merchant_company_building_trade_01
+						NOT = { has_domicile_building_or_higher = merchant_company_building_trade_02 }
+					}
+					add_domicile_building = merchant_company_building_trade_02
+					add_random_internal_trade_company_building = yes
+				}
+				if = {
+					limit = {
+						has_domicile_building_or_higher = merchant_company_building_warehouse_01
+						NOT = { has_domicile_building_or_higher = merchant_company_building_warehouse_02 }
+					}
+					add_domicile_building = merchant_company_building_warehouse_02
+					add_random_internal_warehouse_company_building = yes
+				}
 			}
 
-			title:c_northumberland = {
+			title:c_holland = {
 
 				set_county_rite = rite:americanism
 
 				set_county_culture = culture:american
 
-				change_development_level = 6
+				change_prosperity_level = 6
 
 			}
 
-			title:c_cumberland = {
+			title:c_westfriesland = {
 
 				set_county_rite = rite:americanism
 
 				set_county_culture = culture:american
 
-				change_development_level = 5
+				change_prosperity_level = 5
 
 			}
-
-			add_pressed_claim = title:d_northumberland
-
-			add_pressed_claim = title:c_durham
 
 			spawn_army = {
 				name = trump_pinkerton_guards_name
@@ -1346,93 +1424,9 @@ reincarnated_trump_867 = {
 					type = pinkerton_guards
 					stacks = 6
 				}
-				location = province:1609
-				origin = province:1609
+				location = province:2406
+				origin = province:2406
 				inheritable = no
-			}
-
-			if = {
-
-				limit = { exists = character:163102 }
-
-				create_alliance = {
-
-					target = character:163102
-
-					allied_through_owner = this
-
-					allied_through_target = character:163102
-
-				}
-
-				add_opinion = {
-
-					modifier = event_negotiated_alliance_opinion
-
-					target = character:163102
-
-				}
-
-				character:163102 = {
-
-					add_opinion = {
-
-						modifier = event_negotiated_alliance_opinion
-
-						target = prev
-
-					}
-
-				}
-
-			}
-
-			if = {
-
-				limit = { exists = character:163112 }
-
-				add_truce_both_ways = {
-
-					character = character:163112
-
-					years = 10
-
-					name = TRUCE_TRUMP_VIKING_DEAL
-
-				}
-
-			}
-
-			if = {
-
-				limit = { exists = character:163108 }
-
-				add_truce_both_ways = {
-
-					character = character:163108
-
-					years = 10
-
-					name = TRUCE_TRUMP_VIKING_DEAL
-
-				}
-
-			}
-
-			if = {
-
-				limit = { exists = character:163111 }
-
-				add_truce_both_ways = {
-
-					character = character:163111
-
-					years = 10
-
-					name = TRUCE_TRUMP_VIKING_DEAL
-
-				}
-
 			}
 
 			if = {
@@ -1901,17 +1895,17 @@ reincarnated_kim_jongun_867 = {
 
 				if = {
 
-					limit = { NOT = { has_building_or_higher = curtain_walls_01 } }
+					limit = { NOT = { has_building_or_higher = castle_citadel_1 } }
 
-					add_building = curtain_walls_01
+					add_building = castle_citadel_1
 
 				}
 
 				if = {
 
-					limit = { NOT = { has_building_or_higher = barracks_01 } }
+					limit = { NOT = { has_building_or_higher = castle_garrison_1 } }
 
-					add_building = barracks_01
+					add_building = castle_garrison_1
 
 				}
 
@@ -1929,17 +1923,17 @@ reincarnated_kim_jongun_867 = {
 
 				if = {
 
-					limit = { NOT = { has_building_or_higher = curtain_walls_01 } }
+					limit = { NOT = { has_building_or_higher = castle_citadel_1 } }
 
-					add_building = curtain_walls_01
+					add_building = castle_citadel_1
 
 				}
 
 				if = {
 
-					limit = { NOT = { has_building_or_higher = barracks_01 } }
+					limit = { NOT = { has_building_or_higher = castle_garrison_1 } }
 
-					add_building = barracks_01
+					add_building = castle_garrison_1
 
 				}
 
@@ -1979,7 +1973,7 @@ reincarnated_kim_jongun_867 = {
 
 				set_county_culture = culture:juche_korean
 
-				change_development_level = 5
+				change_prosperity_level = 5
 
 			}
 
@@ -2434,25 +2428,25 @@ reincarnated_idi_amin_867 = {
 
 				if = {
 
-					limit = { NOT = { has_building_or_higher = curtain_walls_01 } }
+					limit = { NOT = { has_building_or_higher = castle_citadel_1 } }
 
-					add_building = curtain_walls_01
-
-				}
-
-				if = {
-
-					limit = { NOT = { has_building_or_higher = barracks_01 } }
-
-					add_building = barracks_01
+					add_building = castle_citadel_1
 
 				}
 
 				if = {
 
-					limit = { NOT = { has_building_or_higher = military_camps_01 } }
+					limit = { NOT = { has_building_or_higher = castle_garrison_1 } }
 
-					add_building = military_camps_01
+					add_building = castle_garrison_1
+
+				}
+
+				if = {
+
+					limit = { NOT = { has_building_or_higher = castle_training_grounds_1 } }
+
+					add_building = castle_training_grounds_1
 
 				}
 
@@ -2470,31 +2464,31 @@ reincarnated_idi_amin_867 = {
 
 				if = {
 
-					limit = { NOT = { has_building_or_higher = curtain_walls_01 } }
+					limit = { NOT = { has_building_or_higher = castle_citadel_1 } }
 
-					add_building = curtain_walls_01
-
-				}
-
-				if = {
-
-					limit = { NOT = { has_building_or_higher = barracks_01 } }
-
-					add_building = barracks_01
+					add_building = castle_citadel_1
 
 				}
 
 				if = {
 
-					limit = { NOT = { has_building_or_higher = military_camps_01 } }
+					limit = { NOT = { has_building_or_higher = castle_garrison_1 } }
 
-					add_building = military_camps_01
+					add_building = castle_garrison_1
+
+				}
+
+				if = {
+
+					limit = { NOT = { has_building_or_higher = castle_training_grounds_1 } }
+
+					add_building = castle_training_grounds_1
 
 				}
 
 			}
 
-			change_government = feudal_government
+			change_government = clan_government
 
 			add_realm_law_skip_effects = male_preference_law
 
@@ -2694,12 +2688,12 @@ reincarnated_jiang_qing_867 = {
 					set_holding_type = castle_holding
 				}
 				if = {
-					limit = { NOT = { has_building_or_higher = curtain_walls_01 } }
-					add_building = curtain_walls_01
+					limit = { NOT = { has_building_or_higher = castle_citadel_1 } }
+					add_building = castle_citadel_1
 				}
 				if = {
-					limit = { NOT = { has_building_or_higher = barracks_01 } }
-					add_building = barracks_01
+					limit = { NOT = { has_building_or_higher = castle_garrison_1 } }
+					add_building = castle_garrison_1
 				}
 			}
 			title:b_wucheng_2.title_province = {
@@ -2708,12 +2702,12 @@ reincarnated_jiang_qing_867 = {
 					set_holding_type = castle_holding
 				}
 				if = {
-					limit = { NOT = { has_building_or_higher = curtain_walls_01 } }
-					add_building = curtain_walls_01
+					limit = { NOT = { has_building_or_higher = castle_citadel_1 } }
+					add_building = castle_citadel_1
 				}
 				if = {
-					limit = { NOT = { has_building_or_higher = barracks_01 } }
-					add_building = barracks_01
+					limit = { NOT = { has_building_or_higher = castle_garrison_1 } }
+					add_building = castle_garrison_1
 				}
 			}
 			change_government = celestial_government
@@ -3086,29 +3080,38 @@ reincarnated_netanyahu_867 = {
 
 			add_known_tenet = tenet_military_industrial_complex
 			force_set_personal_tenet = tenet_military_industrial_complex
-			change_government = administrative_government
-			add_realm_law_skip_effects = acclamation_succession_law
+			change_government = republic_government
+
 			add_realm_law_skip_effects = equal_law
-			set_realm_capital = title:c_jerusalem
-			set_primary_title_to = title:d_rep_netanyahu
+			add_realm_law_skip_effects = republic_type_popular
+			add_realm_law_skip_effects = republic_assembly_composition_parliament
+			add_realm_law_skip_effects = republic_assembly_authority_legislative
+			add_realm_law_skip_effects = republic_assembly_voting_thresholds_simple_majority
+			add_realm_law_skip_effects = republic_war_declaration_2_unlimited
+			add_realm_law_skip_effects = republic_army_organization_3_maa
+			add_realm_law_skip_effects = republic_trade_specialization_construction
 			tgp_treasury_setup_effect = yes
 			house ?= {
-				if = {
-					limit = { house_head != prev }
-					set_house_head = prev
-				}
+				if = { limit = { house_head != prev } set_house_head = prev }
 				set_house_aspiration = {
-					type = confident_schemers
+					type = republic_agitation
 					level = 1
 				}
+			}
+
+			set_realm_capital = title:c_jerusalem
+			set_primary_title_to = title:d_rep_netanyahu
+			dynasty = {
+				add_dynasty_modifier = {
+					modifier = netanyahu_dynastic_polarization_modifier
+				}
+			}
+			add_character_modifier = {
+				modifier = netanyahu_judicial_protest_crisis_modifier
 			}
 			title:d_nf_netanyahu = {
 				set_coa = holder.house
 				set_color_from_title = title:d_rep_netanyahu
-			}
-			domicile ?= {
-				set_up_domicile_estate_effect = yes
-				move_domicile = owner.capital_province
 			}
 
 			title:c_jerusalem = {
@@ -3124,36 +3127,70 @@ reincarnated_netanyahu_867 = {
 
 			province:5965 = {
 				if = {
-					limit = { NOT = { has_building_or_higher = curtain_walls_01 } }
-					add_building = curtain_walls_01
+					limit = { NOT = { has_building_or_higher = castle_citadel_1 } }
+					add_building = castle_citadel_1
 				}
 				if = {
-					limit = { NOT = { has_building_or_higher = barracks_01 } }
-					add_building = barracks_01
+					limit = { NOT = { has_building_or_higher = castle_garrison_1 } }
+					add_building = castle_garrison_1
 				}
 			}
 			province:5962 = {
 				if = {
-					limit = { NOT = { has_building_or_higher = curtain_walls_01 } }
-					add_building = curtain_walls_01
+					limit = { NOT = { has_building_or_higher = castle_citadel_1 } }
+					add_building = castle_citadel_1
 				}
 				if = {
-					limit = { NOT = { has_building_or_higher = barracks_01 } }
-					add_building = barracks_01
+					limit = { NOT = { has_building_or_higher = castle_garrison_1 } }
+					add_building = castle_garrison_1
 				}
 			}
 
-			# Initial 1-time elite Sayeret Matkal garrison (800 men) in addition to permanent cultural recruitment
-			spawn_army = {
-				men_at_arms = {
-					type = sayeret_commandos
-					stacks = 8
+			# Personal MAA (개인 상비군: 마칼라 특임대 1대대, 궁수 1대대)
+			create_maa_regiment = {
+				type = sayeret_commandos
+				check_can_recruit = no
+				size = 1
+			}
+			create_maa_regiment = {
+				type = bowmen
+				check_can_recruit = no
+				size = 1
+			}
+
+			# Republic Title MAA (공화제 부대: 마칼라 특임대 3대대, 궁수 3대대, 경기병 2대대)
+			create_maa_regiment = {
+				type = sayeret_commandos
+				check_can_recruit = no
+				title = title:d_rep_netanyahu
+				size = 3
+			}
+			create_maa_regiment = {
+				type = bowmen
+				check_can_recruit = no
+				title = title:d_rep_netanyahu
+				size = 3
+			}
+			create_maa_regiment = {
+				type = light_horsemen
+				check_can_recruit = no
+				title = title:d_rep_netanyahu
+				size = 2
+			}
+
+			# 1회성 특수 부대 (마칼라 특임대 600명)
+			if = {
+				limit = { exists = capital_province }
+				spawn_army = {
+					name = netanyahu_sayeret_initial_troops
+					men_at_arms = {
+						type = sayeret_commandos
+						stacks = 6
+					}
+					location = root.capital_province
+					origin = root.capital_province
+					inheritable = no
 				}
-				location = province:5965
-				origin = province:5965
-				inheritable = no
-				uses_supply = no
-				name = netanyahu_sayeret_initial_troops
 			}
 
 			# Operation Entebbe Rivalry with Idi Amin

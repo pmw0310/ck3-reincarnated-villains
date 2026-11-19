@@ -98,6 +98,30 @@ mutaguchi_grand_marshal = {
 
 }
 
+tojo_prime_minister = {
+	type = character
+	special = holder
+	priority = 1002
+	titles = { d_taisei_yokusankai d_rep_tojo k_tojo_cabinet }
+	flavourization_rules = {
+		only_holder = yes
+		spouse_takes_title = no
+		top_liege = no
+	}
+}
+
+tojo_imperial_premier = {
+	type = character
+	special = holder
+	priority = 1003
+	titles = { e_imperial_japan }
+	flavourization_rules = {
+		only_holder = yes
+		spouse_takes_title = no
+		top_liege = no
+	}
+}
+
 
 
 flav_idi_amin_junta_president = {
@@ -247,6 +271,68 @@ americanism_president = {
 	special = holder
 	priority = 1002
 	titles = { d_americanism d_rep_trump k_united_states e_american_empire }
+	flavourization_rules = {
+		only_holder = yes
+		spouse_takes_title = no
+		top_liege = no
+	}
+}
+
+putin_president = {
+	type = character
+	special = holder
+	priority = 1002
+	titles = { d_rep_putin k_russian_federation e_eurasian_union }
+	flavourization_rules = {
+		only_holder = yes
+		spouse_takes_title = no
+		top_liege = no
+	}
+}
+
+putin_security_council_chairman = {
+	type = character
+	special = holder
+	priority = 1001
+	titles = { d_putinism }
+	flavourization_rules = {
+		only_holder = yes
+		spouse_takes_title = no
+		top_liege = no
+	}
+}
+
+rasputin_holy_starets = {
+	type = character
+	special = holder
+	priority = 1002
+	titles = { d_laamp_rasputin }
+	flavourization_rules = {
+		only_holder = yes
+		spouse_takes_title = no
+		top_liege = no
+	}
+}
+
+rasputin_living_christ_holder = {
+	type = character
+	gender = male
+	special = holder
+	priority = 1003
+	titles = { d_khlystism }
+	flavourization_rules = {
+		only_holder = yes
+		spouse_takes_title = no
+		top_liege = no
+	}
+}
+
+rasputin_living_mother_holder = {
+	type = character
+	gender = female
+	special = holder
+	priority = 1003
+	titles = { d_khlystism }
 	flavourization_rules = {
 		only_holder = yes
 		spouse_takes_title = no
@@ -489,6 +575,54 @@ mutaguchi_spouse_male = {
 	special = holder
 	priority = 990
 	titles = { d_rep_mutaguchi k_imperial_japan_india e_greater_east_asia_imphal }
+	flavourization_rules = {
+		only_holder = no
+		top_liege = no
+	}
+}
+
+tojo_spouse_female = {
+	type = character
+	gender = female
+	special = holder
+	priority = 990
+	titles = { d_taisei_yokusankai d_rep_tojo k_tojo_cabinet e_imperial_japan }
+	flavourization_rules = {
+		only_holder = no
+		top_liege = no
+	}
+}
+
+tojo_spouse_male = {
+	type = character
+	gender = male
+	special = holder
+	priority = 990
+	titles = { d_taisei_yokusankai d_rep_tojo k_tojo_cabinet e_imperial_japan }
+	flavourization_rules = {
+		only_holder = no
+		top_liege = no
+	}
+}
+
+putin_spouse_female = {
+	type = character
+	gender = female
+	special = holder
+	priority = 990
+	titles = { d_putinism d_rep_putin k_russian_federation e_eurasian_union }
+	flavourization_rules = {
+		only_holder = no
+		top_liege = no
+	}
+}
+
+putin_spouse_male = {
+	type = character
+	gender = male
+	special = holder
+	priority = 990
+	titles = { d_putinism d_rep_putin k_russian_federation e_eurasian_union }
 	flavourization_rules = {
 		only_holder = no
 		top_liege = no
@@ -885,6 +1019,104 @@ villains_ruler_child_juche_faith = {
 	}
 }
 
+# 11. 대정익찬 내각 (도조 히데키): 공자 / 영애
+villains_ruler_child_tojo_title_male = {
+	type = character
+	gender = male
+	special = ruler_child
+	priority = 2001
+	titles = { d_rep_tojo k_tojo_cabinet e_imperial_japan c_nf_tojo }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+villains_ruler_child_tojo_title_female = {
+	type = character
+	gender = female
+	special = ruler_child
+	priority = 2001
+	titles = { d_rep_tojo k_tojo_cabinet e_imperial_japan c_nf_tojo }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+villains_ruler_child_tojo_faith_male = {
+	type = character
+	gender = male
+	special = ruler_child
+	priority = 2000
+	faiths = { taisei_yokusankai }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+villains_ruler_child_tojo_faith_female = {
+	type = character
+	gender = female
+	special = ruler_child
+	priority = 2000
+	faiths = { taisei_yokusankai }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+# 12. 크렘린 주권 행정부 (블라디미르 푸틴): 공자 / 영애
+villains_ruler_child_putin_title_male = {
+	type = character
+	gender = male
+	special = ruler_child
+	priority = 2001
+	titles = { d_rep_putin k_russian_federation e_eurasian_union d_nf_putin }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+villains_ruler_child_putin_title_female = {
+	type = character
+	gender = female
+	special = ruler_child
+	priority = 2001
+	titles = { d_rep_putin k_russian_federation e_eurasian_union d_nf_putin }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+villains_ruler_child_putin_faith_male = {
+	type = character
+	gender = male
+	special = ruler_child
+	priority = 2000
+	faiths = { putinism }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+villains_ruler_child_putin_faith_female = {
+	type = character
+	gender = female
+	special = ruler_child
+	priority = 2000
+	faiths = { putinism }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
 # ==============================================================================
 # 모후(queen_mother) 호칭 방지 (미성년 통치자의 어머니가 왕태후/황태후로 뜨는 현상 차단)
 # ==============================================================================
@@ -930,7 +1162,31 @@ villains_queen_mother_matriarch = {
 	gender = female
 	special = queen_mother
 	priority = 1000
-	faiths = { national_socialism fascism zionism state_shinto }
+	faiths = { national_socialism fascism zionism state_shinto taisei_yokusankai putinism }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+villains_queen_mother_putin = {
+	type = character
+	gender = female
+	special = queen_mother
+	priority = 1001
+	titles = { d_rep_putin k_russian_federation e_eurasian_union }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+villains_queen_mother_tojo = {
+	type = character
+	gender = female
+	special = queen_mother
+	priority = 1001
+	titles = { d_rep_tojo k_tojo_cabinet e_imperial_japan }
 	flavourization_rules = {
 		top_liege = no
 		spouse_takes_title = no
@@ -2906,6 +3162,398 @@ spouse_vassal_female_aminism = {
 	special = holder
 	priority = 140
 	faiths = { aminism }
+	flavourization_rules = {
+		only_holder = no
+		top_liege = no
+	}
+}
+
+
+# --- [taisei_yokusankai] ---
+baron_male_taisei_yokusankai = {
+	type = character
+	gender = male
+	tier = barony
+	priority = 150
+	faiths = { taisei_yokusankai }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+baron_female_taisei_yokusankai = {
+	type = character
+	gender = female
+	tier = barony
+	priority = 150
+	faiths = { taisei_yokusankai }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+count_male_taisei_yokusankai = {
+	type = character
+	gender = male
+	tier = county
+	priority = 150
+	faiths = { taisei_yokusankai }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+count_female_taisei_yokusankai = {
+	type = character
+	gender = female
+	tier = county
+	priority = 150
+	faiths = { taisei_yokusankai }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+duke_male_taisei_yokusankai = {
+	type = character
+	gender = male
+	tier = duchy
+	priority = 150
+	faiths = { taisei_yokusankai }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+duke_female_taisei_yokusankai = {
+	type = character
+	gender = female
+	tier = duchy
+	priority = 150
+	faiths = { taisei_yokusankai }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+king_male_taisei_yokusankai = {
+	type = character
+	gender = male
+	tier = kingdom
+	priority = 150
+	faiths = { taisei_yokusankai }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+king_female_taisei_yokusankai = {
+	type = character
+	gender = female
+	tier = kingdom
+	priority = 150
+	faiths = { taisei_yokusankai }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+emperor_male_taisei_yokusankai = {
+	type = character
+	gender = male
+	tier = empire
+	priority = 150
+	faiths = { taisei_yokusankai }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+emperor_female_taisei_yokusankai = {
+	type = character
+	gender = female
+	tier = empire
+	priority = 150
+	faiths = { taisei_yokusankai }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+barony_taisei_yokusankai = {
+	type = title
+	tier = barony
+	priority = 150
+	faiths = { taisei_yokusankai }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+
+county_taisei_yokusankai = {
+	type = title
+	tier = county
+	priority = 150
+	faiths = { taisei_yokusankai }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+
+duchy_taisei_yokusankai = {
+	type = title
+	tier = duchy
+	priority = 150
+	faiths = { taisei_yokusankai }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+
+kingdom_taisei_yokusankai = {
+	type = title
+	tier = kingdom
+	priority = 150
+	faiths = { taisei_yokusankai }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+
+empire_taisei_yokusankai = {
+	type = title
+	tier = empire
+	priority = 150
+	faiths = { taisei_yokusankai }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+
+spouse_vassal_male_taisei_yokusankai = {
+	type = character
+	gender = male
+	special = holder
+	priority = 140
+	faiths = { taisei_yokusankai }
+	flavourization_rules = {
+		only_holder = no
+		top_liege = no
+	}
+}
+
+spouse_vassal_female_taisei_yokusankai = {
+	type = character
+	gender = female
+	special = holder
+	priority = 140
+	faiths = { taisei_yokusankai }
+	flavourization_rules = {
+		only_holder = no
+		top_liege = no
+	}
+}
+
+
+# --- [putinism] ---
+baron_male_putinism = {
+	type = character
+	gender = male
+	tier = barony
+	priority = 150
+	faiths = { putinism }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+baron_female_putinism = {
+	type = character
+	gender = female
+	tier = barony
+	priority = 150
+	faiths = { putinism }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+count_male_putinism = {
+	type = character
+	gender = male
+	tier = county
+	priority = 150
+	faiths = { putinism }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+count_female_putinism = {
+	type = character
+	gender = female
+	tier = county
+	priority = 150
+	faiths = { putinism }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+duke_male_putinism = {
+	type = character
+	gender = male
+	tier = duchy
+	priority = 150
+	faiths = { putinism }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+duke_female_putinism = {
+	type = character
+	gender = female
+	tier = duchy
+	priority = 150
+	faiths = { putinism }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+king_male_putinism = {
+	type = character
+	gender = male
+	tier = kingdom
+	priority = 150
+	faiths = { putinism }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+king_female_putinism = {
+	type = character
+	gender = female
+	tier = kingdom
+	priority = 150
+	faiths = { putinism }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+emperor_male_putinism = {
+	type = character
+	gender = male
+	tier = empire
+	priority = 150
+	faiths = { putinism }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+emperor_female_putinism = {
+	type = character
+	gender = female
+	tier = empire
+	priority = 150
+	faiths = { putinism }
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+
+barony_putinism = {
+	type = title
+	tier = barony
+	priority = 150
+	faiths = { putinism }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+
+county_putinism = {
+	type = title
+	tier = county
+	priority = 150
+	faiths = { putinism }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+
+duchy_putinism = {
+	type = title
+	tier = duchy
+	priority = 150
+	faiths = { putinism }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+
+kingdom_putinism = {
+	type = title
+	tier = kingdom
+	priority = 150
+	faiths = { putinism }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+
+empire_putinism = {
+	type = title
+	tier = empire
+	priority = 150
+	faiths = { putinism }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+
+spouse_vassal_male_putinism = {
+	type = character
+	gender = male
+	special = holder
+	priority = 140
+	faiths = { putinism }
+	flavourization_rules = {
+		only_holder = no
+		top_liege = no
+	}
+}
+
+spouse_vassal_female_putinism = {
+	type = character
+	gender = female
+	special = holder
+	priority = 140
+	faiths = { putinism }
 	flavourization_rules = {
 		only_holder = no
 		top_liege = no

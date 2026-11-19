@@ -1,6 +1,6 @@
 ﻿l_english:
  # ============================================================================
- # 11. Renya Mutaguchi — State Shinto & Imperial Japanese
+ # 11. Renya Mutaguchi — State Shinto & Southern Imperial Army
  # ============================================================================
 
  # === [Bookmark, Characters, Dynasty, Nicknames & Appearance] ===
@@ -61,12 +61,12 @@
  mutaguchi_banzai_samurai:0 "Imphal Jungle Shock Troops"
  mutaguchi_banzai_samurai_flavor:0 "#F Driven by their commander's reckless order to graze on Imphal jungle grass rather than wait for supplies, these 15th Army shock warriors consume almost no provisions and deal explosive tachi blade damage and pursuit through monsoon thickets at the cost of paper-thin defense.#!"
  mutaguchi_southern_expeditionary_army_name:0 "Imperial Southern Expeditionary Army"
- imperial_japanese:0 "Imperial Japanese"
- imperial_japanese_prefix:0 "Imperial Japanese"
- imperial_japanese_collective_noun:0 "Imperial Subjects"
+ imphal_japanese:0 "Southern Imperial Army"
+ imphal_japanese_prefix:0 "Southern Imperial"
+ imphal_japanese_collective_noun:0 "Southern Imperial Troops"
  tradition_gyokusai_bushido_name:0 "Gyokusai Shock Bushido"
  tradition_gyokusai_bushido_desc:0 "An extreme imperial martial ethos demanding all-out tachi blade charges through dense Imphal jungle rather than retreat even when cut off from supply lines."
- tradition_gyokusai_bushido_only_tt:0 "Must be of Imperial Japanese culture or descended from it"
+ tradition_gyokusai_bushido_only_tt:0 "Must be of Southern Imperial Army culture or descended from it"
  culture_parameter_unlock_maa_mutaguchi_banzai_samurai:0 "Can recruit [GetMaA('mutaguchi_banzai_samurai').GetName] as [men_at_arms|E]"
 
  # === [Decisions, Events, Modifiers & Relics] ===

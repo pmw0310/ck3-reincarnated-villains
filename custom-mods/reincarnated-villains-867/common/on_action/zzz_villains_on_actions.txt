@@ -8,6 +8,23 @@
 		villains_starting_county_hoi4_colors_on_game_start
 		villains_juche_incumbent_chairman_on_game_start
 		villains_enforce_starting_primary_titles_on_game_start
+		villains_strict_starting_maa_on_game_start
+		villains_siloviki_despot_opinion_on_game_start
+	}
+}
+
+villains_chronicle_init_on_game_start = {
+	effect = {
+		every_living_character = {
+			limit = {
+				is_ruler = yes
+				villains_is_reincarnated_dynasty_member_trigger = yes
+			}
+			recalculate_participant_group = situation:reincarnated_villains_chronicle
+		}
+		situation:reincarnated_villains_chronicle ?= {
+			villains_chronicle_yearly_maintenance_effect = yes
+		}
 	}
 }
 
@@ -51,6 +68,10 @@ villains_starting_county_hoi4_colors_on_game_start = {
 			title:c_huzhou = { set_color_from_title = title:k_rep_jiang_qing }
 			title:c_jerusalem = { set_color_from_title = title:d_rep_netanyahu }
 			title:c_jaffa = { set_color_from_title = title:d_rep_netanyahu }
+			title:c_musashi = { set_color_from_title = title:d_rep_tojo }
+			title:c_sagami = { set_color_from_title = title:d_rep_tojo }
+			title:c_terebovl = { set_color_from_title = title:d_rep_putin }
+			title:c_ushytsia = { set_color_from_title = title:d_rep_putin }
 		}
 	}
 }
@@ -214,6 +235,30 @@ villains_jiang_qing_tang_emperor_secret_lover_on_game_start = {
 
 villains_noble_family_house_head_on_game_start = {
 	effect = {
+		character:reincarnated_hitler_867 ?= {
+			if = {
+				limit = { is_alive = yes }
+				villains_lock_non_admin_liege_admin_vassal_inheritance_effect = yes
+				house ?= {
+					if = {
+						limit = { house_head != prev }
+						set_house_head = prev
+					}
+				}
+			}
+		}
+		character:reincarnated_mussolini_867 ?= {
+			if = {
+				limit = { is_alive = yes }
+				villains_lock_non_admin_liege_admin_vassal_inheritance_effect = yes
+				house ?= {
+					if = {
+						limit = { house_head != prev }
+						set_house_head = prev
+					}
+				}
+			}
+		}
 		character:reincarnated_jiang_qing_867 ?= {
 			if = {
 				limit = { is_alive = yes }
@@ -259,6 +304,17 @@ villains_noble_family_house_head_on_game_start = {
 			}
 		}
 		character:reincarnated_mutaguchi_867 ?= {
+			if = {
+				limit = { is_alive = yes }
+				house ?= {
+					if = {
+						limit = { house_head != prev }
+						set_house_head = prev
+					}
+				}
+			}
+		}
+		character:reincarnated_tojo_867 ?= {
 			if = {
 				limit = { is_alive = yes }
 				house ?= {
@@ -347,6 +403,67 @@ villains_noble_family_house_head_on_game_start = {
 				}
 			}
 		}
+		character:reincarnated_putin_867 ?= {
+			if = {
+				limit = { is_alive = yes }
+				add_realm_law_skip_effects = republican_despot_succession_law
+				add_realm_law_skip_effects = republic_type_noble
+				add_realm_law_skip_effects = republic_assembly_composition_parliament
+				add_realm_law_skip_effects = republic_assembly_authority_ceremonial
+				add_realm_law_skip_effects = republic_assembly_voting_thresholds_simple_majority
+				add_realm_law_skip_effects = republic_assembly_term_length_indefinite
+				add_realm_law_skip_effects = republic_end_term_law_1
+				add_realm_law_skip_effects = republic_war_declaration_2_unlimited
+				add_realm_law_skip_effects = republic_army_organization_4_merc
+				add_realm_law_skip_effects = republic_banishment_3_unrestricted
+				add_realm_law_skip_effects = republic_execution_3_unrestricted
+				add_realm_law_skip_effects = republic_title_revocation_2_allowed
+				add_realm_law_skip_effects = republic_retract_vassal_2_allowed
+				add_realm_law_skip_effects = republic_vassal_refusal_2_treason
+				add_realm_law_skip_effects = republic_trade_specialization_minerals
+				house ?= {
+					if = {
+						limit = { house_head != prev }
+						set_house_head = prev
+					}
+					set_house_aspiration = {
+						type = republic_signorial
+						level = 1
+					}
+				}
+				title:d_nf_putin = {
+					set_coa = holder.house
+					set_color_from_title = title:d_rep_putin
+				}
+				domicile ?= {
+					move_domicile = owner.capital_province
+					if = {
+						limit = {
+							has_domicile_building_or_higher = merchant_company_main_01
+							NOT = { has_domicile_building_or_higher = merchant_company_main_02 }
+						}
+						add_domicile_building = merchant_company_main_02
+						add_random_internal_main_company_building = yes
+					}
+					if = {
+						limit = {
+							has_domicile_building_or_higher = merchant_company_building_trade_01
+							NOT = { has_domicile_building_or_higher = merchant_company_building_trade_02 }
+						}
+						add_domicile_building = merchant_company_building_trade_02
+						add_random_internal_trade_company_building = yes
+					}
+					if = {
+						limit = {
+							has_domicile_building_or_higher = merchant_company_building_warehouse_01
+							NOT = { has_domicile_building_or_higher = merchant_company_building_warehouse_02 }
+						}
+						add_domicile_building = merchant_company_building_warehouse_02
+						add_random_internal_warehouse_company_building = yes
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -393,17 +510,195 @@ villains_mutaguchi_house_aspiration_on_game_start = {
 				}
 			}
 		}
+		character:reincarnated_tojo_867 ?= {
+			if = {
+				limit = {
+					is_alive = yes
+					has_tgp_dlc_trigger = yes
+					government_is_japanese_trigger = yes
+				}
+				house ?= {
+					if = {
+						limit = {
+							NOT = {
+								AND = {
+									has_house_aspiration_parameter = aspiration_service
+									has_house_aspiration_parameter = aspiration_level_1
+								}
+							}
+						}
+						set_house_aspiration = {
+							type = service
+							level = 1
+						}
+					}
+				}
+			}
+		}
 	}
 }
 
 on_game_start_after_lobby = {
-
-	events = {
-
-		villains_relics.0001
-
+	on_actions = {
+		villains_strict_starting_maa_on_game_start
+		villains_siloviki_despot_opinion_on_game_start
+		villains_chronicle_init_on_game_start
+		villains_chronicle_intro_popup_after_lobby
 	}
+	events = {
+		villains_relics.0001
+	}
+}
 
+# C++ MAA_STARTING_EXPENSE_MIN(0.20) 자동 무장병 보충 로직이 지주 전생자 11인의 직할지 수입을 보고
+# 바닐라 경보병·궁병 등 잡병 연대를 임의 생성하는 것을 전량 해산하고, 각 진영 고유 특수병만 정확히 2~3대대(봉신 2대대, 독립국 3대대) 유지합니다.
+villains_strict_starting_maa_on_game_start = {
+	effect = {
+		if = {
+			limit = { game_start_date = 867.1.1 }
+			# 1. 히틀러 (바이에른 행정제 봉신: 돌격대 2대대 = 개인 1 + 속주 1)
+			character:reincarnated_hitler_867 ?= {
+				if = {
+					limit = { is_alive = yes is_ruler = yes }
+					every_maa_regiment = { destroy_maa_regiment = yes }
+					title:d_rep_hitler = {
+						every_owned_title_maa_regiment = { destroy_maa_regiment = yes }
+					}
+					create_maa_regiment = { type = sa_stormtroopers check_can_recruit = no size = 1 }
+					if = {
+						limit = { has_title = title:d_rep_hitler }
+						create_maa_regiment = { type = sa_stormtroopers check_can_recruit = no title = title:d_rep_hitler size = 1 }
+					}
+				}
+			}
+			# 2. 무솔리니 (이탈리아 행정제 봉신: 검은셔츠단 2대대 = 개인 1 + 속주 1)
+			character:reincarnated_mussolini_867 ?= {
+				if = {
+					limit = { is_alive = yes is_ruler = yes }
+					every_maa_regiment = { destroy_maa_regiment = yes }
+					title:d_rep_mussolini = {
+						every_owned_title_maa_regiment = { destroy_maa_regiment = yes }
+					}
+					create_maa_regiment = { type = blackshirts_militia check_can_recruit = no size = 1 }
+					if = {
+						limit = { has_title = title:d_rep_mussolini }
+						create_maa_regiment = { type = blackshirts_militia check_can_recruit = no title = title:d_rep_mussolini size = 1 }
+					}
+				}
+			}
+			# 3. 스탈린 (독립 부족제: 적위대 3대대)
+			character:reincarnated_stalin_867 ?= {
+				if = {
+					limit = { is_alive = yes is_ruler = yes }
+					every_maa_regiment = { destroy_maa_regiment = yes }
+					create_maa_regiment = { type = red_guards check_can_recruit = no size = 3 }
+				}
+			}
+			# 4. 트럼프 (로타링기아 시민 공화국 봉신: 핑커튼 특무경비단 2대대)
+			character:reincarnated_trump_867 ?= {
+				if = {
+					limit = { is_alive = yes is_ruler = yes }
+					every_maa_regiment = { destroy_maa_regiment = yes }
+					title:d_rep_trump = {
+						every_owned_title_maa_regiment = { destroy_maa_regiment = yes }
+					}
+					create_maa_regiment = { type = pinkerton_guards check_can_recruit = no size = 2 }
+				}
+			}
+			# 5. 네타냐후 (독립 민중 공화국: 마칼라 특임대 3대대 = 개인 1 + 공화정 직위 2, 아바스·툴룬 방어용 1회성 2,500명 비상동원군은 별도 유지)
+			character:reincarnated_netanyahu_867 ?= {
+				if = {
+					limit = { is_alive = yes is_ruler = yes }
+					every_maa_regiment = { destroy_maa_regiment = yes }
+					title:d_rep_netanyahu = {
+						every_owned_title_maa_regiment = { destroy_maa_regiment = yes }
+					}
+					create_maa_regiment = { type = sayeret_commandos check_can_recruit = no size = 1 }
+					if = {
+						limit = { has_title = title:d_rep_netanyahu }
+						create_maa_regiment = { type = sayeret_commandos check_can_recruit = no title = title:d_rep_netanyahu size = 2 }
+					}
+				}
+			}
+			# 6. 이디 아민 (독립 씨족제: 우간다 심바 대대 3대대)
+			character:reincarnated_idi_amin_867 ?= {
+				if = {
+					limit = { is_alive = yes is_ruler = yes }
+					every_maa_regiment = { destroy_maa_regiment = yes }
+					create_maa_regiment = { type = uganda_simba_battalion check_can_recruit = no size = 3 }
+				}
+			}
+			# 7. 김정은 (독립 관료제: 폭풍군단 3대대 = 개인 1 + 직위 2)
+			character:reincarnated_kim_jongun_867 ?= {
+				if = {
+					limit = { is_alive = yes is_ruler = yes }
+					every_maa_regiment = { destroy_maa_regiment = yes }
+					title:d_rep_kim = {
+						every_owned_title_maa_regiment = { destroy_maa_regiment = yes }
+					}
+					create_maa_regiment = { type = kpa_storm_corps check_can_recruit = no size = 1 }
+					if = {
+						limit = { has_title = title:d_rep_kim }
+						create_maa_regiment = { type = kpa_storm_corps check_can_recruit = no title = title:d_rep_kim size = 2 }
+					}
+				}
+			}
+			# 8. 장칭 (당나라 천조제 봉신: 홍위병 조반대 2대대 = 개인 1 + 직위 1)
+			character:reincarnated_jiang_qing_867 ?= {
+				if = {
+					limit = { is_alive = yes is_ruler = yes }
+					every_maa_regiment = { destroy_maa_regiment = yes }
+					title:k_rep_jiang_qing = {
+						every_owned_title_maa_regiment = { destroy_maa_regiment = yes }
+					}
+					create_maa_regiment = { type = red_guard_rebels check_can_recruit = no size = 1 }
+					if = {
+						limit = { has_title = title:k_rep_jiang_qing }
+						create_maa_regiment = { type = red_guard_rebels check_can_recruit = no title = title:k_rep_jiang_qing size = 1 }
+					}
+				}
+			}
+			# 9. 도조 히데키 (일본 총령 봉신: 제국 헌병대 2대대)
+			character:reincarnated_tojo_867 ?= {
+				if = {
+					limit = { is_alive = yes is_ruler = yes }
+					every_maa_regiment = { destroy_maa_regiment = yes }
+					create_maa_regiment = { type = kenpeitai_enforcers check_can_recruit = no size = 2 }
+				}
+			}
+			# 10. 무타구치 렌야 (독립 총령: 반자이 돌격 사무라이 3대대)
+			character:reincarnated_mutaguchi_867 ?= {
+				if = {
+					limit = { is_alive = yes is_ruler = yes }
+					every_maa_regiment = { destroy_maa_regiment = yes }
+					create_maa_regiment = { type = mutaguchi_banzai_samurai check_can_recruit = no size = 3 }
+				}
+			}
+			# 11. 폴 포트 (크메르 만달라 봉신: 크메르 루주 유격대 2대대)
+			character:reincarnated_pol_pot_867 ?= {
+				if = {
+					limit = { is_alive = yes is_ruler = yes }
+					every_maa_regiment = { destroy_maa_regiment = yes }
+					create_maa_regiment = { type = khmer_rouge_guerrillas check_can_recruit = no size = 2 }
+				}
+			}
+			# 12. 블라디미르 푸틴 (독립 귀족 공화국: 바그너 용병단 3대대 = 개인 1 + 공화정 직위 2)
+			character:reincarnated_putin_867 ?= {
+				if = {
+					limit = { is_alive = yes is_ruler = yes }
+					every_maa_regiment = { destroy_maa_regiment = yes }
+					title:d_rep_putin = {
+						every_owned_title_maa_regiment = { destroy_maa_regiment = yes }
+					}
+					create_maa_regiment = { type = wagner_storm_contractors check_can_recruit = no size = 1 }
+					if = {
+						limit = { has_title = title:d_rep_putin }
+						create_maa_regiment = { type = wagner_storm_contractors check_can_recruit = no title = title:d_rep_putin size = 2 }
+					}
+				}
+			}
+		}
+	}
 }
 
 on_trait_gained = {
@@ -468,8 +763,33 @@ villains_juche_incumbent_chairman_on_game_start = {
 
 on_title_gain = {
 	on_actions = {
+		villains_cleanup_escheated_starting_polity_on_title_gain
 		villains_juche_incumbent_chairman_on_title_gain
 		villains_enforce_ai_primary_title_on_title_gain
+		villains_chronicle_polity_founded_on_title_gain
+		villains_siloviki_despot_opinion_pulse
+	}
+}
+
+villains_cleanup_escheated_starting_polity_on_title_gain = {
+	effect = {
+		villains_cleanup_escheated_starting_polity_on_title_gain_effect = yes
+		villains_lock_non_admin_liege_admin_vassal_inheritance_effect = yes
+	}
+}
+
+villains_chronicle_polity_founded_on_title_gain = {
+	effect = {
+		if = {
+			limit = {
+				exists = situation:reincarnated_villains_chronicle
+				exists = scope:title
+				scope:title = { villains_is_custom_polity_kingdom_or_empire_title_trigger = yes }
+			}
+			scope:title = { save_scope_as = gained_polity_title }
+			villains_chronicle_log_polity_founded_effect = yes
+			recalculate_participant_group = situation:reincarnated_villains_chronicle
+		}
 	}
 }
 
@@ -613,17 +933,58 @@ villains_lock_previous_player_primary_title_on_change = {
 quarterly_playable_pulse = {
 	on_actions = {
 		villains_enforce_ai_primary_title_pulse
+		villains_siloviki_despot_opinion_pulse
 	}
 }
 
 yearly_playable_pulse = {
 	on_actions = {
 		villains_enforce_ai_primary_title_pulse
+		villains_siloviki_despot_opinion_pulse
+	}
+}
+
+on_government_change = {
+	on_actions = {
+		villains_siloviki_despot_opinion_pulse
+	}
+}
+
+villains_siloviki_despot_opinion_on_game_start = {
+	effect = {
+		every_living_character = {
+			limit = {
+				is_ruler = yes
+				is_landed = yes
+			}
+			villains_sync_siloviki_despot_opinion_effect = yes
+		}
+	}
+}
+
+villains_siloviki_despot_opinion_pulse = {
+	effect = {
+		if = {
+			limit = { is_alive = yes }
+			villains_sync_siloviki_despot_opinion_effect = yes
+		}
 	}
 }
 
 villains_enforce_ai_primary_title_pulse = {
 	effect = {
+		if = {
+			limit = { is_ai = no }
+			villains_repair_dead_custom_polity_holders_effect = yes
+		}
+		if = {
+			limit = {
+				is_alive = yes
+				is_ruler = yes
+				is_landed = yes
+			}
+			villains_lock_non_admin_liege_admin_vassal_inheritance_effect = yes
+		}
 		if = {
 			limit = {
 				is_alive = yes
@@ -638,7 +999,34 @@ villains_enforce_ai_primary_title_pulse = {
 
 on_death = {
 	on_actions = {
+		villains_prevent_corpse_realm_on_death
 		villains_juche_eternal_leader_on_death
+		villains_chronicle_first_gen_on_death
+	}
+}
+
+villains_prevent_corpse_realm_on_death = {
+	effect = {
+		villains_prevent_corpse_realm_before_death_effect = yes
+	}
+}
+
+villains_chronicle_first_gen_on_death = {
+	effect = {
+		if = {
+			limit = {
+				exists = situation:reincarnated_villains_chronicle
+				villains_is_first_gen_reincarnated_protagonist_trigger = yes
+			}
+			save_scope_as = deceased_protagonist
+			situation:reincarnated_villains_chronicle = {
+				villains_record_chronicle_event_with_current_phase_effect = {
+					KEY = villains_chronicle_entry_first_gen_death
+					ACTOR = scope:deceased_protagonist
+				}
+				villains_chronicle_yearly_maintenance_effect = yes
+			}
+		}
 	}
 }
 
@@ -650,5 +1038,48 @@ villains_juche_eternal_leader_on_death = {
 		}
 	}
 }
+
+villains_chronicle_intro_popup_after_lobby = {
+	effect = {
+		if = {
+			limit = { exists = situation:reincarnated_villains_chronicle }
+			every_player = {
+				limit = {
+					NOT = { has_character_flag = villains_chronicle_intro_shown }
+					any_character_situation = {
+						this = situation:reincarnated_villains_chronicle
+					}
+				}
+				trigger_event = villains_chronicle.0001
+			}
+		}
+	}
+}
+
+on_war_won_attacker = {
+	on_actions = {
+		villains_putin_three_day_blitz_victory_on_action
+	}
+}
+
+villains_putin_three_day_blitz_victory_on_action = {
+	effect = {
+		scope:attacker ?= {
+			if = {
+				limit = {
+					is_alive = yes
+					has_character_flag = putin_three_day_blitz_active_flag
+					has_character_modifier = putin_three_day_blitz_modifier
+				}
+				remove_character_flag = putin_three_day_blitz_active_flag
+				trigger_event = {
+					id = villains_religious_decision.0271
+					days = 1
+				}
+			}
+		}
+	}
+}
+
 
 

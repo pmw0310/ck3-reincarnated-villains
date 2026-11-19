@@ -87,6 +87,20 @@ villains_enforce_ai_primary_title_effect = {
 				}
 				set_primary_title_to = title:e_greater_israel
 			}
+			else_if = {
+				limit = {
+					has_title = title:e_imperial_japan
+					NOT = { primary_title = title:e_imperial_japan }
+				}
+				set_primary_title_to = title:e_imperial_japan
+			}
+			else_if = {
+				limit = {
+					has_title = title:e_eurasian_union
+					NOT = { primary_title = title:e_eurasian_union }
+				}
+				set_primary_title_to = title:e_eurasian_union
+			}
 		}
 		else_if = {
 			limit = { highest_held_title_tier = tier_kingdom }
@@ -159,6 +173,20 @@ villains_enforce_ai_primary_title_effect = {
 					NOT = { primary_title = title:k_state_of_israel }
 				}
 				set_primary_title_to = title:k_state_of_israel
+			}
+			else_if = {
+				limit = {
+					has_title = title:k_tojo_cabinet
+					NOT = { primary_title = title:k_tojo_cabinet }
+				}
+				set_primary_title_to = title:k_tojo_cabinet
+			}
+			else_if = {
+				limit = {
+					has_title = title:k_russian_federation
+					NOT = { primary_title = title:k_russian_federation }
+				}
+				set_primary_title_to = title:k_russian_federation
 			}
 			else_if = {
 				limit = {
@@ -235,6 +263,20 @@ villains_enforce_ai_primary_title_effect = {
 			}
 			else_if = {
 				limit = {
+					has_title = title:d_rep_tojo
+					NOT = { primary_title = title:d_rep_tojo }
+				}
+				set_primary_title_to = title:d_rep_tojo
+			}
+			else_if = {
+				limit = {
+					has_title = title:d_rep_putin
+					NOT = { primary_title = title:d_rep_putin }
+				}
+				set_primary_title_to = title:d_rep_putin
+			}
+			else_if = {
+				limit = {
 					primary_title = {
 						OR = {
 							this = title:d_fascism
@@ -247,6 +289,8 @@ villains_enforce_ai_primary_title_effect = {
 							this = title:d_khlystism
 							this = title:d_cultural_revolution
 							this = title:d_zionism
+							this = title:d_taisei_yokusankai
+							this = title:d_putinism
 						}
 					}
 					any_held_title = {
@@ -359,6 +403,429 @@ villains_enforce_starting_primary_titles_effect = {
 				}
 				set_primary_title_to = title:d_rep_netanyahu
 			}
+			else_if = {
+				limit = {
+					has_title = title:d_rep_tojo
+					NOT = { primary_title = title:d_rep_tojo }
+				}
+				set_primary_title_to = title:d_rep_tojo
+			}
+			else_if = {
+				limit = {
+					has_title = title:d_rep_putin
+					NOT = { primary_title = title:d_rep_putin }
+				}
+				set_primary_title_to = title:d_rep_putin
+			}
 		}
 	}
+}
+
+villains_sync_siloviki_despot_opinion_effect = {
+	if = {
+		limit = {
+			is_alive = yes
+			is_ruler = yes
+			is_landed = yes
+			culture ?= { has_cultural_parameter = siloviki_despot_capital_popular_opinion }
+			has_realm_law = republican_despot_succession_law
+		}
+		if = {
+			limit = { NOT = { has_character_modifier = siloviki_despot_managed_opinion_modifier } }
+			add_character_modifier = siloviki_despot_managed_opinion_modifier
+		}
+	}
+	else_if = {
+		limit = {
+			has_character_modifier = siloviki_despot_managed_opinion_modifier
+		}
+		remove_character_modifier = siloviki_despot_managed_opinion_modifier
+	}
+}
+
+# 시작 명목 대표 정치체 작위(d_rep_* / k_rep_*)가 무자녀 단절 귀속(escheat)이나 박탈 등으로
+# 창설 가문·이념 외부의 타 가문/타 종교 영주(예: 바이에른 왕, 이탈리아 왕 등)에게 넘어간 경우 즉시 해체합니다.
+# (단, 적법한 동가문 후계자 또는 동일 이념 공화국/총독 후임자가 승계한 경우에는 정상 유지합니다.)
+villains_cleanup_escheated_starting_polity_on_title_gain_effect = {
+	if = {
+		limit = {
+			is_alive = yes
+			exists = scope:title
+		}
+		if = {
+			limit = {
+				scope:title = title:d_rep_hitler
+				NOR = {
+					dynasty ?= dynasty:dynasty_hitler_867
+					faith = faith:national_socialism
+				}
+			}
+			destroy_title = scope:title
+		}
+		else_if = {
+			limit = {
+				scope:title = title:d_rep_stalin
+				NOR = {
+					dynasty ?= dynasty:dynasty_stalin_867
+					faith = faith:bolshevism
+				}
+			}
+			destroy_title = scope:title
+		}
+		else_if = {
+			limit = {
+				scope:title = title:d_rep_mussolini
+				NOR = {
+					dynasty ?= dynasty:dynasty_mussolini_867
+					faith = faith:fascism
+				}
+			}
+			destroy_title = scope:title
+		}
+		else_if = {
+			limit = {
+				scope:title = title:d_rep_mutaguchi
+				NOR = {
+					dynasty ?= dynasty:dynasty_mutaguchi_867
+					rite = rite:state_shinto
+				}
+			}
+			destroy_title = scope:title
+		}
+		else_if = {
+			limit = {
+				scope:title = title:d_rep_trump
+				NOR = {
+					dynasty ?= dynasty:dynasty_trump_867
+					faith = faith:americanism
+				}
+			}
+			destroy_title = scope:title
+		}
+		else_if = {
+			limit = {
+				scope:title = title:d_rep_kim
+				NOR = {
+					dynasty ?= dynasty:dynasty_kim_867
+					faith = faith:juche
+				}
+			}
+			destroy_title = scope:title
+		}
+		else_if = {
+			limit = {
+				scope:title = title:k_rep_jiang_qing
+				NOR = {
+					dynasty ?= dynasty:dynasty_jiang_qing_867
+					dynasty ?= dynasty:dynasty_zhang_867
+					dynasty ?= dynasty:dynasty_yao_867
+					dynasty ?= dynasty:dynasty_wang_867
+					faith = faith:cultural_revolution
+				}
+			}
+			destroy_title = scope:title
+		}
+		else_if = {
+			limit = {
+				scope:title = title:d_rep_pol_pot
+				NOR = {
+					dynasty ?= dynasty:dynasty_pol_pot_867
+					faith = faith:angkar
+				}
+			}
+			destroy_title = scope:title
+		}
+		else_if = {
+			limit = {
+				scope:title = title:d_rep_idi_amin
+				NOR = {
+					dynasty ?= dynasty:dynasty_amin_867
+					faith = faith:aminism
+				}
+			}
+			destroy_title = scope:title
+		}
+		else_if = {
+			limit = {
+				scope:title = title:d_rep_netanyahu
+				NOR = {
+					dynasty ?= dynasty:dynasty_netanyahu_867
+					faith = faith:zionism
+				}
+			}
+			destroy_title = scope:title
+		}
+		else_if = {
+			limit = {
+				scope:title = title:d_rep_tojo
+				NOR = {
+					dynasty ?= dynasty:dynasty_tojo_867
+					faith = faith:taisei_yokusankai
+				}
+			}
+			destroy_title = scope:title
+		}
+		else_if = {
+			limit = {
+				scope:title = title:d_rep_putin
+				NOR = {
+					dynasty ?= dynasty:dynasty_putin_867
+					faith = faith:putinism
+				}
+			}
+			destroy_title = scope:title
+		}
+	}
+}
+
+# 단일 시작 명목 정치체 작위($REP_TITLE$)의 유령 시체 홀더(is_alive = no) 복구 헬퍼
+# 구버전 세이브에서 환호 승계법 교착으로 사망자가 계속 작위를 쥐고 있는 경우 생존 상위 주군(또는 현지 신임 영주)에게 영지를 이양하고 명목 작위를 해체합니다.
+villains_repair_single_dead_polity_holder_effect = {
+	title:$REP_TITLE$ ?= {
+		if = {
+			limit = {
+				is_title_created = yes
+				exists = holder
+				holder = { is_alive = no }
+			}
+			holder = {
+				save_temporary_scope_as = dead_polity_holder
+			}
+			if = {
+				limit = {
+					exists = scope:dead_polity_holder.liege
+					scope:dead_polity_holder.liege = {
+						this != scope:dead_polity_holder
+						is_alive = yes
+					}
+				}
+				scope:dead_polity_holder.liege = {
+					save_temporary_scope_as = escheat_receiver
+				}
+			}
+			else_if = {
+				limit = {
+					exists = title:$FALLBACK_LIEGE$.holder
+					title:$FALLBACK_LIEGE$.holder = {
+						this != scope:dead_polity_holder
+						is_alive = yes
+					}
+				}
+				title:$FALLBACK_LIEGE$.holder = {
+					save_temporary_scope_as = escheat_receiver
+				}
+			}
+			else_if = {
+				limit = {
+					exists = scope:dead_polity_holder.capital_province
+				}
+				create_character = {
+					location = scope:dead_polity_holder.capital_province
+					culture = scope:dead_polity_holder.capital_county.culture
+					rite = scope:dead_polity_holder.capital_county.rite
+					gender_female_chance = 0
+					age = { 24 42 }
+					save_temporary_scope_as = escheat_receiver
+				}
+			}
+			if = {
+				limit = { exists = scope:escheat_receiver }
+				create_title_and_vassal_change = {
+					type = returned
+					save_scope_as = corpse_cleanup_change
+					add_claim_on_loss = no
+				}
+				scope:dead_polity_holder = {
+					every_vassal = {
+						limit = { is_alive = yes }
+						change_liege = {
+							liege = scope:escheat_receiver
+							change = scope:corpse_cleanup_change
+						}
+					}
+					every_held_title = {
+						limit = {
+							tier >= tier_county
+							is_landless_type_title = no
+							is_noble_family_title = no
+							is_head_of_faith = no
+							this != title:$REP_TITLE$
+						}
+						change_title_holder = {
+							holder = scope:escheat_receiver
+							change = scope:corpse_cleanup_change
+							take_baronies = yes
+						}
+					}
+					every_held_title = {
+						limit = {
+							OR = {
+								this = title:$REP_TITLE$
+								is_noble_family_title = yes
+								is_head_of_faith = yes
+							}
+						}
+						change_title_holder = {
+							holder = scope:escheat_receiver
+							change = scope:corpse_cleanup_change
+						}
+					}
+				}
+				resolve_title_and_vassal_change = scope:corpse_cleanup_change
+				scope:escheat_receiver = {
+					if = {
+						limit = { has_title = title:$REP_TITLE$ }
+						destroy_title = title:$REP_TITLE$
+					}
+					every_held_title = {
+						limit = {
+							is_noble_family_title = yes
+							NOT = { this ?= scope:escheat_receiver.house.house_head.primary_title }
+							NOR = {
+								scope:escheat_receiver = { government_allows = noble_families }
+								previous_holder ?= scope:escheat_receiver
+							}
+						}
+						save_temporary_scope_as = stale_nf_title
+						scope:escheat_receiver = { destroy_title = scope:stale_nf_title }
+					}
+					every_held_title = {
+						limit = {
+							is_head_of_faith = yes
+							exists = controlled_faith
+							controlled_faith != scope:escheat_receiver.faith
+						}
+						save_temporary_scope_as = stale_hof_title
+						scope:escheat_receiver = { destroy_title = scope:stale_hof_title }
+					}
+				}
+			}
+		}
+	}
+}
+
+# 비행정제 주군(봉건제·부족제 등) 산하의 행정제 봉신이 월간 법 유지 검사(can_keep_single_heir_succession_law_trigger)로 인해
+# 총독 임명제(appointment_succession_law)로 강등되어 무자녀 사망 시 후보자 0명 교착(시체 홀더 버그)에 빠지는 것을 방지합니다.
+villains_lock_non_admin_liege_admin_vassal_inheritance_effect = {
+	if = {
+		limit = {
+			is_alive = yes
+			is_ruler = yes
+			is_landed = yes
+			government_has_mechanic = administrative
+			is_independent_ruler = no
+			NOT = { top_liege = { government_has_mechanic = administrative } }
+		}
+		set_variable = {
+			name = purge_oath_previous_law
+			value = flag:single_heir_succession_law
+		}
+		if = {
+			limit = { NOT = { has_realm_law = single_heir_succession_law } }
+			add_realm_law_skip_effects = single_heir_succession_law
+		}
+	}
+}
+
+# 사망 직전(on_death: C++ 승계 실행 전) 후계자(primary_heir)가 전무한 상태에서 임명제(appointment) 교착에 빠져 있거나
+# 명목 시작 정치체(d_rep_* / k_rep_*)를 보유한 채 단절되는 경우, 시체 홀더 잔류 및 이교도 주군 승계를 사전 차단합니다.
+villains_prevent_corpse_realm_before_death_effect = {
+	if = {
+		limit = {
+			is_ruler = yes
+			is_landed = yes
+			NOT = { exists = primary_heir }
+		}
+		if = {
+			limit = {
+				is_independent_ruler = no
+				government_has_mechanic = administrative
+				NOT = { top_liege = { government_has_mechanic = administrative } }
+			}
+			set_variable = {
+				name = purge_oath_previous_law
+				value = flag:single_heir_succession_law
+			}
+			if = {
+				limit = { NOT = { has_realm_law = single_heir_succession_law } }
+				add_realm_law_skip_effects = single_heir_succession_law
+			}
+		}
+		if = {
+			limit = {
+				is_independent_ruler = no
+				exists = liege
+				liege = {
+					this != root
+					is_alive = yes
+				}
+			}
+			if = {
+				limit = {
+					has_title = title:d_rep_hitler
+					liege = { NOR = { dynasty ?= dynasty:dynasty_hitler_867 faith = faith:national_socialism } }
+				}
+				destroy_title = title:d_rep_hitler
+			}
+			if = {
+				limit = {
+					has_title = title:d_rep_mussolini
+					liege = { NOR = { dynasty ?= dynasty:dynasty_mussolini_867 faith = faith:fascism } }
+				}
+				destroy_title = title:d_rep_mussolini
+			}
+			if = {
+				limit = {
+					has_title = title:d_rep_trump
+					liege = { NOR = { dynasty ?= dynasty:dynasty_trump_867 faith = faith:americanism } }
+				}
+				destroy_title = title:d_rep_trump
+			}
+			if = {
+				limit = {
+					has_title = title:k_rep_jiang_qing
+					liege = {
+						NOR = {
+							dynasty ?= dynasty:dynasty_jiang_qing_867
+							dynasty ?= dynasty:dynasty_zhang_867
+							dynasty ?= dynasty:dynasty_yao_867
+							dynasty ?= dynasty:dynasty_wang_867
+							faith = faith:cultural_revolution
+						}
+					}
+				}
+				destroy_title = title:k_rep_jiang_qing
+			}
+			if = {
+				limit = {
+					has_title = title:d_rep_pol_pot
+					liege = { NOR = { dynasty ?= dynasty:dynasty_pol_pot_867 faith = faith:angkar } }
+				}
+				destroy_title = title:d_rep_pol_pot
+			}
+			if = {
+				limit = {
+					has_title = title:d_rep_tojo
+					liege = { NOR = { dynasty ?= dynasty:dynasty_tojo_867 faith = faith:taisei_yokusankai } }
+				}
+				destroy_title = title:d_rep_tojo
+			}
+		}
+	}
+}
+
+# 전 진영 시작 명목 정치체의 시체 홀더 유령 봉역 일괄 점검 및 복구
+villains_repair_dead_custom_polity_holders_effect = {
+	villains_repair_single_dead_polity_holder_effect = { REP_TITLE = d_rep_hitler FALLBACK_LIEGE = k_bavaria }
+	villains_repair_single_dead_polity_holder_effect = { REP_TITLE = d_rep_mussolini FALLBACK_LIEGE = k_italy }
+	villains_repair_single_dead_polity_holder_effect = { REP_TITLE = d_rep_stalin FALLBACK_LIEGE = k_opolye }
+	villains_repair_single_dead_polity_holder_effect = { REP_TITLE = d_rep_mutaguchi FALLBACK_LIEGE = k_kamarupa }
+	villains_repair_single_dead_polity_holder_effect = { REP_TITLE = d_rep_trump FALLBACK_LIEGE = k_lotharingia }
+	villains_repair_single_dead_polity_holder_effect = { REP_TITLE = d_rep_kim FALLBACK_LIEGE = k_silla }
+	villains_repair_single_dead_polity_holder_effect = { REP_TITLE = k_rep_jiang_qing FALLBACK_LIEGE = h_china }
+	villains_repair_single_dead_polity_holder_effect = { REP_TITLE = d_rep_pol_pot FALLBACK_LIEGE = k_funan }
+	villains_repair_single_dead_polity_holder_effect = { REP_TITLE = d_rep_idi_amin FALLBACK_LIEGE = k_nubia }
+	villains_repair_single_dead_polity_holder_effect = { REP_TITLE = d_rep_netanyahu FALLBACK_LIEGE = k_jerusalem }
+	villains_repair_single_dead_polity_holder_effect = { REP_TITLE = d_rep_tojo FALLBACK_LIEGE = e_japan }
+	villains_repair_single_dead_polity_holder_effect = { REP_TITLE = d_rep_putin FALLBACK_LIEGE = k_galicia-volhynia }
 }

@@ -4499,6 +4499,30 @@
 				boy = male
 				girl = female
 			}
+
+			villains_tojo_clothes = {
+				index = 244
+				male = {
+					1 = m_clothes_villains_tojo
+				}
+				female = {
+					1 = empty
+				}
+				boy = male
+				girl = female
+			}
+
+			villains_putin_clothes = {
+				index = 245
+				male = {
+					1 = m_clothes_villains_putin
+				}
+				female = {
+					1 = empty
+				}
+				boy = male
+				girl = female
+			}
 		}
 	}
 }

@@ -699,7 +699,7 @@
 	# History
 
 	867.1.1 = {
-		culture = imperial_japanese
+		culture = imphal_japanese
 		rite = state_shinto
 		districts = {
 			district = {
@@ -1058,7 +1058,7 @@
 	# History
 
 	867.1.1 = {
-		culture = imperial_japanese
+		culture = imphal_japanese
 		rite = state_shinto
 		districts = {
 			district = {

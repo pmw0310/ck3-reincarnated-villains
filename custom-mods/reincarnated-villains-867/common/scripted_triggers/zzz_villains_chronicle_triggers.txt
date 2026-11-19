@@ -1,0 +1,89 @@
+﻿########################################################################################
+# Reincarnated Villains Chronicle — Triggers & Helper Effects
+# Pure observer/chronicle Situation (zero stat modifiers, zero balance impact)
+########################################################################################
+
+# 전생한 악당 주요 가문(상하이 문혁 조력 3인방 포함) 소속 여부 판정
+villains_is_reincarnated_dynasty_member_trigger = {
+	exists = dynasty
+	OR = {
+		dynasty = dynasty:dynasty_hitler_867
+		dynasty = dynasty:dynasty_stalin_867
+		dynasty = dynasty:dynasty_mussolini_867
+		dynasty = dynasty:dynasty_mutaguchi_867
+		dynasty = dynasty:dynasty_trump_867
+		dynasty = dynasty:dynasty_kim_867
+		dynasty = dynasty:dynasty_pol_pot_867
+		dynasty = dynasty:dynasty_amin_867
+		dynasty = dynasty:dynasty_rasputin_867
+		dynasty = dynasty:dynasty_jiang_qing_867
+		dynasty = dynasty:dynasty_zhang_867
+		dynasty = dynasty:dynasty_yao_867
+		dynasty = dynasty:dynasty_wang_867
+		dynasty = dynasty:dynasty_netanyahu_867
+		dynasty = dynasty:dynasty_tojo_867
+		dynasty = dynasty:dynasty_putin_867
+	}
+}
+
+# 1대 전생 주인공(북마크 시작 인물) 여부 판정
+villains_is_first_gen_reincarnated_protagonist_trigger = {
+	OR = {
+		this = character:reincarnated_hitler_867
+		this = character:reincarnated_stalin_867
+		this = character:reincarnated_mussolini_867
+		this = character:reincarnated_mutaguchi_867
+		this = character:reincarnated_trump_867
+		this = character:reincarnated_kim_jongun_867
+		this = character:reincarnated_kim_yojong_867
+		this = character:reincarnated_pol_pot_867
+		this = character:reincarnated_idi_amin_867
+		this = character:reincarnated_rasputin_867
+		this = character:reincarnated_jiang_qing_867
+		this = character:reincarnated_netanyahu_867
+		this = character:reincarnated_yonatan_netanyahu_867
+		this = character:reincarnated_tojo_867
+		this = character:reincarnated_putin_867
+	}
+}
+
+# 연대기 '패권을 쥔 전생 왕조' 등급 판정:
+# 장칭의 당나라 봉신용 시작 명목 왕국 직위(k_rep_jiang_qing)만 보유한 경우는 아직 상하이 3백작령 출발 단계이므로 제외하고,
+# 실제로 상하이 인민코뮌(k_shanghai_commune) 등 정식 왕국·제국·패권국 이상을 수립/획득한 통치자만 패권 왕조로 분류합니다.
+villains_is_ascendant_chronicle_ruler_trigger = {
+	highest_held_title_tier >= tier_kingdom
+	any_held_title = {
+		tier >= tier_kingdom
+		this != title:k_rep_jiang_qing
+	}
+}
+
+# 커스텀 국가/제국 작위 여부 판정 (연대기 건국 기록용)
+villains_is_custom_polity_kingdom_or_empire_title_trigger = {
+	OR = {
+		this = title:k_german_reich
+		this = title:e_greater_german_reich
+		this = title:k_soviet_union
+		this = title:e_soviet_union
+		this = title:k_fascist_italy
+		this = title:e_new_roman_empire
+		this = title:k_imperial_japan_india
+		this = title:e_greater_east_asia_imphal
+		this = title:k_united_states
+		this = title:e_american_empire
+		this = title:k_dprk
+		this = title:e_juche_korea
+		this = title:k_democratic_kampuchea
+		this = title:e_democratic_kampuchea
+		this = title:k_uganda
+		this = title:e_uganda_empire
+		this = title:k_shanghai_commune
+		this = title:e_cultural_revolution_china
+		this = title:k_state_of_israel
+		this = title:e_greater_israel
+		this = title:k_tojo_cabinet
+		this = title:e_imperial_japan
+		this = title:k_russian_federation
+		this = title:e_eurasian_union
+	}
+}

@@ -1,0 +1,350 @@
+﻿########################################################################################
+# Reincarnated Villains Chronicle Window (전생한 악당들의 연대기 전용 창)
+# Non-invasive standalone window bound ONLY to situation:reincarnated_villains_chronicle
+########################################################################################
+window = {
+	name = "window_villains_chronicle"
+	widgetid = "window_villains_chronicle"
+	datacontext = "[SituationWindow.GetSituation]"
+	datacontext = "[GetVariableSystem]"
+	datacontext = "[GetPlayer]"
+	parentanchor = top|right
+	layer = windows_layer
+	movable = no
+	allow_outside = yes
+
+	using = Window_Size_MainTab
+
+	state = {
+		name = on_create
+		trigger_on_create = yes
+		on_start = "[GetVariableSystem.Set( 'villains_chronicle_tab', 'history' )]"
+	}
+
+	state = {
+		name = _show
+		using = Animation_FadeIn_Quick
+		using = Sound_WindowShow_Standard
+		using = Window_Position_MainTab
+	}
+
+	state = {
+		name = _hide
+		using = Animation_FadeOut_Quick
+		using = Sound_WindowHide_Standard
+		using = Window_Position_MainTab_Hide
+		on_start = "[SituationWindow.AccessParticipantCharacterList.Close]"
+	}
+
+	margin_widget = {
+		size = { 100% 100% }
+		margin = { 0 26 }
+		margin_right = 13
+
+		widget = {
+			size = { 100% 100% }
+
+			vbox = {
+				using = Window_Margins
+				datacontext = "[SituationWindow.GetSelectedSubRegion]"
+				datacontext = "[SituationSubRegion.GetCurrentPhase]"
+
+				layoutpolicy_vertical = expanding
+				layoutpolicy_horizontal = expanding
+				spacing = 8
+
+				### 1. Header
+				header_pattern = {
+					layoutpolicy_horizontal = expanding
+
+					blockoverride "header_text"
+					{
+						text = "[Situation.GetNameNoTooltip]"
+					}
+
+					blockoverride "button_back"
+					{
+						onclick = "[OpenGameView( 'situations' )]"
+					}
+
+					blockoverride "button_close"
+					{
+						onclick = "[SituationWindow.Close]"
+					}
+				}
+
+				### 2. Full-Width Medieval Satirical Painting Banner (16:9 -> 540x304)
+				widget = {
+					size = { 540 304 }
+					layoutpolicy_horizontal = expanding
+
+					icon = {
+						size = { 100% 100% }
+						texture = "[Situation.GetType.GetIllustration]"
+						using = Mask_Rough_Edges
+					}
+
+					icon = {
+						size = { 100% 100% }
+						texture = "gfx/interface/component_tiles/tile_vignette_3px.dds"
+						spriteType = Corneredtiled
+						spriteborder = { 5 5 }
+					}
+
+					hbox = {
+						parentanchor = bottom|hcenter
+						size = { 100% 52 }
+						margin = { 14 6 }
+						spacing = 10
+
+						background = {
+							using = Background_Area_Dark
+							alpha = 0.88
+						}
+
+						icon = {
+							size = { 38 38 }
+							texture = "[SituationPhase.GetType.GetIcon]"
+						}
+
+						vbox = {
+							layoutpolicy_horizontal = expanding
+							text_single = {
+								layoutpolicy_horizontal = expanding
+								text = "VILLAINS_CHRONICLE_CURRENT_CHAPTER_HEADER"
+								align = nobaseline
+							}
+							text_single = {
+								layoutpolicy_horizontal = expanding
+								text = "VILLAINS_CHRONICLE_START_YEAR_SUBTITLE"
+								default_format = "#weak"
+								align = nobaseline
+							}
+						}
+					}
+				}
+
+				### 3. Player Status & Participant Roster Summary Card
+				vbox = {
+					layoutpolicy_horizontal = expanding
+					margin = { 14 10 }
+					spacing = 8
+
+					datacontext = "[SituationSubRegion.GetCharacterParticipantGroup( GetPlayer )]"
+
+					background = {
+						using = Background_Area
+					}
+
+					text_multi = {
+						layoutpolicy_horizontal = expanding
+						autoresize = yes
+						max_width = 510
+						text = "reincarnated_villains_chronicle_desc"
+						default_format = "#weak"
+					}
+
+					divider_light = {
+						layoutpolicy_horizontal = expanding
+					}
+
+					hbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 10
+
+						container = {
+							visible = "[SituationParticipantGroup.IsValid]"
+
+							icon = {
+								parentanchor = center
+								size = { 46 46 }
+								texture = "gfx/interface/icons/situations/icon_background_01.dds"
+							}
+
+							icon = {
+								parentanchor = center
+								size = { 34 34 }
+								texture = "[SituationParticipantGroup.GetType.GetIcon]"
+							}
+						}
+
+						vbox = {
+							visible = "[SituationParticipantGroup.IsValid]"
+							layoutpolicy_horizontal = expanding
+
+							text_single = {
+								layoutpolicy_horizontal = expanding
+								text = "[SituationParticipantGroup.GetName]"
+								align = nobaseline
+							}
+
+							text_single = {
+								layoutpolicy_horizontal = expanding
+								text = "VILLAINS_CHRONICLE_ACTIVE_RULERS_COUNT"
+								default_format = "#weak"
+								align = nobaseline
+							}
+						}
+
+						vbox = {
+							visible = "[Not( SituationParticipantGroup.IsValid )]"
+							layoutpolicy_horizontal = expanding
+
+							text_single = {
+								layoutpolicy_horizontal = expanding
+								text = "VILLAINS_CHRONICLE_OBSERVER_STATUS"
+								default_format = "#low"
+								align = nobaseline
+							}
+
+							text_single = {
+								layoutpolicy_horizontal = expanding
+								text = "VILLAINS_CHRONICLE_ACTIVE_RULERS_COUNT"
+								default_format = "#weak"
+								align = nobaseline
+							}
+						}
+
+						expand = {}
+
+						button_primary = {
+							size = { 165 34 }
+							onclick = "[SituationWindow.AccessParticipantCharacterList.Toggle]"
+							text = "VILLAINS_CHRONICLE_OPEN_SURVIVORS_BTN"
+						}
+					}
+				}
+
+				### 4. Survival Chronicle History Log
+				vbox = {
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = expanding
+					margin = { 10 8 }
+					spacing = 6
+
+					background = {
+						using = Background_Area
+					}
+
+					text_label_center = {
+						layoutpolicy_horizontal = expanding
+						text = "VILLAINS_CHRONICLE_HISTORY_HEADER"
+					}
+
+					scrollbox = {
+						layoutpolicy_vertical = expanding
+						layoutpolicy_horizontal = expanding
+
+						blockoverride "scrollbox_background" {}
+						blockoverride "scrollbox_background_fade" {}
+						blockoverride "scrollbox_margins" {}
+
+						blockoverride "scrollbox_content"
+						{
+							vbox = {
+								name = "villains_chronicle_history_entries"
+								layoutpolicy_horizontal = expanding
+								spacing = 6
+								margin_right = 8
+
+								datamodel = "[SituationWindow.GetCurrentHistoryPage]"
+
+								item = {
+									hbox = {
+										layoutpolicy_horizontal = expanding
+										minimumsize = { 495 56 }
+										margin = { 10 8 }
+										spacing = 10
+
+										datacontext = "[SituationHistoryEntry.GetCatalyst]"
+										datacontext = "[SituationCatalystHistory.GetPhase]"
+
+										background = {
+											using = Background_Area_Dark
+											alpha = 0.65
+										}
+
+										background = {
+											using = Background_Frame
+											alpha = 0.55
+										}
+
+										icon = {
+											size = { 34 34 }
+											visible = "[SituationPhaseType.IsValid]"
+											texture = "[SituationPhaseType.GetIcon]"
+										}
+
+										text_multi = {
+											layoutpolicy_horizontal = expanding
+											autoresize = yes
+											max_width = 355
+											text = "[SituationHistoryEntry.GetDescription( Situation.Self )]"
+											align = nobaseline
+										}
+
+										expand = {}
+
+										text_single = {
+											text = "[SituationHistoryEntry.GetCatalyst.GetDate.GetStringShort]"
+											default_format = "#weak"
+											align = nobaseline|right
+										}
+									}
+								}
+							}
+						}
+
+						blockoverride "scrollbox_expand"
+						{
+							expand = {}
+						}
+					}
+
+					hbox = {
+						layoutpolicy_horizontal = expanding
+						visible = "[GreaterThan_int32( SituationWindow.GetHistoryPageCount, '(int32)1' )]"
+						margin_top = 4
+
+						expand = {}
+
+						button_select_arrow = {
+							enabled = "[GreaterThan_int32( SituationWindow.GetHistoryPageUIIndex, '(int32)1' )]"
+							size = { 24 24 }
+							mirror = horizontal
+							onclick = "[SituationWindow.PreviousHistoryPage]"
+							clicksound = "event:/SFX/UI/Generic/sfx_ui_generic_decrement"
+						}
+
+						text_single = {
+							margin = { 8 2 }
+							align = nobaseline
+							raw_text = "[SituationWindow.GetHistoryPageUIIndex] / [SituationWindow.GetHistoryPageCount]"
+						}
+
+						button_select_arrow = {
+							enabled = "[SituationWindow.HasNextHistoryPage]"
+							size = { 24 24 }
+							onclick = "[SituationWindow.NextHistoryPage]"
+							clicksound = "event:/SFX/UI/Generic/sfx_ui_generic_increment"
+						}
+
+						expand = {}
+					}
+				}
+			}
+		}
+	}
+
+	window_situation_participant_groups = {
+		datacontext = "[SituationWindow.AccessParticipantCharacterList]"
+		datacontext = "[SituationParticipantCharacterList.AccessCharacterList]"
+		visible = "[SituationParticipantCharacterList.IsVisible]"
+
+		datacontext = "[SituationWindow.GetSelectedSubRegion]"
+		blockoverride "header_text"
+		{
+			text = "[SituationWindow.GetParticipationWindowHeader]"
+		}
+	}
+}

@@ -18,8 +18,14 @@ dynasty_mussolini_867 = {
 
 dynasty_mutaguchi_867 = {
 	name = "dynn_Mutaguchi_867"
-	culture = "imperial_japanese"
+	culture = "imphal_japanese"
 	motto = dynn_Mutaguchi_867_motto
+}
+
+dynasty_tojo_867 = {
+	name = "dynn_Tojo_867"
+	culture = "imperial_japanese"
+	motto = dynn_Tojo_867_motto
 }
 
 dynasty_trump_867 = {
@@ -77,4 +83,10 @@ dynasty_netanyahu_867 = {
 	name = "dynn_Netanyahu_867"
 	culture = "israeli"
 	motto = dynn_Netanyahu_867_motto
+}
+
+dynasty_putin_867 = {
+	name = "dynn_Putin_867"
+	culture = "neo_russian"
+	motto = dynn_Putin_867_motto
 }

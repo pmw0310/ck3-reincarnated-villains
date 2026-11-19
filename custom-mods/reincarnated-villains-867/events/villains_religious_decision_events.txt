@@ -4654,13 +4654,14 @@ villains_religious_decision.0220 = {
 		duel = {
 			skills = { martial intrigue }
 			target = scope:mossad_target
-			50 = {
+			12 = {
 				compare_modifier = {
 					value = scope:duel_value
-					multiplier = 3.5
-					min = -49
+					multiplier = 0.8
+					min = -10
+					max = 16
 				}
-				min = 5
+				min = 3
 				desc = villains_religious_decision.0220.a.success
 				send_interface_toast = {
 					type = event_toast_effect_good
@@ -4676,20 +4677,65 @@ villains_religious_decision.0220 = {
 					add_stress = -20
 				}
 			}
-			50 = {
+			88 = {
 				compare_modifier = {
 					value = scope:duel_value
-					multiplier = -3.5
-					min = -49
+					multiplier = -0.8
+					min = -16
+					max = 20
 				}
-				min = 5
+				modifier = {
+					add = 90
+					scope:mossad_target = { highest_held_title_tier >= tier_empire }
+				}
+				modifier = {
+					add = 50
+					scope:mossad_target = { highest_held_title_tier = tier_kingdom }
+				}
+				modifier = {
+					add = 25
+					scope:mossad_target = { highest_held_title_tier = tier_duchy }
+				}
+				modifier = {
+					add = 35
+					scope:mossad_target = { has_trait = paranoid }
+				}
+				modifier = {
+					add = 25
+					exists = root.capital_province
+					exists = scope:mossad_target.location
+					scope:mossad_target.location = {
+						squared_distance = {
+							target = root.capital_province
+							value > squared_distance_small
+						}
+					}
+				}
+				modifier = {
+					add = 35
+					exists = root.capital_province
+					exists = scope:mossad_target.location
+					scope:mossad_target.location = {
+						squared_distance = {
+							target = root.capital_province
+							value > squared_distance_medium
+						}
+					}
+				}
+				min = 35
 				desc = villains_religious_decision.0220.a.failure
 				send_interface_toast = {
 					type = event_toast_effect_bad
 					title = villains_religious_decision.0220.a.failure
 					left_icon = scope:mossad_target
-					add_prestige = -150
-					add_stress = 25
+					add_prestige = -200
+					add_stress = 35
+					scope:mossad_target = {
+						add_opinion = {
+							target = root
+							modifier = schemed_against_me
+						}
+					}
 					if = {
 						limit = {
 							can_set_relation_rival_trigger = { CHARACTER = scope:mossad_target }
@@ -4701,16 +4747,16 @@ villains_religious_decision.0220 = {
 					}
 					add_character_modifier = {
 						modifier = netanyahu_mossad_compromised_cell_modifier
-						years = 3
+						years = 4
 					}
 				}
 			}
 		}
 		ai_chance = {
-			base = 55
+			base = 35
 			modifier = {
-				intrigue >= 14
-				add = 75
+				intrigue >= 16
+				add = 45
 			}
 		}
 	}
@@ -4722,13 +4768,14 @@ villains_religious_decision.0220 = {
 		duel = {
 			skill = intrigue
 			target = scope:mossad_target
-			45 = {
+			10 = {
 				compare_modifier = {
 					value = scope:duel_value
-					multiplier = 3.5
-					min = -44
+					multiplier = 0.7
+					min = -8
+					max = 15
 				}
-				min = 5
+				min = 2
 				desc = villains_religious_decision.0220.b.success
 				send_interface_toast = {
 					type = event_toast_effect_good
@@ -4748,25 +4795,63 @@ villains_religious_decision.0220 = {
 					}
 				}
 			}
-			55 = {
+			90 = {
 				compare_modifier = {
 					value = scope:duel_value
-					multiplier = -3.5
-					min = -54
+					multiplier = -0.7
+					min = -15
+					max = 20
 				}
-				min = 5
+				modifier = {
+					add = 100
+					scope:mossad_target = { highest_held_title_tier >= tier_empire }
+				}
+				modifier = {
+					add = 55
+					scope:mossad_target = { highest_held_title_tier = tier_kingdom }
+				}
+				modifier = {
+					add = 25
+					scope:mossad_target = { highest_held_title_tier = tier_duchy }
+				}
+				modifier = {
+					add = 40
+					scope:mossad_target = { has_trait = paranoid }
+				}
+				modifier = {
+					add = 25
+					exists = root.capital_province
+					exists = scope:mossad_target.location
+					scope:mossad_target.location = {
+						squared_distance = {
+							target = root.capital_province
+							value > squared_distance_small
+						}
+					}
+				}
+				modifier = {
+					add = 35
+					exists = root.capital_province
+					exists = scope:mossad_target.location
+					scope:mossad_target.location = {
+						squared_distance = {
+							target = root.capital_province
+							value > squared_distance_medium
+						}
+					}
+				}
+				min = 40
 				desc = villains_religious_decision.0220.b.failure
 				send_interface_toast = {
 					type = event_toast_effect_bad
 					title = villains_religious_decision.0220.b.failure
 					left_icon = scope:mossad_target
-					add_prestige = -200
-					add_stress = 30
+					add_prestige = -250
+					add_stress = 40
 					scope:mossad_target = {
 						add_opinion = {
 							target = root
 							modifier = attempted_murder_me_crime
-							opinion = -80
 						}
 					}
 					if = {
@@ -4780,16 +4865,16 @@ villains_religious_decision.0220 = {
 					}
 					add_character_modifier = {
 						modifier = netanyahu_secret_tunnel_excuse_modifier
-						years = 3
+						years = 4
 					}
 				}
 			}
 		}
 		ai_chance = {
-			base = 45
+			base = 25
 			modifier = {
-				intrigue >= 15
-				add = 70
+				intrigue >= 18
+				add = 40
 			}
 		}
 	}
@@ -4798,49 +4883,95 @@ villains_religious_decision.0220 = {
 	option = {
 		name = villains_religious_decision.0220.c
 		trigger = { exists = scope:mossad_target }
-		if = {
-			limit = {
-				can_add_hook = {
-					target = scope:mossad_target
-					type = life_threat_hook
+		duel = {
+			skills = { intrigue stewardship }
+			target = scope:mossad_target
+			40 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 1.2
+					min = -20
+					max = 20
+				}
+				min = 10
+				desc = villains_religious_decision.0220.c.success
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = villains_religious_decision.0220.c.success
+					left_icon = scope:mossad_target
+					if = {
+						limit = {
+							can_add_hook = {
+								target = scope:mossad_target
+								type = favor_hook
+							}
+						}
+						add_hook = {
+							type = favor_hook
+							target = scope:mossad_target
+						}
+					}
+					if = {
+						limit = {
+							scope:mossad_target = { gold >= 60 }
+						}
+						scope:mossad_target = {
+							pay_short_term_gold = {
+								target = root
+								gold = 60
+							}
+						}
+					}
+					add_intrigue_lifestyle_xp = 200
+					add_piety = 100
+					add_stress = -15
 				}
 			}
-			add_hook = {
-				type = life_threat_hook
-				target = scope:mossad_target
-			}
-		}
-		else_if = {
-			limit = {
-				can_add_hook = {
-					target = scope:mossad_target
-					type = favor_hook
+			60 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -1.2
+					min = -20
+					max = 20
+				}
+				modifier = {
+					add = 35
+					scope:mossad_target = { highest_held_title_tier >= tier_empire }
+				}
+				modifier = {
+					add = 20
+					scope:mossad_target = { highest_held_title_tier = tier_kingdom }
+				}
+				modifier = {
+					add = 20
+					exists = root.capital_province
+					exists = scope:mossad_target.location
+					scope:mossad_target.location = {
+						squared_distance = {
+							target = root.capital_province
+							value > squared_distance_medium
+						}
+					}
+				}
+				min = 25
+				desc = villains_religious_decision.0220.c.failure
+				send_interface_toast = {
+					type = event_toast_effect_bad
+					title = villains_religious_decision.0220.c.failure
+					left_icon = scope:mossad_target
+					add_prestige = -120
+					add_stress = 25
+					scope:mossad_target = {
+						add_opinion = {
+							target = root
+							modifier = schemed_against_me
+						}
+					}
 				}
 			}
-			add_hook = {
-				type = favor_hook
-				target = scope:mossad_target
-			}
 		}
-		if = {
-			limit = {
-				scope:mossad_target = { gold >= 90 }
-			}
-			scope:mossad_target = {
-				pay_short_term_gold = {
-					target = root
-					gold = 90
-				}
-			}
-		}
-		else = {
-			add_gold = 90
-		}
-		add_intrigue_lifestyle_xp = 300
-		add_piety = 125
-		add_stress = -15
 		ai_chance = {
-			base = 50
+			base = 65
 		}
 	}
 }
@@ -4954,6 +5085,713 @@ villains_religious_decision.0230 = {
 		}
 		ai_chance = {
 			base = 100
+		}
+	}
+}
+
+# ==============================================================================
+# 0240 - Hideki Tojo: Imperial GHQ Victory Bulletin ('전진적 전선 이동' 대본영 발표)
+# ==============================================================================
+villains_religious_decision.0240 = {
+	type = character_event
+	title = villains_religious_decision.0240.t
+	desc = villains_religious_decision.0240.desc
+	theme = war
+	override_background = { reference = council_chamber }
+
+	left_portrait = {
+		character = root
+		animation = steward
+	}
+	right_portrait = {
+		trigger = { exists = scope:ghq_staff_officer }
+		character = scope:ghq_staff_officer
+		animation = personality_rational
+	}
+
+	immediate = {
+		if = {
+			limit = { exists = cp:councillor_marshal }
+			cp:councillor_marshal = { save_scope_as = ghq_staff_officer }
+		}
+		else_if = {
+			limit = { exists = cp:councillor_chancellor }
+			cp:councillor_chancellor = { save_scope_as = ghq_staff_officer }
+		}
+	}
+
+	# Option A: Intrigue Check (Difficulty 13) - Inflate enemy casualties 10x & stage lantern victory parade
+	option = {
+		name = villains_religious_decision.0240.a
+		duel = {
+			skill = intrigue
+			value = 13
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+					min = -49
+				}
+				min = 5
+				desc = villains_religious_decision.0240.a.success
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = villains_religious_decision.0240.a.success
+					left_icon = root
+					add_prestige = 300
+					add_piety = 150
+					change_current_court_grandeur = 5
+					add_character_modifier = {
+						modifier = tojo_ghq_fabricated_victory_euphoria_modifier
+						years = 5
+					}
+				}
+			}
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+					min = -49
+				}
+				min = 5
+				desc = villains_religious_decision.0240.a.failure
+				send_interface_toast = {
+					type = event_toast_effect_bad
+					title = villains_religious_decision.0240.a.failure
+					left_icon = root
+					add_prestige = -150
+					add_stress = 25
+					add_character_modifier = {
+						modifier = tojo_ghq_bulletin_exposed_fiasco_modifier
+						years = 3
+					}
+				}
+			}
+		}
+		ai_chance = {
+			base = 60
+			modifier = {
+				intrigue >= 13
+				add = 80
+			}
+		}
+	}
+
+	# Option B: Rebrand retreat as 'Forward Redeployment' ('전진적 전선 이동') & levy emergency war bonds
+	option = {
+		name = villains_religious_decision.0240.b
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = villains_religious_decision.0240.b.toast
+			left_icon = root
+			add_gold = 180
+			add_dread = 15
+			add_character_modifier = {
+				modifier = tojo_strategic_redeployment_requisition_modifier
+				years = 5
+			}
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	# Option C: Cautious bureaucratic communique & Kenpeitai press censorship
+	option = {
+		name = villains_religious_decision.0240.c
+		add_piety = 150
+		add_dread = 10
+		add_stress = -15
+		ai_chance = {
+			base = 30
+		}
+	}
+}
+
+# ==============================================================================
+# 0250 - Hideki Tojo: Midnight Alleyway Trash Bin Inspection & Portfolio Monopoly
+# ==============================================================================
+villains_religious_decision.0250 = {
+	type = character_event
+	title = villains_religious_decision.0250.t
+	desc = villains_religious_decision.0250.desc
+	theme = stewardship
+	override_background = { reference = alley_night }
+
+	left_portrait = {
+		character = root
+		animation = personality_paranoid
+	}
+	right_portrait = {
+		trigger = { exists = scope:inspected_official }
+		character = scope:inspected_official
+		animation = fear
+	}
+
+	immediate = {
+		if = {
+			limit = { exists = cp:councillor_steward }
+			cp:councillor_steward = { save_scope_as = inspected_official }
+		}
+		else_if = {
+			limit = { any_vassal = { is_adult = yes } }
+			random_vassal = {
+				limit = { is_adult = yes }
+				save_scope_as = inspected_official
+			}
+		}
+	}
+
+	# Option A: Stewardship Check (Difficulty 13) - Dawn raid on alleyway trash bins to expose black-market fishbones & rice waste
+	option = {
+		name = villains_religious_decision.0250.a
+		duel = {
+			skill = stewardship
+			value = 13
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+					min = -49
+				}
+				min = 5
+				desc = villains_religious_decision.0250.a.success
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = villains_religious_decision.0250.a.success
+					left_icon = root
+					add_gold = 220
+					add_dread = 20
+					add_stress = -25
+					every_held_title = {
+						limit = { tier = tier_county }
+						change_county_control = 25
+					}
+					add_character_modifier = {
+						modifier = tojo_midnight_trash_audit_triumph_modifier
+						years = 5
+					}
+				}
+			}
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+					min = -49
+				}
+				min = 5
+				desc = villains_religious_decision.0250.a.failure
+				send_interface_toast = {
+					type = event_toast_effect_bad
+					title = villains_religious_decision.0250.a.failure
+					left_icon = root
+					add_prestige = -100
+					add_stress = 20
+					add_character_modifier = {
+						modifier = tojo_alleyway_laughingstock_modifier
+						years = 3
+					}
+				}
+			}
+		}
+		ai_chance = {
+			base = 70
+			modifier = {
+				stewardship >= 13
+				add = 90
+			}
+		}
+	}
+
+	# Option B: Monopolize 8 Ministerial Portfolios Himself (Prime Minister + Army + Home + Munitions + Education)
+	option = {
+		name = villains_religious_decision.0250.b
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = villains_religious_decision.0250.b.toast
+			left_icon = root
+			add_prestige = 200
+			add_stress = 15
+			add_character_modifier = {
+				modifier = tojo_portfolio_monopoly_cabinet_modifier
+				years = 5
+			}
+			if = {
+				limit = { exists = capital_province }
+				spawn_army = {
+					name = tojo_kenpeitai_special_patrol_name
+					men_at_arms = {
+						type = kenpeitai_enforcers
+						stacks = 2
+					}
+					location = root.capital_province
+					origin = root.capital_province
+					inheritable = yes
+				}
+			}
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	# Option C: Midnight ledger memo & tea ration discipline
+	option = {
+		name = villains_religious_decision.0250.c
+		add_gold = 90
+		add_piety = 100
+		add_stress = -15
+		ai_chance = {
+			base = 25
+		}
+	}
+}
+
+# ==============================================================================
+# 0260 - Vladimir Putin: High-Tower Window Tea Audit (올리가르히 창가 면담 소집)
+# ==============================================================================
+villains_religious_decision.0260 = {
+	type = character_event
+	title = villains_religious_decision.0260.t
+	desc = villains_religious_decision.0260.desc
+	theme = intrigue
+	override_background = { reference = council_chamber }
+
+	left_portrait = {
+		character = root
+		animation = spymaster
+	}
+	right_portrait = {
+		trigger = {
+			exists = scope:window_audit_target
+			scope:window_audit_target = { is_alive = yes }
+		}
+		character = scope:window_audit_target
+		animation = fear
+	}
+	lower_right_portrait = {
+		trigger = {
+			exists = scope:window_audit_target
+			scope:window_audit_target = { is_alive = no }
+		}
+		character = scope:window_audit_target
+		animation = dead
+	}
+
+	immediate = {
+		if = {
+			limit = { NOT = { exists = scope:window_audit_target } }
+			if = {
+				limit = {
+					any_vassal = {
+						is_adult = yes
+						is_imprisoned = no
+						this != root
+					}
+				}
+				ordered_vassal = {
+					limit = {
+						is_adult = yes
+						is_imprisoned = no
+						this != root
+					}
+					order_by = gold
+					max = 1
+					save_scope_as = window_audit_target
+				}
+			}
+			else_if = {
+				limit = {
+					any_courtier_or_guest = {
+						is_adult = yes
+						is_imprisoned = no
+						this != root
+					}
+				}
+				ordered_courtier_or_guest = {
+					limit = {
+						is_adult = yes
+						is_imprisoned = no
+						this != root
+					}
+					order_by = gold
+					max = 1
+					save_scope_as = window_audit_target
+				}
+			}
+		}
+	}
+
+	# Option A: High-Tower Open Window & Samovar Tea (Intrigue Check, Difficulty 13)
+	option = {
+		name = villains_religious_decision.0260.a
+		trigger = {
+			exists = scope:window_audit_target
+			scope:window_audit_target = { is_alive = yes }
+		}
+		duel = {
+			skill = intrigue
+			value = 13
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+					min = -49
+				}
+				min = 5
+				desc = villains_religious_decision.0260.a.success
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = villains_religious_decision.0260.a.success
+					left_icon = scope:window_audit_target
+					if = {
+						limit = { scope:window_audit_target = { gold >= 150 } }
+						scope:window_audit_target = {
+							pay_short_term_gold = {
+								target = root
+								gold = 150
+							}
+						}
+					}
+					else = {
+						add_gold = 140
+					}
+					scope:window_audit_target = {
+						death = {
+							death_reason = death_accident
+						}
+					}
+					add_dread = 25
+					add_stress = -25
+					add_character_modifier = {
+						modifier = putin_window_audit_dread_modifier
+						years = 5
+					}
+				}
+			}
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+					min = -49
+				}
+				min = 5
+				desc = villains_religious_decision.0260.a.failure
+				send_interface_toast = {
+					type = event_toast_effect_bad
+					title = villains_religious_decision.0260.a.failure
+					left_icon = scope:window_audit_target
+					add_tyranny = 15
+					add_prestige = -120
+					scope:window_audit_target = {
+						add_opinion = {
+							target = root
+							modifier = attempted_murder_me_crime
+							opinion = -60
+						}
+					}
+					add_character_modifier = {
+						modifier = putin_window_audit_botched_scandal_modifier
+						years = 4
+					}
+				}
+			}
+		}
+		ai_chance = {
+			base = 55
+			modifier = {
+				intrigue >= 15
+				add = 85
+			}
+		}
+	}
+
+	# Option B: Voluntary State Concern Equity Surrender (Stewardship + Diplomacy Average Check, Difficulty 11)
+	option = {
+		name = villains_religious_decision.0260.b
+		trigger = {
+			exists = scope:window_audit_target
+			scope:window_audit_target = { is_alive = yes }
+		}
+		duel = {
+			skills = { stewardship diplomacy }
+			value = 11
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+					min = -49
+				}
+				min = 5
+				desc = villains_religious_decision.0260.b.success
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = villains_religious_decision.0260.b.success
+					left_icon = scope:window_audit_target
+					if = {
+						limit = { scope:window_audit_target = { gold >= 180 } }
+						scope:window_audit_target = {
+							pay_short_term_gold = {
+								target = root
+								gold = 180
+							}
+						}
+					}
+					else = {
+						add_gold = 160
+					}
+					add_treasury = 120
+					if = {
+						limit = {
+							can_add_hook = {
+								target = scope:window_audit_target
+								type = loyalty_hook
+							}
+						}
+						add_hook = {
+							type = loyalty_hook
+							target = scope:window_audit_target
+						}
+					}
+					add_dread = 15
+				}
+			}
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+					min = -49
+				}
+				min = 5
+				desc = villains_religious_decision.0260.b.failure
+				send_interface_toast = {
+					type = event_toast_effect_bad
+					title = villains_religious_decision.0260.b.failure
+					left_icon = scope:window_audit_target
+					add_prestige = -100
+					add_stress = 20
+					scope:window_audit_target = {
+						add_opinion = {
+							target = root
+							modifier = insulted_opinion
+							opinion = -35
+						}
+					}
+				}
+			}
+		}
+		ai_chance = {
+			base = 65
+		}
+	}
+
+	# Option C: Long Marble Table Monologue & Patriotic Levy
+	option = {
+		name = villains_religious_decision.0260.c
+		add_gold = 85
+		add_piety = 120
+		add_dread = 10
+		ai_chance = {
+			base = 25
+		}
+	}
+}
+
+# ==============================================================================
+# 0270 - Vladimir Putin: Three-Day Special Military Maneuver / Taiga Bear Hunt
+# ==============================================================================
+villains_religious_decision.0270 = {
+	type = character_event
+	title = villains_religious_decision.0270.t
+	desc = villains_religious_decision.0270.desc
+	theme = war
+	override_background = { reference = army_camp }
+
+	left_portrait = {
+		character = root
+		animation = war_attacker
+	}
+	right_portrait = {
+		trigger = { exists = scope:putin_general_staff }
+		character = scope:putin_general_staff
+		animation = marshal
+	}
+
+	immediate = {
+		if = {
+			limit = { exists = cp:councillor_marshal }
+			cp:councillor_marshal = { save_scope_as = putin_general_staff }
+		}
+		else_if = {
+			limit = { exists = cp:councillor_spymaster }
+			cp:councillor_spymaster = { save_scope_as = putin_general_staff }
+		}
+	}
+
+	# Option A: Wartime Three-Day Lightning Maneuver Directive (365-day deadline before Rasputitsa mud!)
+	option = {
+		name = villains_religious_decision.0270.a
+		trigger = {
+			any_character_war = {
+				primary_attacker = root
+			}
+		}
+		custom_tooltip = villains_religious_decision.0270.a.deadline_tt
+		add_character_flag = {
+			flag = putin_three_day_blitz_active_flag
+			days = 370
+		}
+		add_character_modifier = {
+			modifier = putin_three_day_blitz_modifier
+			days = 365
+		}
+		trigger_event = {
+			id = villains_religious_decision.0272
+			days = 366
+		}
+		ai_chance = {
+			base = 120
+		}
+	}
+
+	# Option B: Shirtless Taiga Bear-Hunt Photo Expedition (Prowess Check, Difficulty 12)
+	option = {
+		name = villains_religious_decision.0270.b
+		duel = {
+			skill = prowess
+			value = 12
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+					min = -49
+				}
+				min = 5
+				desc = villains_religious_decision.0270.b.success
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = villains_religious_decision.0270.b.success
+					left_icon = root
+					add_prestige = 300
+					add_stress = -35
+					add_character_modifier = {
+						modifier = putin_taiga_bear_hunt_macho_modifier
+						years = 6
+					}
+				}
+			}
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+					min = -49
+				}
+				min = 5
+				desc = villains_religious_decision.0270.b.failure
+				send_interface_toast = {
+					type = event_toast_effect_bad
+					title = villains_religious_decision.0270.b.failure
+					left_icon = root
+					add_prestige = -120
+					add_stress = 25
+				}
+			}
+		}
+		ai_chance = {
+			base = 70
+			modifier = {
+				prowess >= 12
+				add = 60
+			}
+		}
+	}
+
+	# Option C: Mobilize Wagner Storm Contractors Reserve Column
+	option = {
+		name = villains_religious_decision.0270.c
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = villains_religious_decision.0270.c.toast
+			left_icon = root
+			add_dread = 15
+			if = {
+				limit = { exists = capital_province }
+				spawn_army = {
+					name = putin_wagner_reserve_detachment_name
+					men_at_arms = {
+						type = wagner_storm_contractors
+						stacks = 2
+					}
+					location = root.capital_province
+					origin = root.capital_province
+					inheritable = yes
+				}
+			}
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+# 0271 - Victory Achieved Before the 1-Year Deadline!
+villains_religious_decision.0271 = {
+	type = character_event
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = { has_character_modifier = putin_three_day_blitz_modifier }
+			remove_character_modifier = putin_three_day_blitz_modifier
+		}
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = villains_religious_decision.0271.t
+			left_icon = root
+			add_prestige = 500
+			add_piety = 250
+			add_treasury = 200
+			add_dread = 20
+		}
+	}
+}
+
+# 0272 - 366 Days Elapsed: Check Whether 'Three-Day Maneuver' Got Bogged Down in Endless Rasputitsa Mud
+villains_religious_decision.0272 = {
+	type = character_event
+	title = villains_religious_decision.0272.t
+	desc = villains_religious_decision.0272.desc
+	theme = war
+	override_background = { reference = wilderness_forest }
+
+	trigger = {
+		is_alive = yes
+		has_character_flag = putin_three_day_blitz_active_flag
+		any_character_war = {
+			primary_attacker = root
+		}
+	}
+
+	left_portrait = {
+		character = root
+		animation = anger
+	}
+
+	immediate = {
+		remove_character_flag = putin_three_day_blitz_active_flag
+		if = {
+			limit = { has_character_modifier = putin_three_day_blitz_modifier }
+			remove_character_modifier = putin_three_day_blitz_modifier
+		}
+	}
+
+	option = {
+		name = villains_religious_decision.0272.a
+		add_prestige = -250
+		add_stress = 30
+		add_character_modifier = {
+			modifier = putin_endless_mud_rasputitsa_modifier
+			years = 4
 		}
 	}
 }

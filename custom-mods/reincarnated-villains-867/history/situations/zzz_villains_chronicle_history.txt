@@ -1,0 +1,31 @@
+﻿########################################################################################
+# Reincarnated Villains Chronicle — Situation History (867 Start Only)
+########################################################################################
+
+867.1.1 = {
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = situation:reincarnated_villains_chronicle }
+			}
+			start_situation = {
+				type = reincarnated_villains_chronicle
+				start_phase = villains_chronicle_phase_first_generation
+			}
+			situation:reincarnated_villains_chronicle ?= {
+				record_situation_special_event = {
+					key = villains_chronicle_entry_opening_867
+					phase = villains_chronicle_phase_first_generation
+				}
+			}
+		}
+	}
+}
+
+1066.1.1 = {
+	effect = {
+		situation:reincarnated_villains_chronicle ?= {
+			end_situation = yes
+		}
+	}
+}

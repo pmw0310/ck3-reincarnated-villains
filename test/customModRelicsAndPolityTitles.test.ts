@@ -158,6 +158,34 @@ const EXPECTED_SATIRICAL_ARTIFACTS = [
     template: 'netanyahu_ledger_heirloom_template',
     visuals: 'pocket_book',
   },
+  {
+    nameKey: 'artifact_tojo_tortoiseshell_spectacles_name',
+    descKey: 'artifact_tojo_tortoiseshell_spectacles_desc',
+    modifier: 'tojo_tortoiseshell_spectacles_modifier',
+    template: 'tojo_personal_only_template',
+    visuals: 'pocket_fancy_case',
+  },
+  {
+    nameKey: 'artifact_tojo_ghq_victory_bulletin_name',
+    descKey: 'artifact_tojo_ghq_victory_bulletin_desc',
+    modifier: 'tojo_ghq_victory_bulletin_modifier',
+    template: 'tojo_dynasty_heirloom_template',
+    visuals: 'book',
+  },
+  {
+    nameKey: 'artifact_putin_long_marble_table_name',
+    descKey: 'artifact_putin_long_marble_table_desc',
+    modifier: 'putin_long_marble_table_modifier',
+    template: 'putin_table_heirloom_template',
+    visuals: 'cabinet_trinket',
+  },
+  {
+    nameKey: 'artifact_putin_lubyanka_samovar_name',
+    descKey: 'artifact_putin_lubyanka_samovar_desc',
+    modifier: 'putin_lubyanka_samovar_modifier',
+    template: 'putin_samovar_heirloom_template',
+    visuals: 'glazed_jar',
+  },
 ] as const
 
 const EXPECTED_REP_POLITIES = [
@@ -183,6 +211,8 @@ const EXPECTED_REP_POLITIES = [
   },
   { repTitle: 'd_rep_idi_amin', tier1Kingdom: 'k_uganda', tier2Empire: 'e_uganda_empire' },
   { repTitle: 'd_rep_netanyahu', tier1Kingdom: 'k_state_of_israel', tier2Empire: 'e_greater_israel' },
+  { repTitle: 'd_rep_tojo', tier1Kingdom: 'k_tojo_cabinet', tier2Empire: 'e_imperial_japan' },
+  { repTitle: 'd_rep_putin', tier1Kingdom: 'k_russian_federation', tier2Empire: 'e_eurasian_union' },
 ] as const
 
 const EXPECTED_MODULAR_LOC_STEMS = [
@@ -198,6 +228,8 @@ const EXPECTED_MODULAR_LOC_STEMS = [
   '09_villains_jiang_qing',
   '10_villains_pol_pot',
   '11_villains_mutaguchi',
+  '12_villains_tojo',
+  '13_villains_putin',
 ] as const
 
 /**
@@ -436,6 +468,10 @@ describe('Reincarnated Villains 867: Satirical Relics & Representative Polity Ti
       'c_xiuzhou',
       'c_jerusalem',
       'c_jaffa',
+      'c_musashi',
+      'c_sagami',
+      'c_terebovl',
+      'c_ushytsia',
     ]
 
     for (const vanillaKey of forbiddenVanillaCoas) {
@@ -589,6 +625,8 @@ describe('Reincarnated Villains 867: Satirical Relics & Representative Polity Ti
       'd_khlystism',
       'd_cultural_revolution',
       'd_zionism',
+      'd_taisei_yokusankai',
+      'd_putinism',
     ]
     const firstHofInLanded = Math.min(...hofKeys.map((k) => landedTitles.indexOf(`${k} = {`)).filter((i) => i !== -1))
     const firstHofInHistory = Math.min(
@@ -813,6 +851,10 @@ describe('Reincarnated Villains 867: Satirical Relics & Representative Polity Ti
       'cultrev_group_leader',
       'zionism_prime_minister',
       'angkar_general_secretary',
+      'tojo_prime_minister',
+      'tojo_imperial_premier',
+      'putin_president',
+      'putin_security_council_chairman',
     ]
 
     for (const key of requiredRulers) {
@@ -855,6 +897,78 @@ describe('Reincarnated Villains 867: Satirical Relics & Representative Polity Ti
     assert.equal(koLoc.get('villains_ruler_child_american_title_male'), '공자')
     assert.equal(koLoc.get('villains_ruler_child_stalin_title'), '혁명 자제')
     assert.equal(koLoc.get('villains_ruler_child_juche_title'), '백두혈통 자제')
+  })
+
+  it('defines the zero-modifier Reincarnated Villains Chronicle Situation, standalone GUI window, and DDS textures', () => {
+    const sitTxt = readUtf8(
+      'custom-mods/reincarnated-villains-867/common/situation/situations/zzz_villains_chronicle_situation.txt',
+    )
+    const sitHistTxt = readUtf8(
+      'custom-mods/reincarnated-villains-867/history/situations/zzz_villains_chronicle_history.txt',
+    )
+    const sitGuiTxt = readUtf8(
+      'custom-mods/reincarnated-villains-867/gui/window_villains_chronicle.gui',
+    )
+    assert.equal(getBraceDelta(sitTxt), 0)
+    assert.equal(getBraceDelta(sitHistTxt), 0)
+    assert.equal(getBraceDelta(sitGuiTxt), 0)
+    assert.ok(sitTxt.includes('reincarnated_villains_chronicle = {'))
+    assert.ok(sitTxt.includes('gui_window_name = "window_villains_chronicle"'))
+    assert.equal(
+      sitTxt.includes('modifier_sets'),
+      false,
+      'Chronicle Situation must remain purely observational with zero stat modifiers',
+    )
+    assert.ok(sitHistTxt.includes('type = reincarnated_villains_chronicle'))
+    assert.ok(sitHistTxt.includes('1066.1.1 = {'))
+
+    const illuDds = fs.readFileSync(
+      path.join(BASE_MOD_DIR, 'gfx/interface/illustrations/situations/villains_situation_chronicle.dds'),
+    )
+    assert.equal(illuDds.toString('ascii', 84, 88), 'DXT1')
+    assert.equal(illuDds.readUInt32LE(16), 1600)
+    assert.equal(illuDds.readUInt32LE(12), 900)
+
+    const hudIconDds = fs.readFileSync(
+      path.join(BASE_MOD_DIR, 'gfx/interface/icons/situation_types/reincarnated_villains_chronicle.dds'),
+    )
+    assert.equal(hudIconDds.readUInt32LE(16), 120)
+    assert.equal(hudIconDds.readUInt32LE(12), 120)
+    assert.ok(hudIconDds.readUInt32LE(28) >= 7, 'HUD situation icon must include full mipmaps for smooth downscaling')
+
+    const fullscreenDds = fs.readFileSync(
+      path.join(BASE_MOD_DIR, 'gfx/interface/illustrations/event_story/villains_fullscreen_chronicle.dds'),
+    )
+    assert.equal(fullscreenDds.toString('ascii', 84, 88), 'DXT1')
+    assert.equal(fullscreenDds.readUInt32LE(16), 1920)
+    assert.equal(fullscreenDds.readUInt32LE(12), 626)
+
+    const introEventTxt = readUtf8('custom-mods/reincarnated-villains-867/events/villains_chronicle_events.txt')
+    const eventBgTxt = readUtf8(
+      'custom-mods/reincarnated-villains-867/common/event_backgrounds/zzz_villains_event_backgrounds.txt',
+    )
+    const infoWidgetGui = readUtf8(
+      'custom-mods/reincarnated-villains-867/gui/event_window_widgets/event_window_widget_situation_info_villains_chronicle.gui',
+    )
+    const onActionsTxt = readUtf8('custom-mods/reincarnated-villains-867/common/on_action/zzz_villains_on_actions.txt')
+    assert.equal(getBraceDelta(introEventTxt), 0)
+    assert.equal(getBraceDelta(eventBgTxt), 0)
+    assert.equal(getBraceDelta(infoWidgetGui), 0)
+    assert.ok(introEventTxt.includes('window = fullscreen_event'))
+    assert.ok(introEventTxt.includes('gui = "event_window_widget_situation_info_villains_chronicle"'))
+    assert.ok(onActionsTxt.includes('on_game_start_after_lobby = {'))
+    assert.ok(onActionsTxt.includes('trigger_event = villains_chronicle.0001'))
+
+    const koCommon = parseLocMap(
+      readUtf8('custom-mods/reincarnated-villains-867/localization/korean/00_villains_common_l_korean.yml'),
+    )
+    const enCommon = parseLocMap(
+      readUtf8('custom-mods/reincarnated-villains-867/localization/english/00_villains_common_l_english.yml'),
+    )
+    assert.equal(koCommon.get('reincarnated_villains_chronicle'), '전생한 악당들의 연대기')
+    assert.equal(enCommon.get('reincarnated_villains_chronicle'), 'Chronicle of the Reincarnated Villains')
+    assert.ok(koCommon.has('villains_chronicle.0001.t'))
+    assert.ok(enCommon.has('villains_chronicle.0001.t'))
   })
 
   it('preserves UTF-8 BOM, CRLF line endings, zero NBSP, and balanced braces across all modified Clausewitz files', () => {

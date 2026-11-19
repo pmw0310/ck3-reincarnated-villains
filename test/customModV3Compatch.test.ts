@@ -111,8 +111,8 @@ describe('Victoria 3 Crossgame Portriat (3836483821) 크로스 의상 서브모�
     const textFiles = v3Files.filter((f) => /\.(txt|mod|yml|asset)$/i.test(f));
     assert.equal(
       textFiles.length,
-      32,
-      'descriptor.mod(1) + triggers(1) + outfits(1) + genes(3) + accessories(3) + asset(3) + bookmark_portraits(13) + loc(7) 총 32개 Clausewitz 텍스트 파일이어야 합니다.'
+      34,
+      'descriptor.mod(1) + triggers(1) + outfits(1) + genes(3) + accessories(3) + asset(3) + bookmark_portraits(15) + loc(7) 총 34개 Clausewitz 텍스트 파일이어야 합니다.'
     );
 
     for (const filePath of textFiles) {
@@ -275,7 +275,43 @@ describe('Victoria 3 Crossgame Portriat (3836483821) 크로스 의상 서브모�
     assert.ok(
       outfitsTxt.includes('xgp_v3_male_headgear_european_military_03_late_bulgarian_green') &&
         outfitsTxt.includes('xgp_v3_male_headgear_late_military_cap_japanese_soldier_strap_khaki'),
-      '이디 아민(녹색 원수 정모), 무다구치(구일본군 카키 전투모) 등 V3 모자가 허용 및 장착되어야 합니다.'
+      '이디 아민(녹색 원수 정모), 무다구치·도조(구일본군 카키 전투모) 등 V3 모자가 허용 및 장착되어야 합니다.'
+    );
+    assert.ok(
+      /v3_tojo_mustache_and_shave\s*=\s*\{[\s\S]*?xgp_v3_male_mustache_european_15[\s\S]*?character:reincarnated_tojo_867/.test(
+        outfitsTxt
+      ) &&
+        /v3_tojo_outfit\s*=\s*\{[\s\S]*?xgp_v3_male_coat_late_japanese_military_01_officer_khaki[\s\S]*?xgp_shoulder_off[\s\S]*?xgp_v3_male_headgear_late_military_cap_japanese_soldier_strap_khaki[\s\S]*?character:reincarnated_tojo_867/.test(
+          outfitsTxt
+        ),
+      '도조 히데키는 V3 유럽식 콧수염 15, 견장 없음(xgp_shoulder_off), 카키색 일본식 후기 병사 턱끈 전투모 및 후기 일본군 장교 상의를 정확히 착용해야 합니다.'
+    );
+    const tojoBookmarkTxt = fs.readFileSync(
+      path.join(v3CompatchRoot, 'common/bookmark_portraits/bookmark_reincarnated_tojo.txt'),
+      'utf8'
+    );
+    assert.ok(
+      tojoBookmarkTxt.includes('xgp_mustache_gene={ "xgp_v3_male_mustache_european_15" 0 "xgp_v3_male_mustache_european_15" 0 }') &&
+        tojoBookmarkTxt.includes('xgp_shoulder_gene={ "xgp_shoulder_off" 0 "xgp_shoulder_off" 0 }') &&
+        tojoBookmarkTxt.includes('xgp_hat_gene={ "xgp_v3_male_headgear_late_military_cap_japanese_soldier_strap_khaki" 0 "xgp_v3_male_headgear_late_military_cap_japanese_soldier_strap_khaki" 0 }') &&
+        tojoBookmarkTxt.includes('xgp_shoulder_custom=xgp_manual_none_xgp_shoulder') &&
+        tojoBookmarkTxt.includes('hash=1341027029'),
+      '북마크 도조 초상화 역시 V3 콧수염 15, 견장 해제, 카키 전투모 및 cap1 해시(1341027029)와 100% 일치해야 합니다.'
+    );
+    const putinBookmarkTxt = fs.readFileSync(
+      path.join(v3CompatchRoot, 'common/bookmark_portraits/bookmark_reincarnated_putin.txt'),
+      'utf8'
+    );
+    assert.ok(
+      /v3_putin_hair\s*=\s*\{[\s\S]*?xgp_v3_male_hair_historical_milos_obrenovic[\s\S]*?no_hairstyles[\s\S]*?character:reincarnated_putin_867/.test(
+        outfitsTxt
+      ) &&
+        putinBookmarkTxt.includes(
+          'xgp_hair_gene={ "xgp_v3_male_hair_historical_milos_obrenovic" 0 "xgp_v3_male_hair_historical_milos_obrenovic" 0 }'
+        ) &&
+        putinBookmarkTxt.includes('hairstyles={ "no_hairstyles" 0 "no_hairstyles" 0 }') &&
+        putinBookmarkTxt.includes('xgp_hair_custom=xgp_v3_male_hair_historical_milos_obrenovic'),
+      '블라디미르 푸틴은 인게임 V3 모디파이어 및 북마크 초상화 양쪽에서 V3 밀로시 오브레노비치 헤어스타일(xgp_v3_male_hair_historical_milos_obrenovic)을 착용해야 합니다.'
     );
     assert.equal(
       /v3_trump_outfit\s*=\s*\{[\s\S]*?weight\s*=\s*\{/.exec(outfitsTxt)?.[0]?.includes('xgp_hat_off') ?? true,
@@ -294,6 +330,7 @@ describe('Victoria 3 Crossgame Portriat (3836483821) 크로스 의상 서브모�
       'reincarnated_benzion_netanyahu_867',
       'reincarnated_mutaguchi_867',
       'reincarnated_mutaguchi_concubine_867',
+      'reincarnated_tojo_867',
       'reincarnated_kim_jongun_867',
       'reincarnated_kim_yojong_867',
       'reincarnated_kim_grandfather_867',
@@ -307,6 +344,7 @@ describe('Victoria 3 Crossgame Portriat (3836483821) 크로스 의상 서브모�
       'reincarnated_pol_pot_867',
       'reincarnated_idi_amin_867',
       'reincarnated_rasputin_867',
+      'reincarnated_putin_867',
     ];
     for (const charId of requiredCharacters) {
       assert.ok(
@@ -326,6 +364,8 @@ describe('Victoria 3 Crossgame Portriat (3836483821) 크로스 의상 서브모�
       'faith:zionism',
       'faith:aminism',
       'faith:khlystism',
+      'faith:taisei_yokusankai',
+      'faith:putinism',
     ]) {
       assert.ok(
         outfitsTxt.includes(faithKey),
@@ -333,16 +373,18 @@ describe('Victoria 3 Crossgame Portriat (3836483821) 크로스 의상 서브모�
       );
     }
 
-    // A4: 10대 고유 근현대 문화(비지주 라스푸틴 제외) 전원 V3 복장 커버리지 검증
+    // A4: 12대 고유 근현대 문화(비지주 라스푸틴 제외) 전원 V3 복장 커버리지 검증
     for (const cultureKey of [
       'culture:american',
       'culture:israeli',
       'culture:aryan',
       'culture:fascist_italian',
       'culture:soviet',
+      'culture:neo_russian',
       'culture:juche_korean',
       'culture:zaofan_chinese',
       'culture:imperial_japanese',
+      'culture:imphal_japanese',
       'culture:angkar_khmer',
       'culture:ugandan',
     ]) {
@@ -353,10 +395,10 @@ describe('Victoria 3 Crossgame Portriat (3836483821) 크로스 의상 서브모�
     }
   });
 
-  it('4. 13개 북마크 선택창 포트레이트(common/bookmark_portraits)가 V3 유전자, 오버라이드, Murmur3 해시를 정확히 포함해야 한다', () => {
+  it('4. 15개 북마크 선택창 포트레이트(common/bookmark_portraits)가 V3 유전자, 오버라이드, Murmur3 해시를 정확히 포함해야 한다', () => {
     const bpDir = path.join(v3CompatchRoot, 'common/bookmark_portraits');
     const bpFiles = fs.readdirSync(bpDir).filter((f) => f.endsWith('.txt'));
-    assert.equal(bpFiles.length, 13, '13개 북마크 포트레이트 파일이 모두 존재해야 합니다.');
+    assert.equal(bpFiles.length, 15, '15개 북마크 포트레이트 파일이 모두 존재해야 합니다.');
 
     for (const bpFile of bpFiles) {
       const txt = fs.readFileSync(path.join(bpDir, bpFile), 'utf8');
@@ -441,28 +483,30 @@ describe('Victoria 3 Crossgame Portriat (3836483821) 크로스 의상 서브모�
       }
     }
 
-    // xgp_custom.txt의 이발소 오버라이드 키 대조
-    const xgpCustomRaw = fs.readFileSync(
-      path.join(v3WorkshopRoot, 'gfx/portraits/portrait_modifiers/xgp_custom.txt'),
-      'utf8'
-    );
+    // gfx/portraits/portrait_modifiers/*.txt의 모든 이발소 오버라이드 키 대조 (xgp_custom.txt, xgp_beards_custom.txt, xgp_hairs_custom.txt 등)
+    const pmWorkshopDir = path.join(v3WorkshopRoot, 'gfx/portraits/portrait_modifiers');
     const customGroups = new Map<string, Set<string>>();
-    const cTokens = xgpCustomRaw.match(tokenRegex) ?? [];
-    let cDepth = 0;
-    let curGroup: string | null = null;
-    for (let i = 0; i < cTokens.length; i += 1) {
-      const tk = cTokens[i];
-      if (!tk || tk.startsWith('#')) continue;
-      if (tk === '{') {
-        cDepth += 1;
-      } else if (tk === '}') {
-        cDepth -= 1;
-        if (cDepth === 0) curGroup = null;
-      } else if (cDepth === 0 && cTokens[i + 1] === '=' && cTokens[i + 2] === '{') {
-        curGroup = tk;
-        customGroups.set(curGroup, new Set<string>());
-      } else if (cDepth === 1 && curGroup && cTokens[i + 1] === '=' && cTokens[i + 2] === '{') {
-        customGroups.get(curGroup)?.add(tk);
+    for (const pmFile of fs.readdirSync(pmWorkshopDir).filter((f) => f.endsWith('.txt'))) {
+      const pmRaw = fs.readFileSync(path.join(pmWorkshopDir, pmFile), 'utf8');
+      const cTokens = pmRaw.match(tokenRegex) ?? [];
+      let cDepth = 0;
+      let curGroup: string | null = null;
+      for (let i = 0; i < cTokens.length; i += 1) {
+        const tk = cTokens[i];
+        if (!tk || tk.startsWith('#')) continue;
+        if (tk === '{') {
+          cDepth += 1;
+        } else if (tk === '}') {
+          cDepth -= 1;
+          if (cDepth === 0) curGroup = null;
+        } else if (cDepth === 0 && cTokens[i + 1] === '=' && cTokens[i + 2] === '{') {
+          curGroup = tk;
+          if (!customGroups.has(curGroup)) {
+            customGroups.set(curGroup, new Set<string>());
+          }
+        } else if (cDepth === 1 && curGroup && cTokens[i + 1] === '=' && cTokens[i + 2] === '{') {
+          customGroups.get(curGroup)?.add(tk);
+        }
       }
     }
 

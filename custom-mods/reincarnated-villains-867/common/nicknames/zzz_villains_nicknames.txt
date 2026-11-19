@@ -22,6 +22,8 @@ nick_the_first_vice_director = {}
 
 nick_brother_number_one = {}
 
+nick_last_king_of_scotland = {}
+
 nick_conqueror_of_british_empire = {}
 
 nick_the_mad_monk = {}
@@ -29,3 +31,7 @@ nick_the_mad_monk = {}
 nick_white_boned_empress = {}
 
 nick_shield_of_zion = {}
+
+nick_the_razor_premier = {}
+
+nick_slayed_bear_bare_handed = {}

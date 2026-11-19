@@ -1,0 +1,91 @@
+﻿# Event window widget to show situation info for Reincarnated Villains Chronicle
+# Required controller: situation_info
+
+vbox = {
+	name = "event_window_widget_situation_info_villains_chronicle"
+	EventWindowWidget = {
+		blockoverride "situation_info_content"
+		{
+			hbox = {
+				datacontext = "[EventWindowCustomWidgetSituationInfo.GetSituation]"
+				datacontext = "[Situation.GetTopSubRegion.GetCurrentPhase]"
+				datacontext = "[SituationPhase.GetType]"
+				datacontext = "[GetPlayer]"
+
+				layoutpolicy_vertical = expanding
+				layoutpolicy_horizontal = fixed
+				spacing = 24
+
+				### 1. Current Chronicle Chapter
+				SituationInfo = {
+					blockoverride "situation_tooltip"
+					{
+						tooltipwidget = {
+							using = situation_phase_type_tooltip
+						}
+						using = tooltip_ne
+					}
+
+					blockoverride "situation_icon"
+					{
+						texture = "[SituationPhaseType.GetIcon]"
+					}
+
+					blockoverride "situation_text"
+					{
+						text = "[SituationPhaseType.GetNameNoTooltip]"
+					}
+				}
+
+				### 2. Player's Participant Group (Ascendant vs Surviving)
+				SituationInfo = {
+					datacontext = "[Situation.GetTopParticipantGroupByKey( 'villains_ascendant_dynasts' )]"
+					datacontext = "[SituationParticipantGroup.GetType]"
+					visible = "[ObjectsEqual( Situation.GetParticipantGroupByCharacter( Character.Self ), SituationParticipantGroup.Self )]"
+
+					blockoverride "situation_tooltip"
+					{
+						tooltipwidget = {
+							using = situation_participant_group_type_tooltip
+						}
+						using = tooltip_ne
+					}
+
+					blockoverride "situation_icon"
+					{
+						texture = "[SituationParticipantGroup.GetType.GetIcon]"
+					}
+
+					blockoverride "situation_text"
+					{
+						text = "[SituationParticipantGroupType.GetNameNoTooltip]"
+					}
+				}
+
+				SituationInfo = {
+					datacontext = "[Situation.GetTopParticipantGroupByKey( 'villains_surviving_dynasts' )]"
+					datacontext = "[SituationParticipantGroup.GetType]"
+					visible = "[ObjectsEqual( Situation.GetParticipantGroupByCharacter( Character.Self ), SituationParticipantGroup.Self )]"
+
+					blockoverride "situation_tooltip"
+					{
+						tooltipwidget = {
+							using = situation_participant_group_type_tooltip
+						}
+						using = tooltip_ne
+					}
+
+					blockoverride "situation_icon"
+					{
+						texture = "[SituationParticipantGroup.GetType.GetIcon]"
+					}
+
+					blockoverride "situation_text"
+					{
+						text = "[SituationParticipantGroupType.GetNameNoTooltip]"
+					}
+				}
+			}
+		}
+	}
+}

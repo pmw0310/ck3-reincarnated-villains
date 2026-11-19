@@ -66,6 +66,7 @@ villains_v3_is_named_reincarnated_character_trigger = {
 		AND = { exists = character:reincarnated_benzion_netanyahu_867 this = character:reincarnated_benzion_netanyahu_867 }
 		AND = { exists = character:reincarnated_mutaguchi_867 this = character:reincarnated_mutaguchi_867 }
 		AND = { exists = character:reincarnated_mutaguchi_concubine_867 this = character:reincarnated_mutaguchi_concubine_867 }
+		AND = { exists = character:reincarnated_tojo_867 this = character:reincarnated_tojo_867 }
 		AND = { exists = character:reincarnated_kim_jongun_867 this = character:reincarnated_kim_jongun_867 }
 		AND = { exists = character:reincarnated_kim_yojong_867 this = character:reincarnated_kim_yojong_867 }
 		AND = { exists = character:reincarnated_kim_grandfather_867 this = character:reincarnated_kim_grandfather_867 }
@@ -79,6 +80,7 @@ villains_v3_is_named_reincarnated_character_trigger = {
 		AND = { exists = character:reincarnated_pol_pot_867 this = character:reincarnated_pol_pot_867 }
 		AND = { exists = character:reincarnated_idi_amin_867 this = character:reincarnated_idi_amin_867 }
 		AND = { exists = character:reincarnated_rasputin_867 this = character:reincarnated_rasputin_867 }
+		AND = { exists = character:reincarnated_putin_867 this = character:reincarnated_putin_867 }
 	}
 }
 
@@ -89,9 +91,11 @@ villains_v3_is_modern_culture_member_trigger = {
 		culture = culture:aryan
 		culture = culture:fascist_italian
 		culture = culture:soviet
+		culture = culture:neo_russian
 		culture = culture:juche_korean
 		culture = culture:zaofan_chinese
 		culture = culture:imperial_japanese
+		culture = culture:imphal_japanese
 		culture = culture:angkar_khmer
 		culture = culture:ugandan
 	}
@@ -137,6 +141,8 @@ villains_v3_receives_modern_outfit_trigger = {
 				faith = faith:zionism
 				faith = faith:aminism
 				faith = faith:khlystism
+				faith = faith:taisei_yokusankai
+				faith = faith:putinism
 				faith = { has_doctrine = special_doctrine_communist_ideology }
 				faith = { has_doctrine = special_doctrine_fascist_ideology }
 				faith = { has_doctrine = special_doctrine_capitalist_ideology }
@@ -198,6 +204,8 @@ villains_v3_receives_modern_hair_trigger = {
 		faith = faith:zionism
 		faith = faith:aminism
 		faith = faith:khlystism
+		faith = faith:taisei_yokusankai
+		faith = faith:putinism
 		faith = { has_doctrine = special_doctrine_communist_ideology }
 		faith = { has_doctrine = special_doctrine_fascist_ideology }
 		faith = { has_doctrine = special_doctrine_capitalist_ideology }

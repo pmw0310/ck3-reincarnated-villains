@@ -1527,4 +1527,19 @@
 		gene = clothes
 		template = villains_jiang_qing_clothes
 	}
+
+	add_accessory_modifiers = {
+		gene = clothes
+		template = villains_netanyahu_clothes
+	}
+
+	add_accessory_modifiers = {
+		gene = clothes
+		template = villains_tojo_clothes
+	}
+
+	add_accessory_modifiers = {
+		gene = clothes
+		template = villains_putin_clothes
+	}
 }

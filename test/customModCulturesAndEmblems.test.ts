@@ -115,6 +115,14 @@ describe('전생한 악당들: 지주 10인 고유 문화·전통·특수병 및
     },
     {
       culture: 'imperial_japanese',
+      tradition: 'tradition_imperial_rule_assistance',
+      maa: 'kenpeitai_enforcers',
+      param: 'unlock_maa_kenpeitai_enforcers',
+      protagonist: 'reincarnated_tojo_867',
+      dynasty: 'dynasty_tojo_867',
+    },
+    {
+      culture: 'imphal_japanese',
       tradition: 'tradition_gyokusai_bushido',
       maa: 'mutaguchi_banzai_samurai',
       param: 'unlock_maa_mutaguchi_banzai_samurai',
@@ -136,6 +144,14 @@ describe('전생한 악당들: 지주 10인 고유 문화·전통·특수병 및
       param: 'unlock_maa_uganda_simba_battalion',
       protagonist: 'reincarnated_idi_amin_867',
       dynasty: 'dynasty_amin_867',
+    },
+    {
+      culture: 'neo_russian',
+      tradition: 'tradition_siloviki_oligarchy',
+      maa: 'wagner_storm_contractors',
+      param: 'unlock_maa_wagner_storm_contractors',
+      protagonist: 'reincarnated_putin_867',
+      dynasty: 'dynasty_putin_867',
     },
   ] as const;
 
@@ -207,8 +223,9 @@ describe('전생한 악당들: 지주 10인 고유 문화·전통·특수병 및
       );
       const histTxt = fs.readFileSync(histPath, 'utf8');
       assert.ok(
-        histTxt.includes('867.1.1') && histTxt.includes('discover_innovation'),
-        `${spec.culture}.txt에 867.1.1 기준 시대 혁신 해금이 정의되어야 합니다.`
+        (histTxt.includes('867.1.1') || histTxt.includes('866.1.1')) &&
+          histTxt.includes('discover_innovation'),
+        `${spec.culture}.txt에 866.1.1 또는 867.1.1 기준 시대 혁신 해금이 정의되어야 합니다.`
       );
 
       const charBlock = extractTopLevelBlock(charsTxt, spec.protagonist);
@@ -378,6 +395,24 @@ describe('전생한 악당들: 지주 10인 고유 문화·전통·특수병 및
       '대독일(aryan) 문화는 바이에른(bavarian)과 게르만(german) 문화의 혼합(parents = { bavarian german })으로 정의되어야 합니다.'
     );
 
+    const silovikiBlock = extractTopLevelBlock(traditionsTxt, 'tradition_siloviki_oligarchy') ?? '';
+    const modifiersTxt = fs.readFileSync(
+      path.join(mainModRoot, 'common/modifiers/zzz_villains_modifiers.txt'),
+      'utf8'
+    );
+    const silovikiModBlock = extractTopLevelBlock(modifiersTxt, 'siloviki_despot_managed_opinion_modifier') ?? '';
+    assert.ok(
+      silovikiBlock.includes('siloviki_despot_capital_popular_opinion = yes') &&
+        !silovikiBlock.includes('character_capital_popular_opinion_add') &&
+        silovikiModBlock.includes('character_capital_popular_opinion_add = 80') &&
+        silovikiModBlock.includes('max_trade_routes = -1') &&
+        silovikiModBlock.includes('has_cultural_parameter = siloviki_despot_capital_popular_opinion') &&
+        silovikiModBlock.includes('has_realm_law = republican_despot_succession_law') &&
+        koLocTxt.includes('culture_parameter_siloviki_despot_capital_popular_opinion:') &&
+        enLocTxt.includes('culture_parameter_siloviki_despot_capital_popular_opinion:'),
+      '실로비키 올리가르히 체제 전통은 무조건적인 민중 의견 가산 대신 데스포티스 승계(republican_despot_succession_law) 보유 시에만 수도 민중 의견 기준치 +80 및 무역로 -1을 부여해야 합니다.'
+    );
+
     const requiredProvinceFiles: Array<{ file: string; culture: string }> = [
       { file: 'k_frisia.txt', culture: 'american' },
       { file: 'k_jerusalem.txt', culture: 'israeli' },
@@ -386,9 +421,12 @@ describe('전생한 악당들: 지주 10인 고유 문화·전통·특수병 및
       { file: 'k_opolye.txt', culture: 'soviet' },
       { file: 'k_goryeo.txt', culture: 'juche_korean' },
       { file: 'k_liangzhe.txt', culture: 'zaofan_chinese' },
-      { file: 'k_kamarupa.txt', culture: 'imperial_japanese' },
+      { file: 'k_azuma.txt', culture: 'imperial_japanese' },
+      { file: 'k_kamarupa.txt', culture: 'imphal_japanese' },
       { file: 'k_funan.txt', culture: 'angkar_khmer' },
       { file: 'k_nubia.txt', culture: 'ugandan' },
+      { file: 'k_galicia-volhynia.txt', culture: 'neo_russian' },
+      { file: 'k_ruthenia.txt', culture: 'neo_russian' },
     ];
     for (const pf of requiredProvinceFiles) {
       const provTxt = fs.readFileSync(path.join(mainModRoot, 'history/provinces', pf.file), 'utf8');
@@ -439,6 +477,8 @@ describe('전생한 악당들: 지주 10인 고유 문화·전통·특수병 및
       'ce_villains_uganda_crane_colors.dds',
       'ce_villains_menorah_wreath.dds',
       'ce_villains_likud_logo.dds',
+      'ce_villains_iraa_emblem.dds',
+      'ce_villains_hoi4_imperial_chrysanthemum.dds',
     ];
 
     for (const fileName of emblemFiles) {
@@ -558,6 +598,29 @@ describe('전생한 악당들: 지주 10인 고유 문화·전통·특수병 및
     checkColoredOnly('d_bolshevism', 'ce_villains_soviet_flag_emblem.dds');
     checkColoredOnly('dynasty_mutaguchi_867', 'ce_villains_mutaguchi_kanji.dds');
     checkColoredOnly('c_nf_mutaguchi', 'ce_villains_mutaguchi_kanji.dds');
+    checkColoredOnly('dynasty_tojo_867', 'ce_villains_iraa_emblem.dds');
+    checkColoredOnly('c_nf_tojo', 'ce_villains_iraa_emblem.dds');
+    checkColoredOnly('d_rep_tojo', 'ce_villains_hoi4_imperial_chrysanthemum.dds');
+    checkColoredOnly('k_tojo_cabinet', 'ce_villains_hoi4_imperial_chrysanthemum.dds');
+    checkColoredOnly('e_imperial_japan', 'ce_villains_hoi4_imperial_chrysanthemum.dds');
+    checkColoredOnly('d_taisei_yokusankai', 'ce_villains_hoi4_imperial_chrysanthemum.dds');
+    assert.ok(
+      fs.existsSync(path.join(mainModRoot, 'gfx/coat_of_arms/textured_emblems/te_villains_fsb_emblem.dds')) &&
+        fs.statSync(path.join(mainModRoot, 'gfx/coat_of_arms/textured_emblems/te_villains_fsb_emblem.dds')).size ===
+          349652 &&
+        (extractTopLevelBlock(coaTxt, 'dynasty_putin_867') ?? '').includes('te_villains_fsb_emblem.dds') &&
+        (extractTopLevelBlock(coaTxt, 'd_nf_putin') ?? '').includes('te_villains_fsb_emblem.dds'),
+      '푸틴 가문 및 실로비키 국영 콘체른(dynasty_putin_867, d_nf_putin)은 왜곡 없는 원본 FSB 검·방패 다색 문장(te_villains_fsb_emblem.dds, 349,652B)을 사용해야 합니다.'
+    );
+    for (const putinStateTitle of ['d_rep_putin', 'k_russian_federation', 'e_eurasian_union', 'd_putinism']) {
+      const putinCoaBlock = extractTopLevelBlock(coaTxt, putinStateTitle) ?? '';
+      assert.ok(
+        putinCoaBlock.includes('pattern = "pattern_tricolor_horizontal_01.dds"') &&
+          !putinCoaBlock.includes('ce_orle.dds') &&
+          !putinCoaBlock.includes('textured_emblem'),
+        `${putinStateTitle} 국기 문장은 무문양 러시아 가로 백청적 삼색기(pattern_tricolor_horizontal_01.dds)로 통일되어야 합니다.`
+      );
+    }
     checkColoredOnly('dynasty_pol_pot_867', 'ce_villains_cpk_hammer_sickle.dds');
     checkColoredOnly('house_pol_pot_867', 'ce_villains_cpk_hammer_sickle.dds');
     checkColoredOnly('d_angkar', 'ce_great_temple.dds');
@@ -613,8 +676,10 @@ describe('전생한 악당들: 지주 10인 고유 문화·전통·특수병 및
     checkColoredOnly('k_uganda', 'ce_villains_uganda_crane_colors.dds');
     checkColoredOnly('e_uganda_empire', 'ce_villains_uganda_crane_body.dds');
     checkColoredOnly('e_uganda_empire', 'ce_villains_uganda_crane_colors.dds');
+    const ugandaArmsPath = path.join(mainModRoot, 'gfx/coat_of_arms/textured_emblems/te_villains_uganda_arms.dds');
     assert.ok(
-      fs.existsSync(path.join(mainModRoot, 'gfx/coat_of_arms/textured_emblems/te_villains_uganda_arms.dds')) &&
+      fs.existsSync(ugandaArmsPath) &&
+        fs.statSync(ugandaArmsPath).size === 349652 &&
         fs.existsSync(path.join(mainModRoot, 'gfx/coat_of_arms/patterns/pattern_villains_uganda_6stripes.dds')) &&
         (extractTopLevelBlock(coaTxt, 'dynasty_amin_867') ?? '').includes('te_villains_uganda_arms.dds') &&
         (extractTopLevelBlock(coaTxt, 'd_aminism') ?? '').includes('pattern_villains_uganda_6stripes.dds') &&
@@ -623,6 +688,24 @@ describe('전생한 악당들: 지주 10인 고유 문화·전통·특수병 및
         (extractTopLevelBlock(coaTxt, 'e_uganda_empire') ?? '').includes('pattern_villains_uganda_6stripes.dds'),
       '이디 아민 가문기(dynasty_amin_867)는 우간다 대통령기 국장(te_villains_uganda_arms.dds)을, 국방최고평의회(d_aminism) 및 국가 작위 3종은 모두 6선 국기 패턴과 회색관두루미를 사용해야 합니다.'
     );
+    {
+      const ugBuf = fs.readFileSync(ugandaArmsPath);
+      let minY = 256;
+      let maxY = -1;
+      for (let y = 0; y < 256; y += 1) {
+        for (let x = 0; x < 256; x += 1) {
+          if (ugBuf[128 + (y * 256 + x) * 4 + 3] > 16) {
+            if (y < minY) minY = y;
+            if (y > maxY) maxY = y;
+          }
+        }
+      }
+      const centerY = (minY + maxY + 1) / (2 * 256);
+      assert.ok(
+        centerY >= 0.44 && centerY <= 0.50 && maxY / 256 >= 0.75 && maxY / 256 <= 0.81,
+        `te_villains_uganda_arms.dds 세로 중심(centerY=${centerY.toFixed(3)}, y1=${(maxY / 256).toFixed(3)})이 상단에 치우쳐 방패 하단이 비어 보이거나 배너 하단에서 잘리지 않아야 합니다.`
+      );
+    }
     checkColoredOnly('dynasty_netanyahu_867', 'ce_villains_likud_logo.dds');
     checkColoredOnly('d_zionism', 'ce_star_hexagram.dds');
     checkColoredOnly('e_greater_israel', 'ce_star_hexagram.dds');
@@ -751,10 +834,13 @@ describe('전생한 악당들: 지주 10인 고유 문화·전통·특수병 및
     assert.ok(
       aminCharBlock.includes('change_government = clan_government') &&
         !aminCharBlock.includes('change_government = feudal_government') &&
+        aminCharBlock.includes('give_nickname = nick_last_king_of_scotland') &&
+        aminCharBlock.includes('add_pressed_claim = title:k_scotland') &&
         (extractTopLevelBlock(titlesHistTxt, 'd_rep_idi_amin') ?? '').includes('government = clan_government') &&
         (extractTopLevelBlock(flavorTxt, 'flav_idi_amin_junta_president') ?? '').includes('d_rep_idi_amin') &&
-        koYmlTxt.includes('flav_idi_amin_junta_president:0 "종신 대통령"'),
-      '이디 아민은 씨족제(clan_government)로 시작해 종신 대통령 칭호를 유지해야 합니다.'
+        koYmlTxt.includes('flav_idi_amin_junta_president:0 "종신 대통령"') &&
+        koYmlTxt.includes('bookmark_reincarnated_idi_amin:0 "\'스코틀랜드의 마지막 왕\' 이디 아민"'),
+      '이디 아민은 씨족제(clan_government), 스코틀랜드의 마지막 왕 시작 별명 및 k_scotland 명분으로 시작해 종신 대통령 칭호를 유지해야 합니다.'
     );
     const hitlerCharBlock = extractTopLevelBlock(charsCheckTxt, 'reincarnated_hitler_867') ?? '';
     const mussoliniCharBlock = extractTopLevelBlock(charsCheckTxt, 'reincarnated_mussolini_867') ?? '';
@@ -792,7 +878,8 @@ describe('전생한 악당들: 지주 10인 고유 문화·전통·특수병 및
 
     assert.ok(
       hitlerCharBlock.includes('change_government = administrative_government') &&
-        hitlerCharBlock.includes('acclamation_succession_law') &&
+        hitlerCharBlock.includes('single_heir_succession_law') &&
+        !hitlerCharBlock.includes('acclamation_succession_law') &&
         hitlerCharBlock.includes('type = sa_stormtroopers') &&
         hitlerCharBlock.includes('title = title:d_rep_hitler') &&
         hitlerCharBlock.includes('title:c_nf_hitler') &&
@@ -802,7 +889,8 @@ describe('전생한 악당들: 지주 10인 고유 문화·전통·특수병 및
         (extractTopLevelBlock(titlesHistTxt, 'd_rep_hitler') ?? '').includes('government = administrative_government') &&
         (extractTopLevelBlock(titlesHistTxt, 'c_nf_hitler') ?? '').includes('government = administrative_government') &&
         mussoliniCharBlock.includes('change_government = administrative_government') &&
-        mussoliniCharBlock.includes('acclamation_succession_law') &&
+        mussoliniCharBlock.includes('single_heir_succession_law') &&
+        !mussoliniCharBlock.includes('acclamation_succession_law') &&
         mussoliniCharBlock.includes('type = blackshirts_militia') &&
         mussoliniCharBlock.includes('title = title:d_rep_mussolini') &&
         mussoliniCharBlock.includes('title:c_nf_mussolini') &&
@@ -837,8 +925,32 @@ describe('전생한 악당들: 지주 10인 고유 문화·전통·특수병 및
         !decisionsCheckTxt.includes('change_development_level') &&
         decisionsCheckTxt.includes('completely_controls = title:d_holland') &&
         decisionsCheckTxt.includes('change_prosperity_level') &&
+        decisionsCheckTxt.includes('idi_amin_coronation_true_king_of_scotland_decision') &&
+        decisionsCheckTxt.includes('give_nickname = nick_conqueror_of_british_empire') &&
+        bibiCharBlock.includes('target = character:reincarnated_hitler_867') &&
+        bibiCharBlock.includes('reason = rival_zionism_vs_nazism') &&
+        koYmlTxt.includes('rival_zionism_vs_nazism:0') &&
         !fs.existsSync(path.join(mainModRoot, 'common/buildings/zzz_villains_watermills.txt')),
-      '결단 파일은 트럼프 암스테르담 이전에 맞춰 옛 브리튼 작위 참조가 없어야 하며, 1.21 번영도 이펙트(change_prosperity_level)를 사용하고 폐기된 수차 오버라이드 파일이 제거되어야 합니다.'
+      '결단 파일은 트럼프 암스테르담 이전에 맞춰 옛 브리튼 작위 참조가 없어야 하며, 이디 아민 스코틀랜드 대관식 결단·제국 별명 승격 및 히틀러-네타냐후 숙적 관계가 연결되어야 합니다.'
+    );
+    const mossadDecBlock = extractTopLevelBlock(decisionsCheckTxt, 'netanyahu_mossad_targeted_operation_decision') ?? '';
+    const religiousEventsTxt = fs.readFileSync(
+      path.join(mainModRoot, 'events/villains_religious_decision_events.txt'),
+      'utf8'
+    );
+    const mossadEventBlock = religiousEventsTxt.slice(
+      religiousEventsTxt.indexOf('villains_religious_decision.0220 = {'),
+      religiousEventsTxt.indexOf('villains_religious_decision.0230 = {')
+    );
+    assert.ok(
+      mossadDecBlock.includes('cooldown = { years = 10 }') &&
+        mossadDecBlock.includes('in_diplomatic_range = root') &&
+        mossadDecBlock.includes('in_diplomatic_range = scope:actor') &&
+        mossadDecBlock.includes('value <= squared_distance_large') &&
+        mossadEventBlock.includes('highest_held_title_tier >= tier_empire') &&
+        mossadEventBlock.includes('value > squared_distance_medium') &&
+        !mossadEventBlock.includes('life_threat_hook'),
+      '모사드 표적 공작 결단(0220)은 외교 범위(in_diplomatic_range)·작전 반경(squared_distance_large) 거리 제한, 10년 쿨다운, 작위/거리 비례 난이도 페널티를 적용하며 무료 강제 구실(life_threat_hook)을 지급하지 않아야 합니다.'
     );
   });
 });

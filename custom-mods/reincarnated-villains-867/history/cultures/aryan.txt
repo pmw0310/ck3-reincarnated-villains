@@ -8,6 +8,7 @@
 	discover_innovation = innovation_quilted_armor
 	#	
 	discover_innovation = innovation_gavelkind
+	discover_innovation = innovation_primogeniture
 	discover_innovation = innovation_currency_01
 	discover_innovation = innovation_crop_rotation
 	discover_innovation = innovation_prosperity_01

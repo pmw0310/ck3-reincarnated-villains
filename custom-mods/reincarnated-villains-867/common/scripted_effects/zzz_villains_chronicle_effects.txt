@@ -1,0 +1,232 @@
+﻿########################################################################################
+# Reincarnated Villains Chronicle — History Logging & Phase Transition Effects
+########################################################################################
+
+# 현재 국면에 맞춰 연대기 특수 기록을 안전하게 추가합니다 (root = situation:reincarnated_villains_chronicle)
+villains_record_chronicle_event_with_current_phase_effect = {
+	if = {
+		limit = { situation_current_phase = villains_chronicle_phase_first_generation }
+		record_situation_special_event = {
+			key = $KEY$
+			phase = villains_chronicle_phase_first_generation
+			variables = {
+				actor_char = $ACTOR$
+			}
+		}
+	}
+	else_if = {
+		limit = { situation_current_phase = villains_chronicle_phase_heirs_era }
+		record_situation_special_event = {
+			key = $KEY$
+			phase = villains_chronicle_phase_heirs_era
+			variables = {
+				actor_char = $ACTOR$
+			}
+		}
+	}
+	else = {
+		record_situation_special_event = {
+			key = $KEY$
+			phase = villains_chronicle_phase_last_standing
+			variables = {
+				actor_char = $ACTOR$
+			}
+		}
+	}
+}
+
+# 작위 창건 기록 추가 (root = character, scope:gained_polity_title = landed_title)
+villains_chronicle_log_polity_founded_effect = {
+	if = {
+		limit = {
+			exists = situation:reincarnated_villains_chronicle
+			exists = scope:gained_polity_title
+			NOT = { scope:gained_polity_title = { has_variable = villains_chronicle_logged_creation } }
+		}
+		save_scope_as = founder_char
+		scope:gained_polity_title = {
+			set_variable = villains_chronicle_logged_creation
+		}
+		situation:reincarnated_villains_chronicle = {
+			if = {
+				limit = { situation_current_phase = villains_chronicle_phase_first_generation }
+				record_situation_special_event = {
+					key = villains_chronicle_entry_polity_founded
+					phase = villains_chronicle_phase_first_generation
+					variables = {
+						founder = scope:founder_char
+						founded_title = scope:gained_polity_title
+					}
+				}
+			}
+			else_if = {
+				limit = { situation_current_phase = villains_chronicle_phase_heirs_era }
+				record_situation_special_event = {
+					key = villains_chronicle_entry_polity_founded
+					phase = villains_chronicle_phase_heirs_era
+					variables = {
+						founder = scope:founder_char
+						founded_title = scope:gained_polity_title
+					}
+				}
+			}
+			else = {
+				record_situation_special_event = {
+					key = villains_chronicle_entry_polity_founded
+					phase = villains_chronicle_phase_last_standing
+					variables = {
+						founder = scope:founder_char
+						founded_title = scope:gained_polity_title
+					}
+				}
+			}
+		}
+	}
+}
+
+# 개별 주연 가문의 생존 여부 평가 및 몰락 1회 기록 헬퍼 (root = situation:reincarnated_villains_chronicle)
+# 주의: 로비 이전에는 dynasty 의 any_dynasty_member 역인덱스가 비어 있으므로, 반드시 every_living_character 직접 스캔 및 시조 생존 여부를 함께 확인합니다.
+villains_chronicle_evaluate_single_dynasty_effect = {
+	character:$FOUNDER$ ?= {
+		save_scope_as = founder_ref
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						is_alive = yes
+						is_ruler = yes
+					}
+					any_living_character = {
+						is_ruler = yes
+						exists = dynasty
+						dynasty = dynasty:$DYNASTY$
+					}
+				}
+			}
+			dynasty ?= {
+				if = {
+					limit = { has_variable = villains_chronicle_dynasty_fallen }
+					remove_variable = villains_chronicle_dynasty_fallen
+				}
+			}
+			root = {
+				change_variable = {
+					name = villains_surviving_dynasties_count
+					add = 1
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				current_date > 867.1.1
+			}
+			dynasty ?= {
+				if = {
+					limit = {
+						NOT = { has_variable = villains_chronicle_dynasty_fallen }
+					}
+					set_variable = villains_chronicle_dynasty_fallen
+					root = {
+						villains_record_chronicle_event_with_current_phase_effect = {
+							KEY = villains_chronicle_entry_dynasty_fallen
+							ACTOR = scope:founder_ref
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# 가문별 통치자 전멸(몰락) 감시 및 국면 전환 평가 (root = situation:reincarnated_villains_chronicle)
+villains_chronicle_yearly_maintenance_effect = {
+	# 0. 구버전 세이브 등에서 발생한 시체 홀더 유령 봉역(d_rep_* / k_rep_*) 우선 정리
+	villains_repair_dead_custom_polity_holders_effect = yes
+
+	# 1. 13대 주연 가문의 실시간 통치권 유지 수 집계 및 몰락 시 1회 부고 기록 (빈 글로벌 리스트·any_dynasty_member 의존 원천 제거)
+	set_variable = {
+		name = villains_surviving_dynasties_count
+		value = 0
+	}
+	villains_chronicle_evaluate_single_dynasty_effect = { FOUNDER = reincarnated_hitler_867 DYNASTY = dynasty_hitler_867 }
+	villains_chronicle_evaluate_single_dynasty_effect = { FOUNDER = reincarnated_stalin_867 DYNASTY = dynasty_stalin_867 }
+	villains_chronicle_evaluate_single_dynasty_effect = { FOUNDER = reincarnated_mussolini_867 DYNASTY = dynasty_mussolini_867 }
+	villains_chronicle_evaluate_single_dynasty_effect = { FOUNDER = reincarnated_mutaguchi_867 DYNASTY = dynasty_mutaguchi_867 }
+	villains_chronicle_evaluate_single_dynasty_effect = { FOUNDER = reincarnated_trump_867 DYNASTY = dynasty_trump_867 }
+	villains_chronicle_evaluate_single_dynasty_effect = { FOUNDER = reincarnated_kim_jongun_867 DYNASTY = dynasty_kim_867 }
+	villains_chronicle_evaluate_single_dynasty_effect = { FOUNDER = reincarnated_pol_pot_867 DYNASTY = dynasty_pol_pot_867 }
+	villains_chronicle_evaluate_single_dynasty_effect = { FOUNDER = reincarnated_idi_amin_867 DYNASTY = dynasty_amin_867 }
+	villains_chronicle_evaluate_single_dynasty_effect = { FOUNDER = reincarnated_rasputin_867 DYNASTY = dynasty_rasputin_867 }
+	villains_chronicle_evaluate_single_dynasty_effect = { FOUNDER = reincarnated_jiang_qing_867 DYNASTY = dynasty_jiang_qing_867 }
+	villains_chronicle_evaluate_single_dynasty_effect = { FOUNDER = reincarnated_netanyahu_867 DYNASTY = dynasty_netanyahu_867 }
+	villains_chronicle_evaluate_single_dynasty_effect = { FOUNDER = reincarnated_tojo_867 DYNASTY = dynasty_tojo_867 }
+	villains_chronicle_evaluate_single_dynasty_effect = { FOUNDER = reincarnated_putin_867 DYNASTY = dynasty_putin_867 }
+
+	# 2. 생존 중인 1대 전생 주인공 수 집계
+	save_temporary_scope_value_as = {
+		name = alive_first_gen_count
+		value = {
+			value = 0
+			if = { limit = { character:reincarnated_hitler_867 ?= { is_alive = yes } } add = 1 }
+			if = { limit = { character:reincarnated_stalin_867 ?= { is_alive = yes } } add = 1 }
+			if = { limit = { character:reincarnated_mussolini_867 ?= { is_alive = yes } } add = 1 }
+			if = { limit = { character:reincarnated_mutaguchi_867 ?= { is_alive = yes } } add = 1 }
+			if = { limit = { character:reincarnated_trump_867 ?= { is_alive = yes } } add = 1 }
+			if = { limit = { character:reincarnated_kim_jongun_867 ?= { is_alive = yes } } add = 1 }
+			if = { limit = { character:reincarnated_pol_pot_867 ?= { is_alive = yes } } add = 1 }
+			if = { limit = { character:reincarnated_idi_amin_867 ?= { is_alive = yes } } add = 1 }
+			if = { limit = { character:reincarnated_rasputin_867 ?= { is_alive = yes } } add = 1 }
+			if = { limit = { character:reincarnated_jiang_qing_867 ?= { is_alive = yes } } add = 1 }
+			if = { limit = { character:reincarnated_netanyahu_867 ?= { is_alive = yes } } add = 1 }
+			if = { limit = { character:reincarnated_tojo_867 ?= { is_alive = yes } } add = 1 }
+			if = { limit = { character:reincarnated_putin_867 ?= { is_alive = yes } } add = 1 }
+		}
+	}
+
+	# 3. 국면(1장 -> 2장 -> 종장) 자동 전환 및 오판 복구 (개막일 867.1.1에는 종장 진입을 원천 차단하고, 기존 세이브 오판 시 복원)
+	if = {
+		limit = {
+			current_date > 867.1.1
+			NOT = { situation_current_phase = villains_chronicle_phase_last_standing }
+			var:villains_surviving_dynasties_count <= 1
+		}
+		situation_top_sub_region = {
+			change_phase = { phase = villains_chronicle_phase_last_standing }
+		}
+		record_situation_special_event = {
+			key = villains_chronicle_entry_phase_last_standing
+			phase = villains_chronicle_phase_last_standing
+		}
+	}
+	else_if = {
+		limit = {
+			situation_current_phase = villains_chronicle_phase_first_generation
+			scope:alive_first_gen_count = 0
+			var:villains_surviving_dynasties_count > 1
+		}
+		situation_top_sub_region = {
+			change_phase = { phase = villains_chronicle_phase_heirs_era }
+		}
+		record_situation_special_event = {
+			key = villains_chronicle_entry_phase_heirs_era
+			phase = villains_chronicle_phase_heirs_era
+		}
+	}
+	else_if = {
+		limit = {
+			situation_current_phase = villains_chronicle_phase_last_standing
+			var:villains_surviving_dynasties_count > 1
+		}
+		if = {
+			limit = { scope:alive_first_gen_count > 0 }
+			situation_top_sub_region = {
+				change_phase = { phase = villains_chronicle_phase_first_generation }
+			}
+		}
+		else = {
+			situation_top_sub_region = {
+				change_phase = { phase = villains_chronicle_phase_heirs_era }
+			}
+		}
+	}
+}

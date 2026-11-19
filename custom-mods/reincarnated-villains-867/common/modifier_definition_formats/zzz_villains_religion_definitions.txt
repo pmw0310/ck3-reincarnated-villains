@@ -13,3 +13,7 @@ juche_religion_opinion = { decimals = 0 }
 americanism_religion_opinion = { decimals = 0 }
 
 cultural_revolution_religion_opinion = { decimals = 0 }
+
+imperial_assistance_religion_opinion = { decimals = 0 }
+
+eurasianism_religion_opinion = { decimals = 0 }

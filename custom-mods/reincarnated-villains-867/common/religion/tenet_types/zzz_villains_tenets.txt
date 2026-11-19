@@ -369,7 +369,10 @@ tenet_state_corporatism = {
 	}
 
 	is_shown = {
-		has_doctrine = special_doctrine_fascist_ideology
+		OR = {
+			has_doctrine = special_doctrine_fascist_ideology
+			this = faith:putinism
+		}
 	}
 
 	can_pick = {
@@ -378,6 +381,7 @@ tenet_state_corporatism = {
 			OR = {
 				has_doctrine = special_doctrine_fascist_ideology
 				doctrine:special_doctrine_fascist_ideology = { is_in_list = selected_doctrines }
+				this = faith:putinism
 			}
 		}
 	}
@@ -385,7 +389,10 @@ tenet_state_corporatism = {
 	can_pick_as_personal_tenet = {
 		custom_description = {
 			text = requires_fascist_special_doctrine_trigger
-			faith = { has_doctrine = special_doctrine_fascist_ideology }
+			OR = {
+				faith = { has_doctrine = special_doctrine_fascist_ideology }
+				faith = faith:putinism
+			}
 		}
 	}
 

@@ -261,3 +261,80 @@ netanyahu_ledger_heirloom_template = {
 	}
 	unique = yes
 }
+
+tojo_personal_only_template = {
+	can_equip = {
+		exists = dynasty
+		dynasty = dynasty:dynasty_tojo_867
+	}
+	can_benefit = {
+		exists = dynasty
+		dynasty = dynasty:dynasty_tojo_867
+	}
+	fallback = {
+		monthly_prestige = 0.1
+	}
+	unique = yes
+}
+
+tojo_dynasty_heirloom_template = {
+	can_equip = {
+		exists = dynasty
+		dynasty = dynasty:dynasty_tojo_867
+	}
+	can_benefit = {
+		exists = dynasty
+		dynasty = dynasty:dynasty_tojo_867
+	}
+	fallback = {
+		monthly_prestige = 0.1
+	}
+	unique = yes
+}
+
+putinism_relic_template = {
+	can_equip = {
+		faith = faith:putinism
+	}
+	can_benefit = {
+		faith = faith:putinism
+	}
+	is_holy_relic = {
+		this = faith:putinism
+	}
+	fallback = {
+		monthly_piety = 0.1
+		monthly_prestige = 0.2
+	}
+	unique = yes
+}
+
+putin_table_heirloom_template = {
+	can_equip = {
+		exists = dynasty
+		dynasty = dynasty:dynasty_putin_867
+	}
+	can_benefit = {
+		exists = dynasty
+		dynasty = dynasty:dynasty_putin_867
+	}
+	fallback = {
+		monthly_prestige = 0.1
+	}
+	unique = yes
+}
+
+putin_samovar_heirloom_template = {
+	can_equip = {
+		exists = dynasty
+		dynasty = dynasty:dynasty_putin_867
+	}
+	can_benefit = {
+		exists = dynasty
+		dynasty = dynasty:dynasty_putin_867
+	}
+	fallback = {
+		monthly_prestige = 0.1
+	}
+	unique = yes
+}

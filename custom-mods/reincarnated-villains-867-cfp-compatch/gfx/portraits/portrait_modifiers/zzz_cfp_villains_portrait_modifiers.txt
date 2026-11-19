@@ -1,0 +1,31 @@
+﻿# CFP 둥근 금속테 안경(male_headgear_special_cfp_glasses_01) 도조 히데키 고정 모디파이어
+# - 본편 zzz_villains_portrait_modifiers.txt(priority = 8)의 기본 spectacles(value = 0) 대신
+#   CFP 구독 환경에서 도조 히데키가 "@cfp_icon! 안경"(cfp_glasses_01)을 100% 확정 착용하도록 priority = 9로 지정합니다.
+# - 이발소 custom_special(usage = customization) 수동 변경에는 양보합니다.
+
+villains_cfp_tojo_glasses = {
+	usage = game
+	selection_behavior = max
+	priority = 9
+
+	cfp_tojo_round_glasses = {
+		ignore_outfit_tags = yes
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = special_headgear_spectacles
+				template = spectacles
+				accessory = male_headgear_special_cfp_glasses_01
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 3000
+				exists = this
+				exists = character:reincarnated_tojo_867
+				this = character:reincarnated_tojo_867
+			}
+		}
+	}
+}

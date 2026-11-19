@@ -437,7 +437,65 @@ tradition_rebel_headquarters = {
 	}
 }
 
-# 8. Imperial Japanese Exclusive: Gyokusai Shock Bushido (옥쇄 돌격 무사도)
+# 8A. Hideki Tojo / Imperial Japanese Exclusive: Imperial Rule Assistance Bureaucracy (익찬 총동원 관료제)
+tradition_imperial_rule_assistance = {
+	category = regional
+
+	layers = {
+		0 = steward
+		1 = asian
+		4 = council.dds
+	}
+
+	is_shown = {
+		culture_is_or_has_ancestor_trigger = { CULTURE = culture:imperial_japanese }
+	}
+
+	can_pick = {
+		custom_tooltip = {
+			text = tradition_imperial_rule_assistance_only_tt
+			culture_is_or_has_ancestor_trigger = { CULTURE = culture:imperial_japanese }
+		}
+	}
+
+	parameters = {
+		unlock_maa_kenpeitai_enforcers = yes
+		diligent_trait_more_common = yes
+		administrator_trait_more_common = yes
+	}
+
+	character_modifier = {
+		domain_tax_mult = 0.12
+		enemy_hostile_scheme_success_chance_max_add = -10
+		dread_baseline_add = 15
+		heavy_infantry_toughness_mult = 0.15
+		castle_holding_build_gold_cost = -0.15
+		vassal_opinion = -5
+	}
+
+	county_modifier = {
+		monthly_county_control_growth_add = 0.3
+		prosperity_growth_factor = 0.15
+		levy_size = 0.15
+	}
+
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+
+	ai_will_do = {
+		value = 1000
+	}
+}
+
+# 8B. Renya Mutaguchi / Southern Imperial Army Exclusive: Gyokusai Shock Bushido (옥쇄 돌격 무사도)
 tradition_gyokusai_bushido = {
 	category = regional
 
@@ -448,13 +506,13 @@ tradition_gyokusai_bushido = {
 	}
 
 	is_shown = {
-		culture_is_or_has_ancestor_trigger = { CULTURE = culture:imperial_japanese }
+		culture_is_or_has_ancestor_trigger = { CULTURE = culture:imphal_japanese }
 	}
 
 	can_pick = {
 		custom_tooltip = {
 			text = tradition_gyokusai_bushido_only_tt
-			culture_is_or_has_ancestor_trigger = { CULTURE = culture:imperial_japanese }
+			culture_is_or_has_ancestor_trigger = { CULTURE = culture:imphal_japanese }
 		}
 	}
 
@@ -576,6 +634,57 @@ tradition_simba_warlordism = {
 		knight_effectiveness_mult = 0.25
 		drylands_advantage = 4
 		floodplains_advantage = 4
+	}
+
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+
+	ai_will_do = {
+		value = 1000
+	}
+}
+
+# 12. Neo-Russian Exclusive: Siloviki Oligarchic Cartel (실로비키 올리가르히 체제)
+tradition_siloviki_oligarchy = {
+	category = regional
+
+	layers = {
+		0 = intrigue
+		1 = western
+		4 = diplomat.dds
+	}
+
+	is_shown = {
+		culture_is_or_has_ancestor_trigger = { CULTURE = culture:neo_russian }
+	}
+
+	can_pick = {
+		custom_tooltip = {
+			text = tradition_siloviki_oligarchy_only_tt
+			culture_is_or_has_ancestor_trigger = { CULTURE = culture:neo_russian }
+		}
+	}
+
+	parameters = {
+		unlock_maa_wagner_storm_contractors = yes
+		siloviki_despot_capital_popular_opinion = yes
+	}
+
+	character_modifier = {
+		owned_hostile_scheme_success_chance_max_add = 10
+		enemy_hostile_scheme_success_chance_max_add = -10
+		dread_decay_mult = -0.20
+		mercenary_hire_cost_mult = -0.15
+		prosperity_growth_factor = 0.10
+		republic_government_tax_contribution_mult = 0.10
 	}
 
 	cost = {

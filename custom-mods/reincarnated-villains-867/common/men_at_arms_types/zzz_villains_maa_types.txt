@@ -401,3 +401,87 @@ sayeret_commandos = {
 	ai_quality = { value = @[cultural_maa_extra_ai_score + 40] }
 	icon = sayeret_commandos
 }
+
+# 11. Hideki Tojo / Imperial Japanese Cultural MaA: Imperial Kenpeitai Enforcers (제국 헌병대)
+# Identity: Ironclad counter-espionage & martial-law garrison heavy infantry — supreme toughness (36) & screen (26), urban/farmlands defense, counters skirmishers & pikemen
+kenpeitai_enforcers = {
+	type = heavy_infantry
+
+	damage = 28
+	toughness = 36
+	pursuit = 12
+	screen = 26
+
+	terrain_bonus = {
+		farmlands = { damage = 8 toughness = 10 screen = 6 }
+		plains = { toughness = 8 screen = 6 }
+		hills = { damage = 6 toughness = 8 }
+		mountains = { toughness = 6 }
+	}
+
+	counters = {
+		skirmishers = 1.5
+		pikemen = 1
+	}
+
+	can_recruit = {
+		valid_for_maa_trigger = { PARAMETER = unlock_maa_kenpeitai_enforcers }
+		NOT = {
+			culture = { has_cultural_parameter = strength_in_numbers_heavy_maa_ban }
+		}
+	}
+
+	buy_cost = { gold = 84 }
+	low_maintenance_cost = { gold = 0.31 }
+	high_maintenance_cost = { gold = 0.93 }
+	provision_cost = 4
+
+	stack = 100
+	ai_quality = { value = @[cultural_maa_extra_ai_score + 25] }
+	icon = kenpeitai_enforcers
+}
+
+# 12. Vladimir Putin / Neo-Russian Cultural MaA: Wagner Storm Contractors (바그너 용병단)
+# Identity: Heavy warhammer shock mercenaries — fierce damage (39) & siege breach (0.1), plains/steppe/hills assault bonus, counters pikemen & heavy infantry
+wagner_storm_contractors = {
+	type = heavy_infantry
+
+	damage = 39
+	toughness = 30
+	pursuit = 14
+	screen = 18
+	siege_value = 0.1
+
+	terrain_bonus = {
+		plains = { damage = 8 toughness = 6 }
+		steppe = { damage = 10 toughness = 6 }
+		farmlands = { damage = 8 toughness = 4 }
+		hills = { damage = 6 toughness = 6 }
+	}
+
+	holding_bonus = {
+		city_holding = { damage = 8 toughness = 6 }
+		castle_holding = { damage = 6 }
+	}
+
+	counters = {
+		pikemen = 1.5
+		heavy_infantry = 1
+	}
+
+	can_recruit = {
+		valid_for_maa_trigger = { PARAMETER = unlock_maa_wagner_storm_contractors }
+		NOT = {
+			culture = { has_cultural_parameter = strength_in_numbers_heavy_maa_ban }
+		}
+	}
+
+	buy_cost = { gold = 98 }
+	low_maintenance_cost = { gold = 0.37 }
+	high_maintenance_cost = { gold = 1.11 }
+	provision_cost = 5
+
+	stack = 100
+	ai_quality = { value = @[cultural_maa_extra_ai_score + 30] }
+	icon = wagner_storm_contractors
+}

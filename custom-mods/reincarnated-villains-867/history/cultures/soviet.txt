@@ -1,7 +1,7 @@
 ﻿# soviet (inherited from heritage_east_slavic.txt)
 #Russians
 
-867.1.1 = {
+866.1.1 = {
 	discover_innovation = innovation_motte
 	#
 	discover_innovation = innovation_gavelkind

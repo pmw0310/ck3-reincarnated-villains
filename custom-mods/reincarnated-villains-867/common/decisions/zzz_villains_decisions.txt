@@ -6148,6 +6148,7 @@ idi_amin_proclaim_british_conqueror_empire_decision = {
 			}
 		}
 		add_prestige = 3000
+		give_nickname = nick_conqueror_of_british_empire
 		if = {
 			limit = { exists = dynasty }
 			dynasty = {
@@ -6163,6 +6164,142 @@ idi_amin_proclaim_british_conqueror_empire_decision = {
 			men_at_arms = {
 				type = uganda_simba_battalion
 				stacks = 20
+			}
+			location = root.capital_province
+			origin = root.capital_province
+			inheritable = yes
+		}
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 1000
+	}
+}
+
+idi_amin_coronation_true_king_of_scotland_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_found_kingdom.dds"
+	}
+	decision_group_type = major
+	desc = idi_amin_coronation_true_king_of_scotland_decision_desc
+	selection_tooltip = idi_amin_coronation_true_king_of_scotland_decision_tooltip
+	confirm_text = idi_amin_coronation_true_king_of_scotland_decision_confirm
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 60
+		kingdom = 24
+		empire = 24
+		hegemony = 24
+	}
+
+	is_shown = {
+		is_ruler = yes
+		is_landed = yes
+		exists = dynasty
+		dynasty = dynasty:dynasty_amin_867
+		NOT = {
+			dynasty = {
+				has_dynasty_modifier = idi_amin_true_king_of_alba_dynasty_modifier
+			}
+		}
+	}
+
+	is_valid = {
+		is_independent_ruler = yes
+		OR = {
+			has_title = title:k_scotland
+			AND = {
+				completely_controls = title:d_albany
+				completely_controls = title:d_lothian
+			}
+		}
+		OR = {
+			completely_controls = title:c_gowrie
+			completely_controls = title:c_lothian
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+		is_at_war = no
+	}
+
+	cost = {
+		gold = 150
+		prestige = 300
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { has_title = title:k_scotland }
+				NOT = { exists = title:k_scotland.holder }
+			}
+			create_title_and_vassal_change = {
+				type = created
+				save_scope_as = scotland_title_change
+				add_claim_on_loss = no
+			}
+			title:k_scotland = {
+				change_title_holder = {
+					holder = root
+					change = scope:scotland_title_change
+				}
+			}
+			resolve_title_and_vassal_change = scope:scotland_title_change
+		}
+		if = {
+			limit = { has_title = title:e_uganda_empire }
+			title:k_scotland = {
+				set_de_jure_liege_title = title:e_uganda_empire
+			}
+		}
+		if = {
+			limit = { NOT = { knows_language = language_goidelic } }
+			learn_language = language_goidelic
+		}
+		if = {
+			limit = { completely_controls = title:c_lothian }
+			title:c_lothian = {
+				change_prosperity_level = 3
+				if = {
+					limit = { NOT = { has_county_modifier = idi_amin_edinburgh_bagpipe_palace_modifier } }
+					add_county_modifier = idi_amin_edinburgh_bagpipe_palace_modifier
+				}
+			}
+		}
+		else_if = {
+			limit = { completely_controls = title:c_gowrie }
+			title:c_gowrie = {
+				change_prosperity_level = 3
+				if = {
+					limit = { NOT = { has_county_modifier = idi_amin_edinburgh_bagpipe_palace_modifier } }
+					add_county_modifier = idi_amin_edinburgh_bagpipe_palace_modifier
+				}
+			}
+		}
+		add_prestige = 2000
+		if = {
+			limit = { exists = dynasty }
+			dynasty = {
+				add_dynasty_prestige = 1500
+				if = {
+					limit = { NOT = { has_dynasty_modifier = idi_amin_true_king_of_alba_dynasty_modifier } }
+					add_dynasty_modifier = idi_amin_true_king_of_alba_dynasty_modifier
+				}
+			}
+		}
+		spawn_army = {
+			name = idi_amin_highland_simba_guard_name
+			men_at_arms = {
+				type = uganda_simba_battalion
+				stacks = 10
 			}
 			location = root.capital_province
 			origin = root.capital_province
@@ -8109,12 +8246,61 @@ netanyahu_mossad_targeted_operation_decision = {
 		hegemony = 36
 	}
 
-	cooldown = { years = 5 }
+	cooldown = { years = 10 }
 
 	is_shown = {
 		is_ruler = yes
 		is_landed = yes
 		faith = faith:zionism
+		OR = {
+			any_relation = {
+				type = rival
+				is_adult = yes
+				is_alive = yes
+				in_diplomatic_range = root
+				OR = {
+					top_liege = root.top_liege
+					AND = {
+						exists = location
+						exists = root.capital_province
+						location = {
+							squared_distance = {
+								target = root.capital_province
+								value <= squared_distance_large
+							}
+						}
+					}
+				}
+			}
+			any_neighboring_and_across_water_top_liege_realm_owner = {
+				is_adult = yes
+				this != root
+				faith != root.faith
+				in_diplomatic_range = root
+				exists = location
+				exists = root.capital_province
+				location = {
+					squared_distance = {
+						target = root.capital_province
+						value <= squared_distance_large
+					}
+				}
+			}
+			any_vassal = {
+				is_adult = yes
+			}
+			any_councillor = {
+				is_adult = yes
+				NOT = { has_council_position = councillor_spouse }
+			}
+			any_courtier = {
+				is_adult = yes
+				this != root
+			}
+			any_prisoner = {
+				is_adult = yes
+			}
+		}
 	}
 
 	is_valid = {
@@ -8127,10 +8313,34 @@ netanyahu_mossad_targeted_operation_decision = {
 					type = rival
 					is_adult = yes
 					is_alive = yes
+					in_diplomatic_range = root
+					OR = {
+						top_liege = root.top_liege
+						AND = {
+							exists = location
+							exists = root.capital_province
+							location = {
+								squared_distance = {
+									target = root.capital_province
+									value <= squared_distance_large
+								}
+							}
+						}
+					}
 				}
 				any_neighboring_and_across_water_top_liege_realm_owner = {
 					is_adult = yes
 					this != root
+					faith != root.faith
+					in_diplomatic_range = root
+					exists = location
+					exists = root.capital_province
+					location = {
+						squared_distance = {
+							target = root.capital_province
+							value <= squared_distance_large
+						}
+					}
 				}
 				any_vassal = {
 					is_adult = yes
@@ -8159,14 +8369,30 @@ netanyahu_mossad_targeted_operation_decision = {
 				scope:selected_item = {
 					is_alive = yes
 					is_adult = yes
+					in_diplomatic_range = root
+					OR = {
+						is_prisoner_of = root
+						top_liege = root.top_liege
+						AND = {
+							exists = location
+							exists = root.capital_province
+							location = {
+								squared_distance = {
+									target = root.capital_province
+									value <= squared_distance_large
+								}
+							}
+						}
+					}
 				}
 			}
 		}
 	}
 
 	cost = {
-		gold = 60
-		piety = 80
+		gold = 150
+		prestige = 100
+		piety = 100
 	}
 
 	widget = {
@@ -8182,6 +8408,20 @@ netanyahu_mossad_targeted_operation_decision = {
 					limit = {
 						is_adult = yes
 						is_alive = yes
+						in_diplomatic_range = scope:actor
+						OR = {
+							top_liege = scope:actor.top_liege
+							AND = {
+								exists = location
+								exists = scope:actor.capital_province
+								location = {
+									squared_distance = {
+										target = scope:actor.capital_province
+										value <= squared_distance_large
+									}
+								}
+							}
+						}
 						NOT = { is_in_list = item_list }
 					}
 					add_to_list = item_list
@@ -8191,6 +8431,15 @@ netanyahu_mossad_targeted_operation_decision = {
 						is_adult = yes
 						this != scope:actor
 						faith != scope:actor.faith
+						in_diplomatic_range = scope:actor
+						exists = location
+						exists = scope:actor.capital_province
+						location = {
+							squared_distance = {
+								target = scope:actor.capital_province
+								value <= squared_distance_large
+							}
+						}
 						NOT = { is_in_list = item_list }
 					}
 					add_to_list = item_list
@@ -8236,6 +8485,20 @@ netanyahu_mossad_targeted_operation_decision = {
 							type = rival
 							is_adult = yes
 							is_alive = yes
+							in_diplomatic_range = scope:actor
+							OR = {
+								top_liege = scope:actor.top_liege
+								AND = {
+									exists = location
+									exists = scope:actor.capital_province
+									location = {
+										squared_distance = {
+											target = scope:actor.capital_province
+											value <= squared_distance_large
+										}
+									}
+								}
+							}
 						}
 					}
 					random_relation = {
@@ -8243,6 +8506,20 @@ netanyahu_mossad_targeted_operation_decision = {
 						limit = {
 							is_adult = yes
 							is_alive = yes
+							in_diplomatic_range = scope:actor
+							OR = {
+								top_liege = scope:actor.top_liege
+								AND = {
+									exists = location
+									exists = scope:actor.capital_province
+									location = {
+										squared_distance = {
+											target = scope:actor.capital_province
+											value <= squared_distance_large
+										}
+									}
+								}
+							}
 						}
 						save_scope_as = selected_item
 					}
@@ -8253,6 +8530,15 @@ netanyahu_mossad_targeted_operation_decision = {
 							is_adult = yes
 							this != scope:actor
 							faith != scope:actor.faith
+							in_diplomatic_range = scope:actor
+							exists = location
+							exists = scope:actor.capital_province
+							location = {
+								squared_distance = {
+									target = scope:actor.capital_province
+									value <= squared_distance_large
+								}
+							}
 						}
 					}
 					random_neighboring_and_across_water_top_liege_realm_owner = {
@@ -8260,6 +8546,15 @@ netanyahu_mossad_targeted_operation_decision = {
 							is_adult = yes
 							this != scope:actor
 							faith != scope:actor.faith
+							in_diplomatic_range = scope:actor
+							exists = location
+							exists = scope:actor.capital_province
+							location = {
+								squared_distance = {
+									target = scope:actor.capital_province
+									value <= squared_distance_large
+								}
+							}
 						}
 						save_scope_as = selected_item
 					}
@@ -8327,7 +8622,8 @@ netanyahu_mossad_targeted_operation_decision = {
 
 	ai_potential = {
 		is_at_war = no
-		gold >= 120
+		gold >= 250
+		prestige >= 150
 		piety >= 150
 	}
 
@@ -8391,5 +8687,933 @@ netanyahu_knesset_strategic_mobilization_decision = {
 
 	ai_will_do = {
 		base = 150
+	}
+}
+
+# ==============================================================================
+# 12. Hideki Tojo (dynasty_tojo_867): Founding & Satirical Decisions
+# ==============================================================================
+
+# 12-A. Establish the Total Mobilization Cabinet (대일본 총력내각 수립: k_tojo_cabinet)
+tojo_establish_total_mobilization_cabinet_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/villains_dec_tojo_ghq_bulletin.dds"
+	}
+	decision_group_type = major
+	desc = tojo_establish_total_mobilization_cabinet_decision_desc
+	selection_tooltip = tojo_establish_total_mobilization_cabinet_decision_tooltip
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 60
+		duchy = 36
+		kingdom = 24
+		empire = 24
+		hegemony = 24
+	}
+
+	is_shown = {
+		is_ruler = yes
+		is_landed = yes
+		exists = dynasty
+		dynasty = dynasty:dynasty_tojo_867
+		NOT = { exists = title:k_tojo_cabinet.holder }
+		NOT = {
+			dynasty = {
+				has_dynasty_modifier = tojo_total_mobilization_dynasty_modifier
+			}
+		}
+	}
+
+	is_valid = {
+		faith = faith:taisei_yokusankai
+		prestige_level >= 2
+		completely_controls = title:d_west_bando
+		OR = {
+			completely_controls = title:d_east_bando
+			completely_controls = title:d_tokaido
+			sub_realm_size >= 6
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_capable_adult = yes
+		is_imprisoned = no
+		is_at_war = no
+	}
+
+	cost = {
+		gold = 200
+		prestige = 400
+		piety = 250
+	}
+
+	effect = {
+		title:d_west_bando = { set_de_jure_liege_title = title:k_tojo_cabinet }
+		if = {
+			limit = { completely_controls = title:d_east_bando }
+			title:d_east_bando = { set_de_jure_liege_title = title:k_tojo_cabinet }
+		}
+		if = {
+			limit = { completely_controls = title:d_tokaido }
+			title:d_tokaido = { set_de_jure_liege_title = title:k_tojo_cabinet }
+		}
+		every_held_title = {
+			limit = {
+				tier = tier_duchy
+				is_titular = no
+				is_landless_type_title = no
+				is_noble_family_title = no
+			}
+			set_de_jure_liege_title = title:k_tojo_cabinet
+		}
+		every_held_title = {
+			limit = {
+				tier = tier_kingdom
+				NOT = { this = title:k_tojo_cabinet }
+				NOT = { this = title:k_chrysanthemum_throne }
+			}
+			every_in_de_jure_hierarchy = {
+				limit = { tier = tier_duchy }
+				set_de_jure_liege_title = title:k_tojo_cabinet
+			}
+		}
+		title:k_tojo_cabinet = {
+			set_de_jure_liege_title = title:e_japan
+			set_coa = k_tojo_cabinet
+		}
+		create_title_and_vassal_change = {
+			type = created
+			save_scope_as = title_change
+			add_claim_on_loss = no
+		}
+		title:k_tojo_cabinet = {
+			change_title_holder = {
+				holder = root
+				change = scope:title_change
+			}
+		}
+		resolve_title_and_vassal_change = scope:title_change
+		set_primary_title_to = title:k_tojo_cabinet
+		if = {
+			limit = { has_title = title:d_rep_tojo }
+			destroy_title = title:d_rep_tojo
+		}
+		every_held_title = {
+			limit = {
+				tier = tier_kingdom
+				NOT = { this = title:k_tojo_cabinet }
+				NOT = { this = title:k_chrysanthemum_throne }
+			}
+			save_temporary_scope_as = old_kingdom
+			root = { destroy_title = scope:old_kingdom }
+		}
+		add_prestige = 1200
+		add_piety = 600
+		title:c_musashi = {
+			change_prosperity_level = 3
+		}
+		dynasty = {
+			add_dynasty_prestige = 1000
+			add_dynasty_modifier = tojo_total_mobilization_dynasty_modifier
+		}
+		spawn_army = {
+			name = tojo_cabinet_kenpeitai_corps_name
+			men_at_arms = {
+				type = kenpeitai_enforcers
+				stacks = 10
+			}
+			location = root.capital_province
+			origin = root.capital_province
+			inheritable = yes
+		}
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 1000
+	}
+}
+
+# 12-B. Proclaim the Empire of Japan (대일본 제국 선포: e_imperial_japan)
+tojo_proclaim_empire_of_japan_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/villains_dec_tojo_ghq_bulletin.dds"
+	}
+	decision_group_type = major
+	desc = tojo_proclaim_empire_of_japan_decision_desc
+	selection_tooltip = tojo_proclaim_empire_of_japan_decision_tooltip
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 60
+		kingdom = 24
+		empire = 24
+		hegemony = 24
+	}
+
+	is_shown = {
+		is_ruler = yes
+		is_landed = yes
+		exists = dynasty
+		dynasty = dynasty:dynasty_tojo_867
+		NOT = { exists = title:e_imperial_japan.holder }
+		NOT = {
+			dynasty = {
+				has_dynasty_modifier = tojo_imperial_rule_dynasty_modifier
+			}
+		}
+		OR = {
+			has_title = title:k_tojo_cabinet
+			has_title = title:e_japan
+			highest_held_title_tier >= tier_kingdom
+		}
+	}
+
+	is_valid = {
+		faith = faith:taisei_yokusankai
+		top_liege = this
+		highest_held_title_tier >= tier_kingdom
+		prestige_level >= 4
+		sub_realm_size >= 30
+		completely_controls = title:d_west_bando
+		completely_controls = title:d_kinai
+		completely_controls = title:c_musashi
+		completely_controls = title:c_yamashiro
+	}
+
+	is_valid_showing_failures_only = {
+		is_capable_adult = yes
+		is_imprisoned = no
+		is_at_war = no
+	}
+
+	cost = {
+		gold = 500
+		prestige = 1000
+		piety = 500
+	}
+
+	effect = {
+		title:k_tojo_cabinet = { set_de_jure_liege_title = title:e_imperial_japan }
+		title:k_azuma = { set_de_jure_liege_title = title:e_imperial_japan }
+		title:k_yamato = { set_de_jure_liege_title = title:e_imperial_japan }
+		title:k_tsukushi = { set_de_jure_liege_title = title:e_imperial_japan }
+		every_held_title = {
+			limit = {
+				tier = tier_kingdom
+				NOT = { this = title:k_chrysanthemum_throne }
+			}
+			set_de_jure_liege_title = title:e_imperial_japan
+		}
+		every_held_title = {
+			limit = {
+				tier = tier_empire
+				NOT = { this = title:e_imperial_japan }
+			}
+			every_in_de_jure_hierarchy = {
+				limit = {
+					tier = tier_kingdom
+					NOT = { this = title:k_chrysanthemum_throne }
+				}
+				set_de_jure_liege_title = title:e_imperial_japan
+			}
+		}
+		title:e_imperial_japan = {
+			set_coa = e_imperial_japan
+		}
+		create_title_and_vassal_change = {
+			type = created
+			save_scope_as = title_change
+			add_claim_on_loss = no
+		}
+		title:e_imperial_japan = {
+			change_title_holder = {
+				holder = root
+				change = scope:title_change
+			}
+		}
+		resolve_title_and_vassal_change = scope:title_change
+		set_primary_title_to = title:e_imperial_japan
+		if = {
+			limit = { has_title = title:d_rep_tojo }
+			destroy_title = title:d_rep_tojo
+		}
+		if = {
+			limit = { has_title = title:k_tojo_cabinet }
+			destroy_title = title:k_tojo_cabinet
+		}
+		every_held_title = {
+			limit = {
+				tier = tier_empire
+				NOT = { this = title:e_imperial_japan }
+			}
+			save_temporary_scope_as = old_empire
+			root = { destroy_title = scope:old_empire }
+		}
+		add_prestige = 2500
+		add_piety = 1200
+		title:c_musashi = {
+			add_county_modifier = tojo_imperial_tokyo_capital_county_modifier
+			change_prosperity_level = 5
+		}
+		dynasty = {
+			add_dynasty_prestige = 2500
+			add_dynasty_modifier = tojo_imperial_rule_dynasty_modifier
+		}
+		spawn_army = {
+			name = tojo_imperial_ghq_guard_army_name
+			men_at_arms = {
+				type = kenpeitai_enforcers
+				stacks = 20
+			}
+			location = root.capital_province
+			origin = root.capital_province
+			inheritable = yes
+		}
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 1000
+	}
+}
+
+# 12-C. Issue Imperial GHQ Victory Bulletin (대본영 발표 — '전진적 전선 이동' 보도 통제)
+tojo_imperial_ghq_victory_bulletin_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/villains_dec_tojo_ghq_bulletin.dds"
+	}
+	decision_group_type = religious
+	sort_order = 121
+	desc = tojo_imperial_ghq_victory_bulletin_decision_desc
+	selection_tooltip = tojo_imperial_ghq_victory_bulletin_decision_tooltip
+	confirm_text = tojo_imperial_ghq_victory_bulletin_decision_confirm
+
+	cooldown = { years = 8 }
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 36
+		duchy = 36
+		kingdom = 24
+		empire = 24
+		hegemony = 24
+	}
+
+	is_shown = {
+		is_ruler = yes
+		is_landed = yes
+		OR = {
+			AND = {
+				exists = dynasty
+				dynasty = dynasty:dynasty_tojo_867
+			}
+			faith = faith:taisei_yokusankai
+		}
+	}
+
+	is_valid = {
+		faith = faith:taisei_yokusankai
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+	}
+
+	cost = {
+		prestige = 100
+		piety = 100
+	}
+
+	effect = {
+		custom_tooltip = tojo_imperial_ghq_victory_bulletin_event_preview_tt
+		trigger_event = villains_religious_decision.0240
+	}
+
+	ai_potential = {
+		prestige >= 150
+		piety >= 150
+	}
+
+	ai_will_do = {
+		base = 160
+	}
+}
+
+# 12-D. Midnight Alleyway Trash Bin Inspection & Portfolio Monopoly (심야 쓰레기통 불시 감사 및 부처 겸직)
+tojo_midnight_trash_inspection_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/villains_dec_tojo_trash_inspection.dds"
+	}
+	decision_group_type = religious
+	sort_order = 122
+	desc = tojo_midnight_trash_inspection_decision_desc
+	selection_tooltip = tojo_midnight_trash_inspection_decision_tooltip
+	confirm_text = tojo_midnight_trash_inspection_decision_confirm
+
+	cooldown = { years = 5 }
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 36
+		duchy = 36
+		kingdom = 24
+		empire = 24
+		hegemony = 24
+	}
+
+	is_shown = {
+		is_ruler = yes
+		is_landed = yes
+		OR = {
+			AND = {
+				exists = dynasty
+				dynasty = dynasty:dynasty_tojo_867
+			}
+			faith = faith:taisei_yokusankai
+		}
+	}
+
+	is_valid = {
+		faith = faith:taisei_yokusankai
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+	}
+
+	cost = {
+		piety = 80
+	}
+
+	effect = {
+		custom_tooltip = tojo_midnight_trash_inspection_event_preview_tt
+		trigger_event = villains_religious_decision.0250
+	}
+
+	ai_potential = {
+		piety >= 120
+	}
+
+	ai_will_do = {
+		base = 180
+	}
+}
+
+# ==============================================================================
+# 13. Vladimir Putin: Sovereign State Founding & Satirical Security Decisions (4)
+# ==============================================================================
+
+# 13-A. Proclaim the Russian Federation (러시아 연방 주권 체제 선포: k_russian_federation)
+putin_establish_russian_federation_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/villains_dec_putin_special_operation.dds"
+	}
+	decision_group_type = major
+	desc = putin_establish_russian_federation_decision_desc
+	selection_tooltip = putin_establish_russian_federation_decision_tooltip
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 60
+		duchy = 36
+		kingdom = 24
+		empire = 24
+		hegemony = 24
+	}
+
+	is_shown = {
+		is_ruler = yes
+		is_landed = yes
+		exists = dynasty
+		dynasty = dynasty:dynasty_putin_867
+		NOT = { exists = title:k_russian_federation.holder }
+		NOT = {
+			dynasty = {
+				has_dynasty_modifier = putin_power_vertical_dynasty_modifier
+			}
+		}
+	}
+
+	is_valid = {
+		faith = faith:putinism
+		top_liege = this
+		prestige_level >= 2
+		completely_controls = title:d_halych
+		OR = {
+			completely_controls = title:d_kiev
+			completely_controls = title:d_volhynia
+			sub_realm_size >= 8
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_capable_adult = yes
+		is_imprisoned = no
+		is_at_war = no
+	}
+
+	cost = {
+		gold = 220
+		prestige = 450
+		piety = 250
+	}
+
+	effect = {
+		title:d_halych = { set_de_jure_liege_title = title:k_russian_federation }
+		if = {
+			limit = { completely_controls = title:d_kiev }
+			title:d_kiev = { set_de_jure_liege_title = title:k_russian_federation }
+		}
+		if = {
+			limit = { completely_controls = title:d_volhynia }
+			title:d_volhynia = { set_de_jure_liege_title = title:k_russian_federation }
+		}
+		every_held_title = {
+			limit = {
+				tier = tier_duchy
+				is_titular = no
+				is_landless_type_title = no
+				is_noble_family_title = no
+			}
+			set_de_jure_liege_title = title:k_russian_federation
+		}
+		every_held_title = {
+			limit = {
+				tier = tier_kingdom
+				NOT = { this = title:k_russian_federation }
+			}
+			every_in_de_jure_hierarchy = {
+				limit = { tier = tier_duchy }
+				set_de_jure_liege_title = title:k_russian_federation
+			}
+		}
+		title:k_russian_federation = {
+			set_de_jure_liege_title = title:e_russia
+			set_coa = k_russian_federation
+		}
+		create_title_and_vassal_change = {
+			type = created
+			save_scope_as = title_change
+			add_claim_on_loss = no
+		}
+		title:k_russian_federation = {
+			change_title_holder = {
+				holder = root
+				change = scope:title_change
+			}
+		}
+		resolve_title_and_vassal_change = scope:title_change
+		set_primary_title_to = title:k_russian_federation
+		if = {
+			limit = { has_title = title:d_rep_putin }
+			destroy_title = title:d_rep_putin
+		}
+		every_held_title = {
+			limit = {
+				tier = tier_kingdom
+				NOT = { this = title:k_russian_federation }
+			}
+			save_temporary_scope_as = old_kingdom
+			root = { destroy_title = scope:old_kingdom }
+		}
+		add_prestige = 1200
+		add_piety = 600
+		title:c_terebovl = {
+			change_prosperity_level = 3
+		}
+		dynasty = {
+			add_dynasty_prestige = 1000
+			add_dynasty_modifier = putin_power_vertical_dynasty_modifier
+		}
+		spawn_army = {
+			name = putin_wagner_expeditionary_corps_name
+			men_at_arms = {
+				type = wagner_storm_contractors
+				stacks = 10
+			}
+			location = root.capital_province
+			origin = root.capital_province
+			inheritable = yes
+		}
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 1000
+	}
+}
+
+# 13-B. Restore the Eurasian Union Empire (유라시아 연방 제국 복원: e_eurasian_union)
+putin_proclaim_eurasian_empire_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/villains_dec_putin_special_operation.dds"
+	}
+	decision_group_type = major
+	desc = putin_proclaim_eurasian_empire_decision_desc
+	selection_tooltip = putin_proclaim_eurasian_empire_decision_tooltip
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 60
+		kingdom = 24
+		empire = 24
+		hegemony = 24
+	}
+
+	is_shown = {
+		is_ruler = yes
+		is_landed = yes
+		exists = dynasty
+		dynasty = dynasty:dynasty_putin_867
+		NOT = { exists = title:e_eurasian_union.holder }
+		NOT = {
+			dynasty = {
+				has_dynasty_modifier = putin_eurasian_hegemony_dynasty_modifier
+			}
+		}
+		OR = {
+			has_title = title:k_russian_federation
+			highest_held_title_tier >= tier_kingdom
+		}
+	}
+
+	is_valid = {
+		faith = faith:putinism
+		top_liege = this
+		highest_held_title_tier >= tier_kingdom
+		prestige_level >= 4
+		sub_realm_size >= 35
+		completely_controls = title:c_terebovl
+		completely_controls = title:c_kiev
+		completely_controls = title:c_moskva
+		completely_controls = title:c_vodi
+		completely_controls = title:c_kerch
+	}
+
+	is_valid_showing_failures_only = {
+		is_capable_adult = yes
+		is_imprisoned = no
+		is_at_war = no
+	}
+
+	cost = {
+		gold = 550
+		prestige = 1200
+		piety = 600
+	}
+
+	effect = {
+		title:k_russian_federation = { set_de_jure_liege_title = title:e_eurasian_union }
+		title:k_galicia-volhynia = { set_de_jure_liege_title = title:e_eurasian_union }
+		title:k_ruthenia = { set_de_jure_liege_title = title:e_eurasian_union }
+		title:k_opolye = { set_de_jure_liege_title = title:e_eurasian_union }
+		title:k_novgorod = { set_de_jure_liege_title = title:e_eurasian_union }
+		title:k_white_rus = { set_de_jure_liege_title = title:e_eurasian_union }
+		every_held_title = {
+			limit = {
+				tier = tier_kingdom
+			}
+			set_de_jure_liege_title = title:e_eurasian_union
+		}
+		every_held_title = {
+			limit = {
+				tier = tier_empire
+				NOT = { this = title:e_eurasian_union }
+			}
+			every_in_de_jure_hierarchy = {
+				limit = { tier = tier_kingdom }
+				set_de_jure_liege_title = title:e_eurasian_union
+			}
+		}
+		title:e_eurasian_union = {
+			set_coa = e_eurasian_union
+		}
+		create_title_and_vassal_change = {
+			type = created
+			save_scope_as = title_change
+			add_claim_on_loss = no
+		}
+		title:e_eurasian_union = {
+			change_title_holder = {
+				holder = root
+				change = scope:title_change
+			}
+		}
+		resolve_title_and_vassal_change = scope:title_change
+		set_primary_title_to = title:e_eurasian_union
+		if = {
+			limit = { has_title = title:d_rep_putin }
+			destroy_title = title:d_rep_putin
+		}
+		if = {
+			limit = { has_title = title:k_russian_federation }
+			destroy_title = title:k_russian_federation
+		}
+		every_held_title = {
+			limit = {
+				tier = tier_empire
+				NOT = { this = title:e_eurasian_union }
+			}
+			save_temporary_scope_as = old_empire
+			root = { destroy_title = scope:old_empire }
+		}
+		add_prestige = 2500
+		add_piety = 1200
+		title:c_moskva = {
+			add_county_modifier = putin_sovereign_capital_county_modifier
+			change_prosperity_level = 5
+		}
+		dynasty = {
+			add_dynasty_prestige = 2500
+			add_dynasty_modifier = putin_eurasian_hegemony_dynasty_modifier
+		}
+		spawn_army = {
+			name = putin_eurasian_guard_corps_name
+			men_at_arms = {
+				type = wagner_storm_contractors
+				stacks = 20
+			}
+			location = root.capital_province
+			origin = root.capital_province
+			inheritable = yes
+		}
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 1000
+	}
+}
+
+# 13-C. Summon Oligarch for High-Tower Window Tea Audit (올리가르히 창가 면담 소집)
+putin_oligarch_window_audit_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/villains_dec_putin_window_audit.dds"
+	}
+	decision_group_type = religious
+	sort_order = 123
+	desc = putin_oligarch_window_audit_decision_desc
+	selection_tooltip = putin_oligarch_window_audit_decision_tooltip
+	confirm_text = putin_oligarch_window_audit_decision_confirm
+
+	cooldown = { years = 6 }
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 36
+		duchy = 36
+		kingdom = 24
+		empire = 24
+		hegemony = 24
+	}
+
+	is_shown = {
+		is_ruler = yes
+		is_landed = yes
+		OR = {
+			AND = {
+				exists = dynasty
+				dynasty = dynasty:dynasty_putin_867
+			}
+			faith = faith:putinism
+		}
+		OR = {
+			any_vassal = {
+				is_adult = yes
+				is_imprisoned = no
+				this != root
+			}
+			any_courtier_or_guest = {
+				is_adult = yes
+				is_imprisoned = no
+				this != root
+			}
+		}
+	}
+
+	is_valid = {
+		faith = faith:putinism
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+		trigger_if = {
+			limit = { exists = scope:selected_item }
+			custom_tooltip = {
+				text = putin_oligarch_window_audit_decision_select_tt
+				scope:selected_item = {
+					is_alive = yes
+					is_imprisoned = no
+				}
+			}
+		}
+	}
+
+	cost = {
+		piety = 120
+	}
+
+	widget = {
+		gui = "decision_view_widget_select_character"
+		controller = select_scope_object
+		show_from_start = yes
+		decision_to_second_step_button = "putin_oligarch_window_audit_decision_confirm"
+
+		setup_items = {
+			scope:actor = {
+				every_vassal = {
+					limit = {
+						is_adult = yes
+						is_imprisoned = no
+						this != scope:actor
+						NOT = { is_in_list = item_list }
+					}
+					add_to_list = item_list
+				}
+				every_courtier_or_guest = {
+					limit = {
+						is_adult = yes
+						is_imprisoned = no
+						this != scope:actor
+						NOT = { is_in_list = item_list }
+					}
+					add_to_list = item_list
+				}
+			}
+		}
+
+		default_item = {
+			scope:actor = {
+				if = {
+					limit = {
+						any_vassal = {
+							is_adult = yes
+							is_imprisoned = no
+							this != scope:actor
+						}
+					}
+					ordered_vassal = {
+						limit = {
+							is_adult = yes
+							is_imprisoned = no
+							this != scope:actor
+						}
+						order_by = gold
+						max = 1
+						save_scope_as = selected_item
+					}
+				}
+				else = {
+					ordered_courtier_or_guest = {
+						limit = {
+							is_adult = yes
+							is_imprisoned = no
+							this != scope:actor
+						}
+						order_by = gold
+						max = 1
+						save_scope_as = selected_item
+					}
+				}
+			}
+		}
+	}
+
+	effect = {
+		custom_tooltip = putin_oligarch_window_audit_event_preview_tt
+		if = {
+			limit = { exists = scope:selected_item }
+			scope:selected_item = {
+				save_scope_as = window_audit_target
+			}
+		}
+		trigger_event = villains_religious_decision.0260
+	}
+
+	ai_potential = {
+		piety >= 160
+	}
+
+	ai_will_do = {
+		base = 175
+	}
+}
+
+# 13-D. Declare Three-Day Special Military Maneuver / Taiga Bear Hunt (사흘 기한 특별 군사 기동 선포)
+putin_three_day_special_operation_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/villains_dec_putin_special_operation.dds"
+	}
+	decision_group_type = religious
+	sort_order = 124
+	desc = putin_three_day_special_operation_decision_desc
+	selection_tooltip = putin_three_day_special_operation_decision_tooltip
+	confirm_text = putin_three_day_special_operation_decision_confirm
+
+	cooldown = { years = 10 }
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 36
+		duchy = 36
+		kingdom = 24
+		empire = 24
+		hegemony = 24
+	}
+
+	is_shown = {
+		is_ruler = yes
+		is_landed = yes
+		OR = {
+			AND = {
+				exists = dynasty
+				dynasty = dynasty:dynasty_putin_867
+			}
+			faith = faith:putinism
+		}
+	}
+
+	is_valid = {
+		faith = faith:putinism
+	}
+
+	is_valid_showing_failures_only = {
+		is_capable_adult = yes
+		is_imprisoned = no
+	}
+
+	cost = {
+		prestige = 120
+		piety = 100
+	}
+
+	effect = {
+		custom_tooltip = putin_three_day_special_operation_event_preview_tt
+		trigger_event = villains_religious_decision.0270
+	}
+
+	ai_potential = {
+		prestige >= 200
+		piety >= 150
+	}
+
+	ai_will_do = {
+		base = 180
 	}
 }

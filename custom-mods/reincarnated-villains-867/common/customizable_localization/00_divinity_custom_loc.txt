@@ -1484,6 +1484,22 @@ GetActualBishopTitle = {
 
 	text = {
 
+		trigger = { OR = { rite = rite:taisei_yokusankai religion = religion:imperial_assistance_religion } }
+
+		localization_key = councillor_court_chaplain_taisei_yokusankai
+
+	}
+
+	text = {
+
+		trigger = { OR = { rite = rite:putinism religion = religion:eurasianism_religion } }
+
+		localization_key = councillor_court_chaplain_putinism
+
+	}
+
+	text = {
+
 		trigger = { OR = { rite = rite:americanism faith = faith:americanism } }
 
 		localization_key = councillor_court_chaplain_americanism
@@ -4931,6 +4947,22 @@ GetActualBishopTitlePossessive = {
 		trigger = { OR = { rite = rite:state_shinto faith = faith:state_shinto } }
 
 		localization_key = councillor_court_chaplain_state_shinto_possessive
+
+	}
+
+	text = {
+
+		trigger = { OR = { rite = rite:taisei_yokusankai religion = religion:imperial_assistance_religion } }
+
+		localization_key = councillor_court_chaplain_taisei_yokusankai_possessive
+
+	}
+
+	text = {
+
+		trigger = { OR = { rite = rite:putinism religion = religion:eurasianism_religion } }
+
+		localization_key = councillor_court_chaplain_putinism_possessive
 
 	}
 

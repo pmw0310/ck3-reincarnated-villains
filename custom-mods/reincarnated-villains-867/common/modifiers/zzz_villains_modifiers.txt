@@ -644,6 +644,36 @@ idi_amin_kampala_command_capital_modifier = {
 
 }
 
+idi_amin_true_king_of_alba_dynasty_modifier = {
+
+	icon = prestige_positive
+
+	diplomacy = 2
+
+	prowess = 3
+
+	knight_limit = 2
+
+	different_culture_opinion = 15
+
+	monthly_prestige_gain_mult = 0.25
+
+}
+
+idi_amin_edinburgh_bagpipe_palace_modifier = {
+
+	icon = county_modifier_prosperity_positive
+
+	all_tax_mult = 0.25
+
+	levy_size = 0.25
+
+	prosperity_growth_factor = 0.25
+
+	popular_opinion_add = 15
+
+}
+
 
 
 idi_amin_economic_war_spoils_modifier = {
@@ -1286,4 +1316,213 @@ netanyahu_mr_security_crisis_modifier = {
 	same_faith_opinion = 15
 	controlled_province_advantage = 4
 	dread_baseline_add = 20
+}
+
+# ==============================================================================
+# Hideki Tojo: Heirloom, Founding & Imperial Rule Assistance Decision Modifiers
+# ==============================================================================
+
+tojo_tortoiseshell_spectacles_modifier = {
+	stewardship = 2
+	enemy_hostile_scheme_success_chance_max_add = -12
+	domain_tax_mult = 0.05
+	stress_gain_mult = 0.10
+}
+
+tojo_ghq_victory_bulletin_modifier = {
+	monthly_legitimacy_add = 0.15
+	popular_opinion_add = 8
+	monthly_prestige = 0.3
+	levy_reinforcement_rate = -0.05
+}
+
+tojo_total_mobilization_dynasty_modifier = {
+	icon = stewardship_positive
+	stewardship = 2
+	intrigue = 2
+	heavy_infantry_damage_mult = 0.15
+	heavy_infantry_toughness_mult = 0.15
+	vassal_tax_contribution_mult = 0.15
+	same_faith_opinion = 15
+}
+
+tojo_imperial_rule_dynasty_modifier = {
+	icon = legitimacy_positive
+	stewardship = 3
+	intrigue = 3
+	domain_limit = 2
+	heavy_infantry_damage_mult = 0.25
+	heavy_infantry_toughness_mult = 0.25
+	vassal_tax_contribution_mult = 0.20
+	enemy_hostile_scheme_success_chance_max_add = -25
+	legitimacy_gain_mult = 0.30
+}
+
+tojo_imperial_tokyo_capital_county_modifier = {
+	icon = county_modifier_prosperity_positive
+	all_tax_mult = 0.30
+	levy_size = 0.30
+	prosperity_growth_factor = 0.35
+	fort_level = 3
+	garrison_size = 0.30
+}
+
+tojo_ghq_fabricated_victory_euphoria_modifier = {
+	icon = prestige_positive
+	monthly_prestige_gain_mult = 0.25
+	popular_opinion_add = 20
+	levy_reinforcement_rate = 0.30
+	army_maintenance_mult = -0.15
+	dread_baseline_add = 15
+}
+
+tojo_ghq_bulletin_exposed_fiasco_modifier = {
+	icon = prestige_negative
+	diplomacy = -2
+	popular_opinion_add = -20
+	vassal_opinion = -15
+	monthly_prestige_gain_mult = -0.20
+}
+
+tojo_strategic_redeployment_requisition_modifier = {
+	icon = economy_positive
+	domain_tax_mult = 0.20
+	vassal_tax_contribution_mult = 0.15
+	garrison_size = 0.25
+	popular_opinion_add = -10
+}
+
+tojo_portfolio_monopoly_cabinet_modifier = {
+	icon = government_positive
+	stewardship = 2
+	martial = 1
+	intrigue = 1
+	domain_limit = 1
+	maa_maintenance_mult = -0.15
+	vassal_opinion = -15
+}
+
+tojo_midnight_trash_audit_triumph_modifier = {
+	icon = stewardship_positive
+	domain_tax_mult = 0.20
+	build_gold_cost = -0.15
+	enemy_hostile_scheme_success_chance_max_add = -20
+	dread_baseline_add = 20
+}
+
+tojo_alleyway_laughingstock_modifier = {
+	icon = prestige_negative
+	monthly_prestige_gain_mult = -0.15
+	vassal_opinion = -10
+	courtier_and_guest_opinion = -15
+}
+
+# ==============================================================================
+# Vladimir Putin: Heirloom, Founding & Sovereign Security Decision Modifiers
+# ==============================================================================
+
+putin_long_marble_table_modifier = {
+	enemy_hostile_scheme_success_chance_max_add = -14
+	health = 0.25
+	dread_decay_mult = -0.20
+	councillor_opinion = -5
+	direct_vassal_opinion = -5
+}
+
+putin_lubyanka_samovar_modifier = {
+	murder_scheme_phase_duration_add = -15
+	owned_hostile_scheme_success_chance_add = 12
+	dread_per_tyranny_add = 0.25
+	dread_baseline_add = 10
+}
+
+putin_power_vertical_dynasty_modifier = {
+	icon = intrigue_positive
+	intrigue = 2
+	stewardship = 2
+	heavy_infantry_damage_mult = 0.15
+	heavy_infantry_toughness_mult = 0.15
+	vassal_tax_contribution_mult = 0.15
+	dread_decay_mult = -0.20
+}
+
+putin_eurasian_hegemony_dynasty_modifier = {
+	icon = prestige_positive
+	intrigue = 3
+	stewardship = 2
+	martial = 2
+	domain_limit = 2
+	heavy_infantry_damage_mult = 0.25
+	heavy_infantry_toughness_mult = 0.25
+	enemy_hostile_scheme_success_chance_max_add = -25
+	vassal_tax_contribution_mult = 0.20
+}
+
+putin_sovereign_capital_county_modifier = {
+	icon = county_modifier_prosperity_positive
+	all_tax_mult = 0.30
+	levy_size = 0.25
+	prosperity_growth_factor = 0.35
+	fort_level = 3
+	garrison_size = 0.30
+}
+
+putin_window_audit_dread_modifier = {
+	icon = dread_positive
+	dread_baseline_add = 20
+	dread_decay_mult = -0.35
+	vassal_tax_contribution_mult = 0.15
+	enemy_hostile_scheme_success_chance_max_add = -15
+}
+
+putin_window_audit_botched_scandal_modifier = {
+	icon = intrigue_negative
+	diplomacy = -2
+	vassal_opinion = -20
+	general_opinion = -10
+	stress_gain_mult = 0.15
+}
+
+putin_three_day_blitz_modifier = {
+	icon = martial_positive
+	movement_speed = 0.25
+	siege_phase_time = -0.25
+	maa_damage_mult = 0.15
+	attacker_advantage = 5
+}
+
+putin_endless_mud_rasputitsa_modifier = {
+	icon = supply_negative
+	supply_limit_mult = -0.30
+	movement_speed = -0.15
+	monthly_prestige_gain_mult = -0.20
+	popular_opinion_add = -20
+	army_maintenance_mult = 0.20
+}
+
+putin_taiga_bear_hunt_macho_modifier = {
+	icon = prowess_positive
+	prowess = 4
+	health = 0.30
+	monthly_prestige_gain_mult = 0.20
+	attraction_opinion = 15
+}
+
+siloviki_despot_managed_opinion_modifier = {
+	icon = county_modifier_opinion_mixed
+	character_capital_popular_opinion_add = 80
+	max_trade_routes = -1
+	scale = {
+		value = {
+			value = 0
+			if = {
+				limit = {
+					is_landed = yes
+					culture ?= { has_cultural_parameter = siloviki_despot_capital_popular_opinion }
+					has_realm_law = republican_despot_succession_law
+				}
+				value = 1
+			}
+		}
+	}
 }

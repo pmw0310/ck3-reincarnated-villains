@@ -1328,8 +1328,11 @@ e_juche_korea = {
 }
 
 # ==============================================================================
+
 # 8. 무타구치 가문 (Mutaguchi Noble Family) — 총령 본가 작위 문장 (히노마루)
+
 # ==============================================================================
+
 c_nf_mutaguchi = {
 	pattern = "pattern_solid.dds"
 	color1 = white
@@ -1347,8 +1350,11 @@ c_nf_mutaguchi = {
 }
 
 # ==============================================================================
+
 # 9. 트럼프 패밀리 (Trump Merchant Family) — 공화제 상단/명문가 작위 문장 (공화당 전령 문장)
+
 # ==============================================================================
+
 c_merchant_trump = {
 	pattern = "pattern_solid.dds"
 	color1 = rgb { 248 248 246 }
@@ -1367,8 +1373,11 @@ c_merchant_trump = {
 }
 
 # ==============================================================================
+
 # 10. 살롯 가문 & 폴 포트 집안(캄보디아 공산당기) & 민주 캄푸치아 앙코르 (Democratic Kampuchea Flag — 붉은 바탕 & 황금 앙코르와트 3탑)
+
 # ==============================================================================
+
 dynasty_pol_pot_867 = {
 	pattern = "pattern_solid.dds"
 	color1 = rgb { 218 18 26 }
@@ -1472,8 +1481,11 @@ e_democratic_kampuchea = {
 }
 
 # ==============================================================================
+
 # 11. 이디 아민 가문(우간다 대통령기 국장) & 우간다 제2공화국(공식 흑·황·적 6선 국기 + 회색관두루미)
+
 # ==============================================================================
+
 dynasty_amin_867 = {
 	pattern = "pattern_solid.dds"
 	color1 = rgb { 188 0 25 }
@@ -1715,6 +1727,7 @@ d_khlystism = {
 }
 
 # 10. 장칭 가문 및 조반 문혁사상 국기 (홍위병 목판화풍 면류관 장칭 흉상)
+
 dynasty_jiang_qing_867 = {
 	pattern = "pattern_solid.dds"
 	color1 = rgb { 172 12 20 }
@@ -1776,6 +1789,7 @@ k_rep_jiang_qing = {
 }
 
 # Benjamin Netanyahu & Zionist State of Israel Coats of Arms
+
 dynasty_netanyahu_867 = {
 	pattern = "pattern_solid.dds"
 	color1 = rgb { 248 248 246 }
@@ -1936,4 +1950,156 @@ e_greater_israel = {
 			depth = 0.010000
 		}
 	}
+}
+
+dynasty_tojo_867 = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 238 232 214 }
+	color2 = rgb { 20 22 25 }
+	color3 = rgb { 238 178 42 }
+	colored_emblem = {
+		texture = "ce_villains_iraa_emblem.dds"
+		color1 = rgb { 20 22 25 }
+		color2 = rgb { 238 178 42 }
+		color3 = rgb { 172 20 28 }
+		instance = {
+			position = { 0.5 0.5 }
+			scale = { 0.88 0.88 }
+			depth = 0.01
+		}
+	}
+}
+
+c_nf_tojo = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 238 232 214 }
+	color2 = rgb { 20 22 25 }
+	color3 = rgb { 238 178 42 }
+	colored_emblem = {
+		texture = "ce_villains_iraa_emblem.dds"
+		color1 = rgb { 20 22 25 }
+		color2 = rgb { 238 178 42 }
+		color3 = rgb { 172 20 28 }
+		instance = {
+			position = { 0.5 0.5 }
+			scale = { 0.88 0.88 }
+			depth = 0.01
+		}
+	}
+}
+
+d_rep_tojo = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 190 0 38 }
+	color2 = rgb { 232 168 0 }
+	color3 = rgb { 142 0 24 }
+	colored_emblem = {
+		texture = "ce_villains_hoi4_imperial_chrysanthemum.dds"
+		color1 = rgb { 232 168 0 }
+		color2 = rgb { 142 0 24 }
+		instance = {
+			position = { 0.5 0.5 }
+			scale = { 0.72 0.72 }
+			depth = 0.01
+		}
+	}
+}
+
+k_tojo_cabinet = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 190 0 38 }
+	color2 = rgb { 232 168 0 }
+	color3 = rgb { 142 0 24 }
+	colored_emblem = {
+		texture = "ce_villains_hoi4_imperial_chrysanthemum.dds"
+		color1 = rgb { 232 168 0 }
+		color2 = rgb { 142 0 24 }
+		instance = {
+			position = { 0.5 0.5 }
+			scale = { 0.72 0.72 }
+			depth = 0.01
+		}
+	}
+}
+
+e_imperial_japan = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 190 0 38 }
+	color2 = rgb { 232 168 0 }
+	color3 = rgb { 142 0 24 }
+	colored_emblem = {
+		texture = "ce_villains_hoi4_imperial_chrysanthemum.dds"
+		color1 = rgb { 232 168 0 }
+		color2 = rgb { 142 0 24 }
+		instance = {
+			position = { 0.5 0.5 }
+			scale = { 0.72 0.72 }
+			depth = 0.01
+		}
+	}
+}
+
+d_taisei_yokusankai = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 190 0 38 }
+	color2 = rgb { 232 168 0 }
+	color3 = rgb { 142 0 24 }
+	colored_emblem = {
+		texture = "ce_villains_hoi4_imperial_chrysanthemum.dds"
+		color1 = rgb { 232 168 0 }
+		color2 = rgb { 142 0 24 }
+		instance = {
+			position = { 0.5 0.5 }
+			scale = { 0.72 0.72 }
+			depth = 0.01
+		}
+	}
+}
+
+dynasty_putin_867 = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 18 28 48 }
+	color2 = rgb { 255 202 5 }
+	color3 = rgb { 219 38 39 }
+	textured_emblem = {
+		texture = "te_villains_fsb_emblem.dds"
+	}
+}
+
+d_nf_putin = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 18 28 48 }
+	color2 = rgb { 255 202 5 }
+	color3 = rgb { 219 38 39 }
+	textured_emblem = {
+		texture = "te_villains_fsb_emblem.dds"
+	}
+}
+
+d_rep_putin = {
+	pattern = "pattern_tricolor_horizontal_01.dds"
+	color1 = rgb { 248 248 250 }
+	color2 = rgb { 0 57 166 }
+	color3 = rgb { 213 43 30 }
+}
+
+k_russian_federation = {
+	pattern = "pattern_tricolor_horizontal_01.dds"
+	color1 = rgb { 248 248 250 }
+	color2 = rgb { 0 57 166 }
+	color3 = rgb { 213 43 30 }
+}
+
+e_eurasian_union = {
+	pattern = "pattern_tricolor_horizontal_01.dds"
+	color1 = rgb { 248 248 250 }
+	color2 = rgb { 0 57 166 }
+	color3 = rgb { 213 43 30 }
+}
+
+d_putinism = {
+	pattern = "pattern_tricolor_horizontal_01.dds"
+	color1 = rgb { 248 248 250 }
+	color2 = rgb { 0 57 166 }
+	color3 = rgb { 213 43 30 }
 }

@@ -1,0 +1,160 @@
+﻿########################################################################################
+# Reincarnated Villains Chronicle Situation (전생한 악당들의 연대기)
+# Pure observer & dynasty-survival tracker — ZERO modifiers, ZERO balance impact
+########################################################################################
+
+reincarnated_villains_chronicle = {
+	window = situation
+	gui_window_name = "window_villains_chronicle"
+	illustration = "gfx/interface/illustrations/situations/villains_situation_chronicle.dds"
+	situation_group_type = struggles
+	sort_order = 50
+
+	is_unique = yes
+	keep_full_history = yes
+	use_situation_phase_flat_icons = no
+	map_mode = participant_groups
+
+	icon = {
+		reference = "gfx/interface/icons/situation_types/reincarnated_villains_chronicle.dds"
+	}
+
+	##################################################
+	# Single Global Sub-Region
+	##################################################
+	sub_regions = {
+		world_stage = {
+			icon = "gfx/interface/icons/situation_types/reincarnated_villains_chronicle.dds"
+			illustration = "gfx/interface/illustrations/situations/villains_situation_chronicle.dds"
+			map_color = { 0.72 0.18 0.18 }
+			geographical_regions = {
+				world_europe
+				world_middle_east
+				world_africa
+				world_steppe
+				world_india
+				world_tibet
+				world_burma
+				world_asia_southeast
+				world_asia_china
+				world_asia_north_east
+				world_asia_korea
+				world_asia_japan
+			}
+		}
+	}
+
+	##################################################
+	# Lifecycle Hooks
+	##################################################
+	on_start = {
+		set_variable = {
+			name = villains_surviving_dynasties_count
+			value = 13
+		}
+	}
+
+	on_yearly = {
+		villains_chronicle_yearly_maintenance_effect = yes
+	}
+
+	##################################################
+	# Participant Groups (Anywhere in the World)
+	##################################################
+	participant_groups = {
+		# 1. 왕국·제국·패권국 이상 등극에 성공한 전생 왕조 통치자
+		villains_ascendant_dynasts = {
+			icon = "gfx/interface/icons/situations/reincarnated_villains_chronicle/group_ascendant.dds"
+			require_realm_in_sub_region = no
+			require_capital_in_sub_region = no
+			require_domain_in_sub_region = no
+			require_domicile_in_sub_region = no
+			auto_add_rulers = yes
+			auto_add_landless_rulers = yes
+
+			is_character_valid = {
+				is_ruler = yes
+				villains_is_reincarnated_dynasty_member_trigger = yes
+				villains_is_ascendant_chronicle_ruler_trigger = yes
+			}
+
+			on_join = {
+				if = {
+					limit = {
+						is_ai = no
+						NOT = { has_character_flag = villains_chronicle_intro_shown }
+					}
+					trigger_event = villains_chronicle.0001
+				}
+			}
+
+			map_color = { 0.88 0.68 0.18 }
+		}
+
+		# 2. 백작·공작·명문가·방랑 야영지 등으로 생존 중인 전생 가문 통치자
+		villains_surviving_dynasts = {
+			icon = "gfx/interface/icons/situations/reincarnated_villains_chronicle/group_surviving.dds"
+			require_realm_in_sub_region = no
+			require_capital_in_sub_region = no
+			require_domain_in_sub_region = no
+			require_domicile_in_sub_region = no
+			auto_add_rulers = yes
+			auto_add_landless_rulers = yes
+
+			is_character_valid = {
+				is_ruler = yes
+				villains_is_reincarnated_dynasty_member_trigger = yes
+				villains_is_ascendant_chronicle_ruler_trigger = no
+			}
+
+			on_join = {
+				if = {
+					limit = {
+						is_ai = no
+						NOT = { has_character_flag = villains_chronicle_intro_shown }
+					}
+					trigger_event = villains_chronicle.0001
+				}
+			}
+
+			map_color = { 0.72 0.22 0.22 }
+		}
+	}
+
+	##################################################
+	# Chronicle Chapters (Zero Modifiers)
+	##################################################
+	start_phase = villains_chronicle_phase_first_generation
+
+	phases = {
+		villains_chronicle_phase_first_generation = {
+			icon = "gfx/interface/icons/situation_types/reincarnated_villains_chronicle.dds"
+			illustration = "gfx/interface/illustrations/situations/villains_situation_chronicle.dds"
+
+			future_phases = {
+				villains_chronicle_phase_heirs_era = {}
+				villains_chronicle_phase_last_standing = {}
+			}
+		}
+
+		villains_chronicle_phase_heirs_era = {
+			icon = "gfx/interface/icons/situation_types/reincarnated_villains_chronicle.dds"
+			illustration = "gfx/interface/illustrations/situations/villains_situation_chronicle.dds"
+
+			future_phases = {
+				villains_chronicle_phase_first_generation = {}
+				villains_chronicle_phase_last_standing = {}
+			}
+		}
+
+		villains_chronicle_phase_last_standing = {
+			icon = "gfx/interface/icons/situation_types/reincarnated_villains_chronicle.dds"
+			illustration = "gfx/interface/illustrations/situations/villains_situation_chronicle.dds"
+
+			future_phases = {
+				villains_chronicle_phase_first_generation = {}
+				villains_chronicle_phase_heirs_era = {}
+			}
+		}
+	}
+}

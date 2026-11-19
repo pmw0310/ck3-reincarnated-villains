@@ -152,6 +152,36 @@ k_state_of_israel = {
 	}
 }
 
+k_tojo_cabinet = {
+	color = { 190 0 38 }
+	capital = c_musashi
+	definite_form = yes
+	can_be_named_after_dynasty = no
+	can_use_nomadic_naming = no
+	ignore_titularity_for_title_weighting = yes
+	ai_primary_priority = {
+		add = 100000
+	}
+	can_create = {
+		always = no
+	}
+}
+
+k_russian_federation = {
+	color = { 32 76 148 }
+	capital = c_terebovl
+	definite_form = yes
+	can_be_named_after_dynasty = no
+	can_use_nomadic_naming = no
+	ignore_titularity_for_title_weighting = yes
+	ai_primary_priority = {
+		add = 100000
+	}
+	can_create = {
+		always = no
+	}
+}
+
 # ==============================================================================
 # 2. Custom Empires founded via Reincarnated Villains Dynasty Major Decisions
 # ==============================================================================
@@ -295,6 +325,36 @@ e_greater_israel = {
 	color = { 54 132 214 }
 	capital = c_jerusalem
 	definite_form = no
+	can_be_named_after_dynasty = no
+	can_use_nomadic_naming = no
+	ignore_titularity_for_title_weighting = yes
+	ai_primary_priority = {
+		add = 200000
+	}
+	can_create = {
+		always = no
+	}
+}
+
+e_imperial_japan = {
+	color = { 176 0 34 }
+	capital = c_musashi
+	definite_form = yes
+	can_be_named_after_dynasty = no
+	can_use_nomadic_naming = no
+	ignore_titularity_for_title_weighting = yes
+	ai_primary_priority = {
+		add = 200000
+	}
+	can_create = {
+		always = no
+	}
+}
+
+e_eurasian_union = {
+	color = { 24 62 128 }
+	capital = c_moskva
+	definite_form = yes
 	can_be_named_after_dynasty = no
 	can_use_nomadic_naming = no
 	ignore_titularity_for_title_weighting = yes
@@ -459,6 +519,38 @@ d_rep_idi_amin = {
 d_rep_netanyahu = {
 	color = { 78 156 232 }
 	capital = c_jerusalem
+	definite_form = yes
+	can_be_named_after_dynasty = no
+	can_use_nomadic_naming = no
+	de_jure_drift_disabled = yes
+	ignore_titularity_for_title_weighting = yes
+	ai_primary_priority = {
+		add = 50000
+	}
+	can_create = {
+		always = no
+	}
+}
+
+d_rep_tojo = {
+	color = { 190 0 38 }
+	capital = c_musashi
+	definite_form = yes
+	can_be_named_after_dynasty = no
+	can_use_nomadic_naming = no
+	de_jure_drift_disabled = yes
+	ignore_titularity_for_title_weighting = yes
+	ai_primary_priority = {
+		add = 50000
+	}
+	can_create = {
+		always = no
+	}
+}
+
+d_rep_putin = {
+	color = { 38 84 156 }
+	capital = c_terebovl
 	definite_form = yes
 	can_be_named_after_dynasty = no
 	can_use_nomadic_naming = no
@@ -686,6 +778,48 @@ d_zionism = {
 	}
 }
 
+d_taisei_yokusankai = {
+	color = { 190 0 38 }
+	capital = c_musashi
+	definite_form = yes
+	ruler_uses_title_name = no
+	landless = yes
+	allow_domicile = no
+	destroy_if_invalid_heir = yes
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	de_jure_drift_disabled = yes
+	can_be_named_after_dynasty = no
+	can_use_nomadic_naming = no
+	ai_primary_priority = {
+		add = -200000
+	}
+	can_create = {
+		always = no
+	}
+}
+
+d_putinism = {
+	color = { 32 76 148 }
+	capital = c_terebovl
+	definite_form = yes
+	ruler_uses_title_name = no
+	landless = yes
+	allow_domicile = no
+	destroy_if_invalid_heir = yes
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	de_jure_drift_disabled = yes
+	can_be_named_after_dynasty = no
+	can_use_nomadic_naming = no
+	ai_primary_priority = {
+		add = -200000
+	}
+	can_create = {
+		always = no
+	}
+}
+
 # ==============================================================================
 # 5. Noble Family & Landless Adventurer Camp Titles
 # ==============================================================================
@@ -753,9 +887,40 @@ d_nf_netanyahu = {
 	}
 }
 
+d_nf_putin = {
+	color = { 28 42 68 }
+	capital = c_terebovl
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+	ai_primary_priority = {
+		add = -200000
+	}
+}
+
 c_nf_mutaguchi = {
 	color = { 230 194 200 }
 	capital = c_manipur
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+	dlc_feature = all_under_heaven
+	ai_primary_priority = {
+		add = -200000
+	}
+}
+
+c_nf_tojo = {
+	color = { 190 0 38 }
+	capital = c_musashi
 	definite_form = yes
 	landless = yes
 	ruler_uses_title_name = no

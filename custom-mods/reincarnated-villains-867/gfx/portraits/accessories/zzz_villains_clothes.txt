@@ -57,3 +57,13 @@ m_clothes_villains_netanyahu = {
 	set_tags = "shrink_arms,shrink_chest,shrink_belly"
 	entity = { required_tags = ""		shared_pose_entity = torso		entity = m_clothes_villains_netanyahu_entity }
 }
+
+m_clothes_villains_tojo = {
+	set_tags = "shrink_arms,shrink_chest,shrink_belly"
+	entity = { required_tags = ""		shared_pose_entity = torso		entity = m_clothes_villains_tojo_entity }
+}
+
+m_clothes_villains_putin = {
+	set_tags = "shrink_arms,shrink_chest,shrink_belly"
+	entity = { required_tags = ""		shared_pose_entity = torso		entity = m_clothes_villains_putin_entity }
+}

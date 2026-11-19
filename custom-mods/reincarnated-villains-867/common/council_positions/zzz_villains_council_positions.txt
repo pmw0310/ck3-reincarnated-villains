@@ -107,6 +107,14 @@ councillor_court_chaplain = {
 				desc = councillor_court_chaplain_zionism
 			}
 			triggered_desc = {
+				trigger = { rite = rite:taisei_yokusankai }
+				desc = councillor_court_chaplain_taisei_yokusankai
+			}
+			triggered_desc = {
+				trigger = { rite = rite:putinism }
+				desc = councillor_court_chaplain_putinism
+			}
+			triggered_desc = {
 				trigger = {
 					highest_held_title_tier >= tier_hegemony
 					government_has_flag = government_has_merit

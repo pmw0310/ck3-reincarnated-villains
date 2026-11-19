@@ -257,3 +257,33 @@ zionism = {
 		}
 	}
 }
+
+taisei_yokusankai = {
+	867.1.1 = {
+		created = yes
+		main_rite = taisei_yokusankai
+		permitted = {
+			tenet_legalism
+			tenet_pursuit_of_power
+		}
+		known = {
+			tenet_warmonger
+			tenet_sacred_shadows
+		}
+	}
+}
+
+putinism = {
+	867.1.1 = {
+		created = yes
+		main_rite = putinism
+		permitted = {
+			tenet_sacred_shadows
+			tenet_warmonger
+		}
+		known = {
+			tenet_legalism
+			tenet_unrelenting_faith
+		}
+	}
+}

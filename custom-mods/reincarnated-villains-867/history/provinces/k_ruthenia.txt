@@ -1,0 +1,2945 @@
+﻿#k_ruthenia
+##d_kiev
+###c_kiev
+####b_kiev
+547 = { #KIEV
+	culture = russian
+	rite = slavic_pagan
+	holding = tribal_holding
+	special_district_slot = golden_gate_of_kiev_01_district
+
+	867.1.1 = {
+
+		province_size = 4
+		districts = {
+			district = {
+				type = entrepot_location_district
+				level = 1
+				buildings = {
+					entrepot_fabric_market_1
+				}
+			}
+			district = {
+				type = grain_district
+			}
+		}
+
+	}
+	935.1.1 = {
+		holding = castle_holding
+	}
+	989.9.15 = {
+		rite = slavic_rite
+	}
+	1024.1.1 = {
+		districts = {
+			district = {
+				type = entrepot_location_district
+				level = 1
+				buildings = {
+					entrepot_fabric_market_1
+				}
+			}
+			district = {
+				type = golden_gate_of_kiev_01_district
+				level = 1
+			}
+			district = {
+				type = grain_district
+			}
+		}
+	}
+	1054.7.16 = {
+		rite = slavic_rite
+	}
+	1066.1.1 = {
+		province_size = 5
+		districts = {
+			district = {
+				type = household_district
+				level = 1
+				buildings = {
+					royal_great_hall_1
+				}
+			}
+			district = {
+				type = castle_holding_district
+				level = 2
+				buildings = {
+					castle_training_grounds_2
+					castle_citadel_2
+				}
+			}
+			district = {
+				type = entrepot_location_district
+				level = 1
+				buildings = {
+					entrepot_fabric_market_1
+				}
+			}
+			district = {
+				type = grain_district
+				level = 4
+				buildings = {
+					beer_brewery_2
+				}
+			}
+			district = {
+				type = golden_gate_of_kiev_01_district
+				level = 1
+			}
+
+			district = {
+				type = walls_district
+				level = 2
+				buildings = {
+					city_watch_2
+				}
+			}
+			district = {
+				type = urban_housing_district
+				level = 3
+				buildings = {
+					communal_wells_2
+					noble_townhouses_2
+				}
+			}
+			district = {
+				type = guild_district
+				level = 2
+				buildings = {
+					brewers_guild_1
+					guild_goldsmiths_2
+				}
+			}
+		}
+
+	}
+	1178.1.1 = {
+		province_size = 5
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 3
+				buildings = {
+					castle_great_hall_2
+					castle_citadel_2
+					castle_training_grounds_2
+				}
+			}
+			district = {
+				type = entrepot_location_district
+				level = 2
+				buildings = {
+					entrepot_fabric_market_2
+					entrepot_mercers_market_1
+				}
+			}
+			district = {
+				type = grain_district
+				level = 6
+				buildings = {
+					beer_brewery_2
+				}
+			}
+			district = {
+				type = golden_gate_of_kiev_01_district
+				level = 1
+			}
+
+			district = {
+				type = walls_district
+				level = 3
+				buildings = {
+					city_watch_2
+					gatehouses_2
+				}
+			}
+			district = {
+				type = urban_housing_district
+				level = 3
+				buildings = {
+					suburb_2
+					noble_townhouses_2
+					communal_wells_2
+				}
+			}
+			district = {
+				type = guild_district
+				level = 3
+				buildings = {
+					brewers_guild_2
+					guild_builders_2
+				}
+			}
+		}
+
+	}
+
+}
+####b_vyshgorod
+5082 = { #VYSHGOROD
+	holding = none
+
+	935.1.1 = {
+		holding = city_holding
+	}
+	1066.1.1 = {
+		districts = {
+			district = {
+				type = city_holding_district
+				level = 2
+			}
+			district = {
+				type = villages_district
+				level = 2
+				buildings = {
+					meadowlands_pastures_1
+				}
+			}
+		}
+	}
+
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = city_holding_district
+				level = 2
+				buildings = {
+					city_town_market_2
+				}
+			}
+			district = {
+				type = villages_district
+				level = 2
+				buildings = {
+					meadowlands_pastures_1
+				}
+			}
+		}
+	}
+
+}
+####b_bilhorod
+5083 = { #BILHOROD
+	holding = none
+
+	980.1.1 = {
+		holding = castle_holding
+	}
+	1066.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 2
+			}
+			district = {
+				type = villages_district
+				level = 2
+			}
+		}
+	}
+
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 3
+				buildings = {
+					castle_garrison_2
+					castle_great_hall_2
+				}
+			}
+			district = {
+				type = villages_district
+				level = 3
+			}
+		}
+	}
+
+}
+####b_yuriev
+5084 = { #YURIEV
+	holding = none
+
+	1032.1.1 = {
+		holding = church_holding
+	}
+	1066.1.1 = {
+		districts = {
+			district = {
+				type = temple_holding_district
+				level = 2
+				buildings = {
+					temple_religious_fairs_2
+				}
+			}
+			district = {
+				type = villages_district
+				level = 2
+			}
+		}
+	}
+
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = temple_holding_district
+				level = 3
+				buildings = {
+					temple_religious_fairs_2
+				}
+			}
+			district = {
+				type = villages_district
+				level = 3
+			}
+			district = {
+				type = religious_community_district
+				level = 1
+			}
+		}
+	}
+
+}
+####b_kaniv
+5085 = { #KANIV
+	holding = none
+
+	1078.1.1 = {
+		holding = city_holding
+	}
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = city_holding_district
+				level = 2
+				buildings = {
+					city_town_watch_2
+				}
+			}
+			district = {
+				type = villages_district
+				level = 2
+			}
+		}
+	}
+
+}
+####b_zdvyzhen
+5086 = { #ZDVYZHEN
+	holding = none
+}
+###c_zhytomyr
+####b_zhytomyr
+5087 = { #ZHYTOMYR
+	culture = russian
+	rite = slavic_pagan
+	holding = tribal_holding
+
+	867.1.1 = {
+		districts = {
+			district = {
+				type = grain_district
+			}
+		}
+	}
+
+	935.1.1 = {
+		holding = castle_holding
+	}
+	989.9.15 = {
+		rite = slavic_rite
+	}
+	1054.7.16 = {
+		rite = slavic_rite
+	}
+
+	1066.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 2
+			}
+			district = {
+				type = grain_district
+				level = 2
+			}
+			district = {
+				type = villages_district
+				level = 2
+				buildings = {
+					roadside_inns_1
+				}
+			}
+			district = {
+				type = manor_houses_district
+				level = 1
+			}
+		}
+	}
+
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 3
+				buildings = {
+					castle_training_grounds_2
+					castle_garrison_2
+				}
+			}
+			district = {
+				type = grain_district
+				level = 6
+				buildings = {
+					seasonal_labor_shared_1
+					horse_grazing_1
+				}
+			}
+			district = {
+				type = villages_district
+				level = 3
+				buildings = {
+					roadside_inns_1
+				}
+			}
+			district = {
+				type = manor_houses_district
+				level = 1
+			}
+		}
+	}
+
+}
+####b_mezhybozhe
+5088 = { #MEZHYBOZHE
+	holding = none
+
+	1050.1.1 = {
+		holding = city_holding
+	}
+	1066.1.1 = {
+		districts = {
+			district = {
+				type = city_holding_district
+				level = 2
+			}
+			district = {
+				type = villages_district
+				level = 2
+			}
+			district = {
+				type = manor_houses_district
+				level = 1
+			}
+		}
+	}
+
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = city_holding_district
+				level = 2
+				buildings = {
+					city_town_market_2
+				}
+			}
+			district = {
+				type = villages_district
+				level = 2
+			}
+			district = {
+				type = manor_houses_district
+				level = 1
+			}
+		}
+	}
+
+}
+####b_rastovets
+5089 = { #RASTOVETS
+	holding = none
+}
+###c_zvyahel
+####b_zvyahel
+5091 = { #ZVYAHEL
+	culture = russian
+	rite = slavic_pagan
+	holding = tribal_holding
+
+	867.1.1 = {
+		districts = {
+			district = {
+				type = honey_district
+			}
+		}
+	}
+
+	935.1.1 = {
+		holding = castle_holding
+	}
+	989.9.15 = {
+		rite = slavic_rite
+	}
+	1054.7.16 = {
+		rite = slavic_rite
+	}
+
+	1066.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 2
+			}
+			district = {
+				type = honey_district
+				level = 2
+			}
+			district = {
+				type = military_district
+				level = 2
+				buildings = {
+					mustering_grounds_1
+				}
+			}
+		}
+	}
+
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 3
+				buildings = {
+					castle_garrison_2
+					castle_court_2
+				}
+			}
+			district = {
+				type = honey_district
+				level = 6
+				buildings = {
+					honey_apothecary_2
+					honey_waxworks_2
+				}
+			}
+			district = {
+				type = military_district
+				level = 3
+				buildings = {
+					mustering_grounds_1
+					archery_ranges_1
+				}
+			}
+		}
+	}
+
+}
+####b_kolodiazhen
+5092 = { #KOLODIAZHEN
+	holding = none
+
+	1066.1.1 = {
+		holding = city_holding
+		districts = {
+			district = {
+				type = city_holding_district
+				level = 2
+			}
+			district = {
+				type = villages_district
+				level = 2
+			}
+		}
+
+	}
+	1178.1.1 = {
+		holding = church_holding
+		districts = {
+			district = {
+				type = temple_holding_district
+				level = 3
+				buildings = {
+					temple_religious_fairs_2
+				}
+			}
+			district = {
+				type = villages_district
+				level = 3
+			}
+		}
+
+	}
+}
+####b_chortolisy
+5093 = { #CHORTOLISY
+	holding = none
+
+	1066.1.1 = {
+		holding = church_holding
+		districts = {
+			district = {
+				type = temple_holding_district
+				level = 2
+			}
+			district = {
+				type = villages_district
+				level = 2
+				buildings = {
+					village_butcher_1
+					communal_woodland_1
+				}
+			}
+			district = {
+				type = manor_houses_district
+				level = 1
+			}
+		}
+
+	}
+	1150.1.1 = {
+		holding = city_holding
+	}
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = city_holding_district
+				level = 2
+				buildings = {
+					city_town_market_2
+				}
+			}
+			district = {
+				type = villages_district
+				level = 2
+				buildings = {
+					village_butcher_1
+				}
+			}
+			district = {
+				type = manor_houses_district
+				level = 1
+			}
+		}
+	}
+
+}
+####b_horodnytsia
+5094 = { #HORODNYTSIA
+	holding = none
+}
+###c_chornobyl
+####b_chornobyl
+5095 = { #CHORNOBYL
+	culture = russian
+	rite = slavic_pagan
+	holding = tribal_holding
+
+	867.1.1 = {
+		districts = {
+			district = {
+				type = honey_district
+			}
+		}
+	}
+
+	935.1.1 = {
+		holding = castle_holding
+	}
+	989.9.15 = {
+		rite = slavic_rite
+	}
+	1054.7.16 = {
+		rite = slavic_rite
+	}
+
+	1066.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 2
+			}
+			district = {
+				type = honey_district
+				level = 2
+			}
+			district = {
+				type = villages_district
+				level = 2
+			}
+		}
+	}
+
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 3
+				buildings = {
+					castle_court_2
+					castle_garrison_2
+				}
+			}
+			district = {
+				type = honey_district
+				level = 6
+				buildings = {
+					honey_apothecary_1
+					minor_forestry_1
+				}
+			}
+			district = {
+				type = villages_district
+				level = 3
+			}
+		}
+	}
+
+}
+####b_ivankiv
+5096 = { #IVANKIV
+	holding = none
+}
+####b_radynka
+5097 = { #RADYNKA
+	holding = none
+}
+###c_ushytsia
+####b_ushytsia
+5098 = { #USHYTSIA
+	culture = russian
+	rite = slavic_pagan
+	holding = tribal_holding
+
+	867.1.1 = {
+		culture = neo_russian
+		rite = putinism
+		districts = {
+			district = {
+				type = grain_district
+			}
+		}
+	}
+
+	882.1.2 = {
+		culture = russian
+		rite = slavic_pagan
+	}
+
+	935.1.1 = {
+		holding = castle_holding
+	}
+	989.9.15 = {
+		rite = slavic_rite
+	}
+	1054.7.16 = {
+		rite = slavic_rite
+	}
+
+	1066.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 2
+			}
+			district = {
+				type = grain_district
+				level = 2
+			}
+			district = {
+				type = military_district
+				level = 2
+				buildings = {
+				}
+			}
+		}
+	}
+
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 3
+				buildings = {
+					castle_training_grounds_2
+				}
+			}
+			district = {
+				type = grain_district
+				level = 6
+				buildings = {
+					seasonal_labor_shared_1
+					beer_brewery_2
+				}
+			}
+			district = {
+				type = military_district
+				level = 3
+				buildings = {
+					archery_ranges_1
+					militia_camps_1
+				}
+			}
+		}
+	}
+
+}
+####b_vinnytsia
+5099 = { #VINNYTSIA
+	holding = none
+}
+####b_yampil
+5100 = { #YAMPIL
+	holding = none
+}
+###c_korsun
+####b_korsun
+544 = { #KORSUN
+	culture = russian
+	rite = slavic_pagan
+	holding = tribal_holding
+
+	#1032.1.1 = {
+	#	#holding = castle_holding
+	#}
+
+	867.1.1 = {
+		districts = {
+			district = {
+				type = grain_district
+			}
+		}
+	}
+
+	989.9.15 = {
+		rite = slavic_rite
+	}
+	1054.7.16 = {
+		rite = slavic_rite
+	}
+	1066.1.1 = {
+		holding = castle_holding
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 2
+			}
+			district = {
+				type = grain_district
+				level = 2
+			}
+			district = {
+				type = military_district
+				level = 2
+				buildings = {
+					mustering_grounds_1
+				}
+			}
+		}
+
+	}
+
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 3
+				buildings = {
+					castle_garrison_2
+					castle_citadel_2
+				}
+			}
+			district = {
+				type = grain_district
+				level = 6
+				buildings = {
+					seasonal_labor_shared_1
+					beer_brewery_2
+				}
+			}
+			district = {
+				type = villages_district
+				level = 3
+			}
+		}
+	}
+
+}
+####b_malaia_skvirka
+5090 = { #MALAIA_SKVIRKA
+	holding = none
+}
+####b_haisyn
+5101 = { #HAISYN
+	holding = none
+}
+##d_turov
+###c_turov
+####b_turov
+552 = { #TUROV
+	culture = russian
+	rite = slavic_pagan
+	holding = tribal_holding
+
+	867.1.1 = {
+		districts = {
+			district = {
+				type = honey_district
+			}
+		}
+	}
+
+	935.1.1 = {
+		holding = castle_holding
+	}
+	989.9.15 = {
+		rite = slavic_rite
+	}
+	1054.7.16 = {
+		rite = slavic_rite
+	}
+	1066.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 2
+				buildings = {
+					castle_training_grounds_2
+				}
+			}
+			district = {
+				type = honey_district
+				level = 2
+			}
+			district = {
+				type = villages_district
+				level = 2
+				buildings = {
+					village_butcher_1
+				}
+			}
+			district = {
+				type = religious_community_district
+				level = 1
+			}
+		}
+
+	}
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 3
+				buildings = {
+					castle_great_hall_2
+					castle_training_grounds_2
+				}
+			}
+			district = {
+				type = honey_district
+				level = 4
+				buildings = {
+					trappers_1
+				}
+			}
+			district = {
+				type = military_district
+				level = 3
+				buildings = {
+					armorer_1
+					militia_camps_1
+				}
+			}
+		}
+	}
+
+}
+####b_sarny
+5102 = { #SARNY
+	holding = none
+}
+####b_selo
+5103 = { #SELO
+	holding = none
+}
+###c_korosten
+####b_korosten
+5104 = { #KOROSTEN
+	culture = russian
+	rite = slavic_pagan
+	holding = tribal_holding
+
+	867.1.1 = {
+		districts = {
+			district = {
+				type = forestry_district
+			}
+			district = {
+				type = tribal_economy_prestige_district
+				buildings = {
+				}
+			}
+		}
+	}
+
+	935.1.1 = {
+		holding = castle_holding
+	}
+	989.9.15 = {
+		rite = slavic_rite
+	}
+	1054.7.16 = {
+		rite = slavic_rite
+	}
+
+	1066.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 2
+			}
+			district = {
+				type = forestry_district
+				level = 2
+			}
+			district = {
+				type = villages_district
+				level = 2
+			}
+		}
+	}
+
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 3
+				buildings = {
+					castle_training_grounds_2
+					castle_great_hall_2
+				}
+			}
+			district = {
+				type = forestry_district
+				level = 6
+				buildings = {
+					hunting_lodges_2
+				}
+			}
+			district = {
+				type = villages_district
+				level = 3
+			}
+		}
+	}
+
+}
+####b_ovruch
+5105 = { #OVRUCH
+	holding = none
+
+	946.1.1 = {
+		holding = city_holding
+	}
+	1066.1.1 = {
+		districts = {
+			district = {
+				type = city_holding_district
+				level = 2
+			}
+			district = {
+				type = villages_district
+				level = 2
+			}
+		}
+	}
+
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = city_holding_district
+				level = 2
+				buildings = {
+					city_magistrate_2
+				}
+			}
+			district = {
+				type = villages_district
+				level = 2
+			}
+		}
+	}
+
+}
+####b_mazyr
+5106 = { #MAZYR
+	holding = none
+
+	1066.1.1 = {
+		holding = church_holding
+		districts = {
+			district = {
+				type = temple_holding_district
+				level = 2
+			}
+			district = {
+				type = villages_district
+				level = 2
+			}
+			district = {
+				type = manor_houses_district
+				level = 1
+			}
+		}
+
+	}
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = temple_holding_district
+				level = 3
+				buildings = {
+					temple_religious_fairs_2
+				}
+			}
+			district = {
+				type = villages_district
+				level = 3
+			}
+			district = {
+				type = manor_houses_district
+				level = 1
+			}
+		}
+	}
+
+}
+####b_naroulia
+5107 = { #NAROULIA
+	holding = none
+}
+####b_lelchytsy
+5108 = { #LELCHYTSY
+	holding = none
+}
+###c_dubrovytsia
+####b_dubrovytsia
+5109 = { #DUBROVYTSIA
+	culture = russian
+	rite = slavic_pagan
+	holding = tribal_holding
+
+	867.1.1 = {
+		districts = {
+			district = {
+				type = cattle_district
+			}
+		}
+	}
+
+	935.1.1 = {
+		holding = castle_holding
+	}
+	989.9.15 = {
+		rite = slavic_rite
+	}
+	1054.7.16 = {
+		rite = slavic_rite
+	}
+
+	1066.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 2
+			}
+			district = {
+				type = cattle_district
+				level = 2
+				buildings = {}
+			}
+			district = {
+				type = villages_district
+				level = 2
+			}
+		}
+	}
+
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 3
+				buildings = {
+					castle_great_hall_2
+					castle_training_grounds_2
+				}
+			}
+			district = {
+				type = cattle_district
+				level = 6
+				buildings = {
+					cheesemaker_2
+				}
+			}
+			district = {
+				type = villages_district
+				level = 3
+			}
+		}
+	}
+
+}
+####b_stepan
+5110 = { #STEPAN
+	holding = none
+}
+####b_liubeshiv
+5111 = { #LIUBESHIV
+	holding = none
+}
+##d_pereyaslavl
+###c_pereyaslavl
+####b_pereyaslavl
+555 = { #PEREYASLAVL
+	culture = russian
+	rite = slavic_pagan
+	holding = tribal_holding
+
+	867.1.1 = {
+		districts = {
+			district = {
+				type = grain_district
+			}
+			district = {
+				type = tribal_economy_prestige_district
+				buildings = {
+				}
+			}
+		}
+	}
+
+	935.1.1 = {
+		holding = castle_holding
+	}
+	989.9.15 = {
+		rite = roman_rite
+		rite = slavic_rite	#Slavonic liturgy of the early Rus' sees
+	}
+	1054.7.16 = {
+		rite = byzantine_rite
+		rite = slavic_rite	#Great Schism; still valid under orthodox
+	}
+	1066.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 2
+			}
+			district = {
+				type = grain_district
+				level = 2
+			}
+			district = {
+				type = villages_district
+				level = 2
+			}
+			district = {
+				type = manor_houses_district
+				level = 1
+			}
+		}
+
+	}
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 3
+				buildings = {
+					castle_garrison_2
+					castle_citadel_2
+				}
+			}
+			district = {
+				type = grain_district
+				level = 4
+				buildings = {
+					beer_brewery_2
+				}
+			}
+			district = {
+				type = villages_district
+				level = 3
+			}
+			district = {
+				type = manor_houses_district
+				level = 1
+			}
+		}
+	}
+
+}
+####b_boryspil
+5178 = { #BORYSPIL
+	holding = none
+
+	1015.1.1 = {
+		holding = city_holding
+	}
+	1066.1.1 = {
+		districts = {
+			district = {
+				type = city_holding_district
+				level = 2
+			}
+			district = {
+				type = villages_district
+				level = 2
+				buildings = {
+					village_butcher_1
+				}
+			}
+		}
+	}
+
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = city_holding_district
+				level = 2
+				buildings = {
+					city_town_market_2
+				}
+			}
+			district = {
+				type = villages_district
+				level = 2
+				buildings = {
+					village_butcher_1
+				}
+			}
+		}
+	}
+
+}
+####b_priluk
+5179 = { #PRILUK
+	holding = none
+
+	1066.1.1 = {
+		holding = church_holding
+		districts = {
+			district = {
+				type = temple_holding_district
+				level = 2
+			}
+			district = {
+				type = villages_district
+				level = 2
+				buildings = {
+					village_butcher_1
+				}
+			}
+		}
+
+	}
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = temple_holding_district
+				level = 3
+				buildings = {
+					temple_hospices_2
+				}
+			}
+			district = {
+				type = villages_district
+				level = 3
+				buildings = {
+					village_butcher_1
+				}
+			}
+		}
+	}
+
+}
+####b_zolotonosha
+5180 = { #ZOLOTONOSHA
+	holding = none
+}
+###c_hradyzk
+####b_hradyzk
+5181 = { #HRADYZK
+	culture = russian
+	rite = slavic_pagan
+	holding = tribal_holding
+
+	867.1.1 = {
+		districts = {
+			district = {
+				type = honey_district
+			}
+		}
+	}
+
+	935.1.1 = {
+		holding = castle_holding
+	}
+	989.9.15 = {
+		rite = slavic_rite
+	}
+	1054.7.16 = {
+		rite = slavic_rite
+	}
+
+	1066.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 2
+			}
+			district = {
+				type = honey_district
+				level = 2
+			}
+			district = {
+				type = military_district
+				level = 2
+				buildings = {
+					mustering_grounds_1
+				}
+			}
+		}
+	}
+
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 3
+				buildings = {
+					castle_training_grounds_2
+					castle_citadel_2
+				}
+			}
+			district = {
+				type = honey_district
+				level = 6
+				buildings = {
+					honey_apothecary_2
+					mead_brewery_2
+				}
+			}
+			district = {
+				type = villages_district
+				level = 3
+			}
+		}
+	}
+
+}
+####b_akhtyr
+5182 = { #AKHTYR
+	holding = none
+
+	950.1.1 = {
+		holding = city_holding
+	}
+	1066.1.1 = {
+		districts = {
+			district = {
+				type = city_holding_district
+				level = 2
+			}
+			district = {
+				type = villages_district
+				level = 2
+				buildings = {
+					communal_woodland_1
+				}
+			}
+		}
+	}
+
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = city_holding_district
+				level = 2
+				buildings = {
+					city_magistrate_2
+				}
+			}
+			district = {
+				type = villages_district
+				level = 2
+				buildings = {
+					communal_woodland_1
+				}
+			}
+		}
+	}
+
+}
+####b_myrhorod
+5183 = { #MYRHOROD
+	holding = none
+
+	1066.1.1 = {
+		holding = church_holding
+		districts = {
+			district = {
+				type = temple_holding_district
+				level = 2
+			}
+			district = {
+				type = villages_district
+				level = 2
+			}
+			district = {
+				type = religious_community_district
+				level = 1
+			}
+		}
+
+	}
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = temple_holding_district
+				level = 3
+				buildings = {
+					temple_hostels_2
+				}
+			}
+			district = {
+				type = villages_district
+				level = 3
+			}
+			district = {
+				type = religious_community_district
+				level = 1
+			}
+		}
+	}
+
+}
+####b_poltava
+5184 = { #POLTAVA
+	holding = none
+
+	1174.1.1 = {
+		holding = castle_holding
+	}
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 3
+				buildings = {
+					castle_training_grounds_2
+					castle_larder_2
+				}
+			}
+			district = {
+				type = villages_district
+				level = 3
+			}
+			district = {
+				type = manor_houses_district
+				level = 1
+			}
+		}
+	}
+
+}
+###c_romen
+####b_romen
+5185 = { #ROMEN
+	culture = russian
+	rite = slavic_pagan
+	holding = tribal_holding
+
+	867.1.1 = {
+		districts = {
+			district = {
+				type = honey_district
+			}
+			district = {
+				type = tribal_economy_prestige_district
+				buildings = {
+				}
+			}
+		}
+	}
+
+	935.1.1 = {
+		holding = castle_holding
+	}
+	989.9.15 = {
+		rite = slavic_rite
+	}
+	1054.7.16 = {
+		rite = slavic_rite
+	}
+
+	1066.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 2
+			}
+			district = {
+				type = honey_district
+				level = 2
+			}
+			district = {
+				type = villages_district
+				level = 2
+			}
+		}
+	}
+
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 3
+				buildings = {
+					castle_court_2
+					castle_great_hall_2
+				}
+			}
+			district = {
+				type = honey_district
+				level = 6
+				buildings = {
+					honey_apothecary_2
+					trappers_1
+				}
+			}
+			district = {
+				type = military_district
+				level = 3
+				buildings = {
+					militia_camps_1
+					mustering_grounds_1
+				}
+			}
+		}
+	}
+
+}
+####b_lokhrytsia
+5186 = { #LOKHRYTSIA
+	holding = none
+}
+####b_nedryhailiv
+5187 = { #NEDRYHAILIV
+	holding = none
+}
+####b_sumy
+5188 = { #SUMY
+	holding = none
+}
+###c_voin
+####b_voin
+5189 = { #VOIN
+	culture = russian
+	rite = slavic_pagan
+	holding = tribal_holding
+
+	867.1.1 = {
+		districts = {
+			district = {
+				type = horses_district
+			}
+		}
+	}
+
+	935.1.1 = {
+		holding = castle_holding
+	}
+	989.9.15 = {
+		rite = slavic_rite
+	}
+	1054.7.16 = {
+		rite = slavic_rite
+	}
+
+	1066.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 2
+			}
+			district = {
+				type = horses_district
+				level = 2
+			}
+			district = {
+				type = military_district
+				level = 2
+				buildings = {
+					armorer_1
+				}
+			}
+		}
+	}
+
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 3
+				buildings = {
+					castle_court_2
+					castle_training_grounds_2
+				}
+			}
+			district = {
+				type = horses_district
+				level = 6
+				buildings = {
+					sheep_pastures_1
+				}
+			}
+			district = {
+				type = villages_district
+				level = 3
+			}
+		}
+	}
+
+}
+####b_lubny
+5190 = { #LUBNY
+	holding = none
+
+	988.1.1 = {
+		holding = city_holding
+	}
+	1066.1.1 = {
+		districts = {
+			district = {
+				type = city_holding_district
+				level = 2
+			}
+			district = {
+				type = villages_district
+				level = 2
+			}
+		}
+	}
+
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = city_holding_district
+				level = 2
+				buildings = {
+					city_magistrate_2
+				}
+			}
+			district = {
+				type = villages_district
+				level = 2
+				buildings = {
+					market_fairs_1
+				}
+			}
+		}
+	}
+
+}
+##d_chernigov
+###c_chernigov
+####b_chernigov
+554 = { #CHERNIGOV
+	culture = russian
+	rite = slavic_pagan
+	holding = tribal_holding
+
+	867.1.1 = {
+		province_size = 3
+		districts = {
+			district = {
+				type = tribal_holding_district
+				level = 2
+			}
+			district = {
+				type = grain_district
+			}
+		}
+
+	}
+	988.1.2 = {
+		holding = castle_holding
+	}
+	989.9.15 = {
+		rite = roman_rite
+		rite = slavic_rite	#Slavonic liturgy of the early Rus' sees
+	}
+	1054.7.16 = {
+		rite = byzantine_rite
+		rite = slavic_rite	#Great Schism; still valid under orthodox
+	}
+	1066.1.1 = {
+		province_size = 4
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 2
+			}
+			district = {
+				type = grain_district
+				level = 2
+			}
+			district = {
+				type = walls_district
+				level = 2
+				buildings = {
+					city_watch_2
+				}
+			}
+			district = {
+				type = urban_housing_district
+				level = 2
+				buildings = {
+					burgage_plots_2
+				}
+			}
+		}
+
+	}
+	1178.1.1 = {
+		province_size = 4
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 3
+				buildings = {
+					castle_training_grounds_2
+				}
+			}
+			district = {
+				type = grain_district
+				level = 4
+				buildings = {
+					beer_brewery_2
+				}
+			}
+			district = {
+				type = walls_district
+				level = 3
+				buildings = {
+					city_watch_2
+					gatehouses_2
+				}
+			}
+			district = {
+				type = urban_housing_district
+				level = 3
+				buildings = {
+					suburb_2
+				}
+			}
+		}
+
+	}
+}
+####b_lyubech
+553 = { #LYUBECH
+	holding = none
+
+	867.1.1 = {
+	}
+
+	988.1.2 = {
+		holding = castle_holding
+	}
+	1066.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 2
+			}
+			district = {
+				type = villages_district
+				level = 2
+			}
+		}
+	}
+
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 3
+				buildings = {
+					castle_court_2
+				}
+			}
+			district = {
+				type = villages_district
+				level = 3
+			}
+		}
+	}
+
+}
+####b_gomel
+5200 = { #GOMEL
+	holding = none
+
+	1066.1.1 = {
+		holding = city_holding
+		districts = {
+			district = {
+				type = city_holding_district
+				level = 2
+			}
+			district = {
+				type = villages_district
+				level = 2
+			}
+		}
+
+	}
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = city_holding_district
+				level = 2
+				buildings = {
+					city_magistrate_2
+				}
+			}
+			district = {
+				type = villages_district
+				level = 2
+				buildings = {
+					blacksmiths_forge_1
+				}
+			}
+		}
+	}
+
+}
+####b_unenezh
+5201 = { #UNENEZH
+	holding = none
+
+	1066.1.1 = {
+		holding = church_holding
+		districts = {
+			district = {
+				type = temple_holding_district
+				level = 2
+			}
+			district = {
+				type = villages_district
+				level = 2
+			}
+		}
+
+	}
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = temple_holding_district
+				level = 3
+				buildings = {
+					temple_hospices_2
+				}
+			}
+			district = {
+				type = villages_district
+				level = 3
+			}
+		}
+	}
+
+}
+####b_surazichi
+5202 = { #SURAZICHI
+	holding = none
+}
+###c_starodub
+####b_starodub
+5203 = { #STARODUB
+	culture = russian
+	rite = slavic_pagan
+	holding = tribal_holding
+
+	867.1.1 = {
+		districts = {
+			district = {
+				type = honey_district
+			}
+		}
+	}
+
+	988.1.2 = {
+		holding = castle_holding
+	}
+	989.9.15 = {
+		rite = slavic_rite
+	}
+	1054.7.16 = {
+		rite = slavic_rite
+	}
+
+	1066.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 2
+			}
+			district = {
+				type = honey_district
+				level = 2
+			}
+			district = {
+				type = villages_district
+				level = 2
+				buildings = {
+					village_butcher_1
+					communal_woodland_1
+				}
+			}
+		}
+	}
+
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 3
+				buildings = {
+					castle_great_hall_2
+					castle_court_2
+				}
+			}
+			district = {
+				type = honey_district
+				level = 6
+				buildings = {
+					honey_apothecary_1
+					minor_forestry_1
+				}
+			}
+			district = {
+				type = military_district
+				level = 3
+				buildings = {
+					militia_camps_1
+					armorer_1
+				}
+			}
+		}
+	}
+
+}
+####b_trubetsk
+5204 = { #TRUBETSK
+	holding = none
+
+	975.1.1 = {
+		holding = church_holding
+	}
+	1066.1.1 = {
+		districts = {
+			district = {
+				type = temple_holding_district
+				level = 2
+			}
+			district = {
+				type = villages_district
+				level = 2
+			}
+		}
+	}
+
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = temple_holding_district
+				level = 3
+				buildings = {
+					temple_reliquary_2
+				}
+			}
+			district = {
+				type = villages_district
+				level = 3
+			}
+		}
+	}
+
+}
+####b_debryansk
+576 = { #DEBRYANSK
+	holding = none
+
+	1066.1.1 = {
+		holding = city_holding
+		districts = {
+			district = {
+				type = city_holding_district
+				level = 2
+			}
+			district = {
+				type = villages_district
+				level = 2
+			}
+			district = {
+				type = religious_community_district
+				level = 1
+			}
+		}
+
+	}
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = city_holding_district
+				level = 2
+				buildings = {
+					city_town_market_2
+				}
+			}
+			district = {
+				type = villages_district
+				level = 2
+			}
+			district = {
+				type = religious_community_district
+				level = 1
+			}
+		}
+	}
+
+}
+####b_mglin
+5205 = { #MGLIN
+	holding = none
+}
+###c_novgorod_seversky
+####b_novgorod_seversky
+567 = { #NOVGOROD_SEVERSKY
+	culture = russian
+	rite = slavic_pagan
+	holding = tribal_holding
+
+	867.1.1 = {
+		districts = {
+			district = {
+				type = furs_district
+			}
+		}
+	}
+
+	988.1.2 = {
+		holding = castle_holding
+	}
+	989.9.15 = {
+		rite = slavic_rite
+	}
+	1054.7.16 = {
+		rite = slavic_rite
+	}
+
+	1066.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 2
+			}
+			district = {
+				type = furs_district
+				level = 2
+			}
+			district = {
+				type = military_district
+				level = 2
+				buildings = {
+					archery_ranges_1
+				}
+			}
+		}
+	}
+
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 3
+				buildings = {
+					castle_court_2
+					castle_larder_2
+				}
+			}
+			district = {
+				type = furs_district
+				level = 6
+				buildings = {
+					furs_tannery_2
+					beehives_1
+				}
+			}
+			district = {
+				type = villages_district
+				level = 3
+				buildings = {
+					roadside_inns_1
+				}
+			}
+		}
+	}
+
+}
+####b_borzna
+5191 = { #BORZNA
+	holding = none
+
+	1000.1.1 = {
+		holding = church_holding
+	}
+	1066.1.1 = {
+		districts = {
+			district = {
+				type = temple_holding_district
+				level = 2
+			}
+			district = {
+				type = villages_district
+				level = 2
+				buildings = {
+					village_butcher_1
+				}
+			}
+		}
+	}
+
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = temple_holding_district
+				level = 3
+				buildings = {
+					temple_hostels_2
+				}
+			}
+			district = {
+				type = villages_district
+				level = 3
+				buildings = {
+					village_butcher_1
+				}
+			}
+		}
+	}
+
+}
+####b_glukhov
+5192 = { #GLUKHOV
+	holding = none
+
+	1066.1.1 = {
+		holding = city_holding
+		districts = {
+			district = {
+				type = city_holding_district
+				level = 2
+			}
+			district = {
+				type = villages_district
+				level = 2
+				buildings = {
+					village_weaver_1
+				}
+			}
+		}
+
+	}
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = city_holding_district
+				level = 2
+				buildings = {
+					city_local_shrine_2
+				}
+			}
+			district = {
+				type = villages_district
+				level = 2
+				buildings = {
+					village_butcher_1
+				}
+			}
+		}
+	}
+
+}
+###c_putyvl
+####b_putyvl
+5193 = { #PUTYVL
+	culture = russian
+	rite = slavic_pagan
+	holding = tribal_holding
+
+	867.1.1 = {
+		districts = {
+			district = {
+				type = forestry_district
+			}
+		}
+	}
+
+	935.1.2 = {
+		holding = castle_holding
+	}
+	989.9.15 = {
+		rite = slavic_rite
+	}
+	1054.7.16 = {
+		rite = slavic_rite
+	}
+
+	1066.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 2
+			}
+			district = {
+				type = forestry_district
+				level = 2
+			}
+			district = {
+				type = military_district
+				level = 2
+				buildings = {
+					archery_ranges_1
+				}
+			}
+		}
+	}
+
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 3
+				buildings = {
+					castle_garrison_2
+					castle_citadel_2
+				}
+			}
+			district = {
+				type = forestry_district
+				level = 6
+				buildings = {
+					charcoal_production_2
+					firewood_collection_2
+				}
+			}
+			district = {
+				type = military_district
+				level = 3
+				buildings = {
+					armorer_1
+					militia_camps_1
+				}
+			}
+		}
+	}
+
+}
+####b_vyr
+5194 = { #VYR
+	holding = none
+
+	1000.1.1 = {
+		holding = church_holding
+	}
+	1066.1.1 = {
+		districts = {
+			district = {
+				type = temple_holding_district
+				level = 2
+			}
+			district = {
+				type = villages_district
+				level = 2
+			}
+		}
+	}
+
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = temple_holding_district
+				level = 3
+				buildings = {
+					temple_hospices_2
+				}
+			}
+			district = {
+				type = villages_district
+				level = 3
+			}
+		}
+	}
+
+}
+####b_konotop
+5195 = { #KONOTOP
+	holding = none
+}
+###c_kursk
+####b_kursk
+5196 = { #KURSK
+	culture = russian
+	rite = slavic_pagan
+	holding = tribal_holding
+
+	867.1.1 = {
+		districts = {
+			district = {
+				type = forestry_district
+			}
+			district = {
+				type = tribal_economy_prestige_district
+				buildings = {
+				}
+			}
+		}
+	}
+
+	988.1.2 = {
+		holding = castle_holding
+	}
+	989.9.15 = {
+		rite = slavic_rite
+	}
+	1054.7.16 = {
+		rite = slavic_rite
+	}
+
+	1066.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 2
+			}
+			district = {
+				type = forestry_district
+				level = 2
+			}
+			district = {
+				type = villages_district
+				level = 2
+				buildings = {
+					roadside_inns_1
+				}
+			}
+			district = {
+				type = manor_houses_district
+				level = 1
+			}
+		}
+	}
+
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 3
+				buildings = {
+					castle_training_grounds_2
+					castle_larder_2
+				}
+			}
+			district = {
+				type = forestry_district
+				level = 6
+				buildings = {
+					hunting_lodges_2
+					charcoal_production_2
+				}
+			}
+			district = {
+				type = villages_district
+				level = 3
+				buildings = {
+					roadside_inns_1
+				}
+			}
+			district = {
+				type = manor_houses_district
+				level = 1
+			}
+		}
+	}
+
+}
+####b_rylsk
+5197 = { #RYLSK
+	holding = none
+
+	1066.1.1 = {
+		holding = city_holding
+		districts = {
+			district = {
+				type = city_holding_district
+				level = 2
+			}
+			district = {
+				type = villages_district
+				level = 2
+				buildings = {
+					village_butcher_1
+				}
+			}
+		}
+
+	}
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = city_holding_district
+				level = 2
+				buildings = {
+					city_local_shrine_2
+				}
+			}
+			district = {
+				type = villages_district
+				level = 2
+				buildings = {
+					roadside_inns_1
+				}
+			}
+		}
+	}
+
+}
+####b_sudzha
+5198 = { #SUDZHA
+	holding = none
+}
+####b_oboyan
+5199 = { #OBOYAN
+	holding = none
+}
+##d_karachev
+###c_karachev
+####b_karachev
+5209 = { #KARACHEV
+	culture = russian
+	rite = slavic_pagan
+	holding = tribal_holding
+
+	867.1.1 = {
+		districts = {
+			district = {
+				type = honey_district
+			}
+		}
+	}
+
+	989.9.15 = {
+		rite = slavic_rite
+	}
+	1054.7.16 = {
+		rite = slavic_rite
+	}
+	1066.1.1 = {
+		districts = {
+			district = {
+				type = tribal_holding_district
+				level = 2
+			}
+			district = {
+				type = honey_district
+			}
+		}
+	}
+
+	1178.1.1 = {
+		holding = castle_holding
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 3
+			}
+			district = {
+				type = honey_district
+				level = 4
+				buildings = {
+					honey_apothecary_2
+				}
+			}
+			district = {
+				type = villages_district
+				level = 3
+			}
+		}
+
+	}
+}
+####b_krom
+5210 = { #KROM
+	holding = none
+
+	1147.1.1 = {
+		holding = city_holding
+	}
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = city_holding_district
+				level = 2
+			}
+			district = {
+				type = villages_district
+				level = 2
+			}
+		}
+	}
+
+}
+####b_oryol
+5211 = { #ORYOL
+	holding = none
+
+	1150.1.1 = {
+		holding = church_holding
+	}
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = temple_holding_district
+				level = 3
+			}
+			district = {
+				type = villages_district
+				level = 3
+			}
+		}
+	}
+
+}
+###c_kozelsk
+####b_kozelsk
+5212 = { #KOZELSK
+	culture = russian
+	rite = slavic_pagan
+	holding = tribal_holding
+
+	867.1.1 = {
+		districts = {
+			district = {
+				type = cattle_district
+			}
+			district = {
+				type = tribal_economy_prestige_district
+				buildings = {
+				}
+			}
+		}
+	}
+
+	989.9.15 = {
+		rite = slavic_rite
+	}
+	1054.7.16 = {
+		rite = slavic_rite
+	}
+	1066.1.1 = {
+		districts = {
+			district = {
+				type = tribal_holding_district
+				level = 2
+			}
+			district = {
+				type = cattle_district
+			}
+		}
+	}
+
+	1178.1.1 = {
+		holding = castle_holding
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 3
+			}
+			district = {
+				type = cattle_district
+				level = 4
+				buildings = {
+					butchery_2
+				}
+			}
+			district = {
+				type = villages_district
+				level = 3
+				buildings = {
+					village_butcher_1
+				}
+			}
+		}
+
+	}
+}
+####b_vorotynsk
+5213 = { #VOROTYNSK
+	holding = none
+
+	1155.1.1 = {
+		holding = city_holding
+	}
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = city_holding_district
+				level = 2
+			}
+			district = {
+				type = villages_district
+				level = 2
+				buildings = {
+					communal_woodland_1
+				}
+			}
+		}
+	}
+
+}
+####b_belev
+5214 = { #BELEV
+	holding = none
+
+	1147.1.1 = {
+		holding = church_holding
+	}
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = temple_holding_district
+				level = 3
+			}
+			district = {
+				type = villages_district
+				level = 3
+				buildings = {
+					roadside_inns_1
+				}
+			}
+		}
+	}
+
+}
+###c_sevsk
+####b_sevsk
+5206 = { #SEVSK
+	culture = russian
+	rite = slavic_pagan
+	holding = tribal_holding
+
+	867.1.1 = {
+		districts = {
+			district = {
+				type = forestry_district
+			}
+		}
+	}
+
+	989.9.15 = {
+		rite = slavic_rite
+	}
+	1054.7.16 = {
+		rite = slavic_rite
+	}
+	1066.1.1 = {
+		districts = {
+			district = {
+				type = tribal_holding_district
+				level = 2
+			}
+			district = {
+				type = forestry_district
+			}
+		}
+	}
+
+	1178.1.1 = {
+		holding = castle_holding
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 3
+			}
+			district = {
+				type = forestry_district
+				level = 4
+				buildings = {
+					charcoal_production_2
+				}
+			}
+			district = {
+				type = villages_district
+				level = 3
+				buildings = {
+					roadside_inns_1
+				}
+			}
+		}
+
+	}
+}
+####b_ust-livny
+5207 = { #UST-LIVNY
+	holding = none
+}
+####b_lokot
+5208 = { #LOKOT
+	holding = none
+}
+##d_novosil
+###c_novosil
+####b_novosil
+5215 = { #NOVOSIL
+	culture = meshchera
+	rite = finnish_pagan
+	holding = tribal_holding
+
+	867.1.1 = {
+		districts = {
+			district = {
+				type = forestry_district
+			}
+		}
+	}
+
+	1066.1.1 = {
+		districts = {
+			district = {
+				type = tribal_holding_district
+				level = 2
+			}
+			district = {
+				type = forestry_district
+			}
+		}
+	}
+
+	1155.1.1 = {
+		culture = russian
+		rite = slavic_rite
+		holding = castle_holding
+	}
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = castle_holding_district
+				level = 3
+				buildings = {
+					castle_training_grounds_2
+				}
+			}
+			district = {
+				type = forestry_district
+				level = 4
+				buildings = {
+					charcoal_production_2
+				}
+			}
+			district = {
+				type = villages_district
+				level = 3
+				buildings = {
+					roadside_inns_1
+				}
+			}
+		}
+	}
+
+}
+####b_mtensk
+5216 = { #MTENSK
+	holding = none
+
+	1146.1.1 = {
+		holding = city_holding
+	}
+	1178.1.1 = {
+		districts = {
+			district = {
+				type = city_holding_district
+				level = 2
+			}
+			district = {
+				type = villages_district
+				level = 2
+			}
+		}
+	}
+
+}
+###c_odoyev
+####b_odoyev
+5217 = { #ODOYEV
+	culture = meshchera
+	rite = finnish_pagan
+	holding = tribal_holding
+
+	867.1.1 = {
+		districts = {
+			district = {
+				type = furs_district
+			}
+		}
+	}
+
+	1066.1.1 = {
+		districts = {
+			district = {
+				type = tribal_holding_district
+				level = 2
+			}
+			district = {
+				type = furs_district
+			}
+		}
+	}
+
+	1178.1.1 = {
+		holding = castle_holding
+		districts = {
+			district = {
+				type = furs_district
+				level = 2
+				buildings = {
+				}
+			}
+			district = {
+				type = villages_district
+				level = 1
+				buildings = {
+				}
+			}
+		}
+
+	}
+}
+####b_suvorov
+5218 = { #SUVOROV
+	holding = none
+}

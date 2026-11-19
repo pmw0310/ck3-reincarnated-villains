@@ -66,7 +66,7 @@ const resolveCk3DocsDir = () => {
  */
 const ensureUtf8BomAndCrlf = (filePath) => {
   const ext = path.extname(filePath).toLowerCase();
-  if (ext !== '.txt' && ext !== '.yml' && ext !== '.gui' && ext !== '.asset') {
+  if (ext !== '.txt' && ext !== '.yml' && ext !== '.gui' && ext !== '.asset' && ext !== '.mod') {
     return;
   }
   const rawBytes = fs.readFileSync(filePath);
@@ -79,7 +79,11 @@ const ensureUtf8BomAndCrlf = (filePath) => {
   ) {
     offset += 3;
   }
-  let content = rawBytes.subarray(offset).toString('utf-8').replace(/^\uFEFF+/, '');
+  let content = rawBytes
+    .subarray(offset)
+    .toString('utf-8')
+    .replace(/^\uFEFF+/, '')
+    .replace(/\u00A0/g, ' ');
   if (ext === '.yml') {
     // IDE YAML 포매터가 첫 줄의 `l_korean:` 헤더와 첫 키를 한 줄로 합치는 현상을 자동 복구합니다.
     content = content.replace(/^(\s*l_[a-z_]+:)[ \t]+(\S)/m, '$1\n $2');

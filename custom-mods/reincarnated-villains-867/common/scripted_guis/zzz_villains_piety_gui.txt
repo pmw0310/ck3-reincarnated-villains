@@ -18,6 +18,7 @@ villains_piety_group_fascist_sgui = {
 		OR = {
 			religion = religion:national_socialism_religion
 			religion = religion:fascism_religion
+			religion = religion:imperial_assistance_religion
 		}
 	}
 }
@@ -26,7 +27,10 @@ villains_piety_group_capitalist_sgui = {
 	scope = character
 	is_shown = {
 		exists = this
-		religion = religion:americanism_religion
+		OR = {
+			religion = religion:americanism_religion
+			religion = religion:eurasianism_religion
+		}
 	}
 }
 
@@ -40,7 +44,9 @@ villains_piety_group_vanilla_sgui = {
 			religion = religion:cultural_revolution_religion
 			religion = religion:national_socialism_religion
 			religion = religion:fascism_religion
+			religion = religion:imperial_assistance_religion
 			religion = religion:americanism_religion
+			religion = religion:eurasianism_religion
 		}
 	}
 }

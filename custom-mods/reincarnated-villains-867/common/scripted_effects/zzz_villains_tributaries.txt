@@ -601,6 +601,16 @@
 			set_color_from_title = title:c_jerusalem
 		}
 		if = {
+			limit = {
+				exists = character:reincarnated_hitler_867
+				NOT = { has_relation_rival = character:reincarnated_hitler_867 }
+			}
+			set_relation_rival = {
+				target = character:reincarnated_hitler_867
+				reason = rival_zionism_vs_nazism
+			}
+		}
+		if = {
 			limit = { is_independent_ruler = no }
 			vassal_contract_set_obligation_level = {
 				type = religious_rights
@@ -609,6 +619,116 @@
 			vassal_contract_set_obligation_level = {
 				type = title_revocation_rights
 				level = 1
+			}
+		}
+	}
+
+	character:reincarnated_tojo_867 ?= {
+		house ?= {
+			if = {
+				limit = { house_head != prev }
+				set_house_head = prev
+			}
+			if = {
+				limit = {
+					prev = {
+						has_tgp_dlc_trigger = yes
+						government_is_japanese_trigger = yes
+					}
+				}
+				set_house_aspiration = {
+					type = service
+					level = 1
+				}
+			}
+		}
+		title:c_nf_tojo = {
+			set_coa = holder.house
+			set_color_from_title = title:d_rep_tojo
+		}
+		domicile ?= {
+			set_up_domicile_estate_effect = yes
+			move_domicile = owner.capital_province
+		}
+		if = {
+			limit = {
+				exists = character:reincarnated_mutaguchi_867
+				NOT = { has_relation_rival = character:reincarnated_mutaguchi_867 }
+			}
+			set_relation_rival = {
+				target = character:reincarnated_mutaguchi_867
+				reason = rival_tojo_vs_mutaguchi
+			}
+		}
+		if = {
+			limit = { is_independent_ruler = no }
+			vassal_contract_set_obligation_level = {
+				type = religious_rights
+				level = 1
+			}
+			vassal_contract_set_obligation_level = {
+				type = title_revocation_rights
+				level = 1
+			}
+		}
+	}
+
+	character:reincarnated_putin_867 ?= {
+		add_realm_law_skip_effects = republican_despot_succession_law
+		add_realm_law_skip_effects = republic_type_noble
+		add_realm_law_skip_effects = republic_assembly_composition_parliament
+		add_realm_law_skip_effects = republic_assembly_authority_ceremonial
+		add_realm_law_skip_effects = republic_assembly_voting_thresholds_simple_majority
+		add_realm_law_skip_effects = republic_assembly_term_length_indefinite
+		add_realm_law_skip_effects = republic_end_term_law_1
+		add_realm_law_skip_effects = republic_war_declaration_2_unlimited
+		add_realm_law_skip_effects = republic_army_organization_4_merc
+		add_realm_law_skip_effects = republic_banishment_3_unrestricted
+		add_realm_law_skip_effects = republic_execution_3_unrestricted
+		add_realm_law_skip_effects = republic_title_revocation_2_allowed
+		add_realm_law_skip_effects = republic_retract_vassal_2_allowed
+		add_realm_law_skip_effects = republic_vassal_refusal_2_treason
+		add_realm_law_skip_effects = republic_trade_specialization_minerals
+		house ?= {
+			if = {
+				limit = { house_head != prev }
+				set_house_head = prev
+			}
+			set_house_aspiration = {
+				type = republic_signorial
+				level = 1
+			}
+		}
+		title:d_nf_putin = {
+			set_coa = holder.house
+			set_color_from_title = title:d_rep_putin
+		}
+		if = {
+			limit = {
+				exists = character:reincarnated_stalin_867
+				NOT = { has_relation_rival = character:reincarnated_stalin_867 }
+			}
+			set_relation_rival = {
+				target = character:reincarnated_stalin_867
+				reason = rival_putin_vs_stalin
+			}
+		}
+		if = {
+			limit = {
+				exists = character:reincarnated_trump_867
+				character:reincarnated_trump_867 = { is_alive = yes }
+			}
+			add_opinion = {
+				target = character:reincarnated_trump_867
+				modifier = friendly_interaction
+				opinion = 35
+			}
+			character:reincarnated_trump_867 = {
+				add_opinion = {
+					target = prev
+					modifier = friendly_interaction
+					opinion = 35
+				}
 			}
 		}
 	}

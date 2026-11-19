@@ -1,0 +1,11 @@
+﻿########################################################################################
+# Reincarnated Villains Chronicle — Fullscreen Event Background
+########################################################################################
+
+villains_fullscreen_chronicle = {
+	background = {
+		reference = "gfx/interface/illustrations/event_story/villains_fullscreen_chronicle.dds"
+		environment = "environment_event_study_physician"
+		ambience = "event:/SFX/Events/Backgrounds/town_market_middleeastern_day"
+	}
+}

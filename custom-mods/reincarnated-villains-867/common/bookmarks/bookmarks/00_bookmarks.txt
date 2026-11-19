@@ -4279,7 +4279,7 @@ bm_867_reincarnated_hitler = {
 		religion = americanism
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
 		history_id = reincarnated_trump_867
-		position = { 300 75 }
+		position = { 285 68 }
 
 		animation = personality_greedy
 	}
@@ -4297,7 +4297,7 @@ bm_867_reincarnated_hitler = {
 		religion = byzantine_rite
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_HARD"
 		history_id = reincarnated_rasputin_867
-		position = { 675 225 }
+		position = { 505 212 }
 
 		animation = personality_cynical
 	}
@@ -4333,7 +4333,7 @@ bm_867_reincarnated_hitler = {
 		religion = fascism
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_HARD"
 		history_id = reincarnated_mussolini_867
-		position = { 285 535 }
+		position = { 290 530 }
 
 		animation = personality_bold
 	}
@@ -4351,7 +4351,7 @@ bm_867_reincarnated_hitler = {
 		religion = national_socialism
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
 		history_id = reincarnated_hitler_867
-		position = { 675 445 }
+		position = { 645 485 }
 
 		animation = personality_zealous
 	}
@@ -4369,7 +4369,7 @@ bm_867_reincarnated_hitler = {
 		religion = aminism
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_HARD"
 		history_id = reincarnated_idi_amin_867
-		position = { 525 780 }
+		position = { 635 785 }
 
 		animation = personality_zealous
 	}
@@ -4387,7 +4387,7 @@ bm_867_reincarnated_hitler = {
 		religion = zionism
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_HARD"
 		history_id = reincarnated_netanyahu_867
-		position = { 990 775 }
+		position = { 1095 785 }
 
 		animation = personality_rational
 
@@ -4403,6 +4403,24 @@ bm_867_reincarnated_hitler = {
 			history_id = reincarnated_yonatan_netanyahu_867
 			animation = personality_bold
 		}
+	}
+
+	# Vladimir Putin (Kremlin Security Administration, Terebovl & Ushytsia 867)
+	character = {
+		name = "bookmark_reincarnated_putin"
+		dynasty = dynasty_putin_867
+		dynasty_splendor_level = 1
+		type = male
+		birth = 848.10.7
+		title = d_rep_putin
+		government = republic_government
+		culture = neo_russian
+		religion = putinism
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		history_id = reincarnated_putin_867
+		position = { 935 365 }
+
+		animation = spymaster
 	}
 }
 
@@ -4428,7 +4446,7 @@ bm_867_reincarnated_villains_east = {
 		religion = juche
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
 		history_id = reincarnated_kim_jongun_867
-		position = { 1045 95 }
+		position = { 660 80 }
 
 		animation = frontend_center_idle
 
@@ -4446,6 +4464,24 @@ bm_867_reincarnated_villains_east = {
 		}
 	}
 
+	# Hideki Tojo (Imperial Rule Assistance Governorate, 867)
+	character = {
+		name = "bookmark_reincarnated_tojo"
+		dynasty = dynasty_tojo_867
+		dynasty_splendor_level = 1
+		type = male
+		birth = 848.12.30
+		title = d_rep_tojo
+		government = japan_feudal_government
+		culture = imperial_japanese
+		religion = taisei_yokusankai
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		history_id = reincarnated_tojo_867
+		position = { 1080 95 }
+
+		animation = steward
+	}
+
 	# Jiang Qing (Jiangnan Rebel Headquarters, 867)
 	character = {
 		name = "bookmark_reincarnated_jiang_qing"
@@ -4459,7 +4495,7 @@ bm_867_reincarnated_villains_east = {
 		religion = cultural_revolution
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
 		history_id = reincarnated_jiang_qing_867
-		position = { 895 390 }
+		position = { 980 320 }
 
 		animation = personality_honorable
 	}
@@ -4473,11 +4509,11 @@ bm_867_reincarnated_villains_east = {
 		birth = 848.10.7
 		title = d_rep_mutaguchi
 		government = japan_feudal_government
-		culture = imperial_japanese
+		culture = imphal_japanese
 		religion = state_shinto
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_HARD"
 		history_id = reincarnated_mutaguchi_867
-		position = { 340 480 }
+		position = { 365 485 }
 
 		animation = personality_irrational
 	}
@@ -4495,7 +4531,7 @@ bm_867_reincarnated_villains_east = {
 		religion = angkar
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_HARD"
 		history_id = reincarnated_pol_pot_867
-		position = { 455 795 }
+		position = { 660 710 }
 
 		animation = personality_callous
 	}

@@ -97,6 +97,7 @@ religion_is_east_asian_trigger = {
 		faith.religion = religion:shintoism_religion
 		faith.religion = religion:juche_religion
 		faith.religion = religion:cultural_revolution_religion
+		faith.religion = religion:imperial_assistance_religion
 	}
 }
 

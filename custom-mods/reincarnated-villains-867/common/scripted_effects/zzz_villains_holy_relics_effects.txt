@@ -697,6 +697,143 @@ villains_seed_holy_site_relics_effect = {
 		}
 	}
 
+	# 12a & 12b. Hideki Tojo: 2 Single-Item Satirical Heirlooms (Round Tortoiseshell Spectacles + GHQ Victory Bulletin)
+	if = {
+		limit = {
+			exists = character:reincarnated_tojo_867
+		}
+		set_artifact_rarity_masterwork = yes
+		character:reincarnated_tojo_867 = {
+			save_scope_as = owner
+			create_artifact = {
+				name = artifact_tojo_tortoiseshell_spectacles_name
+				description = artifact_tojo_tortoiseshell_spectacles_desc
+				type = miscellaneous
+				visuals = pocket_fancy_case
+				template = tojo_personal_only_template
+				wealth = scope:wealth
+				quality = scope:quality
+				history = { type = created_before_history }
+				modifier = tojo_tortoiseshell_spectacles_modifier
+				save_scope_as = newly_created_artifact
+				decaying = no
+			}
+			scope:newly_created_artifact = {
+				set_variable = { name = historical_unique_artifact value = yes }
+				equip_artifact_to_owner = yes
+			}
+			create_artifact = {
+				name = artifact_tojo_ghq_victory_bulletin_name
+				description = artifact_tojo_ghq_victory_bulletin_desc
+				type = journal
+				visuals = book
+				template = tojo_dynasty_heirloom_template
+				wealth = scope:wealth
+				quality = scope:quality
+				history = { type = created_before_history }
+				modifier = tojo_ghq_victory_bulletin_modifier
+				save_scope_as = newly_created_artifact
+				decaying = no
+			}
+			scope:newly_created_artifact = {
+				set_variable = { name = historical_unique_artifact value = yes }
+				equip_artifact_to_owner = yes
+			}
+		}
+	}
+
+	# Seed Putinism Holy Site Relics (5: 1 famed, 2 masterwork, 2 common) + 2 Single-Item Satirical Heirlooms
+	if = {
+		limit = {
+			exists = character:reincarnated_putin_867
+		}
+		villains_create_and_enshrine_relic_effect = {
+			HOLY_SITE = terebovl_putinism
+			CREATOR = character:reincarnated_putin_867
+			RARITY = famed
+			TEMPLATE = putinism_relic_template
+			VISUALS = reliquary
+			NAME = artifact_relic_terebovl_security_seal_name
+			DESC = artifact_relic_terebovl_security_seal_desc
+		}
+		villains_create_and_enshrine_relic_effect = {
+			HOLY_SITE = kiev_putinism
+			CREATOR = character:reincarnated_putin_867
+			RARITY = masterwork
+			TEMPLATE = putinism_relic_template
+			VISUALS = banner
+			NAME = artifact_relic_kiev_millennium_standard_name
+			DESC = artifact_relic_kiev_millennium_standard_desc
+		}
+		villains_create_and_enshrine_relic_effect = {
+			HOLY_SITE = kerch_putinism
+			CREATOR = character:reincarnated_putin_867
+			RARITY = masterwork
+			TEMPLATE = putinism_relic_template
+			VISUALS = goblet
+			NAME = artifact_relic_kerch_fleet_compass_name
+			DESC = artifact_relic_kerch_fleet_compass_desc
+		}
+		villains_create_and_enshrine_relic_effect = {
+			HOLY_SITE = moskva_putinism
+			CREATOR = character:reincarnated_putin_867
+			RARITY = common
+			TEMPLATE = putinism_relic_template
+			VISUALS = pedestal_branch_relic_slavic
+			NAME = artifact_relic_kremlin_spasskaya_chime_name
+			DESC = artifact_relic_kremlin_spasskaya_chime_desc
+		}
+		villains_create_and_enshrine_relic_effect = {
+			HOLY_SITE = vodi_putinism
+			CREATOR = character:reincarnated_putin_867
+			RARITY = common
+			TEMPLATE = putinism_relic_template
+			VISUALS = book
+			NAME = artifact_relic_neva_directorate_dossier_name
+			DESC = artifact_relic_neva_directorate_dossier_desc
+		}
+
+		# 13a & 13b. Vladimir Putin: 2 Single-Item Satirical Heirlooms (Kremlin Long Marble Table + Lubyanka Special Samovar)
+		set_artifact_rarity_masterwork = yes
+		character:reincarnated_putin_867 = {
+			save_scope_as = owner
+			create_artifact = {
+				name = artifact_putin_long_marble_table_name
+				description = artifact_putin_long_marble_table_desc
+				type = miscellaneous
+				visuals = cabinet_trinket
+				template = putin_table_heirloom_template
+				wealth = scope:wealth
+				quality = scope:quality
+				history = { type = created_before_history }
+				modifier = putin_long_marble_table_modifier
+				save_scope_as = newly_created_artifact
+				decaying = no
+			}
+			scope:newly_created_artifact = {
+				set_variable = { name = historical_unique_artifact value = yes }
+				equip_artifact_to_owner = yes
+			}
+			create_artifact = {
+				name = artifact_putin_lubyanka_samovar_name
+				description = artifact_putin_lubyanka_samovar_desc
+				type = miscellaneous
+				visuals = glazed_jar
+				template = putin_samovar_heirloom_template
+				wealth = scope:wealth
+				quality = scope:quality
+				history = { type = created_before_history }
+				modifier = putin_lubyanka_samovar_modifier
+				save_scope_as = newly_created_artifact
+				decaying = no
+			}
+			scope:newly_created_artifact = {
+				set_variable = { name = historical_unique_artifact value = yes }
+				equip_artifact_to_owner = yes
+			}
+		}
+	}
+
 	# Ensure starting representative polity titles (d_rep_* / k_rep_jiang_qing) outrank temporal HoF duchies at game start
 	character:reincarnated_trump_867 ?= {
 		if = {
@@ -798,6 +935,36 @@ villains_seed_holy_site_relics_effect = {
 				has_title = title:d_rep_netanyahu
 			}
 			set_primary_title_to = title:d_rep_netanyahu
+		}
+	}
+	character:reincarnated_tojo_867 ?= {
+		if = {
+			limit = {
+				highest_held_title_tier = tier_duchy
+				has_title = title:d_rep_tojo
+			}
+			set_primary_title_to = title:d_rep_tojo
+		}
+	}
+	character:reincarnated_putin_867 ?= {
+		if = {
+			limit = {
+				highest_held_title_tier = tier_duchy
+				has_title = title:d_rep_putin
+			}
+			set_primary_title_to = title:d_rep_putin
+		}
+		if = {
+			limit = {
+				is_alive = yes
+				government_has_flag = government_is_republic
+			}
+			house ?= {
+				set_house_aspiration = {
+					type = republic_signorial
+					level = 1
+				}
+			}
 		}
 	}
 }

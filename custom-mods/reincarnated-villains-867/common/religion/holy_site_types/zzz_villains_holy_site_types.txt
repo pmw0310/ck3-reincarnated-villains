@@ -1627,3 +1627,261 @@ amsterdam_americanism = {
 		prosperity_growth_factor = 0.01
 	}
 }
+
+######################################
+# Taisei Yokusankai Holy Sites (5)   #
+######################################
+
+musashi_yokusankai = {
+	county = c_musashi
+	barony = b_tama_musashi
+
+	county_holder_character_modifier = {
+		stewardship = 1
+		domain_tax_mult = 0.05
+	}
+
+	county_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		prosperity_growth_factor = 0.02
+		all_tax_mult = 0.02
+	}
+
+	faith_character_modifier = {
+		stewardship = 1
+		monthly_county_control_growth_factor = 0.05
+	}
+
+	faith_character_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		domain_tax_mult = 0.01
+		prosperity_growth_factor = 0.01
+	}
+}
+
+sagami_yokusankai = {
+	county = c_sagami
+	barony = b_kamakura
+
+	county_holder_character_modifier = {
+		martial = 1
+	}
+
+	county_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		levy_size = 0.02
+		garrison_size = 0.03
+	}
+
+	faith_character_modifier = {
+		heavy_infantry_toughness_mult = 0.10
+	}
+
+	faith_character_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		heavy_infantry_toughness_mult = 0.01
+		knight_effectiveness_mult = 0.01
+	}
+}
+
+kyoto_yokusankai = {
+	county = c_yamashiro
+	barony = b_kyo
+
+	county_holder_character_modifier = {
+		diplomacy = 1
+		monthly_prestige_gain_mult = 0.05
+	}
+
+	county_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		prosperity_growth_factor = 0.02
+		popular_opinion_add = 1
+	}
+
+	faith_character_modifier = {
+		monthly_legitimacy_add = 0.10
+		vassal_opinion = 5
+	}
+
+	faith_character_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		monthly_prestige_gain_mult = 0.01
+		same_faith_opinion = 1
+	}
+}
+
+settsu_yokusankai = {
+	county = c_settsu
+	barony = b_fukuhara
+
+	county_holder_character_modifier = {
+		stewardship = 1
+	}
+
+	county_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		prosperity_growth_factor = 0.02
+	}
+
+	faith_character_modifier = {
+		build_gold_cost = -0.05
+	}
+
+	faith_character_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		domain_tax_mult = 0.01
+	}
+}
+
+chikuzen_yokusankai = {
+	county = c_chikuzen
+	barony = b_dazaifu
+
+	county_holder_character_modifier = {
+		intrigue = 1
+	}
+
+	county_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		levy_size = 0.02
+	}
+
+	faith_character_modifier = {
+		enemy_hostile_scheme_success_chance_max_add = -5
+	}
+
+	faith_character_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		dread_baseline_add = 1
+	}
+}
+
+######################################
+# Eurasianism / Putinism Holy Sites  #
+######################################
+
+terebovl_putinism = {
+	county = c_terebovl
+	barony = b_terebovl
+
+	county_holder_character_modifier = {
+		intrigue = 1
+		domain_tax_mult = 0.05
+	}
+
+	county_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		prosperity_growth_factor = 0.02
+		all_tax_mult = 0.02
+	}
+
+	faith_character_modifier = {
+		intrigue = 1
+		dread_decay_mult = -0.10
+	}
+
+	faith_character_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		domain_tax_mult = 0.01
+		prosperity_growth_factor = 0.01
+	}
+}
+
+kiev_putinism = {
+	county = c_kiev
+	barony = b_kiev
+
+	county_holder_character_modifier = {
+		stewardship = 1
+	}
+
+	county_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		prosperity_growth_factor = 0.02
+		levy_size = 0.02
+	}
+
+	faith_character_modifier = {
+		heavy_infantry_damage_mult = 0.10
+	}
+
+	faith_character_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		heavy_infantry_damage_mult = 0.01
+		monthly_prestige_gain_mult = 0.01
+	}
+}
+
+kerch_putinism = {
+	county = c_kerch
+	barony = b_kerch
+
+	county_holder_character_modifier = {
+		martial = 1
+	}
+
+	county_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		prosperity_growth_factor = 0.02
+	}
+
+	faith_character_modifier = {
+		mercenary_hire_cost_mult = -0.10
+	}
+
+	faith_character_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		domain_tax_mult = 0.01
+	}
+}
+
+moskva_putinism = {
+	county = c_moskva
+	barony = b_moskva
+
+	county_holder_character_modifier = {
+		diplomacy = 1
+		monthly_prestige_gain_mult = 0.05
+	}
+
+	county_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		prosperity_growth_factor = 0.02
+		popular_opinion_add = 1
+	}
+
+	faith_character_modifier = {
+		vassal_opinion = 5
+		dread_baseline_add = 10
+	}
+
+	faith_character_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		monthly_prestige_gain_mult = 0.01
+		same_faith_opinion = 1
+	}
+}
+
+vodi_putinism = {
+	county = c_vodi
+	barony = b_nyen
+
+	county_holder_character_modifier = {
+		intrigue = 1
+	}
+
+	county_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		all_tax_mult = 0.02
+	}
+
+	faith_character_modifier = {
+		enemy_hostile_scheme_success_chance_max_add = -5
+	}
+
+	faith_character_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		owned_hostile_scheme_success_chance_max_add = 1
+	}
+}

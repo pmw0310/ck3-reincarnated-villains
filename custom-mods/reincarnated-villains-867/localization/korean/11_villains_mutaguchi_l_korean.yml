@@ -1,6 +1,6 @@
 ﻿l_korean:
  # ============================================================================
- # 11. 무타구치 렌야 — 국가신도 · 황국 일본
+ # 11. 무타구치 렌야 — 국가신도 · 남방 황군
  # ============================================================================
 
  # === [북마크 · 인물 · 가문 · 별명 · 외형] ===
@@ -61,12 +61,12 @@
  mutaguchi_banzai_samurai:0 "임팔 밀림 결사대"
  mutaguchi_banzai_samurai_flavor:0 "#F 보급은 임팔과 카마루파 밀림에서 풀을 뜯어 해결하라는 사령관의 무모한 명령 아래 오직 정신력과 태도 백병 돌격만으로 폭우의 정글을 돌파하는 결사대입니다. 보급 소모가 거의 없고 살상력과 추격력이 폭발적이지만 방어력은 종잇장처럼 얇습니다.#!"
  mutaguchi_southern_expeditionary_army_name:0 "황군 남방 총군 결사대"
- imperial_japanese:0 "황국 일본"
- imperial_japanese_prefix:0 "황국 일본계"
- imperial_japanese_collective_noun:0 "황국 신민"
+ imphal_japanese:0 "남방 황군"
+ imphal_japanese_prefix:0 "남방 황군계"
+ imphal_japanese_collective_noun:0 "남방 파견군인"
  tradition_gyokusai_bushido_name:0 "옥쇄 돌격 무사도"
  tradition_gyokusai_bushido_desc:0 "보급이 끊긴 임팔의 밀림에서도 후퇴 대신 전원 발도 백병 돌격을 택하는 극단적 황군 무사도입니다. 장교단과 임팔 밀림 결사대가 목숨을 돌보지 않고 적진으로 뛰어듭니다."
- tradition_gyokusai_bushido_only_tt:0 "황국 일본 문화이거나 그 후예 문화여야 함"
+ tradition_gyokusai_bushido_only_tt:0 "남방 황군 문화이거나 그 후예 문화여야 함"
  culture_parameter_unlock_maa_mutaguchi_banzai_samurai:0 "[GetMaA('mutaguchi_banzai_samurai').GetName](을)를 [men_at_arms|E]으로 모병 가능"
 
  # === [고유 결단 · 이벤트 · 변화요소 · 성물] ===

@@ -1,0 +1,57 @@
+﻿namespace = villains_chronicle
+
+########################################################################################
+# 0001: Game-Start Fullscreen Splash Event for Reincarnated Villains Chronicle
+########################################################################################
+villains_chronicle.0001 = {
+	type = character_event
+	window = fullscreen_event
+	queue_icon = "gfx/interface/icons/situation_types/reincarnated_villains_chronicle.dds"
+	queue_name = reincarnated_villains_chronicle
+	title = villains_chronicle.0001.t
+	desc = villains_chronicle.0001.desc
+	theme = realm
+
+	override_background = {
+		reference = villains_fullscreen_chronicle
+	}
+	override_sound = {
+		reference = "event:/SFX/Events/Themes/sfx_event_theme_type_duty"
+	}
+
+	cooldown = { years = 100 }
+
+	trigger = {
+		is_ai = no
+		exists = situation:reincarnated_villains_chronicle
+		NOT = { has_character_flag = villains_chronicle_intro_shown }
+		any_character_situation = {
+			this = situation:reincarnated_villains_chronicle
+		}
+	}
+
+	widgets = {
+		widget = {
+			gui = "event_window_widget_situation_info_villains_chronicle"
+			container = "dynamic_content_widget"
+			controller = situation_info
+			setup_scope = {
+				situation:reincarnated_villains_chronicle = { save_scope_as = situation }
+			}
+		}
+	}
+
+	immediate = {
+		play_music_cue = "mx_cue_ck3_vocal_maintheme"
+		add_character_flag = villains_chronicle_intro_shown
+		save_scope_value_as = {
+			name = start
+			value = yes
+		}
+	}
+
+	option = {
+		name = villains_chronicle.0001.a
+		clicksound = "event:/SFX/UI/Generic/sfx_ui_generic_confirm"
+	}
+}

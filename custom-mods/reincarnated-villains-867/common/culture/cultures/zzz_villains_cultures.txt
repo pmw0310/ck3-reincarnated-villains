@@ -147,7 +147,7 @@ fascist_italian = {
 # 5. Joseph Stalin: Soviet (소비에트)
 soviet = {
 	color = { 0.56 0.08 0.08 }
-	created = 867.1.1
+	created = 866.1.1
 	parents = { russian georgian }
 
 	ethos = ethos_communal
@@ -249,11 +249,48 @@ zaofan_chinese = {
 	}
 }
 
-# 8. Renya Mutaguchi: Imperial Japanese (황국 일본)
+# 8A. Hideki Tojo: Imperial Japanese (황국 일본 — 본토 통제파·익찬 총동원 관료 문화, 866.1.1 분화)
 imperial_japanese = {
+	color = { 0.74 0.08 0.16 }
+	created = 866.1.1
+	parents = { japanese }
+
+	name_order_convention = japanese
+	ethos = ethos_bureaucratic
+	heritage = heritage_japonic
+	language = language_japonic
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_domain
+	traditions = {
+		tradition_imperial_rule_assistance
+		tradition_loyal_soldiers
+		tradition_ruling_caste
+	}
+
+	dlc_tradition = {
+		trait = tradition_tgp_japanese_houses
+		requires_dlc_flag = all_under_heaven
+		fallback = tradition_noble_adoption
+	}
+
+	name_list = name_list_yamato
+
+	coa_gfx = { japanese_coa_gfx }
+	building_gfx = { japanese_building_gfx }
+	clothing_gfx = { japanese_clothing_gfx }
+	unit_gfx = { japanese_unit_gfx }
+	house_coa_frame = house_japan
+
+	ethnicities = {
+		100 = asian_japanese
+	}
+}
+
+# 8B. Renya Mutaguchi: Southern Imperial Army (남방 황군 — 황국 일본에서 임팔 밀림으로 재분화, 867.1.1)
+imphal_japanese = {
 	color = { 0.90 0.76 0.78 }
 	created = 867.1.1
-	parents = { japanese }
+	parents = { imperial_japanese }
 
 	name_order_convention = japanese
 	ethos = ethos_bellicose
@@ -352,5 +389,40 @@ ugandan = {
 		65 = east_african
 		20 = african
 		15 = arab
+	}
+}
+
+# 12. Vladimir Putin: Neo-Russian (신러시아)
+neo_russian = {
+	color = { 0.16 0.32 0.68 }
+	created = 867.1.1
+	parents = { russian soviet }
+
+	ethos = ethos_bellicose
+	heritage = heritage_east_slavic
+	language = language_east_slavic
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_domain
+	traditions = {
+		tradition_siloviki_oligarchy
+		tradition_winter_warriors
+		tradition_ruling_caste
+		tradition_eye_for_an_eye
+	}
+
+	name_list = name_list_russian
+
+	coa_gfx = { east_slavic_group_coa_gfx western_coa_gfx }
+	building_gfx = { east_slavic_building_gfx western_building_gfx }
+	clothing_gfx = { east_slavic_clothing_gfx northern_clothing_gfx }
+	unit_gfx = { eastern_unit_gfx }
+	house_coa_frame = house_frame_02
+	house_coa_mask_offset = { 0.0 0.055 }
+	house_coa_mask_scale = { 0.9 0.9 }
+
+	ethnicities = {
+		55 = slavic_northern_blond
+		30 = slavic_northern_brown_hair
+		15 = slavic_northern_dark_hair
 	}
 }
